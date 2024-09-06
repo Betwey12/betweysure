@@ -9,6 +9,11 @@ const pageMetadata = {
     description:
       "Betweysure offers transparent pricing for its paid bundles. Subscribe now to get free curated bundle tips from your favourite leagues.",
   },
+  about: {
+    title: "About Us - Betweysure",
+    description:
+      "Betweysure is a leading prediction site for soccer/football enthusiasts who want to improve their betting performance. ",
+  },
 };
 
 export const { home, pricing } = pageMetadata;
