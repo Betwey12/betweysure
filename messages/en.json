@@ -93,7 +93,7 @@
     "FREE_TIPS": "Free Tips"
   },
   "PREDICTIONS_TABLE": {
-      "NO_PREDICTIONS": "No predictions available for the selected option",
+    "NO_PREDICTIONS": "No predictions available for the selected option",
     "YESTERDAY": "Yesterday",
     "TODAY": "Today",
     "FREE_FOOTBALL_PREDICTIONS": "Free Football Predictions",
@@ -101,7 +101,7 @@
     "OTHER_SPORTS_PREDICTIONS": "Other Sports Predictions"
   },
   "WHY_BETWEYSURE": {
-      "BUNDLES": "Bundles",
+    "BUNDLES": "Bundles",
     "WHY_BETWEYSURE": "Why Betweysure?",
     "TAILORED_TIPS": "Tailored Betting:",
     "TAILORED_TIPS_DESC": "Tips Find the perfect combination of tips and get personalized advice on how much to stake based on your budget and goals. We provide you with the essential information you need to make smart bets.",
@@ -122,9 +122,8 @@
     "LEARN_MORE": "Learn More"
   },
   "BLOG_AND_NEWS": {
-      "READ": "Read",
+    "READ": "Read",
     "BLOG_AND_NEWS": "Blog and News"
-
   },
   "FREQ_ASKED_QUESTIONS": {
     "FREQ_ASKED_QUESTIONS": "Frequently Asked Questions",
@@ -136,5 +135,63 @@
     "ANSWER_THREE": "Contact us to find out if you qualify for any discounts.",
     "QUESTION_FOUR": "What if I have more questions?",
     "ANSWER_FOUR": "If you have more questions, you can contact us by email or phone. We're here to help!"
+  },
+  "PRICING_HEADER": {
+    "TITLE": "Transparent pricing",
+    "DESCRIPTION": "Join our community to take your betting game to the next level. With us, you'll have the tools, knowledge, and opportunities needed for a rewarding betting experience. Get started today to get free curated bundle tips from your favourite leagues."
+  },
+  "PRICING_PLANS": {
+    "SUBSCRIBE_NOW": "Subscribe Now",
+    "FREE_FEATURES": {
+      "ONE": "Correct score",
+      "TWO": "Over 2.5",
+      "THREE": "Draw",
+      "FOUR": "Under 2.5",
+      "FIVE": "Inplay",
+      "SIX": "HT/FT",
+      "SEVEN": "1x2"
+    },
+    "STANDARD_FEATURES": {
+      "ONE": "Everything in free +",
+      "TWO": "Midweek bundle",
+      "THREE": "WDW",
+      "FOUR": "Over 3.5",
+      "FIVE": "HT Goal tips",
+      "SIX": "Over 1.5 FHG",
+      "SEVEN": "Win to Nil tips",
+      "EIGHT": "Sure 2 odds"
+    },
+    "PREMIUM_FEATURES": {
+      "ONE": "Everything in standard +",
+      "TWO": "SMS & Email",
+      "THREE": "Midweek bundle",
+      "FOUR": "Weekend bundle",
+      "FIVE": "Sure 3 odd",
+      "SIX": "Over 2.5",
+      "SEVEN": "BTTS",
+      "EIGHT": "Bet of the day",
+      "NINE": "BTTS & Win",
+      "TEN": "Corners",
+      "ELEVEN": "Cards",
+      "TWELVE": "Player stats",
+      "THIRTEEN": "Offside",
+      "FOURTEEN": "Fouls"
+    },
+    "CHOOSE_PLAN": "Choose a plan"
+  },
+  "WHAT_IS_INCLUDED": {
+    "WHAT_IS_INCLUDED": "What is included",
+    "BENEFIT_ONE": "Curated Bundles",
+    "BENEFIT_TWO": "Daily Surefire Tips",
+    "BENEFIT_THREE": "24/7 Support",
+    "BENEFIT_FOUR": "Bet with Confidence",
+    "BENEFIT_FIVE": "Access games across 103 leagues",
+    "BENEFIT_SIX": "Fast reliable checkout",
+    "BENEFIT_SEVEN": "Winning streak you can count",
+    "BENEFIT_EIGHT": "Different payment methods",
+    "BENEFIT_NINE": "Enjoy free access to premium tip categories",
+    "BENEFIT_TEN": "Maximize your earnings with strategic betting",
+    "BENEFIT_ELEVEN": "Access tips from 103 leagues globally",
+    "BENEFIT_TWELVE": "Increase your odds of success"
   }
 }
