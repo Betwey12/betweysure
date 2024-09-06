@@ -14,6 +14,10 @@ const pageMetadata = {
     description:
       "Betweysure is a leading prediction site for soccer/football enthusiasts who want to improve their betting performance. ",
   },
+  contact: {
+    title: "Contact Us - Betweysure",
+    description: "Get in touch with us for any inquiries or feedback.",
+  },
 };
 
-export const { home, pricing } = pageMetadata;
+export const { home, pricing, about, contact } = pageMetadata;

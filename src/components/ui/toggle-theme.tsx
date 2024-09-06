@@ -3,12 +3,12 @@ import { MoonIcon, SunIcon } from "../icons";
 import { useEffect, useState } from "react";
 
 export default function ToggleTheme() {
-  const { setTheme, theme } = useTheme();
-  const [isDark, setIsDark] = useState<boolean>();
+  const { setTheme, resolvedTheme } = useTheme();
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    setIsDark(theme === "dark");
-  }, [theme]);
+    setIsDark(resolvedTheme === "dark");
+  }, [resolvedTheme]);
 
   return (
     <div className="flex items-center gap-2">
@@ -20,9 +20,9 @@ export default function ToggleTheme() {
           type="checkbox"
           hidden
           className="peer"
-          defaultChecked={isDark}
+          checked={isDark}
           id="toggle"
-          onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
+          onChange={() => setTheme(isDark ? "light" : "dark")}
         />
         <div className="w-7 h-7 flex items-center justify-center rounded-full shadow inset-y-0 left-0 border-2 border-cyan peer-checked:translate-x-[32px] transition-all ease-in-out duration-500">
           {isDark ? <SunIcon /> : <MoonIcon />}
