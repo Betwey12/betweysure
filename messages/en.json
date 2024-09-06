@@ -1,0 +1,95 @@
+{
+  "NAVBAR": {
+    "RESULTS": "Results",
+    "CONTACT_US": "Contact Us",
+    "REGISTER": "Register",
+    "HOME": "Home",
+    "FREE_TIPS": "Free Tips",
+    "PAID_BUNDLES": "Paid Bundles",
+    "PRICING": "Pricing",
+    "ACCA_BUILDER": "ACCA Builder",
+    "BLOG": "Blog",
+    "LIVESCORES": "Livescores",
+    "TRENDS": "Trends",
+    "GO_TO_DASHBOARD": "Go to Dashboard"
+  },
+  "LocaleSwitcher": {},
+  "FOOTER": {
+    "DISCLAIMER": "We are committed to responsible gambling and have a number of ways to help you stay in control and keep gambling fun. \n You must be 18 years or older to use this site. Please bet responsibly.",
+
+    "COPYRIGHT": "© 2021 Betweysure. All rights reserved."
+  },
+  "NEWSLETTER": {
+    "SUBSCRIBE_TO_OUR_NEWSLETTER": "Subscribe to our newsletter",
+    "SUBSCRIBE_TO_OUR_NEWSLETTER_DESC": "Don't miss out on fantastic offers, subscribe to our newsletter and be the first to receive news.",
+    "SUBMIT": "Submit"
+  },
+  "QUICK_LINKS": {
+    "QUICK_LINKS": "Quick Links",
+    "PREDICTIONS": "Predictions",
+    "TODAYS_PREDICTIONS": "Today's Predictions",
+    "ACCA_BUILDER": "ACCA Builder",
+    "LIVESCORES": "Livescores",
+    "OVER/UNDER": "Over/Under",
+    "OTHER_SPORTS": "Other Sports",
+    "FREE_TIPS": "Free Tips",
+    "JOIN_TELEGRAM": "Join our telegram (Betweysure) community",
+    "JOIN_WHATSAPP": "Chat with us on whatsapp"
+  },
+  "MENU_BAR": {
+    "HOME": "Home",
+    "FREE_TIPS": "Free Tips",
+    "PRICING": "Pricing",
+    "ACCA_BUILDER": "ACCA Builder",
+    "LIVESCORES": "Livescores",
+    "BLOG": "Blog",
+    "TRENDS": "Trends",
+    "ACCURACY": "Accuracy"
+  },
+  "HOME_HERO": {
+    "FREE_BET_PREDICTIONS_DESC": "The best free prediction analysis platform.",
+    "FREE_BET_PREDICTIONS": "Free Bet Predictions",
+    "VIEW_PREDICTIONS": "View Predictions",
+    "TOP_OF_THE_LINE": "Check out our top-of-the-line football predictions.",
+    "NEW": "New",
+    "CONVERT_BET_CODES": "Convert Bet Codes"
+  },
+  "HOME_FREE_TIPS": {
+    "FREE_TIPS_DESC": "We are the ultimate prediction site for free soccer betting tips. Whether you are a novice or an expert, you can benefit from our free soccer betting tips that are backed by our proven track record and reliable data. \n Our free tips cover a wide range of markets, including Asian Handicap, singles, and under/over 2.5 goals, and they always deliver a positive outcome. Don’t miss out on the hottest free football prediction tips for today’s matches from the best football tipsters in the English Premier League, La Liga, Champions League, and more. You can also access detailed statistics and analysis for each match to help you make informed decisions. \n Our predictions are based on our exclusive A.I powered algorithm that analyzes various factors, such as form, head-to-head, injuries, and more, to provide you with accurate information that reduces your risk of losing and boosts your chances of winning up to 90%. Join Betweysure.com today and start winning big with our free soccer betting tips.",
+
+    "SEE_ALL_TIPS": "See All Tips",
+    "FREE_TIPS": "Free Tips"
+  },
+  "PREDICTIONS_TABLE": {
+    "YESTERDAY": "Yesterday",
+    "TODAY": "Today",
+    "FREE_FOOTBALL_PREDICTIONS": "Free Football Predictions",
+    "TOMORROW": "Tomorrow",
+    "OTHER_SPORTS_PREDICTIONS": "Other Sports Predictions"
+  },
+  "WHY_BETWEYSURE": {
+    "WHY_BETWEYSURE": "Why Betweysure?",
+    "TAILORED_TIPS": "Tailored Betting:",
+    "TAILORED_TIPS_DESC": "Tips Find the perfect combination of tips and get personalized advice on how much to stake based on your budget and goals. We provide you with the essential information you need to make smart bets.",
+    "ABUNDANT_REWARDS": "Abundant Rewards:",
+    "ABUNDANT_REWARDS_DESC": "Earn amazing rewards and loyalty points when you refer a friend to join BetWeySure. Start your journey by signing up and unlocking exclusive benefits.",
+    "CURATED_PREDICTIONS": "Curated Predictions:",
+    "CURATED_PREDICTIONS_DESC": "Explore a wide range of free expert predictions for various matches and leagues. We select the best predictions and combine them into one convenient package for you.",
+    "STANDARD": "Standard",
+    "STANDARD_DESC": "Save time and effort by choosing our paid bundles that offer you the best football predictions with low risk. We do all the research and analysis for you and deliver the most reliable tips.",
+    "PREMIUM": "Premium",
+    "PREMIUM_DESC": "Join our 3-Bundles plan and get access to exclusive tips from our expert and professional predictors. Whether you are looking for football prediction, soccer prediction, or betting tips, we have you covered.",
+    "INTRO_TITLE": "Most complete prediction and tips you can find",
+    "LEARN_MORE": "Learn More"
+  },
+  "HOME_ABOUT": {
+    "ABOUT_US": "About Us",
+    "ABOUT_US_DESC": "Betweysure is a leading prediction site for soccer/football enthusiasts who want to improve their betting performance. We offer over 90% prediction accuracy on daily games odds from 2 odds and above, as well as free betting tips and picks to help you gain an edge. Our soccer tipsters are experts in providing quality predictions every day, with a comprehensive breakdown and analysis of both Live and Upcoming Matches. This gives you a better chance of having a satisfying cash-out. \n Whether you are a beginner or a seasoned bettor, you will find Betweysure to be your ultimate destination for soccer prediction and football prediction. We provide you with Soccer predictions 24/7, covering all the major leagues and tournaments around the world. We are committed to helping you make smart decisions in the world of sports betting. Betweysure is not a sports betting site, but rather the best prediction site for online sports betting tips and predictions. Our mission is to give you free tips and advice every day, helping you as much as possible.",
+    "LEARN_MORE": "Learn More"
+  },
+  "BLOG_AND_NEWS": {
+    "BLOG_AND_NEWS": "Blog and News"
+  },
+  "FREQ_ASKED_QUESTIONS": {
+   "FREQ_ASKED_QUESTIONS": "Frequently Asked Questions"  }
+}

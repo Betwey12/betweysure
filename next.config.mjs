@@ -1,4 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import createNextIntlPlugin from "next-intl/plugin";
 
-export default nextConfig;
+const withNextIntl = createNextIntlPlugin();
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: ["refpa4293501.top", "media.api-sports.io", "flagcdn.com"],
+  },
+};
+
+export default withNextIntl(nextConfig);

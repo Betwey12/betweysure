@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Landing Page -->
+    <url>
+        <loc>http://betweysure.com/</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <!-- Pricing Page -->
+    <url>
+        <loc>http://betweysure.com/pricing</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <!-- Sports News Page -->
+    <url>
+        <loc>http://betweysure.com/sports-news</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <!-- About Page -->
+    <url>
+        <loc>http://betweysure.com/about</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <!-- Contact Us Page -->
+    <url>
+        <loc>http://betweysure.com/contact-us</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <!-- Livescores Page -->
+    <url>
+        <loc>http://betweysure.com/livescores</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <!-- Results Page -->
+    <url>
+        <loc>http://betweysure.com/results</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <!-- Trends Page -->
+    <url>
+        <loc>http://betweysure.com/football-trends</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <!-- Predictions By Leagues Pages -->
+    <url>
+        <loc>http://betweysure.com/popular/uefa-champions-league</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <url>
+        <loc>http://betweysure.com/popular/uefa-europa-league</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+
+    <url>
+        <loc>http://betweysure.com/popular/england-premier-league</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <url>
+        <loc>http://betweysure.com/popular/premier-league</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <url>
+        <loc>http://betweysure.com/popular/laliga</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <url>
+        <loc>http://betweysure.com/popular/serie-a</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <url>
+        <loc>http://betweysure.com/popular/bundesliga</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <url>
+        <loc>http://betweysure.com/popular/ligue-1</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <url>
+        <loc>http://betweysure.com/popular/uefa-euro-2024</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+
+    <url>
+        <loc>http://betweysure.com/popular/copa-américa-2024</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+
+    <url>
+        <loc>http://betweysure.com/popular/paris-2024-olympics</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+
+    <url>
+        <loc>http://betweysure.com/popular/eredivisie</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+
+    <url>
+        <loc>http://betweysure.com/popular/liga-portugal</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+
+    <url>
+        <loc>http://betweysure.com/popular/saudi-pro-league</loc>
+        <lastmod>2024-05-03T19:28:33+00:00</lastmod>
+    </url>
+</urlset>
