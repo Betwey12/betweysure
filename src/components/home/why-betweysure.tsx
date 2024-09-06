@@ -57,7 +57,7 @@ export default function WhyBetWeySure() {
             <div className="flex gap-4 lg:gap-5">
               <BundlesIcon className="text-2xl text-[#FF9900]" />
               <div className="lg:max-w-[500px] flex flex-col gap-4 max-w-[90%]">
-                <h4 className="text-sm font-bold">Bundles</h4>
+                <h4 className="text-sm font-bold">{t("BUNDLES")}</h4>
                 <HomeBundles />
                 <Link
                   href="/about-us"

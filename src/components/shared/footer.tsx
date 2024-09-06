@@ -12,7 +12,7 @@ import {
 import { FaFacebook } from "react-icons/fa6";
 
 export default function Footer() {
-  const t = useTranslations("FOOTER");
+  const { t, footerLinks } = useFooter();
   return (
     <footer className="footer_bg w-full  px-4 md:px-10 lg:px-20 py-20 text-white mt-10 lg:mt-20">
       <div className="flex flex-col lg:flex-row justify-between lg:gap-0 gap-8">
@@ -38,7 +38,7 @@ export default function Footer() {
           <div className="flex flex-col gap-2">
             <p className="flex items-center gap-2 text-sm lg:text-base">
               <FaPhone />
-              <span>+234 913 7158 913</span>
+              <span>{t("PHONE")}</span>
             </p>
             <Link
               href="https://wa.me/+2349137158913"
@@ -47,7 +47,7 @@ export default function Footer() {
               aria-label="chat with us on whatsapp"
             >
               <FaWhatsapp />
-              Chat with us on whatsapp
+              {t("CHAT_ON_WHATSAPP")}
             </Link>
 
             <Link
@@ -56,15 +56,15 @@ export default function Footer() {
               aria-label="send us a mail"
             >
               <FaEnvelope />
-              <span>general@betweysure.com</span>
+              <span>{t("EMAIL")}</span>
             </Link>
 
             <div className="flex items-center gap-8">
-              <p>Follow Us: </p>
+              <p>{t("FOLLOW_US:")} </p>
               <div className="flex items-center gap-2 text-cyan">
                 <Link
-                  href="https://wa.me/+2349137158913"
-                  aria-label="chat with us on whatsapp"
+                  href={t("WHATSAPP_LINK")}
+                  aria-label={t("CHAT_ON_WHATSAPP")}
                 >
                   <FaWhatsapp />
                 </Link>
@@ -80,7 +80,7 @@ export default function Footer() {
                 </Link>
                 <Link
                   href="https://t.me/betweysure"
-                  aria-label="chat with us on telegram"
+                  aria-label={t("CHAT_ON_TELEGRAM")}
                 >
                   <FaTelegram />
                 </Link>
@@ -113,76 +113,82 @@ export default function Footer() {
   );
 }
 
-const footerLinks = [
-  {
-    title: "About Us",
-    links: [
-      { title: "Blog", link: "/sports-news" },
+function useFooter() {
+  const t = useTranslations("FOOTER");
 
-      {
-        title: "FAQ",
-        link: "/faq",
-      },
-      {
-        title: "About Us",
-        link: "/about-us",
-      },
-      {
-        title: "Contact Us",
-        link: "/contact-us",
-      },
-    ],
-  },
-  {
-    title: "Predictions",
-    links: [
-      {
-        title: "Home Win",
-        link: "/dashboard/football-predictions?country=all",
-      },
-      {
-        title: "Away Win",
-        link: "/dashboard/football-predictions?country=all",
-      },
-      {
-        title: "Correct Score",
-        link: "/dashboard/football-predictions?country=all",
-      },
-      { title: "GG", link: "/dashboard/football-predictions?country=all" },
-      {
-        title: "Over 2.5",
-        link: "/dashboard/football-predictions?country=all",
-      },
-      {
-        title: "Under 2.5",
-        link: "/dashboard/football-predictions?country=all",
-      },
-    ],
-  },
-  {
-    title: "Information",
-    links: [
-      { title: "How to play", link: "/faq" },
-      { title: "Pricing", link: "/pricing" },
-      { title: "Paid Bundle", link: "/pricing" },
-      { title: "Results", link: "/results" },
-      { title: "Privacy Policy", link: "/privacy" },
-      { title: "Terms & Conditions", link: "/t&c" },
-    ],
-  },
-  {
-    title: "Tips",
-    links: [
-      { title: "Todays Tips", link: "/popular/today/predictions" },
-      { title: "Tomorrow's Tips", link: "/popular/tomorrow/predictions" },
-      { title: "Laliga's Tips", link: "/popular/la-liga/predictions" },
-      {
-        title: "EPL's Tips",
-        link: "/popular/england-premier-league/predictions",
-      },
-      { title: "Serie A's Tips", link: "/popular/serie-a/predictions" },
-      { title: "Bundesliga's Tips", link: "/popular/bundesliga/predictions" },
-      { title: "Ligue 1's Tips", link: "/popular/ligue-1/predictions" },
-    ],
-  },
-];
+  const footerLinks = [
+    {
+      title: t("ABOUT_US"),
+      links: [
+        { title: t("BLOG"), link: "/sports-news" },
+        {
+          title: t("FAQ"),
+          link: "/faq",
+        },
+        {
+          title: t("ABOUT_US"),
+          link: "/about-us",
+        },
+        {
+          title: t("CONTACT_US"),
+          link: "/contact-us",
+        },
+      ],
+    },
+    {
+      title: t("PREDICTIONS"),
+      links: [
+        {
+          title: t("HOME_WIN"),
+          link: "/dashboard/football-predictions?country=all",
+        },
+        {
+          title: t("AWAY_WIN"),
+          link: "/dashboard/football-predictions?country=all",
+        },
+        {
+          title: t("CORRECT_SCORE"),
+          link: "/dashboard/football-predictions?country=all",
+        },
+        { title: t("GG"), link: "/dashboard/football-predictions?country=all" },
+        {
+          title: t("OVER_2"),
+          link: "/dashboard/football-predictions?country=all",
+        },
+        {
+          title: t("UNDER_2"),
+          link: "/dashboard/football-predictions?country=all",
+        },
+      ],
+    },
+    {
+      title: t("INFORMATION"),
+      links: [
+        { title: t("HOW_TO_PLAY"), link: "/faq" },
+        { title: t("PRICING"), link: "/pricing" },
+        { title: t("RESULTS"), link: "/results" },
+        { title: t("PRIVACY_POLICY"), link: "/privacy" },
+        { title: t("TERMS_AMP_CONDITIONS"), link: "/t&c" },
+      ],
+    },
+    {
+      title: t("TIPS"),
+      links: [
+        { title: t("TODAYS_TIPS"), link: "/popular/today/predictions" },
+        { title: t("TOMORROWS_TIPS"), link: "/popular/tomorrow/predictions" },
+        { title: t("LALIGA_TIPS"), link: "/popular/la-liga/predictions" },
+        {
+          title: t("EPL_TIPS"),
+          link: "/popular/england-premier-league/predictions",
+        },
+        { title: t("SERIE_A_TIPS"), link: "/popular/serie-a/predictions" },
+        {
+          title: t("BUNDESLIGA_TIPS"),
+          link: "/popular/bundesliga/predictions",
+        },
+        { title: t("LIGUE_1_TIPS"), link: "/popular/ligue-1/predictions" },
+      ],
+    },
+  ];
+  return { t, footerLinks };
+}

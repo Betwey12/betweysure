@@ -31,6 +31,7 @@ export default function BlogAndNews() {
 }
 
 function NewsCard({ news }: { news: any }) {
+  const t = useTranslations("BLOG_AND_NEWS");
   const link = news.uri;
   const content = news.content.replace(/<[^>]*>?/gm, "").slice(0, 130);
   return (
@@ -50,7 +51,7 @@ function NewsCard({ news }: { news: any }) {
           href={`${baseUrl}/blog${link}`}
           className="flex items-center gap-2 mt-8 text-cyan"
         >
-          Read <FaArchive />
+          {t("READ")} <FaArchive />
         </Link>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { FaSpinner } from "react-icons/fa";
 import PredictionsResult from "../ui/football-results";
+import { useTranslations } from "next-intl";
 
 interface FootballPredictionTableProps {
   isLoading: boolean;
@@ -14,6 +15,7 @@ export default function FootballPredictionTable({
   from,
   to,
 }: FootballPredictionTableProps) {
+  const t = useTranslations("PREDICTIONS_TABLE");
   return (
     <>
       {isLoading ? (
@@ -33,7 +35,7 @@ export default function FootballPredictionTable({
             />
           ) : (
             <div className="flex items-center justify-center py-6">
-              <h3>No predictions available for this option</h3>
+              <p>{t("NO_PREDICTIONS")}</p>
             </div>
           )}
         </>

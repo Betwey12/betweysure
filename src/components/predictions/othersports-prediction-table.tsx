@@ -4,6 +4,7 @@ import useHasPlan from "@/hooks/useHasPlan";
 import { useQuery } from "@tanstack/react-query";
 import { HTTPRequest } from "@/api";
 import { fuzzyMatch, getDate } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 interface OtherSportsPredictionTableProps {
   isLoading: boolean;
@@ -22,6 +23,7 @@ export default function OtherSportsPredictionTable({
   bgDashboard,
   sport,
 }: OtherSportsPredictionTableProps) {
+  const t = useTranslations("PREDICTIONS_TABLE");
   const today = getDate("today");
   const formatSport = sport.includes("ice") ? "hockey" : sport;
 
@@ -84,7 +86,7 @@ export default function OtherSportsPredictionTable({
         <div className="flex flex-col gap-1 mt-6">{predictionList}</div>
       ) : (
         <div className="flex items-center justify-center mt-6">
-          <h3>No predictions available</h3>
+          <p>{t("NO_PREDICTIONS")}</p>
         </div>
       )}
     </>
