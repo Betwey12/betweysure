@@ -53,7 +53,7 @@ export default function ContactForm() {
             placeholder={t("NAME_PLACEHOLDER")}
             {...register("name")}
             className={cn(
-              "w-full px-4 py-3 rounded mt-4 text-gray-one focus:outline-none shadaow border-gray-one border",
+              "w-full px-4 bg-white py-3 rounded mt-4 text-gray-one focus:outline-none shadaow border-gray-one border",
               {
                 "border border-red-500": errors.name,
               }
@@ -71,7 +71,7 @@ export default function ContactForm() {
             {...register("email")}
             placeholder="Enter your email"
             className={cn(
-              "w-full px-4 py-3 rounded mt-4 text-gray-one focus:outline-none shadaow border-gray-one border",
+              "w-full px-4 py-3 bg-white rounded mt-4 text-gray-one focus:outline-none shadaow border-gray-one border",
               {
                 "border border-red-500": errors.email,
               }
@@ -91,7 +91,7 @@ export default function ContactForm() {
           {...register("message")}
           placeholder="Enter your message"
           className={cn(
-            "w-full px-4 py-3 rounded mt-4 text-gray-one focus:outline-none shadaow border-gray-one border h-32",
+            "w-full px-4 py-3 rounded mt-4 bg-white text-gray-one focus:outline-none shadaow border-gray-one border h-32",
             {
               "border border-red-500": errors.message,
             }
