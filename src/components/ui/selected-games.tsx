@@ -51,7 +51,7 @@ export default function SelectedGames() {
             <span className="border border-gray-two rounded p-1 w-8 h-8">
               {totalGames}
             </span>
-            <span className="font-semibold">BETSLIP</span>
+            <span>BETSLIP</span>
           </span>
           {!!totalGames && (
             <span>

@@ -16,8 +16,40 @@
   "LocaleSwitcher": {},
   "FOOTER": {
     "DISCLAIMER": "We are committed to responsible gambling and have a number of ways to help you stay in control and keep gambling fun. \n You must be 18 years or older to use this site. Please bet responsibly.",
-
-    "COPYRIGHT": "© 2021 Betweysure. All rights reserved."
+    "COPYRIGHT": "© 2021 Betweysure. All rights reserved.",
+    "PHONE": "+234 913 7158 913",
+    "CHAT_ON_WHATSAPP": "Chat with us on whatsapp",
+    "CHAT_ON_TELEGRAM": "Chat with us on telegram",
+    "EMAIL": "general@betweysure.com",
+    "FOLLOW_US:": "Follow Us:",
+    "WHATSAPP_LINK": "https://wa.me/+2349137158913",
+    "TELEGRAM_LINK": "https://t.me/betweysure",
+    "ABOUT_US": "About Us",
+    "FAQ": "FAQ",
+    "CONTACT_US": "Contact Us",
+    "BLOG": "Blog",
+    "PREDICTIONS": "Predictions",
+    "HOME_WIN": "Home Win",
+    "AWAY_WIN": "Away Win",
+    "CORRECT_SCORE": "Correct Score",
+    "GG": "GG",
+    "OVER_2": "Over 2.5",
+    "UNDER_2": "Under 2.5",
+    "INFORMATION": "Information",
+    "HOW_TO_PLAY": "How to play",
+    "PRICING": "Pricing",
+    "PAID_BUNDLE": "Paid Bundle",
+    "RESULTS": "Results",
+    "PRIVACY_POLICY": "Privacy Policy",
+    "TERMS_AMP_CONDITIONS": "Terms & Conditions",
+    "TIPS": "Tips",
+    "TODAYS_TIPS": "Today's Tips",
+    "TOMORROWS_TIPS": "Tomorrow's Tips",
+    "LALIGA_TIPS": "Laliga's Tips",
+    "EPL_TIPS": "EPL's Tips",
+    "SERIE_A_TIPS": "Serie A's Tips",
+    "BUNDESLIGA_TIPS": "Bundesliga's Tips",
+    "LIGUE_1_TIPS": "Ligue 1's Tips"
   },
   "NEWSLETTER": {
     "SUBSCRIBE_TO_OUR_NEWSLETTER": "Subscribe to our newsletter",
@@ -61,6 +93,7 @@
     "FREE_TIPS": "Free Tips"
   },
   "PREDICTIONS_TABLE": {
+      "NO_PREDICTIONS": "No predictions available for the selected option",
     "YESTERDAY": "Yesterday",
     "TODAY": "Today",
     "FREE_FOOTBALL_PREDICTIONS": "Free Football Predictions",
@@ -68,6 +101,7 @@
     "OTHER_SPORTS_PREDICTIONS": "Other Sports Predictions"
   },
   "WHY_BETWEYSURE": {
+      "BUNDLES": "Bundles",
     "WHY_BETWEYSURE": "Why Betweysure?",
     "TAILORED_TIPS": "Tailored Betting:",
     "TAILORED_TIPS_DESC": "Tips Find the perfect combination of tips and get personalized advice on how much to stake based on your budget and goals. We provide you with the essential information you need to make smart bets.",
@@ -88,8 +122,19 @@
     "LEARN_MORE": "Learn More"
   },
   "BLOG_AND_NEWS": {
+      "READ": "Read",
     "BLOG_AND_NEWS": "Blog and News"
+
   },
   "FREQ_ASKED_QUESTIONS": {
-   "FREQ_ASKED_QUESTIONS": "Frequently Asked Questions"  }
+    "FREQ_ASKED_QUESTIONS": "Frequently Asked Questions",
+    "QUESTION_ONE": "What is the best way to get started?",
+    "ANSWER_ONE": "The best way to get started is to sign up for a free account. This will give you access to all of our free tips and help you decide if our product is right for you.",
+    "QUESTION_TWO": "What payment methods do you accept?",
+    "ANSWER_TWO": "We accept all major credit cards, including Visa, Mastercard, and Verve. We accept payment through paystack and flutterwave.",
+    "QUESTION_THREE": "Do you offer any discounts?",
+    "ANSWER_THREE": "Contact us to find out if you qualify for any discounts.",
+    "QUESTION_FOUR": "What if I have more questions?",
+    "ANSWER_FOUR": "If you have more questions, you can contact us by email or phone. We're here to help!"
+  }
 }
