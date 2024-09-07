@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: livescores.description,
 };
 
-export default function Livescores() {
+export default function LivescoresPage() {
   return (
     <>
       <OtherPagesHero />

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: contact.description,
 };
 
-export default function Contact() {
+export default function ContactPage() {
   const t = useTranslations("CONTACT");
   return (
     <>

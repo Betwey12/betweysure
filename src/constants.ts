@@ -33,7 +33,19 @@ const pageMetadata = {
     description:
       "Get the latest results of our football predictions. We provide highly accurate free sure tips for football, basketball, and other sports.",
   },
+  faq: {
+    title: "Frequently Asked Questions - Betweysure",
+    description: "Get answers to frequently asked questions about Betweysure.",
+  },
 };
 
-export const { home, pricing, about, contact, livescores, leagues, result } =
-  pageMetadata;
+export const {
+  home,
+  pricing,
+  about,
+  contact,
+  livescores,
+  leagues,
+  result,
+  faq,
+} = pageMetadata;

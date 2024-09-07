@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: leagues.description,
 };
 
-export default function Popular({
+export default function PopularPage({
   params,
 }: {
   params: { [key: string]: string | string[] | undefined };

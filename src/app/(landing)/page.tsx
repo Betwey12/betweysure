@@ -7,7 +7,7 @@ import BlogAndNews from "@/components/home/blog-and-news";
 import FrequentlyAskedQuestions from "@/components/home/frequently-asked-questions";
 import SelectedGames from "@/components/ui/selected-games";
 
-export default function Home({
+export default function HomePage({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
