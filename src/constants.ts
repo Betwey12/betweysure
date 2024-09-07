@@ -1,3 +1,10 @@
+const contactInfo = {
+  email: "general@betweysure.com",
+  phone: "+234 913 7158 913",
+  telegram: "https://t.me/betweysure",
+  whatsapp: "https://wa.me/2349137158913",
+};
+
 const pageMetadata = {
   home: {
     title: "Home - Betweysure",
@@ -37,6 +44,14 @@ const pageMetadata = {
     title: "Frequently Asked Questions - Betweysure",
     description: "Get answers to frequently asked questions about Betweysure.",
   },
+  terms: {
+    title: "Terms and Conditions - Betweysure",
+    description: "Read our terms and conditions.",
+  },
+  privacy: {
+    title: "Privacy - Betweysure",
+    description: "Read our privacy policy.",
+  },
 };
 
 export const {
@@ -48,4 +63,8 @@ export const {
   leagues,
   result,
   faq,
+  terms,
+  privacy,
 } = pageMetadata;
+
+export const { email, phone, telegram, whatsapp } = contactInfo;
