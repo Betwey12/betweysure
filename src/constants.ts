@@ -53,6 +53,16 @@ const pageMetadata = {
     title: "Privacy - Betweysure",
     description: "Read our privacy policy.",
   },
+  trends: {
+    title: "Football trends - Betweysure",
+    description:
+      "Get the latest football trends, and previous performance of your favourite clubs on betweysure.",
+  },
+  acca: {
+    title: "Acca Builder - Betweysure",
+    description:
+      "Build your accumulator with the best football predictions for popular leagues. Get the best tips for today's matches with over 90% prediction accuracy on daily games upto 2 odds, as well as free betting tips and picks to help you gain an edge.",
+  },
 };
 
 export const {
@@ -66,6 +76,7 @@ export const {
   faq,
   terms,
   privacy,
+  trends,
 } = pageMetadata;
 
 export const { email, phone, telegram, whatsapp, address } = contactInfo;
