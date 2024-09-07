@@ -8,7 +8,7 @@ type TUsePrediction = {
   predictionsPerPage: number;
 };
 
-export const usePredictions = ({
+const usePredictions = ({
   endpoint,
   queryKey,
   predictionsPerPage,
@@ -40,3 +40,5 @@ export const usePredictions = ({
     to,
   };
 };
+
+export default usePredictions;

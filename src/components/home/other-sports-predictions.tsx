@@ -5,11 +5,12 @@ import { Button } from "../ui/button";
 import { DateCalendar } from "@mui/x-date-pickers";
 import { FaCalendar } from "react-icons/fa";
 import { getDate } from "../../lib/utils";
-import { usePredictions } from "../../hooks/usePredictions";
+import usePredictions from "../../hooks/usePredictions";
 import dayjs from "dayjs";
 import OtherSportsPredictionTable from "../predictions/othersports-prediction-table";
 import { otherSports } from "@/assets/data/data";
 import { useTranslations } from "next-intl";
+import DateWidget from "../ui/date-widget";
 
 interface OtherSportsPredictionsProps {
   selectedSport: string;
@@ -72,22 +73,13 @@ export default function OtherSportsPredictions({
         <div className="flex flex-col lg:flex-row gap-4 lg:items-center justify-between">
           <h2 className="text-xl font-bold">{t("OTHER_SPORTS_PREDICTIONS")}</h2>
           <div className="relative">
-            <Button
-              className="bg-transparent gap-2 text-xs text-gray-one py-0 hover:text-white"
-              onClick={() => setShowDate(!showDate)}
-            >
-              <FaCalendar />
-              {fullDate}
-            </Button>
-
-            {showDate && (
-              <div className="absolute bg-white top-[calc(100%+16px)] right-0 rounded-lg text-blue-three shadow">
-                <DateCalendar
-                  value={dayjs(fullDate)}
-                  onChange={(newValue) => handlDateChange(newValue)}
-                />
-              </div>
-            )}
+            <DateWidget
+              showDate={showDate}
+              handleShowDate={() => setShowDate(!showDate)}
+              handlDateChange={handlDateChange}
+              fullDate={fullDate}
+              alignRight
+            />
           </div>
         </div>
         {/* <Select /> */}

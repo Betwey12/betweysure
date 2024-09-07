@@ -1,5 +1,5 @@
 import { getDate } from "@/lib/utils";
-import { usePredictions } from "./usePredictions";
+import usePredictions from "./usePredictions";
 
 interface IUseXdaysMultiple {
   maxAccuracy: number;

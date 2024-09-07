@@ -9,6 +9,26 @@ const pageMetadata = {
     description:
       "Betweysure offers transparent pricing for its paid bundles. Subscribe now to get free curated bundle tips from your favourite leagues.",
   },
+  about: {
+    title: "About Us - Betweysure",
+    description:
+      "Betweysure is a leading prediction site for soccer/football enthusiasts who want to improve their betting performance. ",
+  },
+  contact: {
+    title: "Contact Us - Betweysure",
+    description: "Get in touch with us for any inquiries or feedback.",
+  },
+  livescores: {
+    title: "Live Scores - Betweysure",
+    description:
+      "Get the latest live scores from football, basketball, handball, rugby, baseball, and other sports.",
+  },
+  leagues: {
+    title: "View Popular Leagues - Betweysure",
+    description:
+      "View the standings, form, and statistics of popular leagues like the English Premier League, La Liga, Serie A, Bundesliga, and more. Get the latest football predictions and tips for these leagues.",
+  },
 };
 
-export const { home, pricing } = pageMetadata;
+export const { home, pricing, about, contact, livescores, leagues } =
+  pageMetadata;

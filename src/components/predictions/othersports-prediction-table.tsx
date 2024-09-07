@@ -1,5 +1,5 @@
 import { FaSpinner } from "react-icons/fa";
-import OtherSportMatchList from "../ui/other-sPorts-matchList";
+import OtherSportMatchList from "../ui/other-sports-match-list";
 import useHasPlan from "@/hooks/useHasPlan";
 import { useQuery } from "@tanstack/react-query";
 import { HTTPRequest } from "@/api";

@@ -4,11 +4,12 @@ import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { useState } from "react";
 import MySelect from "../ui/my-select";
 import { getDate } from "../../lib/utils";
-import { usePredictions } from "../../hooks/usePredictions";
+import usePredictions from "../../hooks/usePredictions";
 import dayjs from "dayjs";
 import FootballPredictionTable from "../predictions/football-predictions-table";
 import { useTranslations } from "next-intl";
 import { Button } from "../ui/button";
+import DateWidget from "../ui/date-widget";
 
 export default function FreeFootballPredictions() {
   const t = useTranslations("PREDICTIONS_TABLE");
@@ -89,22 +90,13 @@ export default function FreeFootballPredictions() {
             {t("FREE_FOOTBALL_PREDICTIONS")}
           </h2>
           <div className="relative">
-            <Button
-              className="bg-transparent gap-2 text-xs text-gray-one py-0 hover:text-white"
-              onClick={() => setShowDate(!showDate)}
-            >
-              <FaCalendar />
-              {fullDate}
-            </Button>
-
-            {showDate && (
-              <div className="absolute bg-white top-[calc(100%+16px)] right-0 rounded-lg text-blue-three shadow">
-                <DateCalendar
-                  value={dayjs(fullDate)}
-                  onChange={(newValue) => handlDateChange(newValue)}
-                />
-              </div>
-            )}
+            <DateWidget
+              showDate={showDate}
+              handleShowDate={() => setShowDate(!showDate)}
+              handlDateChange={handlDateChange}
+              fullDate={fullDate}
+              alignRight
+            />
           </div>
         </div>
         <div className="flex flex-col lg:flex-row gap-4 lg:items-center justify-between">
