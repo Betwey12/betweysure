@@ -28,7 +28,12 @@ const pageMetadata = {
     description:
       "View the standings, form, and statistics of popular leagues like the English Premier League, La Liga, Serie A, Bundesliga, and more. Get the latest football predictions and tips for these leagues.",
   },
+  result: {
+    title: "Predictions Results - Betweysure",
+    description:
+      "Get the latest results of our football predictions. We provide highly accurate free sure tips for football, basketball, and other sports.",
+  },
 };
 
-export const { home, pricing, about, contact, livescores, leagues } =
+export const { home, pricing, about, contact, livescores, leagues, result } =
   pageMetadata;
