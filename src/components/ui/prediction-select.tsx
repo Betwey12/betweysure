@@ -1,3 +1,4 @@
+"use client";
 import RadixSelect from "./radix-select";
 import { leagueList, period } from "@/assets/data/data";
 import { SelectGroup, SelectItem, SelectLabel } from "./select";
@@ -37,7 +38,11 @@ export default function PredictionSelect() {
 
   return (
     <RadixSelect
-      handleValueChange={(v) => router.push(`/popular/${v}/predictions`)}
+      handleValueChange={(v) =>
+        router.push(
+          `/popular/${v.toLowerCase().replace(/\s/g, "-")}/predictions`
+        )
+      }
       selectItems={
         <>
           <SelectGroup>

@@ -23,6 +23,12 @@ const pageMetadata = {
     description:
       "Get the latest live scores from football, basketball, handball, rugby, baseball, and other sports.",
   },
+  leagues: {
+    title: "View Popular Leagues - Betweysure",
+    description:
+      "View the standings, form, and statistics of popular leagues like the English Premier League, La Liga, Serie A, Bundesliga, and more. Get the latest football predictions and tips for these leagues.",
+  },
 };
 
-export const { home, pricing, about, contact, livescores } = pageMetadata;
+export const { home, pricing, about, contact, livescores, leagues } =
+  pageMetadata;

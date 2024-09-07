@@ -240,5 +240,35 @@
   "FILTER": {
     "POPULAR_COUNTRIES": "Popular countries",
     "COUNTRIES": "Countries"
-  }
+  },
+  "LEAGUE_INFO": {
+        "TITLE": "{league} Football Predictions and Tips",
+        "DESCRIPTION": "View our tips, standings, and trends for {league}. Filter based on prediction and date, and click on the info icon to view detailed analysis of each prediction."
+  },
+  "STANDINGS": {
+      "DESCRIPTION": "Here is the latest {league} standings table for the {year}/{plusYear} season. View the standings table for the top teams, their points, and games played.",
+      "NO_STANDINGS": "No standings found for this league"
+  },
+  "TRENDS": {
+      "DESCRIPTION": "Here is the latest {league} trends for todays games. View trends to analyze the games and make better predictions",
+      "NO_TRENDS": "No trends found for this league"
+  },
+  "FORM": {
+      "NO_FORM": "No form found for this league"
+  },
+"FIXTURES": {
+"NO_FIXTURES_FOR": "No fixtures for this {period}",
+"NO_FIXTURES": "No fixtures found for this league"
+},
+"FREE_TABS": {
+  "TITLE": "Free {sport} Predictions:"
+},
+"PAID_TABS": {
+  "TITLE": "Paid {sport} Predictions:",
+  "UPGRADE": "Upgrade to view"
+},
+"LIVE_PREDICTIONS": {
+  "TITLE": "Live Predictions",
+  "NO_LIVE_PREDICTIONS": "No live predictions available"
+}
 }
