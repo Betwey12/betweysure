@@ -17,13 +17,9 @@
   "FOOTER": {
     "DISCLAIMER": "We are committed to responsible gambling and have a number of ways to help you stay in control and keep gambling fun. \n You must be 18 years or older to use this site. Please bet responsibly.",
     "COPYRIGHT": "© 2021 Betweysure. All rights reserved.",
-    "PHONE": "+234 913 7158 913",
     "CHAT_ON_WHATSAPP": "Chat with us on whatsapp",
     "CHAT_ON_TELEGRAM": "Chat with us on telegram",
-    "EMAIL": "general@betweysure.com",
     "FOLLOW_US:": "Follow Us:",
-    "WHATSAPP_LINK": "https://wa.me/+2349137158913",
-    "TELEGRAM_LINK": "https://t.me/betweysure",
     "ABOUT_US": "About Us",
     "FAQ": "FAQ",
     "CONTACT_US": "Contact Us",
@@ -218,12 +214,7 @@
   },
   "CONTACT": {
     "TITLE": "Let us know how we can help you",
-    "HEAD_OFFICE:": "Head Office:",
-    "PHONE": "+234 913 7158 913",
-    "WHATSAPP_LINK": "https://wa.me/+2349137158913",
-    "EMAIL": "general@betweysure.com",
     "FOLLOW_US:": "Follow us:",
-    "TELEGRAM_LINK": "https://t.me/betweysure",
     "CHAT_ON_WHATSAPP": "Chat with us on whatsapp"
   },
   "SEARCH_MATCHES": {

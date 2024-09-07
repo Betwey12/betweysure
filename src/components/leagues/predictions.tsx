@@ -229,7 +229,7 @@ function ApiFootballPredictions({ popularLeague }: PredictionsProps) {
       )}
       {predictions?.length === 0 ? (
         <div className="flex items-center justify-center py-6">
-          <h3>{t("NO_PREDICTIONS")}</h3>
+          <p>{t("NO_PREDICTIONS")}</p>
         </div>
       ) : (
         <div className="mt-10 grid lg:grid-cols-3 gap-10">

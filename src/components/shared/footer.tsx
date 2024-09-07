@@ -1,3 +1,4 @@
+import { email, phone, telegram, whatsapp } from "@/constants";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,10 +39,10 @@ export default function Footer() {
           <div className="flex flex-col gap-2">
             <p className="flex items-center gap-2 text-sm lg:text-base">
               <FaPhone />
-              <span>{t("PHONE")}</span>
+              <span>{phone}</span>
             </p>
             <Link
-              href="https://wa.me/+2349137158913"
+              href={whatsapp}
               className="flex items-center gap-2 text-green-500"
               target="_blank"
               aria-label="chat with us on whatsapp"
@@ -56,16 +57,13 @@ export default function Footer() {
               aria-label="send us a mail"
             >
               <FaEnvelope />
-              <span>{t("EMAIL")}</span>
+              <span>{email}</span>
             </Link>
 
             <div className="flex items-center gap-8">
               <p>{t("FOLLOW_US:")} </p>
               <div className="flex items-center gap-2 text-cyan">
-                <Link
-                  href={t("WHATSAPP_LINK")}
-                  aria-label={t("CHAT_ON_WHATSAPP")}
-                >
+                <Link href={whatsapp} aria-label={t("CHAT_ON_WHATSAPP")}>
                   <FaWhatsapp />
                 </Link>
 
@@ -78,10 +76,7 @@ export default function Footer() {
                 <Link href="#instagram" aria-label="follow us on instagram">
                   <FaInstagram />
                 </Link>
-                <Link
-                  href="https://t.me/betweysure"
-                  aria-label={t("CHAT_ON_TELEGRAM")}
-                >
+                <Link href={telegram} aria-label={t("CHAT_ON_TELEGRAM")}>
                   <FaTelegram />
                 </Link>
               </div>

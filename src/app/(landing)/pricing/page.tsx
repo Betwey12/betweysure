@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: pricing.description,
 };
 
-export default function Pricing() {
+export default function PricingPage() {
   return (
     <>
       <OtherPagesHero />

@@ -58,15 +58,21 @@ export function PredictionList({
   const imgSource = leagueApiF
     ? leagueApiF.country.flag || leagueApiF.league.logo
     : globeIcon;
+  const homeId = predictionObj?.matchData?.matchdetails?.homeID;
+  const awayId = predictionObj?.matchData?.matchdetails?.awayID;
 
   const home = {
     name: predictionObj?.homeTeam,
-    logo: `https://media.api-sports.io/football/teams/${predictionObj?.matchData?.matchdetails?.homeID}.png`,
+    logo: homeId
+      ? `https://media.api-sports.io/football/teams/${homeId}.png`
+      : fooballIcon.src,
   };
 
   const away = {
     name: predictionObj?.awayTeam,
-    logo: `https://media.api-sports.io/football/teams/${predictionObj?.matchData?.matchdetails?.awayID}.png`,
+    logo: awayId
+      ? `https://media.api-sports.io/football/teams/${awayId}.png`
+      : fooballIcon.src,
   };
 
   function handleModal() {

@@ -1,3 +1,11 @@
+const contactInfo = {
+  email: "general@betweysure.com",
+  phone: "+234 913 7158 913",
+  telegram: "https://t.me/betweysure",
+  whatsapp: "https://wa.me/2349137158913",
+  address: "16a Trinity Avenue, Victoria Island, Lagos. Nigeria.",
+};
+
 const pageMetadata = {
   home: {
     title: "Home - Betweysure",
@@ -28,7 +36,36 @@ const pageMetadata = {
     description:
       "View the standings, form, and statistics of popular leagues like the English Premier League, La Liga, Serie A, Bundesliga, and more. Get the latest football predictions and tips for these leagues.",
   },
+  result: {
+    title: "Predictions Results - Betweysure",
+    description:
+      "Get the latest results of our football predictions. We provide highly accurate free sure tips for football, basketball, and other sports.",
+  },
+  faq: {
+    title: "Frequently Asked Questions - Betweysure",
+    description: "Get answers to frequently asked questions about Betweysure.",
+  },
+  terms: {
+    title: "Terms and Conditions - Betweysure",
+    description: "Read our terms and conditions.",
+  },
+  privacy: {
+    title: "Privacy - Betweysure",
+    description: "Read our privacy policy.",
+  },
 };
 
-export const { home, pricing, about, contact, livescores, leagues } =
-  pageMetadata;
+export const {
+  home,
+  pricing,
+  about,
+  contact,
+  livescores,
+  leagues,
+  result,
+  faq,
+  terms,
+  privacy,
+} = pageMetadata;
+
+export const { email, phone, telegram, whatsapp, address } = contactInfo;

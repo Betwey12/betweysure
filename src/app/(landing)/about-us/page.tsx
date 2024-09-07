@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: about.description,
 };
 
-export default function AboutUs() {
+export default function AboutUsPage() {
   return (
     <>
       <OtherPagesHero />
