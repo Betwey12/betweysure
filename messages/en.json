@@ -210,21 +210,35 @@
     "VALUE_TWO": "Most Bettors/Staker rely on us and we rely on the probability and Analysis of every individual \"football match\" using historical data and real-time factors to ensure our Punters and systems are working at 100%."
   },
   "CONTACT_FORM": {
-      "NAME": "Name",
-      "NAME_PLACEHOLDER":"Enter your name",
-      "EMAIL": "Email",
-      "MESSAGE": "Message",
-      "SEND_MESSAGE": "Send Message"
+    "NAME": "Name",
+    "NAME_PLACEHOLDER": "Enter your name",
+    "EMAIL": "Email",
+    "MESSAGE": "Message",
+    "SEND_MESSAGE": "Send Message"
   },
   "CONTACT": {
-      "TITLE": "Let us know how we can help you",
-      "HEAD_OFFICE:": "Head Office:",
-      "PHONE": "+234 913 7158 913",
-      "WHATSAPP_LINK": "https://wa.me/+2349137158913",
-      "EMAIL": "general@betweysure.com",
-      "FOLLOW_US:":"Follow us:",
-      "TELEGRAM_LINK": "https://t.me/betweysure",
-      "CHAT_ON_WHATSAPP": "Chat with us on whatsapp"
+    "TITLE": "Let us know how we can help you",
+    "HEAD_OFFICE:": "Head Office:",
+    "PHONE": "+234 913 7158 913",
+    "WHATSAPP_LINK": "https://wa.me/+2349137158913",
+    "EMAIL": "general@betweysure.com",
+    "FOLLOW_US:": "Follow us:",
+    "TELEGRAM_LINK": "https://t.me/betweysure",
+    "CHAT_ON_WHATSAPP": "Chat with us on whatsapp"
+  },
+  "SEARCH_MATCHES": {
+    "ALL_LEAGUES_AND_COUNTRIES": "All Leagues and Countries",
+    "MATCHES": "Matches",
+    "MATCH_FIXTURES_TODAY": "Match Fixtures Today",
+    "PLACEHOLDER": "Search {noOfMatches} matches today"
+  },
 
+  "RESULTS": {
+    "NO_LIVESCORES": "No livescore found for this sport"
+  },
+
+  "FILTER": {
+    "POPULAR_COUNTRIES": "Popular countries",
+    "COUNTRIES": "Countries"
   }
 }

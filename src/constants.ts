@@ -18,6 +18,11 @@ const pageMetadata = {
     title: "Contact Us - Betweysure",
     description: "Get in touch with us for any inquiries or feedback.",
   },
+  livescores: {
+    title: "Live Scores - Betweysure",
+    description:
+      "Get the latest live scores from football, basketball, handball, rugby, baseball, and other sports.",
+  },
 };
 
-export const { home, pricing, about, contact } = pageMetadata;
+export const { home, pricing, about, contact, livescores } = pageMetadata;
