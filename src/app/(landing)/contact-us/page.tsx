@@ -8,7 +8,7 @@ import {
   FaTwitter,
   FaWhatsapp,
 } from "react-icons/fa";
-import { contact } from "@/constants";
+import { contact, email, phone, telegram, whatsapp } from "@/constants";
 import OtherPagesHero from "@/components/shared/other-pages-hero";
 import ContactForm from "@/components/contact/contact-form";
 import { useTranslations } from "next-intl";
@@ -32,14 +32,14 @@ export default function ContactPage() {
           <div className="mt-6 flex flex-col gap-4 lg:gap-2">
             {/* <p className="flex items-center gap-2 text-sm lg:text-base"> */}
             {/*   <span>{t('HEAD_OFFICE:')} </span> */}
-            {/*   <span>16a Trinity Avenue, Victoria Island, Lagos. Nigeria.</span> */}
+            {/* <span>{address}</span> */}
             {/* </p> */}
             <p className="flex items-center gap-2 text-sm lg:text-base">
               <FaPhone />
-              <span>{t("PHONE")}</span>
+              <span>{phone}</span>
             </p>
             <Link
-              href={t("WHATSAPP_LINK")}
+              href={whatsapp}
               className="capitalize flex items-center gap-2 text-green-500"
               target="_blank"
             >
@@ -48,17 +48,17 @@ export default function ContactPage() {
             </Link>
 
             <Link
-              href="mailto:general@betweysure.com"
+              href={`mailto:${email}`}
               className="flex items-center gap-2 text-sm lg:text-base"
             >
               <FaEnvelope />
-              <span>{t("EMAIL")}</span>
+              <span>{email}</span>
             </Link>
           </div>
           <div className="flex items-center gap-2">
             <p> {t("FOLLOW_US:")} </p>
             <div className="flex items-center gap-2">
-              <Link href={t("WHATSAPP_LINK")}>
+              <Link href={whatsapp}>
                 <FaWhatsapp />
               </Link>
 
@@ -71,7 +71,7 @@ export default function ContactPage() {
               <Link href="#facebook">
                 <FaInstagram />
               </Link>
-              <Link href={t("TELEGRAM_LINK")}>
+              <Link href={telegram}>
                 <FaTelegram />
               </Link>
             </div>

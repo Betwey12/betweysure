@@ -3,6 +3,7 @@ const contactInfo = {
   phone: "+234 913 7158 913",
   telegram: "https://t.me/betweysure",
   whatsapp: "https://wa.me/2349137158913",
+  address: "16a Trinity Avenue, Victoria Island, Lagos. Nigeria.",
 };
 
 const pageMetadata = {
@@ -67,4 +68,4 @@ export const {
   privacy,
 } = pageMetadata;
 
-export const { email, phone, telegram, whatsapp } = contactInfo;
+export const { email, phone, telegram, whatsapp, address } = contactInfo;
