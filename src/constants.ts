@@ -67,6 +67,11 @@ const pageMetadata = {
     title: "Get started - Betweysure",
     description: "Set up your account to get started with Betweysure.",
   },
+  dashboard: {
+    title: "Dashboard - Betweysure",
+    description:
+      "Get predictions, fund your betting wallet, upgrade your plan, purchase airtime or data and more.",
+  },
 };
 
 export const {
@@ -82,6 +87,7 @@ export const {
   privacy,
   trends,
   auth,
+  dashboard,
 } = pageMetadata;
 
 export const { email, phone, telegram, whatsapp, address } = contactInfo;
