@@ -18,7 +18,7 @@ export default function SlideBenefits() {
   }, [benefits.length, slideIndex]);
 
   return (
-    <div className="w-full flex gap-2 items-center flex-col text-white mt-10 overflow-x- ">
+    <div className="w-full flex gap-2 items-center flex-col text-white mt-10 overflow-x-hidden">
       {benefits.map((benefit, index) => (
         <div
           className={cn("flex items-center gap-3 w-full justify-center", {
