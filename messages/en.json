@@ -1,6 +1,7 @@
 {
   "NAVBAR": {
     "RESULTS": "Results",
+    "ABOUT_US": "About Us",
     "CONTACT_US": "Contact Us",
     "REGISTER": "Register",
     "HOME": "Home",
@@ -233,49 +234,96 @@
     "COUNTRIES": "Countries"
   },
   "LEAGUE_INFO": {
-        "TITLE": "{league} Football Predictions and Tips",
-        "DESCRIPTION": "View our tips, standings, and trends for {league}. Filter based on prediction and date, and click on the info icon to view detailed analysis of each prediction."
+    "TITLE": "{league} Football Predictions and Tips",
+    "DESCRIPTION": "View our tips, standings, and trends for {league}. Filter based on prediction and date, and click on the info icon to view detailed analysis of each prediction."
   },
   "STANDINGS": {
-      "DESCRIPTION": "Here is the latest {league} standings table for the {year}/{plusYear} season. View the standings table for the top teams, their points, and games played.",
-      "NO_STANDINGS": "No standings found for this league"
+    "DESCRIPTION": "Here is the latest {league} standings table for the {year}/{plusYear} season. View the standings table for the top teams, their points, and games played.",
+    "NO_STANDINGS": "No standings found for this league"
   },
   "TRENDS": {
-      "DESCRIPTION": "Here is the latest {league} trends for todays games. View trends to analyze the games and make better predictions",
-      "NO_TRENDS": "No trends found for this league"
+    "DESCRIPTION": "Here is the latest {league} trends for todays games. View trends to analyze the games and make better predictions",
+    "NO_TRENDS": "No trends found for this league"
   },
   "FORM": {
-      "NO_FORM": "No form found for this league"
+    "NO_FORM": "No form found for this league"
   },
-"FIXTURES": {
-"NO_FIXTURES_FOR": "No fixtures for this {period}",
-"NO_FIXTURES": "No fixtures found for this league"
-},
-"FREE_TABS": {
-  "TITLE": "Free {sport} Predictions:"
-},
-"PAID_TABS": {
-  "TITLE": "Paid {sport} Predictions:",
-  "UPGRADE": "Upgrade to view"
-},
-"LIVE_PREDICTIONS": {
-  "TITLE": "Live Predictions",
-  "NO_LIVE_PREDICTIONS": "No live predictions available"
-},
-"FOOTBALL_TRENDS" : {
+  "FIXTURES": {
+    "NO_FIXTURES_FOR": "No fixtures for this {period}",
+    "NO_FIXTURES": "No fixtures found for this league"
+  },
+  "FREE_TABS": {
+    "TITLE": "Free {sport} Predictions:"
+  },
+  "PAID_TABS": {
+    "TITLE": "Paid {sport} Predictions:",
+    "UPGRADE": "Upgrade to view"
+  },
+  "LIVE_PREDICTIONS": {
+    "TITLE": "Live Predictions",
+    "NO_LIVE_PREDICTIONS": "No live predictions available"
+  },
+  "FOOTBALL_TRENDS": {
     "TITLE": "Football Trends",
     "NO_TRENDS": "No trends available"
-},
-"ACCA_BUILDER": {
+  },
+  "ACCA_BUILDER": {
     "TITLE": "Acca Builder",
     "DESCRIPTION": "Use our Acca Builder to create your own accumulator bet. Select the matches you want to include in your bet, and our Acca Builder will calculate the odds for you.",
     "NO_MATCHES": "We were not able to find any selections that matched your criteria, please expand your criteria and try again.",
     "YOUR_ACCA": "Your Acca!",
     "BUILD_ACCA": "Build Acca",
     "SELECT_TIMEFRAME": "Select timeframe",
-    "NO_OF_GAMES":               "Number of games",
+    "NO_OF_GAMES": "Number of games",
     "FORM_TITLE": "With just a few clicks, you can build an accumulator using our AI driven tips, Select how many games you would like to have and generate your slip",
     "WHAT_MARKETS": "What markets?",
     "INCOMPLETE_GAMES": "Only {noOfGames} found matches your criteria, please expand your criteria and try again"
-}
+  },
+  "AUTH": {
+    "WELCOME_BACK": "Welcome back!",
+    "SURE_GUY": "Sure Guy.",
+    "TITLE": "Sign in to view all the tips you want.",
+    "EMAIL_ADDRESS": "Email Address",
+    "EMAIL_PLACEHOLDER": "Enter your email address",
+    "PASSWORD": "Password",
+    "REMEMBER_ME": "Remember me for 30 days",
+    "SIGN_IN": "Sign in",
+    "FORGOT_PASSWORD": "Forgot password?",
+    "NO_ACCOUNT": "Don't have an account?",
+    "HAVE_ACCOUNT": "Already have an account?",
+    "SIGN_UP": "Sign up",
+    "SIGN_IN_WITH_GOOGLE": "Sign in with Google",
+    "SIGN_UP_WITH_GOOGLE": "Sign up with Google",
+    "COPYRIGHT": "© 2021 Betweysure. All rights reserved.",
+    "OR": "Or",
+    "I_AGREE": "I agree to Betweysure's",
+    "TERMS_OF_USE": "Terms of Use",
+    "PASSWORD_PLACEHOLDER": "Enter your password",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "CONFIRM_PASSWORD_PLACEHOLDER": "Confirm your password",
+    "PHONE_NUMBER": "Phone Number",
+    "FULL_NAME": "Full Name",
+    "CREATE_AN_ACCOUNT": "Create an account",
+    "GAIN_ACCESS": "and gain access!" ,
+    "SIGNUP_TITLE": "Sign up with a few clicks to join our community of Sure Winners and view the best betting tips and football match analysis.",
+    "WHAT_YOU_GET": "What you’ll benefit",
+    "INFO": "Log in to access personalized tips and rewards or sign up now and join the betweysure community.",
+    "BENEFIT_ONE": "Access to world-class algorithms",
+    "BENEFIT_TWO": "Professional punters with one of the highest winning accuracy in the market",
+    "BENEFIT_THREE": 
+  "Get the best betting tips from our team of experts",
+    "BENEFIT_FOUR":
+  "Enjoy exclusive rewards like tips from paid bundles",
+  "BENEFIT_FIVE":
+  "Have fun with betting on your favourite soccer matches, with updated statistics every day.",
+  "BENEFIT_SIX":
+  "Become a winner by following our proven strategies",
+  "BENEFIT_SEVEN":
+  "Choose from our flexible plans that suit your budget and needs, from free to premium options",
+  "BENEFIT_EIGHT":
+  "Get all the latest football news all in one place",
+  "BENEFIT_NINE":
+  "Join our global network of loyal customers who trust us with their betting decisions."
+
+  }
 }

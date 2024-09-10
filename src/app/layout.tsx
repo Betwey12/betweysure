@@ -9,6 +9,7 @@ import QueryProvider from "@/components/provider/query-provider";
 import AuthProvider from "@/components/provider/auth-provider";
 import SlipProvider from "@/components/provider/SlipProvider";
 import MyMuiLocalizationProvider from "@/components/provider/mui-localization-provucer";
+import ReCaptchaProvider from "@/components/provider/recaptcha-provider";
 
 export const metadata: Metadata = {
   title: home.title,
@@ -27,19 +28,21 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`${rubik.className} ${gilroy.className}`}>
         <NextIntlClientProvider messages={messages}>
-          <QueryProvider>
-            <MyMuiLocalizationProvider>
-              <AuthProvider>
-                <ThemeProvider
-                  attribute="class"
-                  defaultTheme="system"
-                  enableSystem
-                >
-                  <SlipProvider>{children}</SlipProvider>
-                </ThemeProvider>
-              </AuthProvider>
-            </MyMuiLocalizationProvider>
-          </QueryProvider>
+          <ReCaptchaProvider>
+            <QueryProvider>
+              <MyMuiLocalizationProvider>
+                <AuthProvider>
+                  <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                  >
+                    <SlipProvider>{children}</SlipProvider>
+                  </ThemeProvider>
+                </AuthProvider>
+              </MyMuiLocalizationProvider>
+            </QueryProvider>
+          </ReCaptchaProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -16,6 +16,9 @@ const config: Config = {
           sunset: "#FF7F50",
           orange: "#F60",
         },
+        hover: {
+          light: "#dbfaff",
+        },
         dark: "#01163D",
         light: "#fff",
         blue: {
