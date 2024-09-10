@@ -1896,5 +1896,6 @@ export const otherSPortsWorldLeagues = [
   "virtual basketball",
   "itf men",
   "itf women",
+  "world",
   "challenger",
 ];

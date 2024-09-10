@@ -63,6 +63,10 @@ const pageMetadata = {
     description:
       "Build your accumulator with the best football predictions for popular leagues. Get the best tips for today's matches with over 90% prediction accuracy on daily games upto 2 odds, as well as free betting tips and picks to help you gain an edge.",
   },
+  auth: {
+    title: "Get started - Betweysure",
+    description: "Set up your account to get started with Betweysure.",
+  },
 };
 
 export const {
@@ -77,6 +81,7 @@ export const {
   terms,
   privacy,
   trends,
+  auth,
 } = pageMetadata;
 
 export const { email, phone, telegram, whatsapp, address } = contactInfo;

@@ -17,6 +17,11 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  input,
+  textarea {
+    @apply bg-white text-foreground;
+  }
 }
 
 .swiper {
@@ -169,6 +174,36 @@
   .widget-wrapper span span {
     display: none;
   }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.slide-enter {
+  animation: slideIn 0.5s ease forwards;
+}
+
+.slide-exit {
+  animation: slideOut 0.5s ease forwards;
 }
 
 h1,

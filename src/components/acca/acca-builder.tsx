@@ -127,8 +127,8 @@ export default function AccumulatorBuilderForm() {
   const accaGames = filteredPredictions?.slice(0, accaOptions?.games);
 
   return (
-    <div className="w-full px-4 relative dark:text-white">
-      <div className="grid lg:grid-cols-3 gap-20">
+    <div className="w-full px-4 relative text-blue-one dark:text-white flex flex-col items-center">
+      <div className="grid lg:grid-cols-3 gap-20 w-full">
         <XdaysMultiple
           maxAccuracy={60}
           maxOdds={3}
