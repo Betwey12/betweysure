@@ -8,9 +8,14 @@ interface ProtectRouteProps {
 
 export default function ProtectRoute({ children }: ProtectRouteProps) {
   const { user } = useAuth();
+  const profileComplete = user?.phone && user?.fullName;
 
-  if (!user) {
-    redirect("/auth/login");
+  if (user && !profileComplete) {
+    redirect("/auth/complete-profile");
+  }
+
+  if (user && profileComplete) {
+    redirect("/dashboard");
   }
 
   return <>{children}</>;

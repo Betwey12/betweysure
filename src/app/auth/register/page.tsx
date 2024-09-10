@@ -2,7 +2,7 @@ import SignUpForm from "@/components/auth/sign-up-form";
 import SlideBenefits from "@/components/auth/slide-benefits";
 import { useTranslations } from "next-intl";
 
-export default function Register() {
+export default function RegisterPage() {
   const t = useTranslations("AUTH");
 
   return (

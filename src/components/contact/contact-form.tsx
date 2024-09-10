@@ -9,6 +9,7 @@ import { HTTPRequest } from "@/api";
 import { FaSpinner } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { useTranslations } from "next-intl";
+import { Button } from "../ui/button";
 
 const schema = yup.object().shape({
   name: yup.string().required("Name is required"),
@@ -103,10 +104,10 @@ export default function ContactForm() {
           </p>
         )}
       </fieldset>
-      <button className="bg-cyan flex items-center justify-center gap-2 text-white py-2 rounded mt-8">
+      <Button className="bg-cyan font-semibold flex items-center justify-center gap-2 text-white py-2 rounded mt-8">
         {t("SEND_MESSAGE")}
         {isPending && <FaSpinner className="animate-spin" />}
-      </button>
+      </Button>
     </form>
   );
 }

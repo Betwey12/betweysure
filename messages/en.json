@@ -304,26 +304,25 @@
     "PHONE_NUMBER": "Phone Number",
     "FULL_NAME": "Full Name",
     "CREATE_AN_ACCOUNT": "Create an account",
-    "GAIN_ACCESS": "and gain access!" ,
+    "GAIN_ACCESS": "and gain access!",
     "SIGNUP_TITLE": "Sign up with a few clicks to join our community of Sure Winners and view the best betting tips and football match analysis.",
     "WHAT_YOU_GET": "What you’ll benefit",
     "INFO": "Log in to access personalized tips and rewards or sign up now and join the betweysure community.",
     "BENEFIT_ONE": "Access to world-class algorithms",
     "BENEFIT_TWO": "Professional punters with one of the highest winning accuracy in the market",
-    "BENEFIT_THREE": 
-  "Get the best betting tips from our team of experts",
-    "BENEFIT_FOUR":
-  "Enjoy exclusive rewards like tips from paid bundles",
-  "BENEFIT_FIVE":
-  "Have fun with betting on your favourite soccer matches, with updated statistics every day.",
-  "BENEFIT_SIX":
-  "Become a winner by following our proven strategies",
-  "BENEFIT_SEVEN":
-  "Choose from our flexible plans that suit your budget and needs, from free to premium options",
-  "BENEFIT_EIGHT":
-  "Get all the latest football news all in one place",
-  "BENEFIT_NINE":
-  "Join our global network of loyal customers who trust us with their betting decisions."
+    "BENEFIT_THREE": "Get the best betting tips from our team of experts",
+    "BENEFIT_FOUR": "Enjoy exclusive rewards like tips from paid bundles",
+    "BENEFIT_FIVE": "Have fun with betting on your favourite soccer matches, with updated statistics every day.",
+    "BENEFIT_SIX": "Become a winner by following our proven strategies",
+    "BENEFIT_SEVEN": "Choose from our flexible plans that suit your budget and needs, from free to premium options",
+    "BENEFIT_EIGHT": "Get all the latest football news all in one place",
+    "BENEFIT_NINE": "Join our global network of loyal customers who trust us with their betting decisions.",
+    "RESET":"Reset",
+    "RESET_PASSWORD": "Reset Password",
+    "SEND_RESET_LINK": "Send Reset Link",
+    "COMPLETE_PROFILE_DESCRIPTION":"To complete your profile, and recive tips please provide the following information",
+    "WELCOME": "Welcome to Betweysure"
+
 
   }
 }
