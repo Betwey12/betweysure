@@ -6,10 +6,11 @@ export default function AuthPage({
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
   const mode = searchParams.mode as string;
+  const token = searchParams.oobCode as string;
 
   const modes: Record<string, string> = {
-    resetPassword: "/auth/reset-password",
-    verifyEmail: "/auth/verify-email",
+    resetPassword: `/auth/reset-password?token${token}`,
+    verifyEmail: `/auth/verify-email?token=${token}`,
   };
 
   if (mode) {
