@@ -31,7 +31,6 @@ export default function FootballPredictionTable({
               currentPredictions={predictions}
               from={from}
               to={to}
-              whiteBg={true}
             />
           ) : (
             <div className="flex items-center justify-center py-6">

@@ -47,14 +47,14 @@ export default function DashboardPage() {
 const services = [
   {
     name: "Predictions",
-    href: "football-predictions?country=all",
+    href: "/dashboard/football-predictions?country=all",
     icon: <MdBatchPrediction className="text-yellow-500" />,
   },
   {
     name: "Covert Booking Code",
     icon: <FaArrowsSpin className="text-green-500" />,
     task: "convert-bet-code",
-    href: `perform?task=convert-bet-code`,
+    href: `/dashboard/perform?task=convert-bet-code`,
   },
   {
     name: "Fund Betting Account",
@@ -66,18 +66,18 @@ const services = [
   {
     name: "Buy plan",
     icon: <BundlesIcon className="text-green-500" />,
-    href: "buy-plan",
+    href: "/dashboard/buy-plan",
   },
   // {
   //   name: "Data",
   //   icon: <FaExchangeAlt className="text-yellow-orange" />,
   //   task: "data",
-  //   href: `perform?task=data`,
+  //   href: `/dashboard/perform?task=data`,
   // },
   // {
   //   name: "Airtime",
   //   icon: <FaSimCard className="text-yellow-sunset" />,
   //   task: "airtime",
-  //   href: `perform?task=airtime`,
+  //   href: `/dashboard/perform?task=airtime`,
   // },
 ];

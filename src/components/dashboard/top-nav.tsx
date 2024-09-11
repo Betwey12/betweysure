@@ -13,7 +13,6 @@ import Notifications from "./notifications";
 import { useOnClickOutside } from "usehooks-ts";
 import { useQuery } from "@tanstack/react-query";
 import { HTTPRequest } from "@/api";
-import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import ToggleTheme from "../ui/toggle-theme";
 import Link from "next/link";

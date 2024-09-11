@@ -97,7 +97,7 @@ function LivePredictionCard({
         {livePrediction?.competition_full} ({livePrediction?.country})
       </p>
       <p className="text-2xl">
-        {livePrediction?.duration}' ({livePrediction?.status})
+        {livePrediction?.duration}&apos; ({livePrediction?.status})
       </p>
       <p className="bg-cyan/50 px-4 py-2 rounded">{prediction}</p>
     </div>

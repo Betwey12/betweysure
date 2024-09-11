@@ -9,14 +9,12 @@ interface PredictionsResultProps {
   currentPredictions?: TPredictionResponse["data"];
   from: number;
   to: number;
-  whiteBg?: boolean;
 }
 
 export default function PredictionsResult({
   currentPredictions,
   from,
   to,
-  whiteBg,
 }: PredictionsResultProps) {
   const { user } = useAuth();
   const expiryDate = new Date(user?.plan?.expiry || Date.now());
@@ -140,7 +138,6 @@ export default function PredictionsResult({
             setClickedPredictionObj={setClickedPredictionObj}
             setTopPredictions={setTopPredictions}
             prediction={predictionObj.prediction}
-            whiteBg={whiteBg}
             hidePrediction={hidePrediction}
           />
         );

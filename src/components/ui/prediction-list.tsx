@@ -6,7 +6,6 @@ import fooballIcon from "../../assets/icons/solar-football.png";
 import { useSlip } from "@/hooks/useSlip";
 import { useAuth } from "@/hooks/useAuth";
 import { getLeague } from "@/assets/data/leagueApiF";
-import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -30,7 +29,6 @@ interface PredictionListProps {
       | undefined
     >
   >;
-  whiteBg?: boolean;
   hidePrediction: boolean;
 }
 
@@ -40,11 +38,9 @@ export function PredictionList({
   setClickedPredictionObj,
   setTopPredictions,
   prediction,
-  whiteBg,
   hidePrediction,
   highestPrediction,
 }: PredictionListProps) {
-  const { theme } = useTheme();
   const { slip, setSlip } = useSlip();
   const { user } = useAuth();
   const isClicked = slip?.predictions.some(
@@ -100,16 +96,7 @@ export function PredictionList({
   }
 
   return (
-    <div
-      className={cn(
-        "grid grid-cols-[30px_minmax(100px,_1fr)_100px_30px] lg:grid-cols-6 bg-gray-two text-xs py-2 px-4 lg:px-6 rounded-lg",
-        {
-          "bg-blue-three text-white": theme === "dark",
-          "bg-white border-b border-gray-two": whiteBg && theme !== "dark",
-          "bg-blue-two": whiteBg && theme === "dark",
-        }
-      )}
-    >
+    <div className="grid grid-cols-[30px_minmax(100px,_1fr)_100px_30px] lg:grid-cols-6 text-xs py-2 px-4 lg:px-6 rounded-lg text-white bg-white border-b border-gray-two dark:bg-blue-two dark:border-0">
       <button
         aria-label="click to view more"
         className="flex items-center gap-2 disabled:opacity-50 text-left"

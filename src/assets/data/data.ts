@@ -1,16 +1,3 @@
-import uefaChampionsLeague from "../icons/UEFA-Champions-League.png";
-import uefaEuropaLeague from "../icons/UEFA-Europa-League.png";
-import premierLeague from "../icons/premier-league.png";
-import laliga from "../icons/laLiga.png";
-import bundesliga from "../icons/bundesliga.png";
-import league1 from "../icons/ligue-1.png";
-import uefaEuro2024 from "../icons/euro-2024.png";
-import copaAmerica2024 from "../icons/copa-america-2024.png";
-import olympics2024 from "../icons/olympics-2024.png";
-import eredivisie from "../icons/eredivisie.png";
-import ligaPortugal from "../icons/liga-portugal.png";
-import saudiLeague from "../icons/saudi.png";
-
 export const countries = {
   ad: "Andorra",
   ae: "United Arab Emirates",
@@ -366,61 +353,70 @@ export const leagueList: Record<string, TPopularLeague[]> = {
   Popular: [
     {
       name: "UEFA Champions League",
-      logo: uefaChampionsLeague,
+      logo: "https://media.api-sports.io/football/leagues/4.png",
       apiFootballId: 4,
     },
     {
       name: "England Premier League",
-      logo: premierLeague,
+      logo: "https://media.api-sports.io/football/leagues/39.png",
+
       apiFootballId: 39,
     },
     {
       name: "UEFA Europa League",
-      logo: uefaEuropaLeague,
       apiFootballId: 3,
+      logo: "https://media.api-sports.io/football/leagues/3.png",
     },
     {
       name: "Euro Championship",
-      logo: uefaEuro2024,
+      logo: "https://media.api-sports.io/football/leagues/4.png",
+
       apiFootballId: 4,
       allowApiFootball: true,
     },
     {
       name: "Copa America",
-      logo: copaAmerica2024,
+      logo: "https://media.api-sports.io/football/leagues/9.png",
+
       apiFootballId: 9,
       allowApiFootball: true,
     },
     {
       name: "Paris 2024 Olympics",
-      logo: olympics2024,
+      logo: "https://media.api-sports.io/football/leagues/480.png",
+
       apiFootballId: 480,
       allowApiFootball: true,
       betMinerCompetitionFull: "Olympics Men",
     },
     {
       name: "Eredivisie",
-      logo: eredivisie,
+      logo: "https://media.api-sports.io/football/leagues/88.png",
+
       apiFootballId: 88,
     },
     {
       name: "Primeira Liga",
-      logo: ligaPortugal,
+      logo: "https://media.api-sports.io/football/leagues/94.png",
+
       apiFootballId: 94,
     },
     {
       name: "Pro League",
-      logo: saudiLeague,
+      logo: "https://media.api-sports.io/football/leagues/140.png",
+
       apiFootballId: 140,
     },
     {
       name: "La Liga",
-      logo: laliga,
+      logo: "https://media.api-sports.io/football/leagues/140.png",
+
       apiFootballId: 140,
     },
     {
       name: "Bundesliga",
-      logo: bundesliga,
+      logo: "https://media.api-sports.io/football/leagues/78.png",
+
       apiFootballId: 78,
     },
     {
@@ -430,7 +426,8 @@ export const leagueList: Record<string, TPopularLeague[]> = {
     },
     {
       name: "Ligue 1",
-      logo: league1,
+      logo: "https://media.api-sports.io/football/leagues614.png",
+
       apiFootballId: 61,
     },
     {

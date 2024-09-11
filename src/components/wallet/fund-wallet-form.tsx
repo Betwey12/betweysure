@@ -1,7 +1,7 @@
 "use client";
 import bankTransfer from "@/assets/icons/bank-transfer.png";
 import flw from "@/assets/icons/fw-1.png";
-import paystack from "@/assets/icons/paystack.png";
+import paystack from "@/assets/icons/paystack-payment.png";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { cn } from "../../lib/utils";
 import * as yup from "yup";

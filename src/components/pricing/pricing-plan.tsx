@@ -103,10 +103,15 @@ function PlanCard({
   );
 }
 
+type TPackage = {
+  name: string;
+  features: string[];
+}[];
+
 function PackageCard({
   predictionPackage,
 }: {
-  predictionPackage: (typeof packages)[0];
+  predictionPackage: TPackage[number];
 }) {
   const t = useTranslations("PRICING_PLANS");
   const { user } = useAuth();

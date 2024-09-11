@@ -9,12 +9,12 @@ import { toast } from "react-toastify";
 import { useParams } from "next/navigation";
 import SideNav from "./sidnav";
 import DashboardNav from "./top-nav";
-import { useRouter } from "next/navigation";
 import { useAuth } from "@/hooks/useAuth";
 import { redirect } from "next/navigation";
 import { FaSpinner } from "react-icons/fa";
 import JoyRide from "./joy-ride";
 import Modal from "../shared/modal";
+import NotificationPopup from "./notification-popup";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -23,7 +23,6 @@ interface DashboardLayoutProps {
 export default function DashboardWrapper({ children }: DashboardLayoutProps) {
   const [canRequestPermission, setCanRequestPermission] = useState(false);
   const searchParams = useParams<{ tour: string }>();
-  const router = useRouter();
   const { user, isLoading } = useGetUser();
   const { user: loggedInUser, isLoading: loggedInLoading } = useAuth();
   const isVerified = loggedInUser?.emailVerified || loggedInLoading;
@@ -35,30 +34,12 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
       HTTPRequest.Post("users/edit-profile", data),
   });
 
-  function handleTourEnd(data: {
-    action: string;
-    index: number;
-    status: string;
-    type: string;
-  }) {
-    const { status, action } = data;
-    console.log(status);
-
-    if (status === "finished" || action === "close") {
-      router.push("/dashboard");
-    }
-  }
+  const loading = isLoading || loggedInLoading;
 
   useEffect(() => {
     (async () => {
       const messagingResolve = await messaging;
       if (!messagingResolve) return;
-
-      // Check if the user has already granted permission
-      const permission = Notification.permission;
-      if (permission === "default") {
-        setCanRequestPermission(true); // User hasn't accepted or denied notifications yet
-      }
 
       onMessage(messagingResolve, (payload) => {
         console.log("Message received. ", payload);
@@ -80,7 +61,21 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
     })();
   });
 
+  useEffect(() => {
+    const permission = Notification.permission;
+    if (permission === "default" && !loading) {
+      const timer = setTimeout(() => {
+        setCanRequestPermission(true); // Show modal after 30 seconds
+      }, 30000);
+
+      // Cleanup function to clear the timeout
+      return () => clearTimeout(timer);
+    }
+  }, [loading]);
+
   async function handleNotificationSubscription() {
+    setCanRequestPermission(false);
+
     const messagingResolve = await messaging;
     if (!messagingResolve) return;
 
@@ -111,7 +106,7 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
       });
   }
 
-  if (isLoading || loggedInLoading)
+  if (loading)
     return (
       <div className="bg-gray-light min-h-screen flex flex-col justify-center items-center h-full dark:bg-blue-one dark:text-white">
         <FaSpinner className="animate-spin" />
@@ -135,14 +130,13 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
           {children}
         </div>
       </div>
-      {showTour && (
-        <JoyRide handleTourEnd={handleTourEnd} showTour={showTour} />
-      )}
+      {showTour && <JoyRide showTour={showTour} />}
       {canRequestPermission && (
-        <Modal>
-          <button onClick={handleNotificationSubscription}>
-            Subscribe to Notifications
-          </button>
+        <Modal className="absolute top-6">
+          <NotificationPopup
+            handleClose={() => setCanRequestPermission(false)}
+            handleNotificationSubscription={handleNotificationSubscription}
+          />
         </Modal>
       )}
     </div>

@@ -1,16 +1,13 @@
 import Joyride from "react-joyride";
+import { useRouter } from "next/navigation";
 
 interface JoyRideProps {
   showTour: boolean;
-  handleTourEnd: (data: {
-    action: string;
-    index: number;
-    status: string;
-    type: string;
-  }) => void;
 }
 
-export default function JoyRide({ showTour, handleTourEnd }: JoyRideProps) {
+export default function JoyRide({ showTour }: JoyRideProps) {
+  const router = useRouter();
+
   const joyrideSteps = [
     {
       target: ".dashboard",
@@ -40,6 +37,20 @@ export default function JoyRide({ showTour, handleTourEnd }: JoyRideProps) {
       content: "Fund your betting wallet, buy airtime, data and more",
     },
   ];
+
+  function handleTourEnd(data: {
+    action: string;
+    index: number;
+    status: string;
+    type: string;
+  }) {
+    const { status, action } = data;
+    console.log(status);
+
+    if (status === "finished" || action === "close") {
+      router.push("/dashboard");
+    }
+  }
 
   return (
     <>

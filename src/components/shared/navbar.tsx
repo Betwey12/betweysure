@@ -10,13 +10,13 @@ import { cn } from "@/lib/utils";
 import NavLink from "../ui/nav-link";
 import SelectLanguage from "../ui/select-language";
 import ToggleTheme from "../ui/toggle-theme";
+import { useAuth } from "@/hooks/useAuth";
 
 const baseUrl = process.env.NEX_PUBLIC_BASE_URL as string;
 
 export default function Navbar() {
   const { navLinks, t } = useNav();
-  // const { user } = useAuthCont();
-  const user = undefined;
+  const { user } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -81,7 +81,7 @@ export default function Navbar() {
           ) : (
             <Link
               href="/dashboard"
-              className="bg-cyan rounded-lg px-4 py-3 self-start text-sm text-white"
+              className="bg-cyan rounded-lg px-4 py-3 self-start text-sm text-white font-semibold"
             >
               {t("GO_TO_DASHBOARD")}
             </Link>
