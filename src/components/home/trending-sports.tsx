@@ -50,7 +50,7 @@ export default function TrendingSports({ sport }: TrendingSportsProps) {
         ))}
       </div>
       <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-0 px-4 lg:px-20 md:px-10">
-        <div className="flex flex-col gap-8 lg:w-[70%] text-blue-two dark:text-whitee">
+        <div className="flex flex-col gap-8 lg:w-[70%] text-blue-two dark:text-white">
           <div className="lg:hidden">
             <PredictionSelect />
           </div>
