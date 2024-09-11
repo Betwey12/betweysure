@@ -26,9 +26,7 @@ export default function PopUpProvider({ children }: IPopUpProvider) {
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
-      setPopUp(
-        (!user?.subscribed ?? false) && !isLoading ? "newsletter" : null
-      );
+      setPopUp(!user?.subscribed && !isLoading ? "newsletter" : null);
     }, 120000);
     return () => clearTimeout(timeOut);
   }, [user?.subscribed, isLoading]);

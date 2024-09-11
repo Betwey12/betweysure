@@ -6,8 +6,8 @@
   :root {
     --radius: 0.5rem;
     --primary: 186 83% 45%;
-    --popover: 186 83% 45%;
-    --popover-foreground: 186 83% 45%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
     --background: 200 100% 99%;
   }
   .dark {

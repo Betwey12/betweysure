@@ -218,7 +218,7 @@ export default function Trends({ league, category }: TrendsProps) {
             <span className="text-[#7400ff]">
               Over {highestOverTeam?.over - 1}.5 goals
             </span>
-            in <span>{highestOverTeam?.name}'s</span> last
+            in <span>{highestOverTeam?.name}&apos;s</span> last
             <span className="text-red-500">{match?.matches}</span>
             games
           </p>
@@ -286,7 +286,7 @@ export default function Trends({ league, category }: TrendsProps) {
             <span className="text-[#7400ff]">
               Over {highestOverHt?.over - 1}.5 goals
             </span>{" "}
-            in <span>{highestOverHt?.name}'s</span> last{" "}
+            in <span>{highestOverHt?.name}&apos;s</span> last{" "}
             <span className="text-red-500">{match?.matches}</span> half time
             games
           </p>

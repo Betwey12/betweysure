@@ -18,12 +18,12 @@ export default function usePayment({
     reference: new Date().getTime().toString(),
     email: user?.email,
     amount: amount * 100,
-    publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY,
+    publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY ?? "",
     plan: planCode,
   });
 
   const handleFlutterPayment = useFlutterwave({
-    public_key: process.env.NEXT_PUBLIC_FLUTTERWAVE_PUBLIC_KEY,
+    public_key: process.env.NEXT_PUBLIC_FLUTTERWAVE_PUBLIC_KEY ?? "",
     tx_ref: new Date().getTime().toString(),
     amount,
     currency,

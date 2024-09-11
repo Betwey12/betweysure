@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "../../lib/utils";
 import * as yup from "yup";
 import { SubmitHandler, useForm } from "react-hook-form";

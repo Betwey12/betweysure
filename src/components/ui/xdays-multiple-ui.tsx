@@ -47,7 +47,7 @@ export default function XdaysMultipleUi({
             loading="lazy"
           />
 
-          <p className="uppercase">{xDay}'s Multiple</p>
+          <p className="uppercase">{xDay}&apos;s Multiple</p>
         </div>
         <div className="flex flex-col gap-1">
           {topPredictions?.map((game) => (

@@ -51,7 +51,6 @@ export default function AuthProvider({ children }: AuthProviderProps) {
   }, [loggedInUser, userLoading, userId, data]);
 
   useEffect(() => {
-    // @ts-expect-error - This is a global variable
     window.ztUserData = {
       za_email_id: user?.email,
       user_unique_id: user?._id,

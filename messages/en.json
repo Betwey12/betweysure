@@ -326,5 +326,10 @@
   },
   "SIDE_NAV": {
         "DASHBOARD": "Dashboard"
+  },
+  "NOTIFICATION_POPUP": {
+    "SUBSCRIBE_DESCRIPTION": "Subscribe to our notifications to get the latest updates and offers. You can dissable at any time",
+    "LATER": "Later",
+    "ALLOW": "Allow"
   }
 }

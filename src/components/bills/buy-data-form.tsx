@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "../../lib/utils";
 import * as yup from "yup";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -174,7 +175,7 @@ export default function BuyDataForm() {
                       {bundle.PRODUCT_NAME}
                     </p>
                     <p className="text-xs text-gray-one">
-                      {formatCurrency(+bundle?.PRODUCT_AMOUNT + 5 ?? 0)}
+                      {formatCurrency(+(bundle?.PRODUCT_AMOUNT ?? 0) + 5)}
                     </p>
                   </label>
                 </div>
