@@ -8,7 +8,7 @@ const contactInfo = {
 
 const pageMetadata = {
   home: {
-    title: "Home - Betweysure",
+    title: "Free Football Betting Tips & Predictions Website - Betweysure",
     description:
       "Betweysure is a platform that provides football predictions, tips, and analysis to help you win your bets. We provide surebet, football tips, basketball tips, and other sports tips.",
   },
