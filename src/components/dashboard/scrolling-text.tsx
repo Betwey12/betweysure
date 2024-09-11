@@ -2,6 +2,7 @@
 import { HTTPRequest } from "@/api";
 import { DotIcon } from "@radix-ui/react-icons";
 import { useQuery } from "@tanstack/react-query";
+import { Fragment } from "react";
 
 export default function ScrollingText() {
   const { data: announcementData, isPending } = useQuery({
@@ -10,7 +11,6 @@ export default function ScrollingText() {
       HTTPRequest.Get("announcement"),
   });
   const announcements = announcementData?.data ?? [];
-  console.log(announcementData);
 
   return (
     <div className="px-4 py-3 bg-yellow-one mt-6 rounded">
@@ -22,12 +22,12 @@ export default function ScrollingText() {
             </span>
           ) : (
             announcements?.map((announcement, index) => (
-              <>
+              <Fragment key={announcement._id}>
                 <span>{announcement.announcement}</span>
                 {index < announcements?.length - 1 && (
                   <DotIcon className="bg-white rounded-full w-2 h-2" />
                 )}
-              </>
+              </Fragment>
             ))
           )}
         </p>

@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
+import LoadingButton from "../ui/loading-button";
 
 const forgotPasswordSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
@@ -66,16 +67,7 @@ export default function ForgotPasswordForm() {
         )}
       </fieldset>
 
-      <fieldset className="flex flex-col gap-6">
-        <Button className="flex items-center justify-center py-3 text-center text-white bg-cyan">
-          {t("SEND_RESET_LINK")}
-          {isPending && (
-            <span className="animate-spin">
-              <FaSpinner />
-            </span>
-          )}
-        </Button>
-      </fieldset>
+      <LoadingButton isPending={isPending} name={t("SEND_RESET_LINK")} />
     </form>
   );
 }

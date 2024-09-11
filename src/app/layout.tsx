@@ -10,6 +10,8 @@ import AuthProvider from "@/components/provider/auth-provider";
 import SlipProvider from "@/components/provider/SlipProvider";
 import MyMuiLocalizationProvider from "@/components/provider/mui-localization-provucer";
 import ReCaptchaProvider from "@/components/provider/recaptcha-provider";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: home.title,
@@ -44,6 +46,24 @@ export default async function RootLayout({
             </QueryProvider>
           </ReCaptchaProvider>
         </NextIntlClientProvider>
+        <GoogleAnalytics gaId="G-S04GSWE5BT" />
+        <Script
+          type="text/javascript"
+          id="zsiqchat"
+        >{`var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "siqb47ccd4d62e116bb01ff63f73ec8d528bacef77674ee6b027bc548a44a40c8ec", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zohopublic.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);`}</Script>
+
+        <Script id="thrive">
+          {" "}
+          {` var platformType = "custom_user_site";
+      var thriveWidgetCode =
+        "fbbac0a7e1432224a0300ecbb2a26aaf0ea86defd71999210218496772e5f362";
+      var ztUserData = {}`}
+        </Script>
+
+        <Script
+          id="thrive_script"
+          src="https://thrive.zohopublic.com/thrive/publicpages/thrivewidget"
+        ></Script>
       </body>
     </html>
   );

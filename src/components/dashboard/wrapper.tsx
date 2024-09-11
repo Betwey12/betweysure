@@ -136,7 +136,7 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
 
   if (isLoading || loggedInLoading)
     return (
-      <div>
+      <div className="bg-gray-light min-h-screen flex flex-col justify-center items-center h-full dark:bg-blue-one dark:text-white">
         <FaSpinner className="animate-spin" />
       </div>
     );

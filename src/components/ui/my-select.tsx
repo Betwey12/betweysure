@@ -2,7 +2,6 @@ import { useState } from "react";
 import { FaCaretDown } from "react-icons/fa";
 import { cn } from "../../lib/utils";
 import { Button } from "./button";
-import { useTheme } from "next-themes";
 
 interface MySelectProps {
   options: string[];
@@ -17,7 +16,6 @@ export default function MySelect({
   options,
   setSelectedOption,
   selectedOption,
-  bgDashboard,
   handleSelectOption,
   dropTop,
 }: MySelectProps) {

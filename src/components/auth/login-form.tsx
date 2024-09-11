@@ -18,6 +18,7 @@ import useGoogleWithCaptcha from "@/hooks/useGoogleWithCaptcha";
 import { GoogleIcon } from "../icons";
 import { useTranslations } from "next-intl";
 import PasswordInput from "../ui/password-input";
+import LoadingButton from "../ui/loading-button";
 
 const loginSchema = yup.object().shape({
   email: yup.string().email().required(),
@@ -37,7 +38,6 @@ export default function LoginForm() {
   const t = useTranslations("AUTH");
   const router = useRouter();
   const [isPending, setIsPending] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
   const { google, handleReCaptchaVerify } = useGoogleWithCaptcha();
 
   const {
@@ -161,19 +161,7 @@ export default function LoginForm() {
           )}
         </fieldset>
 
-        <fieldset className="flex flex-col gap-6">
-          <Button
-            disabled={isPending}
-            className="flex items-center justify-center py-3 text-center text-white bg-cyan"
-          >
-            {t("SIGN_IN")}
-            {isPending && (
-              <span className="animate-spin">
-                <FaSpinner />
-              </span>
-            )}
-          </Button>
-        </fieldset>
+        <LoadingButton isPending={isPending} name={t("SIGN_IN")} />
       </form>
 
       <div className="flex items-center justify-between w-full mt-4 mb-6">

@@ -1,6 +1,5 @@
+"use client";
 import { cn } from "../../lib/utils";
-import { FaCalendar } from "react-icons/fa";
-import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { useState } from "react";
 import MySelect from "../ui/my-select";
 import { getDate } from "../../lib/utils";

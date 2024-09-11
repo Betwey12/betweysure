@@ -3,7 +3,11 @@ import { useState } from "react";
 import { UseFormRegister } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-type TPassword = "password" | "confirmPassword";
+type TPassword =
+  | "password"
+  | "confirmPassword"
+  | "currentPassword"
+  | "newPassword";
 
 interface PasswordInputProps {
   name: TPassword;
