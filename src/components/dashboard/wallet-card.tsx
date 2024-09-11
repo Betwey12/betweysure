@@ -15,7 +15,7 @@ export default function WalletCard() {
       : fetchedUser?.plan?.type;
 
   return (
-    <div className="bg-yellow-sunset rounded-3xl p-6 flex flex-col gap-2 text-white md:max-w-[350px]">
+    <div className="bg-yellow-sunset rounded-3xl p-6 flex flex-col gap-2 text-white w-full md:max-w-[350px]">
       <div>
         <div className="flex items-center gap-2 justify-between">
           <h3>Wallet balance</h3>
@@ -39,7 +39,7 @@ export default function WalletCard() {
             </p>
           )}
         </div>
-        <p className="text-2xl">
+        <p className="text-2xl font-semibold">
           {isLoading ? (
             <span className="animate-spin">
               <FaSpinner />
@@ -51,7 +51,7 @@ export default function WalletCard() {
       </div>
       <div className="">
         <h3>Loyalty points</h3>
-        <p className="text-2xl">
+        <p className="text-2xl font-semibold">
           {isLoading ? (
             <span className="animate-spin">
               <FaSpinner />

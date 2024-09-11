@@ -14,6 +14,8 @@ import PhoneInput from "../ui/phone-input";
 import { Button } from "../ui/button";
 import { FaSpinner } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import LoadingButton from "../ui/loading-button";
+import { useTranslations } from "next-intl";
 
 const schema = yup.object().shape({
   phone: yup
@@ -38,6 +40,7 @@ type TPayload = {
 export default function CompleteProfileForm() {
   const router = useRouter();
   const { user, isLoading } = useAuth();
+  const t = useTranslations("AUTH");
 
   const {
     register,
@@ -131,10 +134,8 @@ export default function CompleteProfileForm() {
           <p className="text-red-500 text-sm italic">{errors.phone.message}</p>
         )}
       </fieldset>
-      <Button className="py-3 mt-6 text-center justify-center w-full">
-        Submit
-        {isPending && <FaSpinner className="animate-spin" />}
-      </Button>
+
+      <LoadingButton isPending={isPending} name={t("SUBMIT")} />
     </form>
   );
 }

@@ -1,6 +1,5 @@
 import { FaCalendar } from "react-icons/fa";
 import { Button } from "../ui/button";
-import { useState } from "react";
 import { DateCalendar } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import { cn } from "@/lib/utils";
@@ -22,7 +21,7 @@ export default function DateWidget({
   return (
     <>
       <Button
-        className="self-start bg-transparent gap-2 text-xs text-gray-one py-0 hover:text-white"
+        className="self-start bg-transparent  gap-2 text-xs text-gray-one py-0 hover:text-white"
         onClick={handleShowDate}
       >
         <FaCalendar />
@@ -32,7 +31,7 @@ export default function DateWidget({
         {showDate && (
           <div
             className={cn(
-              "absolute bg-white top-[calc(100%+16px)] left-0 rounded-lg text-blue-three shadow",
+              "absolute bg-white top-[calc(100%+24px)] z-[90] left-0 rounded-lg text-blue-three shadow",
               {
                 "right-0 left-auto": alignRight,
               }

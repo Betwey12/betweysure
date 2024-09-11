@@ -20,6 +20,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/firebase/config";
 import PasswordInput from "../ui/password-input";
 import { useTranslations } from "next-intl";
+import LoadingButton from "../ui/loading-button";
 
 const registerSchema = yup.object().shape({
   fullName: yup.string().required("Full name is required"),
@@ -251,19 +252,7 @@ export default function SignUpForm() {
           )}
         </fieldset>
 
-        <fieldset className="flex flex-col gap-6">
-          <Button
-            disabled={isPending}
-            className="flex items-center justify-center py-3 text-center text-white bg-cyan"
-          >
-            {t("SIGN_UP")}
-            {isPending && (
-              <span className="animate-spin">
-                <FaSpinner />
-              </span>
-            )}
-          </Button>
-        </fieldset>
+        <LoadingButton isPending={isPending} name={t("SIGN_UP")} />
       </form>
       <div className="flex items-center justify-between w-full mt-4 mb-6">
         <p className="text-xs flex items-center gap-2">

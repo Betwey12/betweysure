@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import PasswordInput from "../ui/password-input";
+import LoadingButton from "../ui/loading-button";
 
 const resetPasswordSchema = yup.object().shape({
   password: yup
@@ -79,15 +80,7 @@ export default function ResetPasswordForm({ token }: ResetPasswordFormProps) {
         )}
       </fieldset>
 
-      <fieldset className="flex flex-col gap-6">
-        <Button
-          className="flex items-center justify-center py-3 text-center text-white bg-cyan"
-          disabled={isPending}
-        >
-          {t("RESET")}
-          {isPending && <FaSpinner className="animate-spin" />}
-        </Button>
-      </fieldset>
+      <LoadingButton name={t("RESET")} isPending />
     </form>
   );
 }

@@ -41,7 +41,7 @@ interface SideNavProps {
 
 export default function SideNav({ setShowSideNav }: SideNavProps) {
   return (
-    <div className="relative border-gray-two border bg-white text-blue-three lg:flex min-h-screen lg:max-h-max max-h-[100vh] flex-col gap-8 h-full rounded lg:rounded-none shadow dark:text-white dark:bg-blue-two bg:border-0">
+    <div className="relative border-gray-two border bg-white text-blue-three lg:flex min-h-screen lg:max-h-max max-h-[100vh] flex-col gap-8 h-full rounded lg:rounded-none shadow dark:text-white dark:bg-blue-two dark:border-0">
       <div className="overflow-y-scroll bg-inherit">
         <div className="p-4 block lg:px-5 lg:py-8 bg-inherit w-full">
           <Link href="/?category=trending">

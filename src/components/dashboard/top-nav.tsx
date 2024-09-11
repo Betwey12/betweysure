@@ -53,12 +53,12 @@ export default function DashboardNav() {
 
   return (
     <div className="w-full flex items-center border border-l-0 border-gray-two justify-between lg:justify-end bg-white text-blue-three px-4 lg:py-8 py-6 lg:pr-8 relative dark:bg-blue-two dark:text-white dark:border-0">
-      <Button
+      <button
         className="p-0 text-2xl lg:hidden"
         onClick={() => setShowSideNav((prev) => !prev)}
       >
         {showSideNav ? <IoMdClose /> : <IoMdMenu />}
-      </Button>
+      </button>
 
       <div
         ref={menuEl}
@@ -93,24 +93,24 @@ export default function DashboardNav() {
               {link.name}
             </Link>
           ))}
-          <Button
-            className="px-0 w-full text-center lg:pl-5"
+          <button
+            className="px-0 w-full text-center flex items-center gap-2 py-4 lg:pl-5"
             onClick={handleChat}
           >
             <IoMdChatboxes className="" />
             Chat with support
-          </Button>
+          </button>
 
-          <Button
-            className="px-0 w-full text-center text-red-500 lg:pl-5"
+          <button
+            className="flex items-center gap-2 px-0 w-full text-center py-4 text-red-500 lg:pl-5"
             onClick={handleLogout}
           >
             <IoMdLogOut className="" />
             Logout
-          </Button>
+          </button>
         </div>
         <div className="hidden gap-4 items-center lg:flex">
-          <Button
+          <button
             className="hidden relative p-0 lg:block"
             onClick={() => setShowNotifications((prev) => !prev)}
           >
@@ -120,7 +120,7 @@ export default function DashboardNav() {
                 {notifications.length}
               </span>
             )}
-          </Button>
+          </button>
           <div
             className="hidden gap-6 items-center cursor-pointer lg:flex"
             role="button"
@@ -144,7 +144,7 @@ export default function DashboardNav() {
         </div>
       </div>
       <div className="flex gap-4 items-center lg:hidden">
-        <Button
+        <button
           className="relative p-0"
           onClick={() => setShowNotifications((prev) => !prev)}
         >
@@ -154,7 +154,7 @@ export default function DashboardNav() {
               {notifications.length}
             </span>
           )}
-        </Button>
+        </button>
 
         <button onClick={() => setShowMenu((prev) => !prev)}>
           <Image

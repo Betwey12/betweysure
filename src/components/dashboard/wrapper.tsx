@@ -1,7 +1,6 @@
 "use client";
-import Joyride from "react-joyride";
 import useGetUser from "@/hooks/useGetUser";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getToken, onMessage } from "firebase/messaging";
 import { messaging } from "@/firebase/config";
 import { HTTPRequest } from "@/api";
@@ -14,12 +13,15 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/hooks/useAuth";
 import { redirect } from "next/navigation";
 import { FaSpinner } from "react-icons/fa";
+import JoyRide from "./joy-ride";
+import Modal from "../shared/modal";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
 }
 
 export default function DashboardWrapper({ children }: DashboardLayoutProps) {
+  const [canRequestPermission, setCanRequestPermission] = useState(false);
   const searchParams = useParams<{ tour: string }>();
   const router = useRouter();
   const { user, isLoading } = useGetUser();
@@ -32,36 +34,6 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
     mutationFn: (data: { fcmToken: string }) =>
       HTTPRequest.Post("users/edit-profile", data),
   });
-
-  const joyrideSteps = [
-    {
-      target: ".dashboard",
-      content:
-        "Welcome to the dashboard, View predictions, Convert bet codes, Fund your betting wallet and more",
-      disableBeacon: true,
-    },
-    {
-      target: ".football",
-      content: "Get predictions for all football leagues in the world",
-    },
-    {
-      target: ".other-sports",
-      content:
-        "Get predictions for other sports like Basketball, Tennis, Ice Hockey and Baseball",
-    },
-    {
-      target: ".free-predictions",
-      content: "Get free predictions for football and other sports",
-    },
-    {
-      target: ".buy-plan",
-      content: "Buy a plan to get access to more predictions",
-    },
-    {
-      target: ".bills-payment",
-      content: "Fund your betting wallet, buy airtime, data and more",
-    },
-  ];
 
   function handleTourEnd(data: {
     action: string;
@@ -81,6 +53,13 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
     (async () => {
       const messagingResolve = await messaging;
       if (!messagingResolve) return;
+
+      // Check if the user has already granted permission
+      const permission = Notification.permission;
+      if (permission === "default") {
+        setCanRequestPermission(true); // User hasn't accepted or denied notifications yet
+      }
+
       onMessage(messagingResolve, (payload) => {
         console.log("Message received. ", payload);
         toast(
@@ -101,42 +80,40 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
     })();
   });
 
-  useEffect(() => {
-    (async () => {
-      const messagingResolve = await messaging;
-      if (isLoading || !messagingResolve) return;
+  async function handleNotificationSubscription() {
+    const messagingResolve = await messaging;
+    if (!messagingResolve) return;
 
-      getToken(messagingResolve, {
-        vapidKey: process.env.NEXT_PUBLIC_FIREBASE_PUBLIC_VAPID_KEY,
+    getToken(messagingResolve, {
+      vapidKey: process.env.NEXT_PUBLIC_FIREBASE_PUBLIC_VAPID_KEY,
+    })
+      .then(async (currentToken) => {
+        if (!currentToken) {
+          Notification.requestPermission().then((permission) => {
+            if (permission === "granted") {
+              console.log("Notification permission granted.");
+            } else {
+              console.log("Unable to get permission to notify.");
+            }
+          });
+          return;
+        }
+        if (currentToken !== user?.fcmToken) {
+          // Send the token to your server and update the UI if necessary
+          const res = await mutateAsync({ fcmToken: currentToken });
+          if (isError || !res.success)
+            toast.error(res.message || "Something went wrong");
+          toast.success("Saved");
+        }
       })
-        .then(async (currentToken) => {
-          if (!currentToken) {
-            Notification.requestPermission().then((permission) => {
-              if (permission === "granted") {
-                console.log("Notification permission granted.");
-              } else {
-                console.log("Unable to get permission to notify.");
-              }
-            });
-            return;
-          }
-          if (currentToken !== user?.fcmToken) {
-            // Send the token to your server and update the UI if necessary
-            const res = await mutateAsync({ fcmToken: currentToken });
-            if (isError || !res.success)
-              toast.error(res.message || "Something went wrong");
-            toast.success("Saved");
-          }
-        })
-        .catch((err) => {
-          console.log("An error occurred while retrieving token. ", err);
-        });
-    })();
-  }, [isError, isLoading, mutateAsync, user?.fcmToken]);
+      .catch((err) => {
+        console.log("An error occurred while retrieving token. ", err);
+      });
+  }
 
   if (isLoading || loggedInLoading)
     return (
-      <div>
+      <div className="bg-gray-light min-h-screen flex flex-col justify-center items-center h-full dark:bg-blue-one dark:text-white">
         <FaSpinner className="animate-spin" />
       </div>
     );
@@ -159,15 +136,14 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
         </div>
       </div>
       {showTour && (
-        <div className="absolute top-0 bg-black/50 inset-0">
-          <Joyride
-            steps={joyrideSteps}
-            run={showTour}
-            callback={handleTourEnd}
-            continuous
-            disableScrollParentFix
-          />
-        </div>
+        <JoyRide handleTourEnd={handleTourEnd} showTour={showTour} />
+      )}
+      {canRequestPermission && (
+        <Modal>
+          <button onClick={handleNotificationSubscription}>
+            Subscribe to Notifications
+          </button>
+        </Modal>
       )}
     </div>
   );
