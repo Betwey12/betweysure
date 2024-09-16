@@ -16,6 +16,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: home.title,
   description: home.description,
+  keywords: home.keywords,
 };
 
 export default async function RootLayout({
