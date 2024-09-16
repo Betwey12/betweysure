@@ -59,7 +59,7 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
         );
       });
     })();
-  });
+  }, []);
 
   useEffect(() => {
     const permission = Notification.permission;
@@ -115,7 +115,7 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
 
   if (!loggedInUser) redirect("/auth/login");
 
-  if (loggedInUser && !isVerified) redirect("/auth?mode=verifyEmail");
+  if (loggedInUser && !isVerified) redirect("/auth/verify-email");
 
   if (!hasPhone && loggedInUser) redirect("/auth/complete-profile");
 

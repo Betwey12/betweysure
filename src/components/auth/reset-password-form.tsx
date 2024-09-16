@@ -80,7 +80,7 @@ export default function ResetPasswordForm({ token }: ResetPasswordFormProps) {
         )}
       </fieldset>
 
-      <LoadingButton name={t("RESET")} isPending />
+      <LoadingButton name={t("RESET")} isPending={isPending} />
     </form>
   );
 }
