@@ -57,9 +57,10 @@ const pageMetadata = {
     description: "Read our privacy policy.",
   },
   trends: {
-    title: "Football trends - Betweysure",
+    title: "Football Trends & Recent Form Analysis | Betweysure",
     description:
-      "Get the latest football trends, and previous performance of your favourite clubs on betweysure.",
+      "Analyze recent team performance and trends to make informed betting decisions. Betweysure provides up-to-date football trends for various leagues and teams.",
+    keywords: "football trends, recent form analysis",
   },
   acca: {
     title:

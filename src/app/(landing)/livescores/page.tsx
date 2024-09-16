@@ -6,6 +6,7 @@ import MatchResults from "@/components/livescores/match-results";
 import { livescores } from "@/constants";
 import { useTranslations } from "next-intl";
 import KeywordListItem from "@/components/ui/keyword-list-item";
+import PageHeader from "@/components/shared/page-header";
 
 export const metadata: Metadata = {
   title: livescores.title,
@@ -19,10 +20,7 @@ export default function LivescoresPage() {
     <>
       <OtherPagesHero />
 
-      <div className="flex flex-col gap-6 items-center text-blue-three my-10 lg:my-20 px-4 dark:text-white">
-        <h1 className="text-3xl lg:text-5xl text-center"> {t("TITLE")}</h1>
-        <p className="text-center max-w-5xl">{t("DESCRIPTION")}</p>
-      </div>
+      <PageHeader title={t("TITLE")} description={t("DESCRIPTION")} />
 
       <MatchResults />
 

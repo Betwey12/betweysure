@@ -283,7 +283,23 @@
     "NO_LIVE_PREDICTIONS": "No live predictions available"
   },
   "FOOTBALL_TRENDS": {
-    "TITLE": "Football Trends",
+    "TITLE": "Football Trends: Find Winning Tips",
+    "DESCRIPTION": "Get an edge in your football bets with Betweysure’s trend analysis. We provide the latest info on team performances, helping you spot patterns and make better betting decisions.",
+    "ABOUT_TRENDS_ONE": "Understand Football Trends",
+    "ABOUT_TRENDS_ONE_DESC": "Football trends show how teams are currently performing and what to expect in the future. By looking at recent results, you can see which teams are winning, which are struggling, and make more informed bets.",
+    "ABOUT_TRENDS_TWO": "Betweysure’s Trend Analysis:",
+    "ABOUT_TRENDS_TWO_DESC": "At Betweysure, we follow the latest football trends in different leagues and teams. Our easy-to-read format shows you recent wins, losses, and draws so you can quickly understand how a team is doing.",
+    "ABOUT_TRENDS_THREE": "How to Use Trends for Betting:",
+    "ABOUT_TRENDS_THREE_DESC": "Use our trend analysis to find good betting opportunities. Consider:",
+    "TIP_ONE": "Teams on a winning streak: Will they keep winning?",
+    "TIP_TWO": "Teams in a slump: Are they about to bounce back?",
+    "TIP_THREE": "Head-to-head records: How have these teams played against each other recently?",
+    "ABOUT_TRENDS_FOUR": "Beyond the Numbers:",
+    "ABOUT_TRENDS_FOUR_DESC": "Trends are important, but don’t forget other factors like injuries, suspensions, and team news when placing your bets.",
+    "ABOUT_TRENDS_FIVE": "Stay Ahead of the Game:",
+    "ABOUT_TRENDS_FIVE_DESC": "By keeping up with football trends, you can stay ahead of other bettors. Betweysure’s trend analysis helps you make smarter, more strategic bets.",
+    "CALL_TO_ACTION": "Check the Latest Football Trends & Start Winning!",
+
     "NO_TRENDS": "No trends available"
   },
   "ACCA_BUILDER": {
@@ -413,7 +429,7 @@
   "LIVESCORES": {
     "TITLE": "Live Scores & Results: Your Real-Time Sports Hub",
     "DESCRIPTION": "Welcome to Betweysure's Live Scores page, the place to get the latest sports updates. Never miss a goal, basket, or point! We give you up-to-the-minute live scores and results for many sports, so you're always in the know.",
-    "BENEFIT":"Features & Benefits:",
+    "BENEFIT": "Features & Benefits:",
     "BENEFIT_ONE": "Real-Time Updates:",
     "BENEFIT_ONE_DESC": "Feel the excitement as the game happens with real-time updates. Whether it's a close game or a big win, you'll know first.",
     "BENEFIT_TWO": "Wide Sports Coverage:",
