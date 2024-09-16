@@ -2,8 +2,6 @@ import { cn } from "../../lib/utils";
 import MySelect from "../ui/my-select";
 import { useState } from "react";
 import { Button } from "../ui/button";
-import { DateCalendar } from "@mui/x-date-pickers";
-import { FaCalendar } from "react-icons/fa";
 import { getDate } from "../../lib/utils";
 import usePredictions from "../../hooks/usePredictions";
 import dayjs from "dayjs";
@@ -124,7 +122,7 @@ export default function OtherSportsPredictions({
             isLoading={isLoading}
             predictions={predictions}
             to={to}
-            sport={selectedSport}
+            sport={selectedSport.toLowerCase()}
           />
         </div>
       </div>

@@ -317,15 +317,19 @@
     "BENEFIT_SEVEN": "Choose from our flexible plans that suit your budget and needs, from free to premium options",
     "BENEFIT_EIGHT": "Get all the latest football news all in one place",
     "BENEFIT_NINE": "Join our global network of loyal customers who trust us with their betting decisions.",
-    "RESET":"Reset",
+    "RESET": "Reset",
     "RESET_PASSWORD": "Reset Password",
     "SEND_RESET_LINK": "Send Reset Link",
-    "COMPLETE_PROFILE_DESCRIPTION":"To complete your profile, and recive tips please provide the following information",
+    "COMPLETE_PROFILE_DESCRIPTION": "To complete your profile, and recive tips please provide the following information",
     "SUBMIT": "Submit",
-    "WELCOME": "Welcome to Betweysure"
+    "WELCOME": "Welcome to Betweysure",
+    "GO_TO_DASHBOARD": "Go to Dashboard",
+    "VERIFY_EMAIL_MESSAGE": "We have sent a verification link to you email. Click on the link to activate your account.",
+    "RESEND_EMAIL": "Resend Email",
+    "EMAIL_VERIFIED": "Email has been verified successfully"
   },
   "SIDE_NAV": {
-        "DASHBOARD": "Dashboard"
+    "DASHBOARD": "Dashboard"
   },
   "NOTIFICATION_POPUP": {
     "SUBSCRIBE_DESCRIPTION": "Subscribe to our notifications to get the latest updates and offers. You can dissable at any time",

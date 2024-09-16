@@ -97,7 +97,7 @@ export default function SignUpForm() {
     toast.success(response.message);
 
     await signInWithEmailAndPassword(auth, data.email, data.password);
-    router.push("/dashboard");
+    router.push("/auth/verify-email");
   };
 
   return (

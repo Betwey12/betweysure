@@ -59,7 +59,7 @@ export default function AuthNavBar() {
         ))}
         {user && (
           <Button
-            className="text-center text-red-500 gap-4 font-semibold"
+            className="text-center gap-2 font-semibold"
             onClick={handleLogout}
           >
             <IoMdLogOut className="" />

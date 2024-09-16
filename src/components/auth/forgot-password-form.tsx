@@ -11,6 +11,8 @@ import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import LoadingButton from "../ui/loading-button";
+import { useState } from "react";
+import { SentEmailIcon } from "../icons";
 
 const forgotPasswordSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
@@ -28,6 +30,7 @@ export default function ForgotPasswordForm() {
   } = useForm<ForgotPasswordForm>({
     resolver: yupResolver(forgotPasswordSchema),
   });
+  const [emailSent, setEmailSent] = useState(false);
 
   const { isPending, mutateAsync, isError } = useMutation({
     mutationFn: (data: ForgotPasswordForm) =>
@@ -43,7 +46,22 @@ export default function ForgotPasswordForm() {
     router.push("/auth/login");
   };
 
-  return (
+  return emailSent ? (
+    <div className="flex-col items-center justify-center flex">
+      <SentEmailIcon className="text-9xl" />
+      <p className="text-center">
+        An email has been sent to your email address with instructions on how to
+        reset your password
+      </p>
+      <Button
+        type="button"
+        className="py-3 mt-6 text-center justify-center"
+        onClick={() => setEmailSent(false)}
+      >
+        Resend Email
+      </Button>
+    </div>
+  ) : (
     <form
       action=""
       className="flex flex-col w-full gap-6 mt-10"

@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import AuthNavBar from "@/components/auth/auth-navbar";
 import { auth } from "@/constants";
-import ProtectRoute from "@/components/auth/protect-route";
 
 export const metadata: Metadata = {
   title: auth.title,
@@ -17,7 +16,7 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
     <>
       <main className="flex flex-col ">
         <AuthNavBar />
-        <ProtectRoute>{children}</ProtectRoute>
+        {children}
       </main>
     </>
   );
