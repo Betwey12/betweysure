@@ -1,6 +1,5 @@
 "use client";
 import { useAuth } from "@/hooks/useAuth";
-import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FaCheckCircle, FaSpinner } from "react-icons/fa";
 import { auth } from "@/firebase/config";
@@ -11,12 +10,14 @@ import { EmailSentIcon } from "../icons";
 import { Button } from "../ui/button";
 import { useTranslations } from "next-intl";
 
-export default function VerifyEmailClient() {
+interface VerifyEmailClientProps {
+  token: string;
+}
+
+export default function VerifyEmailClient({ token }: VerifyEmailClientProps) {
   const t = useTranslations("AUTH");
-  const searchParams = useSearchParams();
   const [isVerifying, setIsVerifying] = useState(false);
   const { user, setUser, isLoading } = useAuth();
-  const token = searchParams.get("oobCode");
 
   useEffect(() => {
     if (!token || !user) {
