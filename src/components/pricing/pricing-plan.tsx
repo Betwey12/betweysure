@@ -18,6 +18,7 @@ export default function PricingPlans() {
     selectedCurrency,
     pricing,
     currency,
+    t,
   } = usePricingPlans();
 
   return (
@@ -32,13 +33,20 @@ export default function PricingPlans() {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-8 lg:gap-10 lg:px-20 px-4 md:px-10">
-        <div className="self-end max-w-xs w-full z-10 border border-gray-two rounded">
-          <MySelect
-            options={supportedCountries}
-            bgDashboard
-            selectedOption={selectedCurrency}
-            setSelectedOption={setSelectedCurrency}
-          />
+        <div className="w-full flex items-center justify-between">
+          <div className="flex flex-col gap-2">
+            <h2 className="text-2xl">{t("CALL_TO_ACTION")}</h2>
+            <p>{t("CALL_TO_ACTION_DESC")}</p>
+          </div>
+
+          <div className="z-10 w-full max-w-xs">
+            <MySelect
+              options={supportedCountries}
+              bgDashboard
+              selectedOption={selectedCurrency}
+              setSelectedOption={setSelectedCurrency}
+            />
+          </div>
         </div>
         {Object.keys(pricing).map((planName) => (
           <div key={planName} className="flex flex-col gap-4 lg:gap-6">
@@ -245,5 +253,6 @@ function usePricingPlans() {
     selectedCurrency,
     pricing,
     currency,
+    t,
   };
 }

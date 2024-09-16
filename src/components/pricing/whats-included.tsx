@@ -14,10 +14,17 @@ import {
 import { FaBoltLightning, FaCartShopping } from "react-icons/fa6";
 
 export default function WhatsIncluded() {
-  const { t, packages } = useWhatIsIncluded();
+  const { t, packages, plansDescriptions } = useWhatIsIncluded();
   return (
     <div className="text-blue-three px-4 md:px-10 lg:px-20 my-10 lg:my-20 mb-40 dark:text-white">
       <h3 className="text-xl">{t("WHAT_IS_INCLUDED")}</h3>
+
+      {plansDescriptions.map((plan) => (
+        <div className="flex flex-col gap-2 mt-6" key={plan.title}>
+          <h4 className="text-lg font-semibold">{plan.title}</h4>
+          <p>{plan.description}</p>
+        </div>
+      ))}
 
       <div className="grid lg:grid-cols-3 justify-between lg:flex-row flex-col gap-4 mt-6">
         {packages.map((pack) => (
@@ -33,6 +40,21 @@ export default function WhatsIncluded() {
 
 function useWhatIsIncluded() {
   const t = useTranslations("WHAT_IS_INCLUDED");
+
+  const plansDescriptions = [
+    {
+      title: t("FREE_PLAN"),
+      description: t("FREE_PLAN_DESC"),
+    },
+    {
+      title: t("STANDARD_PLAN"),
+      description: t("STANDARD_PLAN_DESC"),
+    },
+    {
+      title: t("PREMIUM_PLAN"),
+      description: t("PREMIUM_PLAN_DESC"),
+    },
+  ];
 
   const packages = [
     {
@@ -88,5 +110,6 @@ function useWhatIsIncluded() {
   return {
     t,
     packages,
+    plansDescriptions,
   };
 }

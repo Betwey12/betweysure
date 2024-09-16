@@ -124,21 +124,34 @@
   },
   "FREQ_ASKED_QUESTIONS": {
     "FREQ_ASKED_QUESTIONS": "Frequently Asked Questions",
-    "QUESTION_ONE": "What is the best way to get started?",
-    "ANSWER_ONE": "The best way to get started is to sign up for a free account. This will give you access to all of our free tips and help you decide if our product is right for you.",
-    "QUESTION_TWO": "What payment methods do you accept?",
-    "ANSWER_TWO": "We accept all major credit cards, including Visa, Mastercard, and Verve. We accept payment through paystack and flutterwave.",
-    "QUESTION_THREE": "Do you offer any discounts?",
-    "ANSWER_THREE": "Contact us to find out if you qualify for any discounts.",
-    "QUESTION_FOUR": "What if I have more questions?",
-    "ANSWER_FOUR": "If you have more questions, you can contact us by email or phone. We're here to help!"
+    "QUESTION_ONE": "How can I find the best sports betting tips?",
+    "ANSWER_ONE": "At Betweysure, we offer a wide range of free sports betting tips and predictions, including football, basketball, tennis, baseball, and ice hockey. Our expert tipsters analyze various factors to provide you with high-accuracy predictions across different sports.",
+
+    "QUESTION_TWO": "Are your sports predictions accurate?",
+
+    "ANSWER_TWO": "We strive to provide the most accurate sports predictions possible. Our tipsters have a proven track record of success, and we're confident that our tips will help you increase your chances of winning, no matter which sport you're betting on.",
+
+    "QUESTION_THREE": "What types of sports bets do you offer tips for?",
+
+    "ANSWER_THREE": "We cover a variety of sports bets, including match outcomes (1X2), over/under scores, handicaps, and more, depending on the specific sport.",
+
+    "QUESTION_FOUR": "How often do you update your sports predictions?",
+
+    "ANSWER_FOUR": "Our sports predictions are updated regularly, ensuring that you have access to the latest information and insights for all the sports we cover.",
+    "QUESTION_FIVE": "What payment methods do you accept?",
+    "ANSWER_FIVE": "We accept all major credit cards, including Visa, Mastercard, and Verve. We also accept payment through Paystack and Flutterwave.",
+    "QUESTION_SIX": "Do you offer any discounts?",
+
+    "ANSWER_SIX": "We occasionally offer discounts and promotions. Be sure to check our website or subscribe to our newsletter to stay updated on the latest offers."
   },
   "PRICING_HEADER": {
-    "TITLE": "Transparent pricing",
-    "DESCRIPTION": "Join our community to take your betting game to the next level. With us, you'll have the tools, knowledge, and opportunities needed for a rewarding betting experience. Get started today to get free curated bundle tips from your favourite leagues."
+    "TITLE": "Affordable Betting Tips for Every Bettor | Betweysure Pricing",
+    "DESCRIPTION": "At Betweysure, we believe that everyone should have access to quality betting tips. That's why we offer a range of pricing plans to suit every budget and betting style. Whether you're just starting or a seasoned pro, we have a plan that's right for you."
   },
   "PRICING_PLANS": {
     "SUBSCRIBE_NOW": "Subscribe Now",
+    "CALL_TO_ACTION": "Ready to start winning? ",
+    "CALL_TO_ACTION_DESC": "Choose the plan that fits your needs and join the Betweysure community today!",
     "FREE_FEATURES": {
       "ONE": "Correct score",
       "TWO": "Over 2.5",
@@ -189,6 +202,12 @@
     "BENEFIT_NINE": "Enjoy free access to premium tip categories",
     "BENEFIT_TEN": "Maximize your earnings with strategic betting",
     "BENEFIT_ELEVEN": "Access tips from 103 leagues globally",
+    "FREE_PLAN": "Free Plan",
+    "FREE_PLAN_DESC": "Get started with our Free Plan and enjoy access to a selection of curated betting tips, covering various sports and leagues. It's the perfect way to experience the quality of our predictions and see how Betweysure can help you win.",
+    "STANDARD_PLAN": "Standard Plan",
+    "STANDARD_PLAN_DESC": "Take your betting to the next level with our Standard Plan. Get daily surefire tips, access to games across 103 leagues, and 24/7 support. Our Standard Plan is designed for bettors who want to increase their winning potential without breaking the bank.",
+    "PREMIUM_PLAN": "Premium Plan",
+    "PREMIUM_PLAN_DESC": "For the serious bettor, our Premium Plan offers the ultimate betting experience. Enjoy all the benefits of the Standard Plan, plus exclusive access to premium tip categories, weekend bundles, and personalized support. Maximize your earnings with our strategic betting tips and increase your odds of success.",
     "BENEFIT_TWELVE": "Increase your odds of success"
   },
   "OUR_EXPERTISE": {
@@ -335,5 +354,77 @@
     "SUBSCRIBE_DESCRIPTION": "Subscribe to our notifications to get the latest updates and offers. You can dissable at any time",
     "LATER": "Later",
     "ALLOW": "Allow"
+  },
+  "ACCA_BUILDER_EXPLAINED": {
+    "WHAT_IS_ACCA_BUILDER": "What is an Acca Builder?",
+    "WHAT_IS_ACCA_BUILDER_DESC": "An Acca Builder, short for Accumulator Builder, is a powerful tool designed to help bettors create customized accumulator bets quickly and efficiently. An accumulator bet, also known as an acca, is a single bet that combines multiple selections into one, with the potential for a higher payout if all selections win. The Acca Builder simplifies this process by allowing users to select multiple games or events, adjust their preferences, and instantly generate an accumulator bet.",
+    "HOW_IT_WORKS": "How Does the Acca Builder Work?",
+    "HOW_IT_WORKS_DESC": " The Acca Builder works by leveraging advanced algorithms and AI-driven tips to provide users with the best possible combinations of games. Here’s how it typically functions: ",
+    "HOW_IT_WORKS_STEP_ONE": "Selection of Games:",
+    "HOW_IT_WORKS_STEP_ONE_DESC": "Users can choose from a wide range of sports and events. Whether you’re into football, basketball, tennis, or other sports, the Acca Builder offers a vast selection of games.",
+    "HOW_IT_WORKS_STEP_TWO": "Customization:",
+    "HOW_IT_WORKS_STEP_TWO_DESC": "Users can specify the number of games they want to include in their accumulator. The tool allows for customization based on personal preferences or betting strategies.",
+    "HOW_IT_WORKS_STEP_THREE": "AI-Driven Suggestions:",
+    "HOW_IT_WORKS_STEP_THREE_DESC": "The Acca Builder utilizes AI technology to suggest the most promising games based on real-time data, statistics, and expert tips. This increases the chances of building a winning accumulator.",
+    "HOW_IT_WORKS_STEP_FOUR": "Instant Generation:",
+    "HOW_IT_WORKS_STEP_FOUR_DESC": "Once the selections are made, the Acca Builder instantly generates the accumulator bet, showing the potential odds and payouts.",
+    "WHY_ACCA_BUILDER": "Why is the Acca Builder Beneficial?",
+    "WHY_ACCA_BUILDER_ONE": "Time-Saving:",
+    "WHY_ACCA_BUILDER_ONE_DESC": "The Acca Builder saves you time by streamlining the process of creating an accumulator bet.",
+    "WHY_ACCA_BUILDER_TWO": "Increased Winning Potential:",
+    "WHY_ACCA_BUILDER_TWO_DESC": "By using AI-driven tips, the tool helps you make more informed decisions, potentially increasing your chances of winning.",
+    "WHY_ACCA_BUILDER_THREE": "User-Friendly:",
+    "WHY_ACCA_BUILDER_THREE_DESC": "Even if you’re new to accumulator betting, the Acca Builder’s intuitive interface makes it easy to create your first acca.",
+    "HOW_TO_USE_ACCA_BUILDER": "How to Use the Betweysure Acca Builder",
+    "HOW_TO_USE_ACCA_BUILDER_DESC": "Creating an accumulator bet with the Betweysure Acca Builder is quick and easy. Follow these steps to get started:",
+    "HOW_TO_USE_ACCA_BUILDER_STEP_ONE": "Select the Number of Games",
+    "HOW_TO_USE_ACCA_BUILDER_STEP_ONE_DESC": "Begin by choosing the number of games you want to include in your accumulator. The Acca Builder allows you to select anywhere from 3 to 10 games, depending on your strategy and desired payout. ",
+    "HOW_TO_USE_ACCA_BUILDER_STEP_TWO": "Choose Your Betting Markets",
+    "HOW_TO_USE_ACCA_BUILDER_STEP_TWO_DESC": " Next, select the markets for your accumulator. You can choose from a variety of popular markets, including:",
+    "POPULAR_MARKET_ONE": "1x2: Predict the outcome of each game (home win, draw, or away win).",
+    "POPULAR_MARKET_TWO": "Both Teams to Score (BTTS): Bet on whether both teams will score in the match.",
+    "POPULAR_MARKET_THREE": "Over 2.5 Goals: Bet on whether the total number of goals in the match will be over 2.5.",
+    "POPULAR_MARKET_FOUR": "Over 1.5 Goals: Bet on whether the total number of goals in the match will be over 1.5.",
+
+    "HOW_TO_USE_ACCA_BUILDER_STEP_THREE": "Set Your Time Frame:",
+    "HOW_TO_USE_ACCA_BUILDER_STEP_THREE_DESC": " Choose the time frame within which you want your selected games to take place. The Acca Builder allows you to select games happening within the next: ",
+    "TIME_FRAME_ONE": "4 hours",
+    "TIME_FRAME_TWO": "12 hours",
+    "TIME_FRAME_THREE": "24 hours",
+    "TIME_FRAME_FOUR": "48 hours",
+
+    "HOW_TO_USE_ACCA_BUILDER_STEP_FOUR": "Generate Your Acca",
+    "HOW_TO_USE_ACCA_BUILDER_STEP_FOUR_DESC": "After making your selections, click the \"Generate Acca\" button. The Acca Builder will instantly create your accumulator bet, displaying the total odds and potential winnings. ",
+    "HOW_TO_USE_ACCA_BUILDER_STEP_FIVE": "Place Your Bet",
+    "HOW_TO_USE_ACCA_BUILDER_STEP_FIVE_DESC": "Review your accumulator and, once satisfied, click \"Place Bet\" to finalize your wager. Your bet slip will be updated with the new accumulator, and you’ll be ready to track the progress of your bet.",
+    "BENEFITS_OF_ACCA_BUILDER": "Benefits of Using the Betweysure Acca Builder",
+    "BENEFITS_OF_ACCA_BUILDER_DESC": " The Betweysure Acca Builder is not just another betting tool; it’s a game-changer for both novice and experienced bettors. Here’s why: ",
+    "BENEFITS_ONE": "AI-Driven Tips for Smarter Bets:",
+    "BENEFITS_ONE_DESC": "Our Acca Builder is powered by advanced AI algorithms that analyze vast amounts of data to provide you with the best possible tips.",
+    "BENEFITS_TWO": "Customization to Fit Your Strategy:",
+    "BENEFITS_TWO_DESC": "Choose the number of games, adjust your bet types, and create an acca that aligns with your goals.",
+    "BENEFITS_THREE": "User-Friendly Interface:",
+    "BENEFITS_THREE_DESC": "We’ve designed the Acca Builder to be intuitive and easy to use.",
+    "BENEFITS_FOUR": "Save Time and Increase Efficiency:",
+    "BENEFITS_FOUR_DESC": "The Acca Builder streamlines the process, saving you time and effort.",
+    "BENEFITS_FIVE": "Maximize Your Winnings:",
+    "BENEFITS_FIVE_DESC": "By combining multiple selections into one bet, the Acca Builder gives you the chance to win big with small stakes."
+  },
+  "LIVESCORES": {
+    "TITLE": "Live Scores & Results: Your Real-Time Sports Hub",
+    "DESCRIPTION": "Welcome to Betweysure's Live Scores page, the place to get the latest sports updates. Never miss a goal, basket, or point! We give you up-to-the-minute live scores and results for many sports, so you're always in the know.",
+    "BENEFIT":"Features & Benefits:",
+    "BENEFIT_ONE": "Real-Time Updates:",
+    "BENEFIT_ONE_DESC": "Feel the excitement as the game happens with real-time updates. Whether it's a close game or a big win, you'll know first.",
+    "BENEFIT_TWO": "Wide Sports Coverage:",
+    "BENEFIT_TWO_DESC": "From football and basketball to tennis and baseball, we've got it all. You can easily follow your favorite teams and leagues.",
+    "BENEFIT_THREE": "Easy-to-Use Interface:",
+    "BENEFIT_THREE_DESC": "Our simple design helps you find the scores you're looking for. You can filter by sport, league, or country and quickly get to the matches that matter.",
+    "BENEFIT_FOUR": "Detailed Match Info:",
+    "BENEFIT_FOUR_DESC": "See more than just the score! Get deep into the game with match stats, lineups, and key info that helps you understand the action better.",
+    "BENEFIT_FIVE": "Boost Your Betting Decisions:",
+    "BENEFIT_FIVE_DESC": "Make smarter bets with our real-time data. Track your bets, spot in-play opportunities, and stay on top of the game.",
+    "BENEFIT_SIX": "Stay Updated Anywhere:",
+    "BENEFIT_SIX_DESC": "Stay updated! Visit Betweysure for the latest live scores and results, and take your sports experience to the next level."
   }
 }

@@ -9,6 +9,7 @@ import { pricing } from "@/constants";
 export const metadata: Metadata = {
   title: pricing.title,
   description: pricing.description,
+  keywords: pricing.keywords,
 };
 
 export default function PricingPage() {

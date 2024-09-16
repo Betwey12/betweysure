@@ -10,12 +10,14 @@ const pageMetadata = {
   home: {
     title: "Free Football Betting Tips & Predictions Website - Betweysure",
     description:
-      "Betweysure is a platform that provides football predictions, tips, and analysis to help you win your bets. We provide surebet, football tips, basketball tips, and other sports tips.",
+      "Get accurate and reliable football betting tips and predictions for free at Betweysure. Increase your chances of winning with our expert analysis and insights.",
+    keywords: "Football Betting Tips & Predictions",
   },
   pricing: {
-    title: "Pricing - Betweysure",
+    title: "Accurate Betting Tips | Affordable Pricing Plans - Betweysure",
     description:
-      "Betweysure offers transparent pricing for its paid bundles. Subscribe now to get free curated bundle tips from your favourite leagues.",
+      "Get access to highly accurate betting tips and predictions at affordable prices. Our flexible plans cater to all levels of bettors. Explore Betweysure's pricing today.",
+    keywords: "accurate betting tips",
   },
   about: {
     title: "About Us - Betweysure",
@@ -27,9 +29,10 @@ const pageMetadata = {
     description: "Get in touch with us for any inquiries or feedback.",
   },
   livescores: {
-    title: "Live Scores - Betweysure",
+    title: "Live Scores & Results | Football, Basketball & More - Betweysure",
     description:
-      "Get the latest live scores from football, basketball, handball, rugby, baseball, and other sports.",
+      "Get real-time live scores and results for football, basketball, tennis, baseball, and more. Stay up-to-date with your favorite teams and leagues on Betweysure.",
+    keywords: "live scores, football, basketball, tennis, baseball",
   },
   leagues: {
     title: "View Popular Leagues - Betweysure",
@@ -59,9 +62,11 @@ const pageMetadata = {
       "Get the latest football trends, and previous performance of your favourite clubs on betweysure.",
   },
   acca: {
-    title: "Acca Builder - Betweysure",
+    title:
+      "Acca Builder: Build Winning Accumulators with Betweysure's Tips - Betweysure",
     description:
-      "Build your accumulator with the best football predictions for popular leagues. Get the best tips for today's matches with over 90% prediction accuracy on daily games upto 2 odds, as well as free betting tips and picks to help you gain an edge.",
+      "Create your accumulator with Betweysure's Acca Builder. Use AI-driven tips to select games, and customize your bets. Start building now!",
+    keywords: "acca builder accumulator",
   },
   auth: {
     title: "Get started - Betweysure",
@@ -88,6 +93,7 @@ export const {
   trends,
   auth,
   dashboard,
+  acca,
 } = pageMetadata;
 
 export const { email, phone, telegram, whatsapp, address } = contactInfo;
