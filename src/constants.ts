@@ -78,6 +78,22 @@ const pageMetadata = {
     description:
       "Get predictions, fund your betting wallet, upgrade your plan, purchase airtime or data and more.",
   },
+  yesterday: {
+    title: "Yesterday's Football Predictions & Results - Betweysure",
+    description:
+      "Looking for yesterday's football predictions and results? Betweysure provides expert analysis and insights into past matches to help you stay informed and refine your betting strategies.",
+  },
+  today: {
+    title: "Today's Football Predictions & Betting Tips - Betweysure",
+    description:
+      "Get the edge with Betweysure's expert today's football predictions! We analyze matches, offer betting tips, and provide insights to help you make informed decisions.",
+  },
+  tomorrow: {
+    title:
+      "Tomorrow's Football Predictions: In-Depth Analysis & Tips - Betweysure",
+    description:
+      "Get ahead of the game with Betweysure's detailed predictions for tomorrow's football matches. Our experts analyze key factors to provide you with valuable insights and betting tips.",
+  },
 };
 
 export const {
@@ -95,6 +111,9 @@ export const {
   auth,
   dashboard,
   acca,
+  yesterday,
+  today,
+  tomorrow,
 } = pageMetadata;
 
 export const { email, phone, telegram, whatsapp, address } = contactInfo;

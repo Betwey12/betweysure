@@ -95,7 +95,8 @@
     "TODAY": "Today",
     "FREE_FOOTBALL_PREDICTIONS": "Free Football Predictions",
     "TOMORROW": "Tomorrow",
-    "OTHER_SPORTS_PREDICTIONS": "Other Sports Predictions"
+    "OTHER_SPORTS_PREDICTIONS": "Other Sports Predictions",
+    "UPGRADE_DESCRIPTION": " Get even more value with our premium predictions and in-depth analysis. Upgrade today and unlock the full potential of your betting strategy!"
   },
   "WHY_BETWEYSURE": {
     "BUNDLES": "Bundles",
@@ -114,8 +115,8 @@
     "LEARN_MORE": "Learn More"
   },
   "HOME_ABOUT": {
-    "ABOUT_US": "About Us",
-    "ABOUT_US_DESC": "Betweysure is a leading prediction site for soccer/football enthusiasts who want to improve their betting performance. We offer over 90% prediction accuracy on daily games odds from 2 odds and above, as well as free betting tips and picks to help you gain an edge. Our soccer tipsters are experts in providing quality predictions every day, with a comprehensive breakdown and analysis of both Live and Upcoming Matches. This gives you a better chance of having a satisfying cash-out. \n Whether you are a beginner or a seasoned bettor, you will find Betweysure to be your ultimate destination for soccer prediction and football prediction. We provide you with Soccer predictions 24/7, covering all the major leagues and tournaments around the world. We are committed to helping you make smart decisions in the world of sports betting. Betweysure is not a sports betting site, but rather the best prediction site for online sports betting tips and predictions. Our mission is to give you free tips and advice every day, helping you as much as possible.",
+    "ABOUT_US": "About Betweysure: Your Trusted Source for Football Betting Tips",
+    "ABOUT_US_DESC": "Betweysure is a leading prediction site dedicated to providing free and accurate football betting tips and predictions. Our mission is to empower bettors of all levels with the knowledge and insights they need to make successful bets. \n We understand that the world of football betting can be overwhelming, with countless matches and markets to choose from. That's why we've assembled a team of expert tipsters who are passionate about the game and committed to delivering high-quality predictions. \n Our tipsters utilize a combination of statistical analysis, in-depth research, and their own football expertise to provide you with the most reliable predictions possible. We cover a wide range of leagues, from the top European competitions to lesser-known leagues around the world, ensuring that you have access to valuable insights no matter where your betting interests lie. \n At Betweysure, we believe that everyone should have access to quality football betting tips, regardless of their experience or budget. That's why we offer all our predictions completely free of charge. We're confident that our tips will help you make informed decisions and increase your chances of winning. \n Join the Betweysure community today and discover the difference that expert football betting tips and predictions can make.",
     "LEARN_MORE": "Learn More"
   },
   "BLOG_AND_NEWS": {
@@ -253,6 +254,16 @@
     "COUNTRIES": "Countries"
   },
   "LEAGUE_INFO": {
+      "TODAY_TITLE": "Today's Football Predictions: Expert Tips & Insights",
+      "TODAY_DESCRIPTION": "The world of football is constantly changing. We keep our predictions up-to-date with the latest news and developments, so you can stay ahead of the curve. Looking for the best bets today? Betweysure's team of experts has analyzed today's matches and provided their top predictions.  Whether you're a seasoned bettor or just starting out, our predictions and tips can help you make smarter bets and increase your chances of success.",
+      "YESTERDAY_TITLE": "Yesterday's Football Predictions: Expert Analysis & Results",
+      "YESTERDAY_DESCRIPTION": "Recap of Yesterday's Football Action: Get a comprehensive overview of yesterday's football matches, including final scores, key highlights, and notable upsets. Our team of experienced analysts breaks down yesterday's games, providing valuable insights into team performance, player form, and tactical decisions. Use our yesterday's predictions and results to inform your future betting decisions. Identify trends, spot potential value bets, and refine your strategies. Betweysure keeps you up-to-date with the latest football news and analysis. Check back regularly for daily predictions, tips, and in-depth match previews.",
+      "TOMORROW_TITLE": "Tomorrow's Football Predictions: Expert Insights for Smarter Bets",
+      "TOMORROW_DESCRIPTION": "Eager to know what tomorrow's matches hold? Our team of seasoned analysts has meticulously examined upcoming fixtures to bring you comprehensive predictions and betting tips. We go beyond simple predictions. Our analysis considers team form, head-to-head records, player injuries, and other crucial factors to give you a well-rounded view of each match. Whether you're interested in match outcomes, over/under goals, both teams to score, or more specialized markets, we have you covered. Our predictions cater to diverse betting preferences.  Gain an edge with our early insights into tomorrow's matches. Our predictions are available well in advance, allowing you to make informed decisions and potentially identify value bets before the odds shift. ",
+
+      "YESTERDAY_CALL_TO_ACTION": " Ready for today's action? Check out our \"Today's Football Predictions\" page for expert tips and insights on upcoming matches.",
+      "TODAY_CALL_TO_ACTION": "Ready to Place Your Bets? Check out our top picks for today and make informed decisions with Betweysure.",
+      "TOMORROW_CALL_TO_ACTION": "Don't Wait, Prepare for Tomorrow: Explore our expert predictions for tomorrow's matches and equip yourself with the knowledge to make smarter bets. Upgrade today and take your betting game to the next level.",
     "TITLE": "{league} Football Predictions and Tips",
     "DESCRIPTION": "View our tips, standings, and trends for {league}. Filter based on prediction and date, and click on the info icon to view detailed analysis of each prediction."
   },
@@ -285,7 +296,7 @@
   "FOOTBALL_TRENDS": {
     "TITLE": "Football Trends: Find Winning Tips",
     "DESCRIPTION": "Get an edge in your football bets with Betweysure’s trend analysis. We provide the latest info on team performances, helping you spot patterns and make better betting decisions.",
-    "ABOUT_TRENDS_ONE": "Understand Football Trends",
+    "ABOUT_TRENDS_ONE": "Understand Football Trends:",
     "ABOUT_TRENDS_ONE_DESC": "Football trends show how teams are currently performing and what to expect in the future. By looking at recent results, you can see which teams are winning, which are struggling, and make more informed bets.",
     "ABOUT_TRENDS_TWO": "Betweysure’s Trend Analysis:",
     "ABOUT_TRENDS_TWO_DESC": "At Betweysure, we follow the latest football trends in different leagues and teams. Our easy-to-read format shows you recent wins, losses, and draws so you can quickly understand how a team is doing.",

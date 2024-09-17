@@ -14,11 +14,11 @@ export default function useTrends({
       (prediction) => prediction.winner === "AWAY_TEAM"
     );
     const awayTotalGoals = match?.previous?.reduce(
-      (acc, curr) => acc + curr.ftAway,
+      (acc, curr) => acc + (curr.ftAway || 0),
       0
     );
     const homeTotalGoals = match?.previous?.reduce(
-      (acc, curr) => acc + curr.ftHome,
+      (acc, curr) => acc + (curr.ftHome || 0),
       0
     );
     const homeAvgGoals = Math.round(homeTotalGoals / match?.previous.length);
@@ -129,7 +129,7 @@ export default function useTrends({
 
   const trends = matchTrends.flatMap((match) => {
     const highestWinningTeam =
-      match?.homeTeam?.ftWins > match?.awayTeam?.ftWins
+      match?.homeTeam?.ftWins >= match?.awayTeam?.ftWins
         ? match?.homeTeam
         : match?.awayTeam;
     const highestOverTeam =
@@ -163,14 +163,6 @@ export default function useTrends({
         gameType: "games",
       },
       {
-        logo: highestOverTeam?.logo,
-        name: highestOverTeam?.name,
-        count: highestOverTeam?.over,
-        total: match?.matches,
-        type: "over",
-        gameType: "games",
-      },
-      {
         logo: match.homeTeam?.logo,
         name: match.homeTeam?.name,
         count: match.homeTeam?.consecutiveWins,
@@ -198,14 +190,30 @@ export default function useTrends({
         type: "wins",
         gameType: "half time games",
       },
-      {
-        logo: highestOverHt?.logo,
-        name: highestOverHt?.name,
-        count: highestOverHt?.over,
-        total: match?.matches,
-        type: "over",
-        gameType: "half time games",
-      },
+      ...(highestOverHt.over > 0
+        ? [
+            {
+              logo: highestOverHt?.logo,
+              name: highestOverHt?.name,
+              count: highestOverHt?.over,
+              total: match?.matches,
+              type: "over",
+              gameType: "half time games",
+            },
+          ]
+        : []),
+      ...(highestOverTeam.over > 0
+        ? [
+            {
+              logo: highestOverTeam?.logo,
+              name: highestOverTeam?.name,
+              count: highestOverTeam?.over,
+              total: match?.matches,
+              type: "over",
+              gameType: "games",
+            },
+          ]
+        : []),
       ...(highestWInStreak?.winStreak > 3
         ? [
             {
