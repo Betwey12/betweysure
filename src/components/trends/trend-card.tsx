@@ -43,9 +43,9 @@ export default function TrendCard({
       )}
       {type === "over" && (
         <p>
-          There have been
-          <span className="text-[#7400ff]">Over {count - 1}.5 goals</span>
-          in <span>{name}&apos;s</span> last
+          There have been{" "}
+          <span className="text-[#7400ff]">Over {count - 1}.5 goals</span> in{" "}
+          <span>{name}&apos;s</span> last{" "}
           <span className="text-red-500">{total}</span> {gameType}
         </p>
       )}

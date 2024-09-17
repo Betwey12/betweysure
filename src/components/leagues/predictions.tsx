@@ -42,6 +42,7 @@ export default function Predictions({
 }
 
 function BetMinerPredictions({ popularLeague, category }: PredictionsProps) {
+  const t = useTranslations("PREDICTIONS_TABLE");
   const {
     from,
     handlePagination,
@@ -106,6 +107,7 @@ function BetMinerPredictions({ popularLeague, category }: PredictionsProps) {
             handlePrediction={handlePrediction}
             paidTabs={footballPaidTabs}
           />
+          <p>{t("UPGRADE_DESCRIPTION")}</p>
         </div>
         <div className="flex flex-col gap-4">
           <DateWidget

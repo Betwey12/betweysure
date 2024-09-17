@@ -1,4 +1,5 @@
 import { capitalize, getDate } from "@/lib/utils";
+import { period } from "@/assets/data/data";
 import dayjs from "dayjs";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -16,29 +17,16 @@ export default function LeagueInfo({
   popularLeague,
 }: LeagueInfoProps) {
   const t = useTranslations("LEAGUE_INFO");
-  console.log(category, "category");
 
-  const dates: Record<string, string> = {
-    today: getDate("today"),
-    tomorrow: getDate("tomorrow"),
-    yesterday: getDate("yesterday"),
-  };
-  const date = dayjs(dates[`${category}`] ?? new Date()).format(
-    "dddd, MMMM DD, YYYY"
-  );
-
-  const titles: Record<string, string> = {
-    today: `Today's Football Predictions - ${capitalize(date)}`,
-    tomorrow: `Tomorrow's Football Predictions - ${capitalize(date)}`,
-    yesterday: `Yesterday's Football Predictions - ${capitalize(date)}`,
-    undefined: "Football Predictions",
-  };
+  const isPeriod = category && period.includes(category);
 
   return (
     <div className="mb-8 flex flex-col items-center">
       <div className="mb-6 text-center font-bold flex items-center gap-4 justify-center">
-        {titles[`${category}`] ? (
-          <h1 className="text-xl lg:text-2xl">{titles[`${category}`]}</h1>
+        {isPeriod ? (
+          <h1 className="text-3xl lg:text-5xl text-center">
+            {t(`${category?.toUpperCase()}_TITLE` as any)}
+          </h1>
         ) : (
           popularLeague && (
             <>
@@ -56,12 +44,8 @@ export default function LeagueInfo({
           )
         )}
       </div>
-      <p className="text-center lg:max-w-[600px]">
-        {t("DESCRIPTION", {
-          league: popularLeague?.name
-            ? popularLeague?.name
-            : `each league in ${category}'s games`,
-        })}
+      <p className="text-center max-w-5xl">
+        {t(`${category?.toUpperCase()}_DESCRIPTION` as any)}
       </p>
     </div>
   );
