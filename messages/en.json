@@ -254,18 +254,27 @@
     "COUNTRIES": "Countries"
   },
   "LEAGUE_INFO": {
-      "TODAY_TITLE": "Today's Football Predictions: Expert Tips & Insights",
-      "TODAY_DESCRIPTION": "The world of football is constantly changing. We keep our predictions up-to-date with the latest news and developments, so you can stay ahead of the curve. Looking for the best bets today? Betweysure's team of experts has analyzed today's matches and provided their top predictions.  Whether you're a seasoned bettor or just starting out, our predictions and tips can help you make smarter bets and increase your chances of success.",
-      "YESTERDAY_TITLE": "Yesterday's Football Predictions: Expert Analysis & Results",
-      "YESTERDAY_DESCRIPTION": "Recap of Yesterday's Football Action: Get a comprehensive overview of yesterday's football matches, including final scores, key highlights, and notable upsets. Our team of experienced analysts breaks down yesterday's games, providing valuable insights into team performance, player form, and tactical decisions. Use our yesterday's predictions and results to inform your future betting decisions. Identify trends, spot potential value bets, and refine your strategies. Betweysure keeps you up-to-date with the latest football news and analysis. Check back regularly for daily predictions, tips, and in-depth match previews.",
-      "TOMORROW_TITLE": "Tomorrow's Football Predictions: Expert Insights for Smarter Bets",
-      "TOMORROW_DESCRIPTION": "Eager to know what tomorrow's matches hold? Our team of seasoned analysts has meticulously examined upcoming fixtures to bring you comprehensive predictions and betting tips. We go beyond simple predictions. Our analysis considers team form, head-to-head records, player injuries, and other crucial factors to give you a well-rounded view of each match. Whether you're interested in match outcomes, over/under goals, both teams to score, or more specialized markets, we have you covered. Our predictions cater to diverse betting preferences.  Gain an edge with our early insights into tomorrow's matches. Our predictions are available well in advance, allowing you to make informed decisions and potentially identify value bets before the odds shift. ",
+    "TODAY_TITLE": "Today's Football Predictions: Expert Tips & Insights",
+    "TODAY_DESCRIPTION": "The world of football is constantly changing. We keep our predictions up-to-date with the latest news and developments, so you can stay ahead of the curve. Looking for the best bets today? Betweysure's team of experts has analyzed today's matches and provided their top predictions.  Whether you're a seasoned bettor or just starting out, our predictions and tips can help you make smarter bets and increase your chances of success.",
+    "YESTERDAY_TITLE": "Yesterday's Football Predictions: Expert Analysis & Results",
+    "YESTERDAY_DESCRIPTION": "Recap of Yesterday's Football Action: Get a comprehensive overview of yesterday's football matches, including final scores, key highlights, and notable upsets. Our team of experienced analysts breaks down yesterday's games, providing valuable insights into team performance, player form, and tactical decisions. Use our yesterday's predictions and results to inform your future betting decisions. Identify trends, spot potential value bets, and refine your strategies. Betweysure keeps you up-to-date with the latest football news and analysis. Check back regularly for daily predictions, tips, and in-depth match previews.",
+    "TOMORROW_TITLE": "Tomorrow's Football Predictions: Expert Insights for Smarter Bets",
+    "TOMORROW_DESCRIPTION": "Eager to know what tomorrow's matches hold? Our team of seasoned analysts has meticulously examined upcoming fixtures to bring you comprehensive predictions and betting tips. We go beyond simple predictions. Our analysis considers team form, head-to-head records, player injuries, and other crucial factors to give you a well-rounded view of each match. Whether you're interested in match outcomes, over/under goals, both teams to score, or more specialized markets, we have you covered. Our predictions cater to diverse betting preferences.  Gain an edge with our early insights into tomorrow's matches. Our predictions are available well in advance, allowing you to make informed decisions and potentially identify value bets before the odds shift. ",
 
-      "YESTERDAY_CALL_TO_ACTION": " Ready for today's action? Check out our \"Today's Football Predictions\" page for expert tips and insights on upcoming matches.",
-      "TODAY_CALL_TO_ACTION": "Ready to Place Your Bets? Check out our top picks for today and make informed decisions with Betweysure.",
-      "TOMORROW_CALL_TO_ACTION": "Don't Wait, Prepare for Tomorrow: Explore our expert predictions for tomorrow's matches and equip yourself with the knowledge to make smarter bets. Upgrade today and take your betting game to the next level.",
+    "UEFA_CHAMPIONS_LEAGUE_CALL_TO_ACTION": "Boost your Euro Championship betting with our detailed match previews, expert strategies, and exclusive predictions. Upgrade your Betweysure membership today!",
+    "YESTERDAY_CALL_TO_ACTION": " Ready for today's action? Check out our \"Today's Football Predictions\" page for expert tips and insights on upcoming matches.",
+    "TODAY_CALL_TO_ACTION": "Ready to Place Your Bets? Check out our top picks for today and make informed decisions with Betweysure.",
+    "TOMORROW_CALL_TO_ACTION": "Don't Wait, Prepare for Tomorrow: Explore our expert predictions for tomorrow's matches and equip yourself with the knowledge to make smarter bets. Upgrade today and take your betting game to the next level.",
+    "UEFA_CHAMPIONS_LEAGUE_TITLE": "Euro Championship Predictions: Dominate the Tournament",
+    "UEFA_CHAMPIONS_LEAGUE_DESCRIPTION": "The UEFA European Championship, or the Euros, is a major football tournament held every four years, featuring Europe’s top national teams. It’s one of the biggest and most-watched events in sports. Our team of experienced football analysts at Betweysure carefully studies each Euro match to bring you accurate predictions and helpful betting tips.",
+    "TODAY_CTA_TITLE": "Today's Football Predictions",
+    "TOMORROW_CTA_TITLE": "Tomorrow's Football Predictions",
+    "YESTERDAY_CTA_TITLE": "Yesterday's Football Predictions",
+    "UEFA_CHAMPIONS_LEAGUE_CTA_TITLE": "Get Premium Euro Insights",
+    "DEFAULT_CTA_TITLE": "Get full access",
     "TITLE": "{league} Football Predictions and Tips",
-    "DESCRIPTION": "View our tips, standings, and trends for {league}. Filter based on prediction and date, and click on the info icon to view detailed analysis of each prediction."
+    "DESCRIPTION": "View our tips, standings, and trends for {league}. Filter based on prediction and date, and click on the info icon to view detailed analysis of each prediction.",
+    "CALL_TO_ACTION": "Ready to explore other leagues? Visit the dashboard to view all available leagues and predictions. Upgrade to access premium tips and exclusive content."
   },
   "STANDINGS": {
     "DESCRIPTION": "Here is the latest {league} standings table for the {year}/{plusYear} season. View the standings table for the top teams, their points, and games played.",
@@ -453,5 +462,15 @@
     "BENEFIT_FIVE_DESC": "Make smarter bets with our real-time data. Track your bets, spot in-play opportunities, and stay on top of the game.",
     "BENEFIT_SIX": "Stay Updated Anywhere:",
     "BENEFIT_SIX_DESC": "Stay updated! Visit Betweysure for the latest live scores and results, and take your sports experience to the next level."
+  },
+  "LEAGUE_EXPLAINED": {
+    "UEFA_CHAMPIONS_LEAGUE_TITLE_P1": "A Storied Football Tournament: ",
+    "UEFA_CHAMPIONS_LEAGUE_DESC_P1": "Since its start in 1960, the Euros have brought fans some of the most thrilling moments in football. From unforgettable goals to intense penalty shootouts, it’s always full of excitement.",
+    "UEFA_CHAMPIONS_LEAGUE_TITLE_P2": "Finding Value in Every Bet:",
+    "UEFA_CHAMPIONS_LEAGUE_DESC_P2": "We don’t just predict winners; we cover different betting options like total goals, both teams to score, and correct score. Our insights help you spot valuable betting opportunities.",
+    "UEFA_CHAMPIONS_LEAGUE_TITLE_P3": "Complete Coverage:",
+    "UEFA_CHAMPIONS_LEAGUE_DESC_P3": " From the group stages to the final match, Betweysure gives you full coverage of the Euro Championship. Our predictions and tips keep you informed every step of the way.",
+    "UEFA_CHAMPIONS_LEAGUE_TITLE_P4": "Maximize Your Betting Opportunities:",
+    "UEFA_CHAMPIONS_LEAGUE_DESC_P4": "Don’t miss out on the excitement of the Euro Championship. Join Betweysure and get the tips and insights you need to place confident, informed bets."
   }
 }
