@@ -94,6 +94,22 @@ const pageMetadata = {
     description:
       "Get ahead of the game with Betweysure's detailed predictions for tomorrow's football matches. Our experts analyze key factors to provide you with valuable insights and betting tips.",
   },
+  euroChampionship: {
+    title: "Euro Championship Predictions & Expert Betting Tips - Betweysure",
+    description:
+      "Stay ahead in the Euro Championship with Betweysure’s expert predictions and betting tips. We break down matches, analyze trends, and offer key insights for smarter bets.",
+  },
+  englandPremierLeague: {
+    title:
+      "Premier League Predictions & Betting Tips: Expert Analysis - Betweysure",
+    description:
+      "Stay ahead in the Premier League with Betweysure's expert predictions and betting tips. We analyze matches, track trends, and provide insights to help you make informed wagers.",
+  },
+  uefaEuropaLeague: {
+    title: "UEFA Europa League Predictions & Expert Betting Tips - Betweysure",
+    description:
+      "Enhance your Europa League betting with Betweysure. We offer expert predictions, insightful analysis, and valuable tips for upcoming UEL matches.",
+  },
   uefaChampionsLeague: {
     title:
       "UEFA Champions League Predictions & Expert Betting Tips - Betweysure",
@@ -177,6 +193,7 @@ export const {
   today,
   tomorrow,
   uefaChampionsLeague,
+  euroChampionship,
   copaAmerica,
   uefaSuperCup,
   spainPrimeiraLiga,
@@ -188,6 +205,8 @@ export const {
   eredivisie,
   primeiraLiga,
   italianSerieA,
+  englandPremierLeague,
+  uefaEuropaLeague,
 } = pageMetadata;
 
 export const { email, phone, telegram, whatsapp, address } = contactInfo;

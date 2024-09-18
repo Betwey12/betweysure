@@ -6,7 +6,7 @@ import {
   yesterday,
   today,
   tomorrow,
-  uefaChampionsLeague,
+  euroChampionship,
   leagues,
   uefaSuperCup,
   copaAmerica,
@@ -18,6 +18,9 @@ import {
   bundesliga,
   italianSerieA,
   ligue1,
+  uefaChampionsLeague,
+  uefaEuropaLeague,
+  englandPremierLeague,
 } from "@/constants";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -43,9 +46,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     today,
     tomorrow,
     "uefa-champions-league": uefaChampionsLeague,
+    "euro-championship": euroChampionship,
     "uefa-super-cup": uefaSuperCup,
     "copa-america": copaAmerica,
-    "spain-primeira-liga": spainPrimeiraLiga,
+    "spain-primera-liga": spainPrimeiraLiga,
     "primeira-liga": primeiraLiga,
     eredivisie: eredivisie,
     "pro-league": proLeague,
@@ -53,6 +57,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     bundesliga: bundesliga,
     "italian-serie-a": italianSerieA,
     "ligue-1": ligue1,
+    "england-premier-league": englandPremierLeague,
+    "uefa-europa-league": uefaEuropaLeague,
   };
   const meta = categories[category];
 
