@@ -403,20 +403,17 @@ export const leagueList: Record<string, TPopularLeague[]> = {
     },
     {
       name: "Pro League",
-      logo: "https://media.api-sports.io/football/leagues/140.png",
-
-      apiFootballId: 140,
+      logo: "https://media.api-sports.io/football/leagues/144.png",
+      apiFootballId: 144,
     },
     {
       name: "La Liga",
       logo: "https://media.api-sports.io/football/leagues/140.png",
-
       apiFootballId: 140,
     },
     {
       name: "Bundesliga",
       logo: "https://media.api-sports.io/football/leagues/78.png",
-
       apiFootballId: 78,
     },
     {
@@ -426,8 +423,7 @@ export const leagueList: Record<string, TPopularLeague[]> = {
     },
     {
       name: "Ligue 1",
-      logo: "https://media.api-sports.io/football/leagues614.png",
-
+      logo: "https://media.api-sports.io/football/leagues/61.png",
       apiFootballId: 61,
     },
     {
