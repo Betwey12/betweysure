@@ -2,10 +2,27 @@ import type { Metadata } from "next";
 import LeaguePredictions from "@/components/leagues/league-predictions";
 import OtherPagesHero from "@/components/shared/other-pages-hero";
 import SelectedGames from "@/components/ui/selected-games";
-import { yesterday, today, tomorrow } from "@/constants";
+import {
+  yesterday,
+  today,
+  tomorrow,
+  uefaChampionsLeague,
+  leagues,
+  uefaSuperCup,
+  copaAmerica,
+  primeiraLiga,
+  spainPrimeiraLiga,
+  eredivisie,
+  proLeague,
+  laliga,
+  bundesliga,
+  italianSerieA,
+  ligue1,
+} from "@/constants";
 import { useTranslations } from "next-intl";
-import KeywordListItem from "@/components/ui/keyword-list-item";
 import Link from "next/link";
+import LeaguesExplained from "@/components/leagues/leagues-explained";
+import { period } from "@/assets/data/data";
 
 type Props = {
   params: { category: string };
@@ -25,11 +42,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     yesterday,
     today,
     tomorrow,
+    "uefa-champions-league": uefaChampionsLeague,
+    "uefa-super-cup": uefaSuperCup,
+    "copa-america": copaAmerica,
+    "spain-primeira-liga": spainPrimeiraLiga,
+    "primeira-liga": primeiraLiga,
+    eredivisie: eredivisie,
+    "pro-league": proLeague,
+    "la-liga": laliga,
+    bundesliga: bundesliga,
+    "italian-serie-a": italianSerieA,
+    "ligue-1": ligue1,
   };
   const meta = categories[category];
 
   return {
-    title: meta.title,
+    title: meta?.title || leagues.title,
   };
 }
 
@@ -41,21 +69,30 @@ export default function PopularPage({
   const category = (params["category"] || "") as string;
   const tab = (params["tab"] || "") as string;
   const { t, cta } = usePopularLeagues(category);
+  const formattedCategory = category?.toUpperCase().replace(/-/g, "_");
+  const isPeriod = category && period.includes(category);
 
   return (
     <>
       <OtherPagesHero />
       <LeaguePredictions category={category} tab={tab} />
-      <div className="px-4 md:px-10 lg:px-20">
+      <div className="px-4 md:px-10 lg:px-20 flex flex-col gap-4 lg:gap-6">
+        {!isPeriod && <LeaguesExplained category={category} />}
         <div className="dark:bg-blue-one  rounded p-4 dark:text-white flex flex-col lg:flex-row lg:py-8 lg:px-6 gap-4 lg:items-center justify-between">
           <p className="max-w-lg">
-            {t(`${category.toUpperCase()}_CALL_TO_ACTION` as any)}
+            {t(`${formattedCategory}_CALL_TO_ACTION` as any) !==
+            `LEAGUE_INFO.${formattedCategory}_CALL_TO_ACTION`
+              ? t(`${formattedCategory}_CALL_TO_ACTION` as any)
+              : t("CALL_TO_ACTION", { league: formattedCategory })}
           </p>
           <Link
             href={cta.link}
-            className="text-center bg-cyan p-4 rounded font-medium"
+            className="text-center bg-cyan  py-3 px-4 rounded font-medium"
           >
-            {cta.text}
+            {t(`${formattedCategory}_CTA_TITLE` as any) !==
+            `LEAGUE_INFO.${formattedCategory}_CTA_TITLE`
+              ? t(`${formattedCategory}_CTA_TITLE` as any)
+              : t("DEFAULT_CTA_TITLE")}
           </Link>
         </div>
       </div>
@@ -70,26 +107,24 @@ function usePopularLeagues(category: string) {
   const seoCTALinkss: Record<
     string,
     {
-      text: string;
       link: string;
     }
   > = {
     yesterday: {
-      text: "Today's Football Predictions",
       link: "/popular/today/predictions",
     },
     today: {
-      text: "Today's Football Predictions",
       link: "/popular/today/predictions",
     },
     tomorrow: {
-      text: "Tomorrow's Football Predictions",
       link: "/popular/tomorrow/predictions",
     },
   };
 
   return {
     t,
-    cta: seoCTALinkss[category] || "",
+    cta: seoCTALinkss[category] || {
+      link: "/dashboard",
+    },
   };
 }

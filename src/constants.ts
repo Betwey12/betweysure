@@ -94,6 +94,68 @@ const pageMetadata = {
     description:
       "Get ahead of the game with Betweysure's detailed predictions for tomorrow's football matches. Our experts analyze key factors to provide you with valuable insights and betting tips.",
   },
+  uefaChampionsLeague: {
+    title:
+      "UEFA Champions League Predictions & Expert Betting Tips - Betweysure",
+    description:
+      "Elevate your Champions League betting with Betweysure. Get expert predictions, in-depth analysis, and valuable tips for upcoming UCL matches.",
+  },
+  copaAmerica: {
+    title: "Copa America Predictions & Expert Betting Tips - Betweysure",
+    description:
+      "Get the inside scoop on Copa America with Betweysure's expert predictions and betting tips. We analyze matches, track trends, and provide valuable insights for informed wagers.",
+  },
+  uefaSuperCup: {
+    title: "UEFA Super Cup Predictions & Expert Betting Tips - Betweysure",
+    description:
+      "Get the edge in the UEFA Super Cup with Betweysure's expert predictions and analysis. We delve into the matchup, track trends, and provide valuable insights for informed wagers.",
+  },
+  spainPrimeiraLiga: {
+    title: "La Liga Predictions & Expert Betting Tips - Betweysure",
+    description:
+      "Enhance your La Liga betting with Betweysure. We provide expert predictions, in-depth analysis, and valuable tips for upcoming matches in Spain's top football league.",
+  },
+  primeiraLiga: {
+    title: "Primeira Liga Predictions & Expert Betting Tips - Betweysure",
+    description:
+      "Elevate your Primeira Liga betting with Betweysure's in-depth predictions and expert analysis. We cover matches, track trends, and provide valuable insights for informed wagers.",
+  },
+  eredivisie: {
+    title: "Eredivisie Predictions & Expert Betting Tips - Betweysure",
+    description:
+      "Get the edge in the Eredivisie with Betweysure's expert predictions and betting tips. We analyze matches, track trends, and provide valuable insights to enhance your Dutch football wagers.",
+  },
+  ligue1: {
+    title: "Ligue 1 Predictions & Expert Betting Tips - Betweysure",
+    description:
+      "Enhance your Ligue 1 betting with Betweysure. We provide expert predictions, in-depth analysis, and valuable tips for upcoming matches in France's top football league.",
+  },
+  serieA: {
+    title: "Serie A Predictions & Expert Betting Tips - Betweysure",
+    description:
+      "Enhance your Serie A betting with Betweysure's expert predictions and analysis. We delve into matches, track trends, and provide valuable insights for informed wagers on Italy's top football league.",
+  },
+  bundesliga: {
+    title: "Bundesliga Predictions & Expert Betting Tips - Betweysure",
+    description:
+      "Enhance your Bundesliga betting with Betweysure. We provide expert predictions, in-depth analysis, and valuable tips for upcoming matches in Germany's top football league.",
+  },
+  laliga: {
+    title: "La Liga Predictions & Expert Betting Tips - Betweysure",
+    description:
+      "Enhance your La Liga betting with Betweysure's expert predictions and analysis. We delve into matches, track trends, and provide valuable insights for informed wagers.",
+  },
+  proLeague: {
+    title:
+      "Pro League Predictions & Betting Tips: Expert Analysis - Betweysure",
+    description:
+      "Elevate your Pro League betting with Betweysure. We provide expert predictions, in-depth analysis, and valuable tips for upcoming matches.",
+  },
+  italianSerieA: {
+    title: "Serie A Predictions & Expert Betting Tips - Betweysure",
+    description:
+      "Enhance your Serie A betting with Betweysure's expert predictions and analysis. We delve into matches, track trends, and provide valuable insights for informed wagers on Italy's top football league.",
+  },
 };
 
 export const {
@@ -114,6 +176,18 @@ export const {
   yesterday,
   today,
   tomorrow,
+  uefaChampionsLeague,
+  copaAmerica,
+  uefaSuperCup,
+  spainPrimeiraLiga,
+  ligue1,
+  serieA,
+  bundesliga,
+  laliga,
+  proLeague,
+  eredivisie,
+  primeiraLiga,
+  italianSerieA,
 } = pageMetadata;
 
 export const { email, phone, telegram, whatsapp, address } = contactInfo;
