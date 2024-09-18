@@ -1,7 +1,8 @@
 "use client";
 
 import { useAuth } from "@/hooks/useAuth";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 interface NonAuthedLayoutProps {
   children: React.ReactNode;
@@ -9,10 +10,13 @@ interface NonAuthedLayoutProps {
 
 export default function NonAuthedLayout({ children }: NonAuthedLayoutProps) {
   const { user } = useAuth();
+  const router = useRouter();
 
-  if (user && user?.emailVerified) {
-    redirect("/dashboard");
-  }
+  useEffect(() => {
+    if (user && user?.emailVerified) {
+      router.push("/dashboard");
+    }
+  }, [user, router]);
 
   return <>{children}</>;
 }
