@@ -149,37 +149,37 @@ const navlinks = [
     dropdown: [
       {
         name: "All Predictions",
-        path: "football-predictions?country=all",
+        path: "/dashboard/football-predictions?country=all",
         icon: championsBall,
       },
       {
         name: "England",
-        path: "football-predictions?country=england",
+        path: "/dashboard/football-predictions?country=england",
         icon: englandFlag,
       },
       {
         name: "Spain",
-        path: "football-predictions?country=spain",
+        path: "/dashboard/football-predictions?country=spain",
         icon: spanishFlag,
       },
       {
         name: "Italy",
-        path: "football-predictions?country=italy",
+        path: "/dashboard/football-predictions?country=italy",
         icon: italianFlag,
       },
       {
         name: "Germany",
-        path: "football-predictions?country=germany",
+        path: "/dashboard/football-predictions?country=germany",
         icon: germanFlag,
       },
       {
         name: "France",
-        path: "football-predictions?country=france",
+        path: "/dashboard/football-predictions?country=france",
         icon: frenchFlag,
       },
       {
         name: "Europe",
-        path: "football-predictions?country=europe",
+        path: "/dashboard/football-predictions?country=europe",
         icon: europeFlag,
       },
     ],
@@ -190,22 +190,22 @@ const navlinks = [
     dropdown: [
       {
         name: "Basketball",
-        path: "other-sports?sport=basketball",
+        path: "/dashboard/other-sports?sport=basketball",
         icon: <BasketballIcon className="text-[#664136]" />,
       },
       {
         name: "Tennis",
-        path: "other-sports?sport=tennis",
+        path: "/dashboard/other-sports?sport=tennis",
         icon: <TennisIcon className="text-[#6d9b00]" />,
       },
       {
         name: "Ice Hockey",
-        path: "other-sports?sport=ice hockey",
+        path: "/dashboard/other-sports?sport=ice hockey",
         icon: <FaHockeyPuck className="text-[#ff8560]" />,
       },
       {
         name: "Baseball",
-        path: "other-sports?sport=baseball",
+        path: "/dashboard/other-sports?sport=baseball",
         icon: <BaseballIcon className="text-[#999]" />,
       },
     ],
@@ -216,19 +216,19 @@ const navlinks = [
     dropdown: [
       {
         name: "Football",
-        path: "free-predictions?country=all",
+        path: "/dashboard/free-predictions?country=all",
         icon: <FootBallIcon />,
       },
       {
         name: "Other Sports",
-        path: "other-sports?sport=basketball",
+        path: "/dashboard/other-sports?sport=basketball",
         icon: <BasketballIcon />,
       },
     ],
   },
   {
     name: "Buy plan",
-    path: "buy-plan",
+    path: "/dashboard/buy-plan",
     icon: <BundlesIcon />,
   },
   {
@@ -240,7 +240,7 @@ const navlinks = [
   {
     name: "Bet Offers",
     icon: <PercentIcon />,
-    path: "bet-offers",
+    path: "/dashboard/bet-offers",
   },
   {
     name: "Bills Payment",
