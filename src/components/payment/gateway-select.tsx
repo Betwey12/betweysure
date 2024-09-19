@@ -52,11 +52,11 @@ export default function GatewaySelect() {
     currency: availableCurrency,
     planCode:
       paystackPlanCodes[
-        `${duration}-${planName}` as keyof typeof paystackPlanCodes
+        `${planName}-${duration}` as keyof typeof paystackPlanCodes
       ],
     flutterwavePlanCode:
       flutterwavePlanCodes[
-        `${duration}-${planName}` as keyof typeof flutterwavePlanCodes
+        `${planName}-${duration}` as keyof typeof flutterwavePlanCodes
       ],
   });
 
