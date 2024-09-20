@@ -7,20 +7,21 @@ import { HTTPRequest } from "@/api";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { useParams } from "next/navigation";
-import SideNav from "./sidnav";
+import SideNav from "./sidenav";
 import DashboardNav from "./top-nav";
 import { useAuth } from "@/hooks/useAuth";
-import { redirect } from "next/navigation";
 import { FaSpinner } from "react-icons/fa";
 import JoyRide from "./joy-ride";
 import Modal from "../shared/modal";
 import NotificationPopup from "./notification-popup";
+import { useRouter } from "next/navigation";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
 }
 
 export default function DashboardWrapper({ children }: DashboardLayoutProps) {
+  const router = useRouter();
   const [canRequestPermission, setCanRequestPermission] = useState(false);
   const searchParams = useParams<{ tour: string }>();
   const { user, isLoading } = useGetUser();
@@ -106,18 +107,20 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
       });
   }
 
+  useEffect(() => {
+    if (!loggedInUser) router.push("/auth/login");
+
+    if (loggedInUser && !isVerified) router.push("/auth/verify-email");
+
+    if (!hasPhone && loggedInUser) router.push("/auth/complete-profile");
+  }, [hasPhone, isVerified, loggedInUser, router]);
+
   if (loading)
     return (
       <div className="bg-gray-light min-h-screen flex flex-col justify-center items-center h-full dark:bg-blue-one dark:text-white">
         <FaSpinner className="animate-spin" />
       </div>
     );
-
-  if (!loggedInUser) redirect("/auth/login");
-
-  if (loggedInUser && !isVerified) redirect("/auth/verify-email");
-
-  if (!hasPhone && loggedInUser) redirect("/auth/complete-profile");
 
   return (
     <div className="flex flex-col h-screen lg:flex-row w-full overflow-hidden">

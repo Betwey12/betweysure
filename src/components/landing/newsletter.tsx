@@ -17,7 +17,7 @@ export default function NewsLetter() {
           {t("SUBSCRIBE_TO_OUR_NEWSLETTER_DESC")}
         </p>
       </div>
-      <form action="" className="lg:self-end">
+      <form className="lg:self-end">
         <fieldset className="flex">
           <input
             type="text"

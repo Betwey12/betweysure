@@ -33,7 +33,7 @@ import {
   TennisIcon,
 } from "../icons";
 
-const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 interface SideNavProps {
   setShowSideNav?: React.Dispatch<React.SetStateAction<boolean>>;

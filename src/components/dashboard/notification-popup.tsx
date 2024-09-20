@@ -34,7 +34,7 @@ export default function NotificationPopup({
         </button>
         <button
           onClick={handleNotificationSubscription}
-          className="bg-cyan px-6 py-2 rounded font-semibold hover:bg-cyan/80"
+          className="bg-cyan text-white px-6 py-2 rounded font-semibold hover:bg-cyan/80"
         >
           {t("ALLOW")}
         </button>

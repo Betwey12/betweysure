@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 import ToggleTheme from "../ui/toggle-theme";
 import Link from "next/link";
 import Image from "next/image";
-import SideNav from "./sidnav";
+import SideNav from "./sidenav";
 import { useAuth } from "@/hooks/useAuth";
 import useHandleLogout from "@/hooks/useHandleLogout";
 
@@ -115,7 +115,7 @@ export default function DashboardNav() {
           >
             <FaBell />
             {notifications?.length > 0 && (
-              <span className="bg-red-500 animate-pulse w-3 h-3 absolute -top-2 -right-1 rounded-full text-[10px] flex items-center justify-center">
+              <span className="bg-red-500 text-white animate-pulse w-3 h-3 absolute -top-2 -right-1 rounded-full text-[10px] flex items-center justify-center">
                 {notifications.length}
               </span>
             )}

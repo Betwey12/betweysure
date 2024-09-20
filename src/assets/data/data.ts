@@ -1892,3 +1892,11 @@ export const otherSPortsWorldLeagues = [
   "world",
   "challenger",
 ];
+
+export const popularPredictionstabs = [
+  "standings",
+  "trends",
+  "predictions",
+  "form",
+  "fixtures",
+];

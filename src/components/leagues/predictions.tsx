@@ -138,7 +138,7 @@ function BetMinerPredictions({ popularLeague, category }: PredictionsProps) {
         </div>
       </div>
 
-      <div className="w-full flex flex-col my-10">
+      <div className="w-full flex flex-col my-10 border rounded dark:border-0 border-gray-two">
         {showLive ? (
           <LivePredictions
             livePredictions={livePredictions}
