@@ -1,6 +1,10 @@
 "use client";
 import { HTTPRequest } from "@/api";
-import { period, TPopularLeague } from "@/assets/data/data";
+import {
+  period,
+  popularPredictionstabs,
+  TPopularLeague,
+} from "@/assets/data/data";
 import { cn } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
@@ -28,7 +32,6 @@ export default function ViewLeague({
   });
 
   const isPeriod = category && period.includes(category);
-  const tabs = ["standings", "trends", "predictions", "form", "fixtures"];
 
   const fixtures = leagueResponse?.data?.fixtures?.response;
   const standings = leagueResponse?.data.standings?.response;
@@ -37,7 +40,7 @@ export default function ViewLeague({
     <>
       {!isPeriod && (
         <div className="grid grid-cols-3 lg:flex items-center gap-1 mb-10">
-          {tabs.map((tab) => (
+          {popularPredictionstabs.map((tab) => (
             <Link
               key={tab}
               href={`/popular/${category}/${tab}`}

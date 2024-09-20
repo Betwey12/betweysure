@@ -11,7 +11,7 @@ import { auth } from "@/firebase/config";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
-import { FaCheck, FaEye, FaEyeSlash, FaSpinner } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 import Link from "next/link";
 import Or from "../ui/or";
 import useGoogleWithCaptcha from "@/hooks/useGoogleWithCaptcha";
@@ -91,7 +91,6 @@ export default function LoginForm() {
   return (
     <>
       <form
-        action=""
         className="flex flex-col w-full gap-6 mt-10"
         onSubmit={handleSubmit(onSubmit)}
       >

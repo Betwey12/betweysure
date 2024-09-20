@@ -11,7 +11,6 @@ import { updateEmail } from "firebase/auth";
 import { useAuth } from "@/hooks/useAuth";
 import { cn } from "@/lib/utils";
 import PhoneInput from "../ui/phone-input";
-import { Button } from "../ui/button";
 import { FaSpinner } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import LoadingButton from "../ui/loading-button";
@@ -91,7 +90,6 @@ export default function CompleteProfileForm() {
     <FaSpinner className="animate-spin" />
   ) : (
     <form
-      action=""
       className="flex items-center w-full gap-4 max-w-sm justify-center flex-col mt-6"
       onSubmit={handleSubmit(onSubmit)}
     >

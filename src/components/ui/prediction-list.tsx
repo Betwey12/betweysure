@@ -96,7 +96,7 @@ export function PredictionList({
   }
 
   return (
-    <div className="grid grid-cols-[30px_minmax(100px,_1fr)_100px_30px] lg:grid-cols-6 text-xs py-2 px-4 lg:px-6 rounded-lg text-white bg-white border-b border-gray-two dark:bg-blue-two dark:border-0">
+    <div className="grid grid-cols-[30px_minmax(100px,_1fr)_100px_30px] lg:grid-cols-6 text-xs py-2 px-4 lg:px-6 rounded-lg dark:text-white bg-white border-b border-gray-two dark:bg-blue-two dark:border-0">
       <button
         aria-label="click to view more"
         className="flex items-center gap-2 disabled:opacity-50 text-left"
