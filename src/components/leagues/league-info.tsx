@@ -20,12 +20,13 @@ export default function LeagueInfo({
 
   const isPeriod = category && period.includes(category);
   const formatCategory = category?.toUpperCase()?.replace(/-/g, "_");
+  console.log(popularLeague?.logo);
 
   return (
     <div className="mb-8 flex flex-col items-center">
-      <div className="mb-6 text-center font-bold flex items-center gap-4 justify-center">
+      <div className="mb-6 text-center font-bold flex flex-col lg:flex-row items-center gap-2 lg:gap-4 justify-center">
         {isPeriod ? (
-          <h1 className="text-3xl lg:text-5xl text-center">
+          <h1 className="lg:text-4xl text-3xl text-center">
             {t(`${formatCategory}_TITLE` as any)}
           </h1>
         ) : (
@@ -36,9 +37,9 @@ export default function LeagueInfo({
                 height={40}
                 src={popularLeague?.logo}
                 alt="logo"
-                className="w-10 h-10 bg-white rounded-full object-contain"
+                className="w-10 h-10 bg-white text-blue-one rounded-full object-contain"
               />
-              <h1 className="text-xl lg:text-2xl">
+              <h1 className="lg:text-4xl text-3xl text-center">
                 {t(`${formatCategory}_TITLE` as any) !==
                 `LEAGUE_INFO.${formatCategory}_TITLE`
                   ? t(`${formatCategory}_TITLE` as any)

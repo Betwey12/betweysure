@@ -59,7 +59,7 @@ export default function AuthNavBar() {
         ))}
         {user && (
           <Button
-            className="text-center gap-2 font-semibold"
+            className="text-center gap-2 font-semibold text-white"
             onClick={handleLogout}
           >
             <IoMdLogOut className="" />
@@ -70,7 +70,7 @@ export default function AuthNavBar() {
         <ToggleTheme />
       </div>
       <Button
-        className="lg:hidden text-inherit p-0 text-2xl dark:text-white"
+        className="lg:hidden bg-transparent text-inherit p-0 text-2xl dark:text-white"
         onClick={() => setIsMenuOpen((prev) => !prev)}
       >
         {isMenuOpen ? <FaTimes /> : <IoMdMenu />}
