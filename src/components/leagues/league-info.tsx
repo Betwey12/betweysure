@@ -1,6 +1,5 @@
-import { capitalize, getDate } from "@/lib/utils";
+import { capitalize } from "@/lib/utils";
 import { period } from "@/assets/data/data";
-import dayjs from "dayjs";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
