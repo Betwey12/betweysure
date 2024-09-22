@@ -3,9 +3,11 @@ import onexbet from "../../assets/images/1xbet2.gif";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function HomeFreeTips() {
   const t = useTranslations("HOME_FREE_TIPS");
+  const { user } = useAuth();
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-col items-center justify-center gap-8 lg:flex-row">
@@ -22,8 +24,8 @@ export default function HomeFreeTips() {
           />
         </Link>
         <div className="flex flex-col gap-6 lg:w-[58%] text-blue-three dark:text-white">
-          <h3 className="text-2xl font-semibold">{t("FREE_TIPS")}</h3>
-          {t("FREE_TIPS_DESC")
+          <h3 className="text-2xl font-semibold">{t("FREE_BETTING_TIPS")}</h3>
+          {t("FREE_BETTING_TIPS_DESC")
             .split("\n")
             .map((desc, index) => (
               <p className="text-sm" key={index}>
@@ -31,7 +33,7 @@ export default function HomeFreeTips() {
               </p>
             ))}
           <Link
-            href="/free-tips"
+            href={user ? "/dashboard/football-predictions" : "/auth/login"}
             className="flex items-center self-start gap-2 px-4 py-2 mt-8 border rounded-lg min-w-max border-cyan text-cyan"
           >
             {t("SEE_ALL_TIPS")}

@@ -3,6 +3,7 @@ import OurExpertise from "@/components/about/our-expertise";
 import WhatWeStrive from "@/components/about/what-we-strive";
 import OtherPagesHero from "@/components/shared/other-pages-hero";
 import { about } from "@/constants";
+import UltimateBettingGuide from "@/components/about/ultimate-betting-guide";
 
 export const metadata: Metadata = {
   title: about.title,
@@ -15,6 +16,7 @@ export default function AboutUsPage() {
       <OtherPagesHero />
       <OurExpertise />
       <WhatWeStrive />
+      <UltimateBettingGuide />
     </>
   );
 }

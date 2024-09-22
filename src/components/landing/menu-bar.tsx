@@ -79,9 +79,7 @@ function useMenu() {
     },
     {
       name: t("FREE_TIPS"),
-      link: user
-        ? "/dashboard/free-predictions?category=football"
-        : "/auth/login",
+      link: user ? "/dashboard/free-predictions" : "/auth/login",
     },
     {
       name: t("PRICING"),

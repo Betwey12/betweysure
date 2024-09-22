@@ -6,13 +6,13 @@ import AboutBetWeySure from "@/components/home/about-betweysure";
 import BlogAndNews from "@/components/home/blog-and-news";
 import FrequentlyAskedQuestions from "@/components/home/frequently-asked-questions";
 import SelectedGames from "@/components/ui/selected-games";
+import CallToAction from "@/components/home/call-to-action";
 
 export default function HomePage({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  console.log(searchParams);
   const sport = searchParams["sport"] as string | null;
 
   return (
@@ -31,8 +31,9 @@ export default function HomePage({
       </div>
       <WhyBetWeySure />
       <AboutBetWeySure />
-      <BlogAndNews />
+      <CallToAction />
       <FrequentlyAskedQuestions />
+      <BlogAndNews />
       <SelectedGames />
     </>
   );

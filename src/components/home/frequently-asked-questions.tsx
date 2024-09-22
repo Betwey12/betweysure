@@ -5,7 +5,7 @@ export default function FrequentlyAskedQuestions() {
   const { t, faqs } = useFrequentlyAskedQuestions();
 
   return (
-    <div className="px-4 md:px-10 xl:px-20 my-10 lg:my-20 dark:text-white">
+    <div className="px-4 md:px-10 xl:px-20 my-10 lg:mb-20 dark:text-white">
       <h1 className="lg:text-2xl text-xl font-semibold">
         {t("FREQ_ASKED_QUESTIONS")}
       </h1>
