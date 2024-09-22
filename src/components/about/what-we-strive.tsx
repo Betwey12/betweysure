@@ -10,7 +10,7 @@ export default function WhatWeStrive() {
       <h3 className="text-2xl lg:text-4xl text-center mb-4 max-w-5xl">
         {t("TITLE")}
       </h3>
-      <div className="flex flex-col gap-6 lg:flex-row items-center justify-evenly mt-8 lg:mt-16">
+      <div className="w-full flex flex-col gap-6 lg:flex-row items-center justify-evenly mt-8 lg:mt-16">
         <Image
           width={600}
           height={500}

@@ -83,11 +83,14 @@
     "NEW": "New",
     "CONVERT_BET_CODES": "Convert Bet Codes"
   },
-  "HOME_FREE_TIPS": {
+  "ULTIMATE_BETTING_GUIDE": {
     "FREE_TIPS_DESC": "We are the ultimate prediction site for free soccer betting tips. Whether you are a novice or an expert, you can benefit from our free soccer betting tips that are backed by our proven track record and reliable data. \n Our free tips cover a wide range of markets, including Asian Handicap, singles, and under/over 2.5 goals, and they always deliver a positive outcome. Don’t miss out on the hottest free football prediction tips for today’s matches from the best football tipsters in the English Premier League, La Liga, Champions League, and more. You can also access detailed statistics and analysis for each match to help you make informed decisions. \n Our predictions are based on our exclusive A.I powered algorithm that analyzes various factors, such as form, head-to-head, injuries, and more, to provide you with accurate information that reduces your risk of losing and boosts your chances of winning up to 90%. Join Betweysure.com today and start winning big with our free soccer betting tips.",
-
-    "SEE_ALL_TIPS": "See All Tips",
     "FREE_TIPS": "Free Tips"
+  },
+  "HOME_FREE_TIPS": {
+    "SEE_ALL_TIPS": "See All Tips",
+    "FREE_BETTING_TIPS": "Free Football Betting Tips & Predictions - Win Big with Betweysure",
+    "FREE_BETTING_TIPS_DESC": "Are you looking for accurate and reliable football betting tips and predictions? Look no further! Betweysure is your one-stop shop for free, expert insights that will help you make informed decisions and boost your chances of winning big. \n Our team of experienced tipsters carefully analyzes every match, considering various factors such as team form, player injuries, head-to-head records, and more. We provide you with the most up-to-date information and predictions, covering a wide range of leagues and markets. \n Whether you're a seasoned bettor or just starting, Betweysure is the perfect platform to enhance your betting strategy. Join us today and start winning with our free football betting tips and predictions!"
   },
   "PREDICTIONS_TABLE": {
     "NO_PREDICTIONS": "No predictions available for the selected option",
@@ -628,5 +631,16 @@
     "UEFA_SUPER_CUP_DESC_P3": "The Super Cup has produced its fair share of dramatic matches and unforgettable moments. From penalty shootouts to late winners, this competition consistently delivers excitement.",
     "UEFA_SUPER_CUP_TITLE_P4": "Unlock Premium Super Cup Insights:",
     "UEFA_SUPER_CUP_DESC_P4": "Elevate your Super Cup betting experience with our exclusive predictions, in-depth match previews, and expert betting strategies. Upgrade your Betweysure membership today."
-  }
+  },
+  "CALL_TO_ACTION": {
+    "TITLE": "Ready to Win",
+    "DESCRIPTION": "Explore our free football betting tips and predictions today!",
+    "TIP_ONE": "Today's Predictions:",
+    "TIP_ONE_DESC": "Check out our latest tips and predictions for today's matches.",
+    "TIP_TWO": "All Tips:",
+    "TIP_TWO_DESC": "Browse our extensive archive of past and future predictions.",
+    "TIP_THREE": "Expert Analysis:",
+    "TIP_THREE_DESC": "Gain valuable insights from our team of expert tipsters.",
+    "CTA_TITLE": "Start winning now",
+    "CTA": "Don't miss out on the opportunity to boost your betting success. Join Betweysure now and start winning!" }
 }

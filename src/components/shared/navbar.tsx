@@ -15,8 +15,7 @@ import { useAuth } from "@/hooks/useAuth";
 const baseUrl = process.env.NEX_PUBLIC_BASE_URL as string;
 
 export default function Navbar() {
-  const { navLinks, t } = useNav();
-  const { user } = useAuth();
+  const { navLinks, t, user } = useNav();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -105,6 +104,7 @@ export default function Navbar() {
 
 function useNav() {
   const t = useTranslations("NAVBAR");
+  const { user } = useAuth();
 
   const navLinks = [
     {
@@ -113,11 +113,7 @@ function useNav() {
     },
     {
       name: t("FREE_TIPS"),
-      link: "/free-tips",
-    },
-    {
-      name: t("PAID_BUNDLES"),
-      link: "/dashboard/packages",
+      link: user ? "/dashboard/free-predictions" : "/auth/login",
     },
     {
       name: t("PRICING"),
@@ -152,5 +148,6 @@ function useNav() {
   return {
     navLinks,
     t,
+    user,
   };
 }
