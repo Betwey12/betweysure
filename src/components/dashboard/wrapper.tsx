@@ -108,12 +108,22 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
   }
 
   useEffect(() => {
-    if (!loggedInUser) router.push("/auth/login");
+    if (loading) return;
 
-    if (loggedInUser && !isVerified) router.push("/auth/verify-email");
+    if (!loggedInUser) {
+      router.push("/auth/login");
+      return;
+    }
 
-    if (!hasPhone && loggedInUser) router.push("/auth/complete-profile");
-  }, [hasPhone, isVerified, loggedInUser, router]);
+    if (!isVerified) {
+      router.push("/auth/verify-email");
+      return;
+    }
+
+    if (!hasPhone) {
+      router.push("/auth/complete-profile");
+    }
+  }, [hasPhone, isVerified, loading, loggedInUser, router]);
 
   if (loading)
     return (
