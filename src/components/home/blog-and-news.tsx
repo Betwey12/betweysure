@@ -17,7 +17,7 @@ export default function BlogAndNews() {
     queryFn: (): Promise<any> => fetchPosts(),
   });
 
-  const news = newsData?.data.posts ?? [];
+  const news = newsData?.data?.posts ?? [];
 
   return (
     <div className="flex flex-col gap-8 px-4 lg:px-20 md:px-10 dark:text-white">
