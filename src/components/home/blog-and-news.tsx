@@ -48,7 +48,7 @@ function NewsCard({ news }: { news: any }) {
       <Image
         width={300}
         height={200}
-        src={news.featuredImage?.sourceUrl ?? ""}
+        src={news.featuredImage.node.sourceUrl ?? ""}
         alt={news.title}
         className="w-full rounded-[12px_12px_0_0] h-[200px] object-cover"
       />
