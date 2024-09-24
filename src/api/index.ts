@@ -101,7 +101,7 @@ const query = `
   }
 `;
 
-const endpoint = "https://betweysure.com/blog/graphql";
+const endpoint = "https://blog.betweysure.com/graphql";
 export const fetchPosts = async () => {
   try {
     return fetch(endpoint, {

@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
-const baseUrl = process.env.VITE_BASE_URL;
+const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL;
 
 export default function BlogAndNews() {
   const t = useTranslations("BLOG_AND_NEWS");
@@ -48,7 +48,7 @@ function NewsCard({ news }: { news: any }) {
         <p className="text-sm text-gray-two mt-2">{content}...</p>
         <Link
           target="_blank"
-          href={`${baseUrl}/blog${link}`}
+          href={`${blogUrl}/${link}`}
           className="flex items-center gap-2 mt-8 text-cyan"
         >
           {t("READ")} <FaArchive />

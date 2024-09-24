@@ -9,7 +9,7 @@ import PredictionSelect from "../ui/prediction-select";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-const baseUrl = process.env.VITE_BASE_URL;
+const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL ?? "";
 
 export default function MenuBar() {
   const { t, navigations } = useMenu();
@@ -29,7 +29,7 @@ export default function MenuBar() {
         {navigations.map((nav, i) => (
           <li className="" key={i}>
             <NavLink
-              target={nav.link.includes("http") ? "_blank" : "_self"}
+              target={nav?.link.includes("http") ? "_blank" : "_self"}
               href={nav.link}
             >
               {nav.name}
@@ -95,7 +95,7 @@ function useMenu() {
     },
     {
       name: t("BLOG"),
-      link: `${baseUrl}/blog`,
+      link: blogUrl,
     },
     {
       name: t("TRENDS"),

@@ -33,7 +33,7 @@ import {
   TennisIcon,
 } from "../icons";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL;
 
 interface SideNavProps {
   setShowSideNav?: React.Dispatch<React.SetStateAction<boolean>>;
@@ -234,7 +234,7 @@ const navlinks = [
   {
     name: "Sport News",
     icon: <NewsIcon />,
-    path: `${baseUrl}/blog`,
+    path: blogUrl,
     blank: true,
   },
   {
