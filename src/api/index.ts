@@ -80,17 +80,16 @@ const HTTPRequest = {
 export { HTTPRequest };
 
 const query = `
-  query NewQuery {
-    posts {
-      nodes {
-        id
-        content
-        featuredImage {
-          node {
-            id
-            sourceUrl
-            uri
-          }
+query NewQuery {
+  posts {
+    nodes {
+      id
+      content
+      featuredImage {
+        node {
+          id
+          sourceUrl
+          uri
         }
       }
       uri
