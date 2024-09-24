@@ -34,7 +34,7 @@ export default function WhyBetWeySure() {
         height={800}
         src={wearable}
         alt="player"
-        className="lg:w-[40%] lg:h-[800px]"
+        className="w-full lg:w-[40%] lg:h-[800px]"
       />
       <div className="flex items-center justify-center lg:w-[60%] bg-gray-three dark:bg-blue-one dark:text-white">
         <div className="px-4 py-8 lg:px-16 lg:py-18">
