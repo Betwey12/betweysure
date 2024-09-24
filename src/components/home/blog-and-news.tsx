@@ -1,12 +1,11 @@
 "use client";
 
-import { FaArchive, FaSpinner } from "react-icons/fa";
+import { FaArchive } from "react-icons/fa";
 import { fetchPosts } from "../../api";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import LoadingButton from "../ui/loading-button";
 import Spinner from "../ui/spinner";
 
 const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL;
@@ -51,7 +50,7 @@ function NewsCard({ news }: { news: any }) {
       />
       <div className="flex flex-col justify-between h-full bg-white shadow-md rounded-[0_0_12px_12px] px-4 py-6 dark:bg-blue-one dark:text-white">
         <h4 className="text-dark dark:text-white">{news.title}</h4>
-        <p className="text-sm text-gray-two mt-2">{content}...</p>
+        <p className="text-sm text-gray-one mt-2">{content}...</p>
         <Link
           target="_blank"
           href={`${blogUrl}/${link}`}
