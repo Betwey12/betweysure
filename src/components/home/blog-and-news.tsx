@@ -1,17 +1,19 @@
 "use client";
 
-import { FaArchive } from "react-icons/fa";
+import { FaArchive, FaSpinner } from "react-icons/fa";
 import { fetchPosts } from "../../api";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import LoadingButton from "../ui/loading-button";
+import Spinner from "../ui/spinner";
 
 const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL;
 
 export default function BlogAndNews() {
   const t = useTranslations("BLOG_AND_NEWS");
-  const { data: newsData } = useQuery({
+  const { data: newsData, isLoading } = useQuery({
     queryKey: ["news"],
     queryFn: (): Promise<any> => fetchPosts(),
   });
@@ -21,11 +23,15 @@ export default function BlogAndNews() {
   return (
     <div className="flex flex-col gap-8 px-4 lg:px-20 md:px-10 dark:text-white">
       <h3 className="text-3xl">{t("BLOG_AND_NEWS")}</h3>
-      <div className="grid lg:grid-cols-3 gap-4 lg:gap-8 justify-between">
-        {news.slice(0, 3).map((news: any, i: number) => (
-          <NewsCard news={news} key={`${news.title}${i}`} />
-        ))}
-      </div>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <div className="grid lg:grid-cols-3 gap-4 lg:gap-8 justify-between">
+          {news.slice(0, 3).map((news: any, i: number) => (
+            <NewsCard news={news} key={`${news.title}${i}`} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
