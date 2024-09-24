@@ -82,23 +82,22 @@ export { HTTPRequest };
 const query = `
   query NewQuery {
     posts {
-      edges {
-        node {
-          id
-          content
-          featuredImage {
-            node {
-              id
-              sourceUrl
-              uri
-            }
+      nodes {
+        id
+        content
+        featuredImage {
+          node {
+            id
+            sourceUrl
+            uri
           }
-          uri
-          title
         }
       }
+      uri
+      title
     }
   }
+}
 `;
 
 const endpoint = "https://blog.betweysure.com/graphql";

@@ -17,7 +17,7 @@ export default function BlogAndNews() {
     queryFn: (): Promise<any> => fetchPosts(),
   });
 
-  const news = newsData?.data.posts.edges.map((edge: any) => edge.node) ?? [];
+  const news = newsData?.data.posts ?? [];
 
   return (
     <div className="flex flex-col gap-8 px-4 lg:px-20 md:px-10 dark:text-white">
@@ -38,13 +38,17 @@ export default function BlogAndNews() {
 function NewsCard({ news }: { news: any }) {
   const t = useTranslations("BLOG_AND_NEWS");
   const link = news.uri;
-  const content = news.content.replace(/<[^>]*>?/gm, "").slice(0, 130);
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(news.content, "text/html");
+  const firstParagraph = doc.querySelector("p")?.textContent || "";
+  const content = firstParagraph.slice(0, 130);
+
   return (
     <div className="flex flex-col">
       <Image
         width={300}
         height={200}
-        src={news.featuredImage?.node?.sourceUrl ?? ""}
+        src={news.featuredImage?.sourceUrl ?? ""}
         alt={news.title}
         className="w-full rounded-[12px_12px_0_0] h-[200px] object-cover"
       />
