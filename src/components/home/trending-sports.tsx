@@ -22,7 +22,7 @@ interface TrendingSportsProps {
 }
 
 export default function TrendingSports({ sport }: TrendingSportsProps) {
-  const [selectedOption, setSelectedOption] = useState(sport ?? "");
+  const [selectedOption, setSelectedOption] = useState(sport ?? "basketball");
 
   useEffect(() => {
     if (sport) return;
