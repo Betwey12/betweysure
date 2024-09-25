@@ -20,6 +20,8 @@ export default function VerifyEmailClient({ token }: VerifyEmailClientProps) {
   const { user, setUser, isLoading } = useAuth();
 
   useEffect(() => {
+    console.log(token, "token");
+
     if (!token || !user) {
       return;
     }
@@ -33,8 +35,9 @@ export default function VerifyEmailClient({ token }: VerifyEmailClientProps) {
             emailVerified: true,
           });
         })
-        .catch(() => {
+        .catch((err) => {
           setIsVerifying(false);
+          console.log("err", err);
         });
     })();
   }, [token, user, isLoading, setUser]);
