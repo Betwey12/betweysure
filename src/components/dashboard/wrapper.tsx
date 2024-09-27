@@ -10,7 +10,6 @@ import { useSearchParams } from "next/navigation";
 import SideNav from "./sidenav";
 import DashboardNav from "./top-nav";
 import { useAuth } from "@/hooks/useAuth";
-import { FaSpinner } from "react-icons/fa";
 import JoyRide from "./joy-ride";
 import Modal from "../shared/modal";
 import NotificationPopup from "./notification-popup";

@@ -1,5 +1,5 @@
 import DashboardWrapper from "@/components/dashboard/wrapper";
-import Spinner, { DashboardSpinner } from "@/components/ui/spinner";
+import { DashboardSpinner } from "@/components/ui/spinner";
 import { dashboard } from "@/constants";
 import { Metadata } from "next";
 import { Suspense } from "react";
