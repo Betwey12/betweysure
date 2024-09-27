@@ -13,7 +13,8 @@ export default function AuthPage({
     verifyEmail: `/auth/verify-email?token=${token}`,
   };
 
-  console.log(modes[mode]);
-
-  redirect(modes[mode] ?? "/auth/login");
+  if (!mode || !token) {
+    return redirect("/auth/login");
+  }
+  return redirect(modes[mode] ?? "/auth/login");
 }

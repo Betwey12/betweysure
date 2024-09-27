@@ -10,10 +10,10 @@ export function middleware(req: NextRequest) {
     !host?.includes("localhost")
   ) {
     const correctedHost = host?.slice(0, 4) === "www." ? host : `www.${host}`;
-    return NextResponse.redirect(
-      `https://${correctedHost}${req.nextUrl.pathname}`,
-      301
-    );
+
+    const redirectUrl = `https://${correctedHost}${req.nextUrl.pathname}${req.nextUrl.search}`;
+
+    return NextResponse.redirect(redirectUrl, 301);
   }
 
   return NextResponse.next();
