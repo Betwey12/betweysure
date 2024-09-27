@@ -1,6 +1,8 @@
 import DashboardWrapper from "@/components/dashboard/wrapper";
+import { DashboardSpinner } from "@/components/ui/spinner";
 import { dashboard } from "@/constants";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: dashboard.title,
@@ -12,5 +14,9 @@ interface DashboardLayoutProps {
 }
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
-  return <DashboardWrapper>{children}</DashboardWrapper>;
+  return (
+    <Suspense fallback={<DashboardSpinner />}>
+      <DashboardWrapper>{children}</DashboardWrapper>;
+    </Suspense>
+  );
 }

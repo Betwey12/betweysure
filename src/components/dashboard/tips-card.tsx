@@ -20,8 +20,6 @@ export default function TipsCard() {
     .sort((a, b) => dayjs(a.match_dat).diff(dayjs(b.match_dat)))
     .slice(0, 3);
 
-  console.log(todaysTips);
-
   return (
     <div className="shadow bg-white border border-gray-two p-6 rounded-3xl h-full justify-center flex flex-col items-center gap-1 dark:bg-blue-two">
       <h3 className="font-bold">{xDay}&apos;s Tips</h3>
