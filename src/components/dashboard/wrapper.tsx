@@ -15,6 +15,7 @@ import JoyRide from "./joy-ride";
 import Modal from "../shared/modal";
 import NotificationPopup from "./notification-popup";
 import { useRouter } from "next/navigation";
+import { DashboardSpinner } from "../ui/spinner";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -125,14 +126,7 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
     }
   }, [hasPhone, isVerified, loading, loggedInUser, router]);
 
-  if (loading)
-    return (
-      <div className="bg-gray-light min-h-screen flex flex-col justify-center items-center h-full dark:bg-blue-one dark:text-white">
-        <FaSpinner className="animate-spin" />
-      </div>
-    );
-
-  console.log(showTour, "showTour");
+  if (loading) return <DashboardSpinner />;
 
   return (
     <div className="flex flex-col h-screen lg:flex-row w-full overflow-hidden">
