@@ -1,5 +1,6 @@
 "use client";
 
+import { DashboardSpinner } from "@/components/ui/spinner";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -19,7 +20,7 @@ export default function AuthedLayout({ children }: NonAuthedLayoutProps) {
   }, [user, isLoading, router]);
 
   if (isLoading) {
-    return <div>Loading...</div>; // Optional: Show a loading state while checking authentication
+    return <DashboardSpinner />;
   }
 
   return <>{children}</>;
