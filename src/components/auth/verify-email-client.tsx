@@ -20,7 +20,10 @@ export default function VerifyEmailClient({ token }: VerifyEmailClientProps) {
   const { user, setUser, isLoading } = useAuth();
   const { data, isPending: verifyLoading } = useQuery({
     queryKey: ["verify-email"],
-    queryFn: () => HTTPRequest.Get(`auth/verify-email?token=${token}`),
+    queryFn: () =>
+      HTTPRequest.Get(
+        `auth/verify-email?token=${token}&fullName=${user?.fullName}&email=${user?.email}`
+      ),
     enabled: !!(token || user),
   });
 
