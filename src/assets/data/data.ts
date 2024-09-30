@@ -1407,20 +1407,22 @@ export const flutterwavePlanCodes = {
   "standard-3-months": "124244",
   "standard-6-months": "124245",
   "standard-1-year": "124246",
-  "premium-2-weeks": "124247",
+  // "premium-2-weeks": "124247",
   "premium-1-month": "124249",
   "premium-3-months": "124250",
   "premium-6-months": "124251",
   "premium-1-year": "124252",
 };
 
+// test PLN_ar8p19q43d0mcsw
 export const paystackPlanCodes = {
   // "standard-2-weeks": "PLN_b9gv27ezigqc79y",
+
   "standard-1-month": "PLN_hzpujs5jyttkrm8",
   "standard-3-months": "PLN_wwlp2xzg0xs7e7j",
   "standard-6-months": "PLN_kougi7kdo4b9r19",
   "standard-1-year": "PLN_rjq3senvt7755d5",
-  "premium-2-weeks": "PLN_pmr7exuc1sg778p",
+  // "premium-2-weeks": "PLN_pmr7exuc1sg778p",
   "premium-1-month": "PLN_3qal83zxjkygqyp",
   "premium-3-months": "PLN_isv5go847e4sfra",
   "premium-6-months": "PLN_hvqi6qbazeepk9t",

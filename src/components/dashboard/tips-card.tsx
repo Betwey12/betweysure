@@ -1,13 +1,16 @@
 "use client";
 
 import { HTTPRequest } from "@/api";
+import { useAuth } from "@/hooks/useAuth";
+import useHasPlan from "@/hooks/useHasPlan";
 import { xDay } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import dayjs from "dayjs";
 import Link from "next/link";
-import { FaSpinner } from "react-icons/fa";
+import { FaLock, FaSpinner } from "react-icons/fa";
 
 export default function TipsCard() {
+  const { hasPlan } = useHasPlan();
   const { data: tipsData, isLoading } = useQuery({
     queryKey: ["tips", xDay],
     queryFn: (): Promise<{
@@ -42,8 +45,19 @@ export default function TipsCard() {
                 target="_blank"
                 className="flex items-center justify-center gap-4 bg-yellow-one text-center"
               >
-                <span>{tip.tip}</span>
-                <span className="text-green-800">{tip.tip_odd}</span>
+                {hasPlan ? (
+                  <>
+                    <span>{tip.tip}</span>
+                    <span className="text-green-800">{tip.tip_odd}</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Subscribe to view</span>
+                    <span>
+                      <FaLock />
+                    </span>
+                  </>
+                )}
               </Link>
             </div>
           ))
