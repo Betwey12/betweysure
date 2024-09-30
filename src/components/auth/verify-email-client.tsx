@@ -1,14 +1,15 @@
 "use client";
 import { useAuth } from "@/hooks/useAuth";
-import { useEffect, useState } from "react";
 import { FaCheckCircle, FaSpinner } from "react-icons/fa";
 import { auth } from "@/firebase/config";
-import { applyActionCode, sendEmailVerification } from "firebase/auth";
+import { sendEmailVerification } from "firebase/auth";
 import { toast } from "react-toastify";
 import Link from "next/link";
 import { EmailSentIcon } from "../icons";
 import { Button } from "../ui/button";
 import { useTranslations } from "next-intl";
+import { useQuery } from "@tanstack/react-query";
+import { HTTPRequest } from "@/api";
 
 interface VerifyEmailClientProps {
   token: string;
@@ -16,31 +17,15 @@ interface VerifyEmailClientProps {
 
 export default function VerifyEmailClient({ token }: VerifyEmailClientProps) {
   const t = useTranslations("AUTH");
-  const [isVerifying, setIsVerifying] = useState(false);
   const { user, setUser, isLoading } = useAuth();
-
-  useEffect(() => {
-    console.log(token, "token");
-
-    if (!token || !user) {
-      return;
-    }
-    (async () => {
-      setIsVerifying(true);
-      await applyActionCode(auth, token)
-        .then(() => {
-          toast.success("Email verified successfully");
-          setUser({
-            ...user,
-            emailVerified: true,
-          });
-        })
-        .catch((err) => {
-          setIsVerifying(false);
-          console.log("err", err);
-        });
-    })();
-  }, [token, user, isLoading, setUser]);
+  const { data, isPending: verifyLoading } = useQuery({
+    queryKey: ["verify-email"],
+    queryFn: () =>
+      HTTPRequest.Get(
+        `auth/verify-email?token=${token}&fullName=${user?.fullName}&email=${user?.email}`
+      ),
+    enabled: !!(token || user),
+  });
 
   async function handleResendEmail() {
     const user = auth.currentUser;
@@ -59,11 +44,19 @@ export default function VerifyEmailClient({ token }: VerifyEmailClientProps) {
     toast.success("Email sent successfully");
   }
 
+  function handleGoToDashboard() {
+    if (!user) return;
+    setUser({
+      ...user,
+      emailVerified: data?.success,
+    });
+  }
+
   return (
     <div className="flex flex-col max-w-xl border border-gray-two items-center justify-center w-full gap-2 bg-white px-4 lg:px-10 py-8 lg:py-12 rounded-lg shadow-md dark:border-0 dark:bg-blue-one">
-      {isLoading || isVerifying ? (
+      {isLoading || verifyLoading ? (
         <FaSpinner className="animate-spin" />
-      ) : user?.emailVerified ? (
+      ) : data?.success ? (
         <div className="flex items-center justify-center flex-col gap-3">
           <FaCheckCircle className="text-6xl text-green-600 bg-white rounded-full" />
 
@@ -71,6 +64,7 @@ export default function VerifyEmailClient({ token }: VerifyEmailClientProps) {
           <Link
             className="py-3 text-center text-white justify-center bg-cyan px-4 rounded"
             href="/dashboard?tour=true"
+            onClick={handleGoToDashboard}
           >
             {t("GO_TO_DASHBOARD")}
           </Link>

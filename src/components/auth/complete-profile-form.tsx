@@ -82,6 +82,7 @@ export default function CompleteProfileForm() {
       return toast.error(response.message);
     }
     toast.success(response.message);
+
     router.push("/dashboard");
     // window.location.replace("/dashboard");
   }

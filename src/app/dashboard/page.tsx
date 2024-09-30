@@ -60,7 +60,7 @@ const services = [
     name: "Fund Betting Account",
     icon: <FaMoneyCheck className="text-gray-two" />,
     task: "fund-bet-wallet",
-    href: `perform?task=fund-bet-wallet`,
+    href: `/dashboard/perform?task=fund-bet-wallet`,
   },
 
   {
