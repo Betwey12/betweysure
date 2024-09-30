@@ -1,7 +1,6 @@
 "use client";
 
 import { HTTPRequest } from "@/api";
-import { useAuth } from "@/hooks/useAuth";
 import useHasPlan from "@/hooks/useHasPlan";
 import { xDay } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
@@ -25,7 +24,9 @@ export default function TipsCard() {
 
   return (
     <div className="shadow bg-white border border-gray-two p-6 rounded-3xl h-full justify-center flex flex-col items-center gap-1 dark:bg-blue-two">
-      <h3 className="font-bold">{xDay}&apos;s Tips</h3>
+      <h3 className="font-bold">
+        {xDay}&apos;s Tips <span className="text-sm">(upcoming)</span>
+      </h3>
 
       <div className="flex flex-col gap-4 mt-4 w-full">
         {isLoading ? (
