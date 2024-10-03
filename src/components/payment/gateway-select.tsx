@@ -20,11 +20,9 @@ import { HTTPRequest } from "@/api";
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/navigation";
 
 type TPayload = {
-  userid?: string;
   method: string;
   reference: string;
   plan: string;
@@ -33,7 +31,6 @@ type TPayload = {
 export default function GatewaySelect() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { user } = useAuth();
   const planName = searchParams.get("plan");
   const duration = searchParams.get("duration");
   const currency = searchParams.get("currency") || "NGN";
@@ -61,10 +58,7 @@ export default function GatewaySelect() {
   });
 
   async function handleUpdatePlan(reference?: string, planGateway?: string) {
-    const userId = user?._id;
-
     const response = await mutateAsync({
-      userid: userId,
       method: planGateway!,
       reference: reference!,
       plan: `${duration?.toLowerCase()}-${planName?.toLowerCase()}`,

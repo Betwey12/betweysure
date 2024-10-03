@@ -10,7 +10,6 @@ import { toast } from "react-toastify";
 import { formatCurrency } from "../../lib/utils";
 import { Country } from "country-state-city";
 import { networks } from "@/assets/data/data";
-import { useAuth } from "@/hooks/useAuth";
 import Image from "next/image";
 import PhoneInput from "../ui/phone-input";
 import { Button } from "@mui/material";
@@ -34,14 +33,12 @@ const schema = yup.object({
 type AirtimeForm = typeof schema extends yup.Schema<infer T> ? T : any;
 
 type TPayload = {
-  userid?: string;
   phone: string;
   amount: number;
   networkCode: string;
 };
 
 export default function AirtimeForm() {
-  const { user } = useAuth();
   const {
     register,
     handleSubmit,
@@ -65,11 +62,9 @@ export default function AirtimeForm() {
     mutationFn: (data: TPayload) =>
       HTTPRequest.Post("bills/airtime/initiate", data),
   });
-  const userid = user?._id;
 
   const onSubmit: SubmitHandler<AirtimeForm> = async (data) => {
     const payload = {
-      userid,
       phone: `${data.phonecode || "+234"}${data?.phone}`,
       amount: data?.amount,
       networkCode: data.network,

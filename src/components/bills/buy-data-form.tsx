@@ -9,7 +9,6 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { FaSpinner } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { networks } from "@/assets/data/data";
-import { useAuth } from "@/hooks/useAuth";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import PhoneInput from "../ui/phone-input";
@@ -27,15 +26,12 @@ const schema = yup.object({
 
 type AirtimeForm = typeof schema extends yup.Schema<infer T> ? T : any;
 type TPayload = {
-  userid?: string;
   phone: string;
   bundleSize: string;
   scheme: string;
 };
 
 export default function BuyDataForm() {
-  const { user } = useAuth();
-  const userid = user?._id;
   const {
     register,
     handleSubmit,
@@ -66,12 +62,11 @@ export default function BuyDataForm() {
     isError,
   } = useMutation({
     mutationFn: (data: TPayload) =>
-      HTTPRequest.Post("bills/data-bunles/initiate", data),
+      HTTPRequest.Post("bills/data-bundles/initiate", data),
   });
 
   const onSubmit: SubmitHandler<AirtimeForm> = async (data) => {
     const payload: TPayload = {
-      userid,
       phone: `${data.phonecode || "+234"}${data.phone}`,
       bundleSize: data.plan,
       scheme: data.network,

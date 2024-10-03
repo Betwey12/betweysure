@@ -28,7 +28,6 @@ type PaymentForm = yup.InferType<typeof PaymentSchema>;
 
 type TPayload = {
   amount: number;
-  userid?: string;
   method: string;
   currency: string;
 };
@@ -55,7 +54,6 @@ export default function FundWalletForm() {
   const onSubmit: SubmitHandler<PaymentForm> = async (data) => {
     const payload = {
       amount: data.amount,
-      userid: user?._id,
       method: data.paymentMethod,
       currency,
     };
@@ -144,7 +142,7 @@ export default function FundWalletForm() {
                   </p>
                 )}
               </fieldset>
-              <Button className="self-start mt-6">
+              <Button className="self-start mt-6 gap-4">
                 Fund Wallet {formatCurrency(watchAmount)}
                 {isPending && (
                   <span className="animate-spin">
