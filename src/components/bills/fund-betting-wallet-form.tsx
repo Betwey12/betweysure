@@ -37,7 +37,7 @@ export default function FundBettingWalletForm() {
 
   const { isPending, mutateAsync, isError } = useMutation({
     mutationFn: (data: FundBettingWalletForm) =>
-      HTTPRequest.Post(`bet/fund-bet-wallet/${user?._id}`, data),
+      HTTPRequest.Post(`bet/fund-bet-wallet`, data),
   });
 
   const onSubmit: SubmitHandler<FundBettingWalletForm> = async (data) => {
