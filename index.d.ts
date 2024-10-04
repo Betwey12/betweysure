@@ -42,6 +42,7 @@ declare global {
       emailVerified: boolean;
       createdAt: string;
       fcmToken: string;
+      referralCode: string;
     };
   };
 
@@ -635,6 +636,6 @@ declare global {
     expiry: number;
     emailVerified: boolean;
     subscribed: boolean;
-    zohoHMACDigest: string;
+    referralCode: string;
   }
 }

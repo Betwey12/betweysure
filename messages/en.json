@@ -390,6 +390,7 @@
     "INCOMPLETE_GAMES": "Only {noOfGames} found matches your criteria, please expand your criteria and try again"
   },
   "AUTH": {
+    "REFERAL_CODE": "Referral Code",
     "WELCOME_BACK": "Welcome back!",
     "SURE_GUY": "Sure Guy.",
     "TITLE": "Sign in to view all the tips you want.",
@@ -642,5 +643,6 @@
     "TIP_THREE": "Expert Analysis:",
     "TIP_THREE_DESC": "Gain valuable insights from our team of expert tipsters.",
     "CTA_TITLE": "Start winning now",
-    "CTA": "Don't miss out on the opportunity to boost your betting success. Join Betweysure now and start winning!" }
+    "CTA": "Don't miss out on the opportunity to boost your betting success. Join Betweysure now and start winning!"
+  }
 }

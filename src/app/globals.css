@@ -162,34 +162,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .widget-wrapper {
-    position: relative;
-    left: 16px !important;
-    right: auto !important;
-    margin-inline: 0 !important;
-  }
-
-  .widget-wrapper span {
-    width: 60px;
-    height: 60px;
-    min-width: auto !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 !important;
-  }
-
-  .widget-wrapper span:before {
-    left: auto !important;
-    right: auto !important;
-  }
-
-  .widget-wrapper span span {
-    display: none;
-  }
-}
-
 @keyframes slideIn {
   from {
     transform: translateX(-100%);

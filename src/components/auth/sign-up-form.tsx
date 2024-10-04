@@ -31,6 +31,13 @@ const registerSchema = yup.object().shape({
     .matches(/^[0-9]+$/, "Phone number must be a number")
     .min(10, "Phone number must be at least 10 characters"),
   phonecode: yup.string(),
+  referredBy: yup
+    .string()
+    .optional()
+    .matches(
+      /^(betwey-[a-zA-Z0-9]{7}|)$/,
+      "Invalid: leave empty if unavailable"
+    ),
   password: yup
     .string()
     .min(8, "Password must be at least 8 characters")
@@ -74,11 +81,14 @@ export default function SignUpForm() {
       phonecode.includes(country.phonecode)
     )?.currency;
     const newPhone = `${phonecode}${data.phone}`;
+    const referredBy =
+      sessionStorage.getItem("referralCode") || data.referredBy;
 
     if (!token) return toast.error("Recaptcha verification failed");
 
     const body = {
       ...data,
+      referredBy,
       phone: newPhone,
       phonecode: phonecode,
       token: token,
@@ -180,6 +190,29 @@ export default function SignUpForm() {
               </p>
             )}
           </fieldset>
+        </fieldset>
+
+        <fieldset className="flex flex-col gap-2 w-full text-sm">
+          <label htmlFor="referralCode" className="flex items-center gap-2">
+            {t("REFERAL_CODE")}
+            <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            {...register("referredBy")}
+            placeholder="betwey-axDcf3G"
+            className={cn(
+              "px-4 border py-3 rounded focus:outline-none text-gray-neutral",
+              {
+                "border border-red-500": errors.referredBy,
+              }
+            )}
+          />
+          {errors.referredBy && (
+            <p className="text-red-500 text-xs italic">
+              {errors.referredBy.message}
+            </p>
+          )}
         </fieldset>
 
         <fieldset className="flex flex-col gap-4 lg:flex-row justify-between">

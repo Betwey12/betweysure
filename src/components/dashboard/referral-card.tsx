@@ -1,5 +1,4 @@
 "use client";
-import { useQuery } from "@tanstack/react-query";
 import {
   FacebookIcon,
   LinkedinIcon,
@@ -8,7 +7,6 @@ import {
   TwitterXIcon,
   WhatsappIcon,
 } from "../icons";
-import { HTTPRequest } from "@/api";
 import { useState } from "react";
 import Link from "next/link";
 import { simpleSocialShare } from "@/lib/utils";
@@ -17,18 +15,12 @@ import { useAuth } from "@/hooks/useAuth";
 export default function ReferralCard() {
   const { user } = useAuth();
   const [copied, setCopied] = useState(false);
-
-  const { data } = useQuery({
-    queryKey: ["thrive_user"],
-    queryFn: () => HTTPRequest.Get("users/thrive-user"),
-    enabled: !!user,
-  });
-  const thriveUser = data?.user?.data;
-
-  console.log(thriveUser);
+  const myLink = `${window.location.origin}?referralCode=${
+    user?.referralCode ?? ""
+  }`;
 
   function copyToClipboard() {
-    navigator.clipboard.writeText(thriveUser?.user_share_url);
+    navigator.clipboard.writeText(myLink);
     setCopied(true);
   }
 
@@ -72,7 +64,7 @@ export default function ReferralCard() {
               href={simpleSocialShare({
                 medium: site.medium,
                 message,
-                shareurl: thriveUser?.user_share_url,
+                shareurl: myLink,
               })}
               target="_blank"
               rel="noreferrer"
