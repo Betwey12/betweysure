@@ -25,6 +25,8 @@ export default function ReferralCard() {
   });
   const thriveUser = data?.user?.data;
 
+  console.log(thriveUser);
+
   function copyToClipboard() {
     navigator.clipboard.writeText(thriveUser?.user_share_url);
     setCopied(true);
