@@ -50,17 +50,6 @@ export default function AuthProvider({ children }: AuthProviderProps) {
     }
   }, [loggedInUser, userLoading, userId, data]);
 
-  useEffect(() => {
-    window.ztUserData = {
-      za_email_id: user?.email,
-      user_unique_id: user?._id,
-      thrive_digest: user?.zohoHMACDigest, // Replace with actual dynamic data
-      signUpPage: `${window.location.origin}/auth/register`,
-      signInPage: `${window.location.origin}/auth/login`,
-      ztWidgetDelay: 5,
-    };
-  }, [user?._id, user?.email, user?.zohoHMACDigest]);
-
   return (
     <AuthContext.Provider
       value={{

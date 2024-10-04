@@ -34,6 +34,7 @@ type TPayload = {
   phonecode: string;
   currency: string;
   uid: string;
+  referredBy?: string;
 };
 
 export default function CompleteProfileForm() {
@@ -62,6 +63,7 @@ export default function CompleteProfileForm() {
     const currency = countries.find((country) =>
       phonecode?.includes(country.phonecode)
     )?.currency;
+    const referredBy = sessionStorage.getItem("referralCode") || undefined;
 
     data.email &&
       (await updateEmail(authUser, data.email).catch((error) => {
@@ -76,6 +78,7 @@ export default function CompleteProfileForm() {
       phonecode,
       currency: currency!,
       uid: authUser.uid,
+      referredBy,
     });
 
     if (!response.success || isError) {
