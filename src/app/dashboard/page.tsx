@@ -54,13 +54,13 @@ const services = [
     name: "Covert Booking Code",
     icon: <FaArrowsSpin className="text-green-500" />,
     task: "convert-bet-code",
-    href: `/dashboard/perform?task=convert-bet-code`,
+    href: `/dashboard/perform-action?task=convert-bet-code`,
   },
   {
     name: "Fund Betting Account",
     icon: <FaMoneyCheck className="text-gray-two" />,
     task: "fund-bet-wallet",
-    href: `/dashboard/perform?task=fund-bet-wallet`,
+    href: `/dashboard/perform-action?task=fund-bet-wallet`,
   },
 
   {
@@ -72,12 +72,12 @@ const services = [
   //   name: "Data",
   //   icon: <FaExchangeAlt className="text-yellow-orange" />,
   //   task: "data",
-  //   href: `/dashboard/perform?task=data`,
+  //   href: `/dashboard/perform-action?task=data`,
   // },
   // {
   //   name: "Airtime",
   //   icon: <FaSimCard className="text-yellow-sunset" />,
   //   task: "airtime",
-  //   href: `/dashboard/perform?task=airtime`,
+  //   href: `/dashboard/perform-action?task=airtime`,
   // },
 ];
