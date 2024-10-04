@@ -10,6 +10,7 @@ import {
 } from "../../components/home";
 import Image from "next/image";
 import SelectedGames from "@/components/ui/selected-games";
+import ReferralClientWapper from "@/components/home/referral-client";
 
 export default function HomePage({
   searchParams,
@@ -17,9 +18,10 @@ export default function HomePage({
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
   const sport = searchParams["sport"] as string | null;
+  const referralCode = searchParams["referralCode"] as string | null;
 
   return (
-    <>
+    <ReferralClientWapper referralCode={referralCode}>
       <HomeHero />
       <TrendingSports sport={sport} />
 
@@ -38,6 +40,6 @@ export default function HomePage({
       <FrequentlyAskedQuestions />
       <BlogAndNews />
       <SelectedGames />
-    </>
+    </ReferralClientWapper>
   );
 }
