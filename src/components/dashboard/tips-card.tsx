@@ -26,15 +26,21 @@ export default function TipsCard() {
   const tips =
     predictions
       ?.map((prediction) => {
+        const home_team = prediction?.homeTeam ?? null;
+        const away_team = prediction?.awayTeam ?? null;
         const tip = prediction?.matchData?.tips?.find(
           (tip) => !tip?.selection?.toLowerCase()?.includes("correct score")
         );
+        const teamName = tip?.selection?.includes(home_team)
+          ? home_team
+          : away_team;
+        const replace = tip?.selection?.includes(home_team) ? "Home" : "Away";
 
         return {
           league: prediction?.competition_full ?? null,
-          home_team: prediction?.homeTeam ?? null,
-          away_team: prediction?.awayTeam ?? null,
-          tip: tip?.selection ?? null,
+          home_team,
+          away_team,
+          tip: tip?.selection?.replace(teamName, replace) ?? null,
           tip_odd: tip?.odds ?? null,
           match_time: prediction?.date,
         };

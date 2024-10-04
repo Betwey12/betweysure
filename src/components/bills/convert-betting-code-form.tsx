@@ -80,7 +80,7 @@ export default function ConvertBettingCodeForm() {
             <select
               id="from"
               className={cn(
-                "w-full px-4 py-3 rounded text-gray-one focus:outline-none shadaow border-gray-one border",
+                "w-full bg-white px-4 py-3 rounded text-gray-one focus:outline-none shadaow border-gray-one border",
                 {
                   "border-red-500": errors.from,
                 }
@@ -104,7 +104,7 @@ export default function ConvertBettingCodeForm() {
             <select
               id="to"
               className={cn(
-                "w-full px-4 py-3 rounded text-gray-one focus:outline-none shadaow border-gray-one border",
+                "w-full px-4 py-3 bg-white rounded text-gray-one focus:outline-none shadaow border-gray-one border",
                 {
                   "border-red-500": errors.to,
                 }
