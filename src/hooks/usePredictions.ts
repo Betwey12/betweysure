@@ -5,13 +5,13 @@ import { useState } from "react";
 type TUsePrediction = {
   endpoint: string;
   queryKey: (string | boolean | number | null | undefined)[];
-  predictionsPerPage: number;
+  predictionsPerPage?: number;
 };
 
 const usePredictions = ({
   endpoint,
   queryKey,
-  predictionsPerPage,
+  predictionsPerPage = 10,
 }: TUsePrediction) => {
   const [from, setFrom] = useState(0);
   const [to, setTo] = useState(predictionsPerPage);
