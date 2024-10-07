@@ -6,6 +6,8 @@ const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 async function Get(endpoint: string) {
   const user = auth.currentUser;
   const token = user ? await getIdToken(user) : "";
+  console.log(token);
+
   const res = await fetch(`${baseUrl}/${endpoint}`, {
     headers: {
       "Content-Type": "application/json",

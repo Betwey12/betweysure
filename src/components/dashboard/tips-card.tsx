@@ -1,11 +1,9 @@
 "use client";
 
-import { HTTPRequest } from "@/api";
 import { popularTags } from "@/assets/data/data";
 import useHasPlan from "@/hooks/useHasPlan";
 import usePredictions from "@/hooks/usePredictions";
 import { getDate, xDay } from "@/lib/utils";
-import { useQuery } from "@tanstack/react-query";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { FaLock, FaSpinner } from "react-icons/fa";
@@ -47,11 +45,13 @@ export default function TipsCard() {
       })
       .filter(
         (tip) =>
-          tip.tip && dayjs(tip.match_time).isAfter(dayjs().add(1, "hour"))
+          tip.tip && dayjs(tip.match_time).isAfter(dayjs().add(1, "minute"))
       ) ?? [];
 
   const popularTips: any[] = [];
   const restTips: any[] = [];
+
+  console.log(predictions, "tips");
 
   tips.forEach((tip) => {
     const isPopular = popularTags.some((tag) =>
