@@ -1356,29 +1356,13 @@ export const leagueList: Record<string, TPopularLeague[]> = {
 export const period = ["yesterday", "today", "tomorrow"];
 
 export const footballPaidTabs = [
-  [
-    "Home win",
-    "Away win",
-    "Over 3.5",
-    "Draw Tips",
-    "HT Home",
-    "HT Away",
-    "HT Draw",
-    "Over 0.5 FHG",
-    "Over 1.5 FHG",
-    "Win to Nil Tips",
-    "HT/FT",
-  ],
-  [
-    "Over 2.5",
-    "BTTS",
-    "Win & Over 2.5",
-    "Corners",
-    "Cards",
-    "BTTS & Win",
-    "BTTS HT&FT",
-    "Bet of the Day",
-  ],
+  "HT/FT",
+  "BTTS",
+  "Win & Over 2.5",
+  "BTTS & Win",
+  "Corners",
+  "Cards",
+  "Bet of the Day",
 ];
 
 export const footballFreeTabs = [
@@ -1388,6 +1372,18 @@ export const footballFreeTabs = [
   "12",
   "Correct Score",
   "Over 1.5",
+  "Home win",
+  "Away win",
+  "Over 3.5",
+  "Draw Tips",
+  "HT Home",
+  "BTTS HT&FT",
+  "HT Away",
+  "HT Draw",
+  "Over 0.5 FHG",
+  "Over 1.5 FHG",
+  "Win to Nil Tips",
+  "Over 2.5",
   "Inplay Live",
 ];
 
@@ -1403,30 +1399,36 @@ export const paymentSupportedCountries = [
 
 export const flutterwavePlanCodes = {
   // "standard-2-weeks": "124241",
-  "standard-1-month": "124242",
-  "standard-3-months": "124244",
-  "standard-6-months": "124245",
-  "standard-1-year": "124246",
+  "mixed-1-month":
+    process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH ?? "124242",
+  // "standard-3-months": "124244",
+  // "standard-6-months": "124245",
+  // "standard-1-year": "124246",
   // "premium-2-weeks": "124247",
-  "premium-1-month": "124249",
-  "premium-3-months": "124250",
-  "premium-6-months": "124251",
-  "premium-1-year": "124252",
+  "premium-1-month":
+    process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH ?? "124249",
+  // "premium-3-months": "124250",
+  // "premium-6-months": "124251",
+  // "premium-1-year": "124252",
 };
 
 // test PLN_ar8p19q43d0mcsw
 export const paystackPlanCodes = {
   // "standard-2-weeks": "PLN_b9gv27ezigqc79y",
 
-  "standard-1-month": "PLN_hzpujs5jyttkrm8",
-  "standard-3-months": "PLN_wwlp2xzg0xs7e7j",
-  "standard-6-months": "PLN_kougi7kdo4b9r19",
-  "standard-1-year": "PLN_rjq3senvt7755d5",
+  "mixed-1-month":
+    process.env.NEXT_PUBLIC_PAYSTACK_MIXED_ONE_MONTH ?? "PLN_hzpujs5jyttkrm8",
+
+  // "standard-3-months": "PLN_wwlp2xzg0xs7e7j",
+  // "standard-6-months": "PLN_kougi7kdo4b9r19",
+  // "standard-1-year": "PLN_rjq3senvt7755d5",
   // "premium-2-weeks": "PLN_pmr7exuc1sg778p",
-  "premium-1-month": "PLN_3qal83zxjkygqyp",
-  "premium-3-months": "PLN_isv5go847e4sfra",
-  "premium-6-months": "PLN_hvqi6qbazeepk9t",
-  "premium-1-year": "PLN_3db7ite70fnc9z4",
+  "premium-1-month":
+    process.env.NEXT_PUBLIC_PAYSTACK_PREMIUM_ONE_MONTH ?? "PLN_3qal83zxjkygqyp",
+
+  // "premium-3-months": "PLN_isv5go847e4sfra",
+  // "premium-6-months": "PLN_hvqi6qbazeepk9t",
+  // "premium-1-year": "PLN_3db7ite70fnc9z4",
 };
 
 export const plans: {
@@ -1437,115 +1439,59 @@ export const plans: {
   };
 } = {
   NGN: {
-    standard: {
-      "2 weeks": 3000,
-      "1 month": 5000,
-      "3 months": 12000,
-      "6 months": 22000,
-      "1 year": 40000,
-    },
     premium: {
-      "2 weeks": 6000,
-      "1 month": 10000,
-      "3 months": 25000,
-      "6 months": 45000,
-      "1 year": 80000,
+      "1 month": 15000,
+    },
+    mixed: {
+      "1 month": 40000,
     },
   },
   GHS: {
-    standard: {
-      "2 weeks": 30,
-      "1 month": 45,
-      "3 months": 110,
-      "6 months": 200,
-      "1 year": 360,
-    },
     premium: {
-      "2 weeks": 60,
+      "1 month": 45,
+    },
+    mixed: {
       "1 month": 90,
-      "3 months": 225,
-      "6 months": 405,
-      "1 year": 720,
     },
   },
   KES: {
-    standard: {
-      "2 weeks": 280,
-      "1 month": 455,
-      "3 months": 1100,
-      "6 months": 2010,
-      "1 year": 3650,
-    },
     premium: {
-      "2 weeks": 550,
+      "1 month": 455,
+    },
+    mixed: {
       "1 month": 910,
-      "3 months": 2275,
-      "6 months": 4100,
-      "1 year": 7285,
     },
   },
   UGX: {
-    standard: {
-      "2 weeks": 8070,
-      "1 month": 13450,
-      "3 months": 32280,
-      "6 months": 59170,
-      "1 year": 107580,
-    },
     premium: {
-      "2 weeks": 16410,
+      "1 month": 13450,
+    },
+    mixed: {
       "1 month": 26800,
-      "3 months": 67240,
-      "6 months": 121000,
-      "1 year": 215150,
     },
   },
   TZS: {
-    standard: {
-      "2 weeks": 5290,
-      "1 month": 8800,
-      "3 months": 21150,
-      "6 months": 40000,
-      "1 year": 73000,
-    },
     premium: {
-      "2 weeks": 10940,
+      "1 month": 8800,
+    },
+    mixed: {
       "1 month": 18240,
-      "3 months": 45600,
-      "6 months": 82000,
-      "1 year": 146000,
     },
   },
   ZAR: {
-    standard: {
-      "2 weeks": 50,
-      "1 month": 70,
-      "3 months": 165,
-      "6 months": 300,
-      "1 year": 540,
-    },
     premium: {
-      "2 weeks": 90,
+      "1 month": 70,
+    },
+    mixed: {
       "1 month": 135,
-      "3 months": 340,
-      "6 months": 610,
-      "1 year": 1080,
     },
   },
   USD: {
-    standard: {
-      "2 weeks": 10,
-      "1 month": 15,
-      "3 months": 40,
-      "6 months": 70,
-      "1 year": 100,
-    },
     premium: {
-      "2 weeks": 20,
+      "1 month": 15,
+    },
+    mixed: {
       "1 month": 25,
-      "3 months": 60,
-      "6 months": 110,
-      "1 year": 180,
     },
   },
 };
@@ -1693,111 +1639,99 @@ export const rankMapping = {
   rank_to_lvl3_p4: "Over 59.5 (P4)",
 };
 
-export const otherSportGroupings: Record<
-  string,
-  Record<string, string[] | string[][]>
-> = {
+export const otherSportGroupings: Record<string, Record<string, string[]>> = {
   basketball: {
     free: ["Home", "Away"],
     paid: [
-      [
-        "Draw",
-        "Over 197.5",
-        "Over 205.5",
-        "Over 213.5",
-        "Over 221.5",
-        "Over 229.5",
-        "Over 100.5",
-        "Over 108.5",
-        "Over 116.5",
-        "Over 97.5",
-        "Over 105.5",
-        "Over 113.5",
-        "Over 47.5",
-        "Over 53.5",
-        "Over 59.5",
-      ],
-
-      ["Bet of the day"],
+      "Bet of the day",
+      "Draw",
+      "Over 197.5",
+      "Over 205.5",
+      "Over 213.5",
+      "Over 221.5",
+      "Over 229.5",
+      "Over 100.5",
+      "Over 108.5",
+      "Over 116.5",
+      "Over 97.5",
+      "Over 105.5",
+      "Over 113.5",
+      "Over 47.5",
+      "Over 53.5",
+      "Over 59.5",
     ],
   },
   tennis: {
     free: ["Home", "Away"],
     paid: [
-      [
-        "Draw",
-        "Handicap All Sets",
-        "Set1",
-        "Set2",
-        "Over 7.5",
-        "Over 8.5",
-        "Over 9.5",
-        "Over 10.5",
-        "Over 12.5",
-        "Over 19.5",
-        "Over 20.5",
-        "Over 21.5",
-        "Over 22.5",
-        "Over 23.5",
-        "Over 24.5",
-      ],
-      ["Bet of the day"],
+      "Draw",
+      "Handicap All Sets",
+      "Set1",
+      "Set2",
+      "Over 7.5",
+      "Over 8.5",
+      "Over 9.5",
+      "Over 10.5",
+      "Over 12.5",
+      "Over 19.5",
+      "Over 20.5",
+      "Over 21.5",
+      "Over 22.5",
+      "Over 23.5",
+      "Over 24.5",
+      "Bet of the day",
     ],
   },
   "ice hockey": {
     free: ["Home", "Away"],
     paid: [
-      [
-        "Draw",
-        "Home OT",
-        "Away OT",
-        "Draw OT",
-        "Over 3.5",
-        "Over 4.5",
-        "Over 5.5",
-        "Over 6.5 ice hockey",
-        "Over 7.5 ice hockey",
-        "Home Over 1.5",
-        "Home Over 3.5",
-        "Home Over 5.5",
-        "Away Over 0.5",
-        "Away Over 2.5 ice hockey",
-        "Away Over 4.5 ice hockey",
-        "Over 0.5",
-        "Over 1.5",
-        "Over 2.5",
-      ],
-      ["Bet of the day"],
+      "Draw",
+      "Home OT",
+      "Away OT",
+      "Draw OT",
+      "Over 3.5",
+      "Over 4.5",
+      "Over 5.5",
+      "Over 6.5 ice hockey",
+      "Over 7.5 ice hockey",
+      "Home Over 1.5",
+      "Home Over 3.5",
+      "Home Over 5.5",
+      "Away Over 0.5",
+      "Away Over 2.5 ice hockey",
+      "Away Over 4.5 ice hockey",
+      "Over 0.5",
+      "Over 1.5",
+      "Over 2.5",
+      "Bet of the day",
     ],
   },
   baseball: {
     free: ["Home", "Away"],
     paid: [
-      [
-        "Draw",
-        "Over 6.5",
-        "Over 7.5 baseball",
-        "Over 8.5 baseball",
-        "Over 9.5 baseball",
-        "Over 10.5 baseball",
-        "Home Over 2.5",
-        "Home Over 4.5",
-        "Home Over 6.5",
-        "Away Over 2.5",
-        "Away Over 4.5",
-        "Away Over 6.5",
-      ],
+      "Draw",
+      "Over 6.5",
+      "Over 7.5 baseball",
+      "Over 8.5 baseball",
+      "Over 9.5 baseball",
+      "Over 10.5 baseball",
+      "Home Over 2.5",
+      "Home Over 4.5",
+      "Home Over 6.5",
+      "Away Over 2.5",
+      "Away Over 4.5",
+      "Away Over 6.5",
 
-      ["Bet of the day"],
+      "Bet of the day",
     ],
   },
   rugby: {
     free: ["Home", "Away"],
-    paid: [["Draw"], ["Bet of the day"]],
+    paid: ["Draw", "Bet of the day"],
   },
   cricket: {
     free: ["Home", "Away"],
-    paid: [["Draw"], ["Bet of the day"]],
+    paid: ["Draw", "Bet of the day"],
   },
 };
 

@@ -77,7 +77,7 @@ export default function VerifyEmailClient({ token }: VerifyEmailClientProps) {
 
           <Button
             type="button"
-            className="py-3 mt-6 text-center justify-center"
+            className="py-3 mt-6 text-center justify-center text-white"
             onClick={handleResendEmail}
           >
             {t("RESEND_EMAIL")}

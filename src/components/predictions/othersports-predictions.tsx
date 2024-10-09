@@ -97,7 +97,7 @@ export default function OtherSportsPredictions() {
         <PaidTabs
           activeTab={activeTab}
           handlePrediction={handleFilterPrediction}
-          paidTabs={sportGrouping.paid as string[][]}
+          paidTabs={sportGrouping.paid}
           sport={sport}
         />
       </div>

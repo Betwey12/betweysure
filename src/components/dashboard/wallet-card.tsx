@@ -29,7 +29,7 @@ export default function WalletCard() {
                 " bg-[#ff0101] px-3 py-1 text-xs capitalize rounded-full",
                 {
                   "bg-[#572805]":
-                    fetchedUser?.plan?.type.toLowerCase() === "standard",
+                    fetchedUser?.plan?.type.toLowerCase() === "mixed",
                   "bg-purple-royal":
                     fetchedUser?.plan?.type.toLowerCase() === "premium",
                 }

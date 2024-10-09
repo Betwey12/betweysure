@@ -25,7 +25,7 @@ import {
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import LeaguesExplained from "@/components/leagues/leagues-explained";
-import { leagueList, period } from "@/assets/data/data";
+import { period } from "@/assets/data/data";
 
 type Props = {
   params: { category: string };
@@ -84,7 +84,8 @@ export default function PopularPage({
       <LeaguePredictions category={category} tab={tab} />
       <div className="px-4 md:px-10 lg:px-20 flex flex-col gap-4 lg:gap-6">
         {!isPeriod && <LeaguesExplained category={category} />}
-        <div className="dark:bg-blue-one border border-gray-two dark:border-0 rounded p-4 dark:text-white flex flex-col lg:flex-row lg:py-8 lg:px-6 gap-4 lg:items-center justify-between">
+
+        <div className="dark:bg-blue-one border border-gray-two dark:border-0 rounded  p-4 lg:px-10 lg:py-20 dark:text-white flex flex-col lg:flex-row  gap-4 lg:items-center justify-between">
           <p className="max-w-lg">
             {t(`${formattedCategory}_CALL_TO_ACTION` as any) !==
             `LEAGUE_INFO.${formattedCategory}_CALL_TO_ACTION`

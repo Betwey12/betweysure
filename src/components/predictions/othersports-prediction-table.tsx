@@ -86,7 +86,7 @@ export default function OtherSportsPredictionTable({
         <div className="flex flex-col gap-1 mt-6">{predictionList}</div>
       ) : (
         <div className="flex items-center justify-center mt-6">
-          <p>{t("NO_PREDICTIONS")}</p>
+          <p className="text-center">{t("NO_PREDICTIONS")}</p>
         </div>
       )}
     </>

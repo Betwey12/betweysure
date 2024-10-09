@@ -150,7 +150,7 @@ export default function GatewaySelect() {
               setClickedIndex(index);
               handlePayment(gateway.name);
             }}
-            className="text-white text-sm bg-yellow-sunset hover:bg-white hover:border hover:border-yellow-sunset hover:text-yellow-sunset text-center px-4 py-2 rounded disabled:cursor-not-allowed disabled:opacity-50"
+            className="text-white gap-2 text-sm bg-yellow-sunset hover:bg-white hover:border hover:border-yellow-sunset hover:text-yellow-sunset text-center px-4 py-2 rounded disabled:cursor-not-allowed disabled:opacity-50"
             disabled={isPending || gateway.name === "bank transfer"}
             title={
               gateway.name === "bank transfer"

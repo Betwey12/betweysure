@@ -154,46 +154,34 @@
   },
   "PRICING_PLANS": {
     "SUBSCRIBE_NOW": "Subscribe Now",
-    "CALL_TO_ACTION": "Ready to start winning? ",
-    "CALL_TO_ACTION_DESC": "Choose the plan that fits your needs and join the Betweysure community today!",
     "FREE_FEATURES": {
       "ONE": "Correct score",
-      "TWO": "Over 2.5",
-      "THREE": "Draw",
-      "FOUR": "Under 2.5",
+      "TWO": "Over",
+      "THREE": "1x2",
+      "FOUR": "BTTS",
       "FIVE": "Inplay",
       "SIX": "HT/FT",
-      "SEVEN": "1x2"
-    },
-    "STANDARD_FEATURES": {
-      "ONE": "Everything in free +",
-      "TWO": "Midweek bundle",
-      "THREE": "WDW",
-      "FOUR": "Over 3.5",
-      "FIVE": "HT Goal tips",
-      "SIX": "Over 1.5 FHG",
-      "SEVEN": "Win to Nil tips",
-      "EIGHT": "Sure 2 odds"
+      "SEVEN": "Bet of the day",
+      "EIGHT": "Win to Nil Tips"
     },
     "PREMIUM_FEATURES": {
-      "ONE": "Everything in standard +",
+      "ONE": "Everything in free +",
       "TWO": "SMS & Email",
-      "THREE": "Midweek bundle",
-      "FOUR": "Weekend bundle",
-      "FIVE": "Sure 3 odd",
-      "SIX": "Over 2.5",
-      "SEVEN": "BTTS",
-      "EIGHT": "Bet of the day",
-      "NINE": "BTTS & Win",
-      "TEN": "Corners",
-      "ELEVEN": "Cards",
-      "TWELVE": "Player stats",
-      "THIRTEEN": "Offside",
-      "FOURTEEN": "Fouls"
+      "THREE": "Midweek games",
+      "FOUR": "Weekend games",
+      "FIVE": "Daily 2 - 5 odds"
     },
+    "MIXED_FEATURES": {
+      "ONE": "Everything in premium +",
+      "TWO": "Other sports games"
+    },
+    "GET_STARTED": "Get started",
     "CHOOSE_PLAN": "Choose a plan"
   },
   "WHAT_IS_INCLUDED": {
+    "CALL_TO_ACTION": "Ready to start winning? ",
+    "CALL_TO_ACTION_DESC": "Choose the plan that fits your needs and join the Betweysure community today!",
+    "CHOOSE_PLAN": "Choose a plan",
     "WHAT_IS_INCLUDED": "What is included",
     "BENEFIT_ONE": "Curated Bundles",
     "BENEFIT_TWO": "Daily Surefire Tips",
