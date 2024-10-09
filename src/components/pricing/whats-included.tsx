@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import {
   FaCartPlus,
   FaFileInvoice,
@@ -33,6 +34,19 @@ export default function WhatsIncluded() {
             <p>{pack.title}</p>
           </div>
         ))}
+      </div>
+
+      <div className="flex flex-col lg:flex-row gap-4 lg:items-center justify-between mt-20 dark:bg-blue-one p-4 lg:py-20 lg:px-10 border border-gray-two rounded dark:border-0">
+        <div className="flex flex-col gap-2">
+          <h2 className="text-2xl">{t("CALL_TO_ACTION")}</h2>
+          <p>{t("CALL_TO_ACTION_DESC")}</p>
+        </div>
+        <Link
+          href="/dashboard/buy-plan"
+          className="rounded lg:text-base text-xs px-2 lg:px-4 font-medium flex items-center justify-center py-3 bg-yellow-sunset text-white"
+        >
+          {t("CHOOSE_PLAN")}
+        </Link>
       </div>
     </div>
   );

@@ -1356,29 +1356,13 @@ export const leagueList: Record<string, TPopularLeague[]> = {
 export const period = ["yesterday", "today", "tomorrow"];
 
 export const footballPaidTabs = [
-  [
-    "Home win",
-    "Away win",
-    "Over 3.5",
-    "Draw Tips",
-    "HT Home",
-    "HT Away",
-    "HT Draw",
-    "Over 0.5 FHG",
-    "Over 1.5 FHG",
-    "Win to Nil Tips",
-    "HT/FT",
-  ],
-  [
-    "Over 2.5",
-    "BTTS",
-    "Win & Over 2.5",
-    "Corners",
-    "Cards",
-    "BTTS & Win",
-    "BTTS HT&FT",
-    "Bet of the Day",
-  ],
+  "HT/FT",
+  "BTTS",
+  "Win & Over 2.5",
+  "BTTS & Win",
+  "Corners",
+  "Cards",
+  "Bet of the Day",
 ];
 
 export const footballFreeTabs = [
@@ -1388,6 +1372,18 @@ export const footballFreeTabs = [
   "12",
   "Correct Score",
   "Over 1.5",
+  "Home win",
+  "Away win",
+  "Over 3.5",
+  "Draw Tips",
+  "HT Home",
+  "BTTS HT&FT",
+  "HT Away",
+  "HT Draw",
+  "Over 0.5 FHG",
+  "Over 1.5 FHG",
+  "Win to Nil Tips",
+  "Over 2.5",
   "Inplay Live",
 ];
 
@@ -1437,115 +1433,59 @@ export const plans: {
   };
 } = {
   NGN: {
-    standard: {
-      "2 weeks": 3000,
-      "1 month": 5000,
-      "3 months": 12000,
-      "6 months": 22000,
-      "1 year": 40000,
-    },
     premium: {
-      "2 weeks": 6000,
-      "1 month": 10000,
-      "3 months": 25000,
-      "6 months": 45000,
-      "1 year": 80000,
+      "1 month": 15000,
+    },
+    mixed: {
+      "1 month": 40000,
     },
   },
   GHS: {
-    standard: {
-      "2 weeks": 30,
-      "1 month": 45,
-      "3 months": 110,
-      "6 months": 200,
-      "1 year": 360,
-    },
     premium: {
-      "2 weeks": 60,
+      "1 month": 45,
+    },
+    mixed: {
       "1 month": 90,
-      "3 months": 225,
-      "6 months": 405,
-      "1 year": 720,
     },
   },
   KES: {
-    standard: {
-      "2 weeks": 280,
-      "1 month": 455,
-      "3 months": 1100,
-      "6 months": 2010,
-      "1 year": 3650,
-    },
     premium: {
-      "2 weeks": 550,
+      "1 month": 455,
+    },
+    mixed: {
       "1 month": 910,
-      "3 months": 2275,
-      "6 months": 4100,
-      "1 year": 7285,
     },
   },
   UGX: {
-    standard: {
-      "2 weeks": 8070,
-      "1 month": 13450,
-      "3 months": 32280,
-      "6 months": 59170,
-      "1 year": 107580,
-    },
     premium: {
-      "2 weeks": 16410,
+      "1 month": 13450,
+    },
+    mixed: {
       "1 month": 26800,
-      "3 months": 67240,
-      "6 months": 121000,
-      "1 year": 215150,
     },
   },
   TZS: {
-    standard: {
-      "2 weeks": 5290,
-      "1 month": 8800,
-      "3 months": 21150,
-      "6 months": 40000,
-      "1 year": 73000,
-    },
     premium: {
-      "2 weeks": 10940,
+      "1 month": 8800,
+    },
+    mixed: {
       "1 month": 18240,
-      "3 months": 45600,
-      "6 months": 82000,
-      "1 year": 146000,
     },
   },
   ZAR: {
-    standard: {
-      "2 weeks": 50,
-      "1 month": 70,
-      "3 months": 165,
-      "6 months": 300,
-      "1 year": 540,
-    },
     premium: {
-      "2 weeks": 90,
+      "1 month": 70,
+    },
+    mixed: {
       "1 month": 135,
-      "3 months": 340,
-      "6 months": 610,
-      "1 year": 1080,
     },
   },
   USD: {
-    standard: {
-      "2 weeks": 10,
-      "1 month": 15,
-      "3 months": 40,
-      "6 months": 70,
-      "1 year": 100,
-    },
     premium: {
-      "2 weeks": 20,
+      "1 month": 15,
+    },
+    mixed: {
       "1 month": 25,
-      "3 months": 60,
-      "6 months": 110,
-      "1 year": 180,
     },
   },
 };
