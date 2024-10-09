@@ -34,7 +34,7 @@ export default function FootballPredictionTable({
             />
           ) : (
             <div className="flex items-center justify-center py-6">
-              <p>{t("NO_PREDICTIONS")}</p>
+              <p className="text-center">{t("NO_PREDICTIONS")}</p>
             </div>
           )}
         </>

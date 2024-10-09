@@ -42,23 +42,21 @@ interface SideNavProps {
 export default function SideNav({ setShowSideNav }: SideNavProps) {
   return (
     <div className="relative border-gray-two border bg-white text-blue-three lg:flex min-h-screen lg:max-h-max max-h-[100vh] flex-col gap-8 h-full rounded lg:rounded-none shadow dark:text-white dark:bg-blue-two dark:border-0">
-      <div className="overflow-y-scroll bg-inherit">
-        <div className="p-4 block lg:px-5 lg:py-8 bg-inherit w-full">
-          <Link href="/?category=trending">
-            <Image
-              width={120}
-              height={120}
-              src="/logo.png"
-              alt="logo"
-              className="w-[120px] lg:w-[160px]"
-            />
-          </Link>{" "}
-        </div>
-        <div className="flex flex-col lg:absolute bottom-0 lg:overflow-y-scroll lg:h-[85%] w-full">
-          {navlinks.map((link, index) => (
-            <NavLIst key={index} link={link} setShowSideNav={setShowSideNav} />
-          ))}
-        </div>
+      <div className="p-4 block lg:px-5 lg:py-8 z-10 bg-inherit w-full">
+        <Link href="/?category=trending">
+          <Image
+            width={120}
+            height={120}
+            src="/logo.png"
+            alt="logo"
+            className="w-[120px] lg:w-[160px]"
+          />
+        </Link>{" "}
+      </div>
+      <div className="flex flex-col lg:absolute bottom-0 lg:overflow-y-scroll lg:h-[85%] w-full bg-inherit">
+        {navlinks.map((link, index) => (
+          <NavLIst key={index} link={link} setShowSideNav={setShowSideNav} />
+        ))}
       </div>
     </div>
   );
@@ -211,12 +209,29 @@ const navlinks = [
     ],
   },
   {
+    name: "Premium predictions",
+    icon: <BundlesIcon />,
+    dropdown: [
+      {
+        name: "Football",
+        path: "/dashboard/football-predictions?country=all",
+        icon: <FootBallIcon />,
+      },
+      {
+        name: "Other Sports",
+        path: "/dashboard/other-sports?sport=basketball",
+        icon: <BasketballIcon />,
+      },
+    ],
+  },
+
+  {
     name: "Free predictions",
     icon: <TbFreeRights />,
     dropdown: [
       {
         name: "Football",
-        path: "/dashboard/free-predictions?country=all",
+        path: "/dashboard/football-predictions?country=all",
         icon: <FootBallIcon />,
       },
       {

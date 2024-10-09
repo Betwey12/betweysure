@@ -26,16 +26,16 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
   const searchParams = useSearchParams();
   const { user, isLoading } = useGetUser();
   const { user: loggedInUser, isLoading: loggedInLoading } = useAuth();
-  const isVerified = loggedInUser?.emailVerified || loggedInLoading;
-  const hasPhone = user?.phone || loggedInLoading;
+  const loading = isLoading || loggedInLoading;
+  const isVerified = loggedInUser?.emailVerified || loading;
+  const hasPhone = user?.phone || loading;
+  const isLoggedIn = loggedInUser || loading;
 
   const showTour = !!searchParams.get("tour") || false;
   const { mutateAsync, isError } = useMutation({
     mutationFn: (data: { fcmToken: string }) =>
       HTTPRequest.Post("users/edit-profile", data),
   });
-
-  const loading = isLoading || loggedInLoading;
 
   useEffect(() => {
     (async () => {
@@ -110,7 +110,7 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
   useEffect(() => {
     if (loading) return;
 
-    if (!loggedInUser) {
+    if (!isLoggedIn) {
       router.push("/auth/login");
       return;
     }
@@ -123,7 +123,7 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
     if (!hasPhone) {
       router.push("/auth/complete-profile");
     }
-  }, [hasPhone, isVerified, loading, loggedInUser, router]);
+  }, [hasPhone, isLoggedIn, isVerified, loading, router]);
 
   if (loading) return <DashboardSpinner />;
 
