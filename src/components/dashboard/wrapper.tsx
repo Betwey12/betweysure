@@ -128,11 +128,11 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
   if (loading) return <DashboardSpinner />;
 
   return (
-    <div className="flex flex-col h-screen lg:flex-row w-full overflow-hidden">
+    <div className="flex flex-col h-screen lg:flex-row w-full">
       <div className="hidden lg:block w-1/5">
         <SideNav />
       </div>
-      <div className="x flex-col lg:w-4/5 h-full">
+      <div className="flex flex-col lg:w-4/5 h-full">
         <DashboardNav />
         <div className="bg-gray-light p-4 lg:p-6 lg:pb-28 pb-28 overflow-y-scroll h-full relative dark:bg-blue-one dark:text-white">
           {children}

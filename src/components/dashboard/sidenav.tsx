@@ -214,7 +214,7 @@ const navlinks = [
     dropdown: [
       {
         name: "Football",
-        path: "/dashboard/football-predictions?country=all",
+        path: "/dashboard/premium-football",
         icon: <FootBallIcon />,
       },
       {

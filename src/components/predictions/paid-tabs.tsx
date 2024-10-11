@@ -24,7 +24,7 @@ export default function PaidTabs({
     (fetchedUser?.plan?.expiry ?? 0) < Date.now() ||
     fetchedUser?.plan?.type === "free";
 
-  const hasPremium = fetchedUser?.plan?.type === "premium" && !isExpired;
+  const hasPremium = fetchedUser?.plan?.type !== "free" && !isExpired;
 
   return (
     <div className="flex gap-4 flex-col">
