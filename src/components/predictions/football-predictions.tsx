@@ -8,13 +8,9 @@ import { FaInfoCircle } from "react-icons/fa";
 import FootballPredictionTable from "./football-predictions-table";
 import SelectedGames from "../ui/selected-games";
 import useControlFootballPredictions from "@/hooks/useControlFootballPredictions";
-import { useState } from "react";
-import {
-  europeanCountries,
-  footballFreeTabs,
-  footballPaidTabs,
-} from "@/assets/data/data";
+import { footballFreeTabs, footballPaidTabs } from "@/assets/data/data";
 import { useRouter } from "next/navigation";
+import useFilterPredictions from "@/hooks/useFilterPredictions";
 
 interface FootballPredictionsProps {
   country: string;
@@ -44,31 +40,14 @@ export default function FootballPredictions({
     activeTab,
     isLoadingLive,
   } = useControlFootballPredictions();
-  const [searchValue, setSearchValue] = useState("");
 
-  const options = ["England", "Spain", "Italy", "Germany", "France", "Europe"];
+  const {
+    filteredPredictions: filteredData,
+    setSearchValue,
+    options,
+  } = useFilterPredictions({ predictions: tableData ?? [], country });
 
-  const filteredPredictions =
-    tableData?.filter((prediction) => {
-      const filters: Record<string, boolean> = {
-        all: true,
-        europe: europeanCountries.includes(prediction.country),
-        spain: prediction.country?.toLowerCase() === "spain",
-        england: prediction.country?.toLowerCase() === "england",
-        france: prediction.country?.toLowerCase() === "france",
-        germany: prediction.country?.toLowerCase() === "germany",
-        italy: prediction.country?.toLowerCase() === "italy",
-      };
-      const newSearchValue = searchValue.toLowerCase();
-      const hasSearchValue =
-        prediction.competition_full.toLowerCase().includes(newSearchValue) ||
-        prediction.country.toLowerCase().includes(newSearchValue) ||
-        prediction.awayTeam.toLowerCase().includes(newSearchValue) ||
-        prediction.homeTeam.toLowerCase().includes(newSearchValue);
-
-      return filters[country] && hasSearchValue;
-    }) || [];
-
+  const filteredPredictions = filteredData as Prediction[];
   const count = Math.ceil(
     (filteredPredictions?.length ?? 0) / predictionsPerPage
   );
