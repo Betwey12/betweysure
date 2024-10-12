@@ -83,11 +83,14 @@ export default function FootballPremiumTable({
         {tip}
       </p>
 
-      <ResultIcon
-        awayGoals={awayGoals}
-        homeGoals={homeGoals}
-        status={matchStatus}
-      />
+      <div className="flex items-center justify-center">
+        <ResultIcon
+          awayGoals={awayGoals}
+          homeGoals={homeGoals}
+          status={matchStatus}
+          resultKey="null"
+        />
+      </div>
     </div>
   );
 }

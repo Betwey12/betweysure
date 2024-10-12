@@ -14,8 +14,8 @@ const useControlFootballPredictions = () => {
 
   const { fullDate, handlDateChange, setShowDate, showDate, setFullDate } =
     useChangeDate(currentPeriod);
-  const queryKey = ["predictions", fullDate];
 
+  const queryKey = ["predictions", fullDate];
   const endpoint = `tips/football/${fullDate}/${fullDate}`;
 
   const predictionsPerPage = 10;

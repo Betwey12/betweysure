@@ -2,27 +2,67 @@
 import { Pagination } from "@mui/material";
 import { FaInfoCircle } from "react-icons/fa";
 import SelectedGames from "../ui/selected-games";
-import useControlFootballPredictions from "@/hooks/useControlFootballPredictions";
 import FootballPremiumTable from "./football-premium-table";
-import { useQuery } from "@tanstack/react-query";
 import usePredictions from "@/hooks/usePredictions";
 import useChangeDate from "@/hooks/useChangeDate";
+import PredictionsFilter from "./predictions-filter";
+import { period } from "@/assets/data/data";
+import { useState } from "react";
+import useFilterPredictions from "@/hooks/useFilterPredictions";
 
 export default function PremiumFootball() {
+  const [periodIndex, setPeriodIndex] = useState(1);
+  const [country, setCountry] = useState("all");
+  const currentPeriod = period[periodIndex] as TPeriod;
+
   const { fullDate, handlDateChange, setShowDate, showDate, setFullDate } =
-    useChangeDate("today");
+    useChangeDate(currentPeriod);
 
   const predictionsPerPage = 10;
   const { data, handlePagination, from, to } = usePredictions({
     endpoint: `tips/football-premium/${fullDate}/${fullDate}`,
-    queryKey: ["premium-football"],
+    queryKey: ["premium-football", fullDate],
     predictionsPerPage,
   });
-  const premiumPredictions =
-    (data?.data as unknown as TPremiumPrediction[]) ?? [];
+  const premiumPredictions = (
+    (data?.data as unknown as TPremiumPrediction[]) ?? []
+  ).map((pred) => ({
+    ...pred,
+    competition_full: pred.competitionFull,
+  }));
+
+  const {
+    filteredPredictions: filteredData,
+    setSearchValue,
+    options,
+  } = useFilterPredictions({ predictions: premiumPredictions ?? [], country });
+  const filteredPredictions = filteredData as TPremiumPrediction[];
+
+  const handleSelectOption = (option: string) => {
+    handlePagination(undefined, 1);
+    setCountry(option.toLowerCase());
+  };
 
   return (
     <>
+      <div className="flex flex-col gap-6">
+        <PredictionsFilter
+          options={options}
+          setShowDate={setShowDate}
+          handlDateChange={handlDateChange}
+          showDate={showDate}
+          fullDate={fullDate}
+          periodIndex={periodIndex}
+          setFullDate={setFullDate}
+          setPeriodIndex={setPeriodIndex}
+          title="Premium Football Predictions"
+          selectedOption={country}
+          setSearchValue={setSearchValue}
+          handleSelectOption={handleSelectOption}
+          handlePagination={handlePagination}
+        />
+      </div>
+
       <div className="overflow-x-scroll">
         <div className="mt-10">
           <div className="lg:hidden grid grid-cols-2 text-center">
@@ -46,7 +86,7 @@ export default function PremiumFootball() {
             </div>
 
             <div className="flex flex-col">
-              {premiumPredictions.slice(from, to).map((predictionObj) => (
+              {filteredPredictions.slice(from, to).map((predictionObj) => (
                 <FootballPremiumTable
                   key={predictionObj._id}
                   awayGoals={predictionObj.awayGoals}
