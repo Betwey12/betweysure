@@ -1,3 +1,4 @@
+import { TPlanType } from "@/constants";
 import en from "./messages/en.json";
 import { User } from "firebase/auth";
 
@@ -642,12 +643,6 @@ declare global {
     message: string;
     data: TAnnouncement[];
   };
-
-  enum TPlanType {
-    FREE = "free",
-    MIXED = "mixed",
-    PREMIUM = "premium",
-  }
 
   interface TUser extends User {
     _id: string;

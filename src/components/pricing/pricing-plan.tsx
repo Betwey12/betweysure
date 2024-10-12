@@ -7,6 +7,7 @@ import { plans } from "@/assets/data/data";
 import useSelectCurrency from "@/hooks/useSelectCurrency";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { TPlanType } from "@/constants";
 
 export default function PricingPlans() {
   const { packages } = usePricingPlans();
