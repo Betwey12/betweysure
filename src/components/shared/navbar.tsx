@@ -12,7 +12,7 @@ import SelectLanguage from "../ui/select-language";
 import ToggleTheme from "../ui/toggle-theme";
 import { useAuth } from "@/hooks/useAuth";
 
-const baseUrl = process.env.NEX_PUBLIC_BASE_URL as string;
+const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL as string;
 
 export default function Navbar() {
   const { navLinks, t, user } = useNav();
@@ -125,7 +125,7 @@ function useNav() {
     },
     {
       name: t("BLOG"),
-      link: `${baseUrl}/blog`,
+      link: blogUrl,
     },
     {
       name: t("LIVESCORES"),
