@@ -17,7 +17,7 @@ const usePredictions = ({
   const [to, setTo] = useState(predictionsPerPage);
 
   async function getPredictions(): Promise<
-    TPredictionResponse | TOtherSportsResponse
+    TPredictionResponse | TOtherSportsResponse | TPremiumFootballResponse
   > {
     return await HTTPRequest.Get(endpoint);
   }

@@ -46,10 +46,10 @@ export default function SideNav({ setShowSideNav }: SideNavProps) {
         <Link href="/?category=trending">
           <Image
             width={120}
-            height={120}
+            height={46}
             src="/logo.png"
             alt="logo"
-            className="w-[120px] lg:w-[160px]"
+            className="w-[120px] h-[45px] lg:w-[160px]"
           />
         </Link>{" "}
       </div>
@@ -214,7 +214,7 @@ const navlinks = [
     dropdown: [
       {
         name: "Football",
-        path: "/dashboard/football-predictions?country=all",
+        path: "/dashboard/premium-football",
         icon: <FootBallIcon />,
       },
       {

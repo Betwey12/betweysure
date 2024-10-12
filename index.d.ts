@@ -84,6 +84,24 @@ declare global {
     matchData: TMatchData;
   };
 
+  type TPremiumPrediction = {
+    awayTeam: string;
+    homeTeam: string;
+    competition: string;
+    competitionFull: string;
+    competitionLogo: string;
+    country: string;
+    date: string;
+    homeGoals: number;
+    awayGoals: number;
+    _id: string;
+    status: string;
+    prediction?: string;
+    homeLogo: string;
+    awayLogo: string;
+    tip: string;
+  };
+
   type TMatchPredictionAndPrediction = Prediction & {
     over0: string;
     hthome: string;
@@ -100,6 +118,12 @@ declare global {
     success: boolean;
     message: string;
     data: Prediction[];
+  };
+
+  type TPremiumFootballResponse = {
+    success: boolean;
+    message: string;
+    data: TPremiumPrediction[];
   };
 
   type TMatchPrediction = {

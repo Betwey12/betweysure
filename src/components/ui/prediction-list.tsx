@@ -2,7 +2,7 @@ import { FaArrowRight, FaInfoCircle, FaLock } from "react-icons/fa";
 import { cn } from "../../lib/utils";
 import ResultIcon from "./result-icon";
 import globeIcon from "../../assets/icons/globe.png";
-import fooballIcon from "../../assets/icons/solar-football.png";
+import footballIcon from "../../assets/icons/solar-football.png";
 import { useSlip } from "@/hooks/useSlip";
 import { useAuth } from "@/hooks/useAuth";
 import { getLeague } from "@/assets/data/leagueApiF";
@@ -61,14 +61,14 @@ export function PredictionList({
     name: predictionObj?.homeTeam,
     logo: homeId
       ? `https://media.api-sports.io/football/teams/${homeId}.png`
-      : fooballIcon.src,
+      : footballIcon.src,
   };
 
   const away = {
     name: predictionObj?.awayTeam,
     logo: awayId
       ? `https://media.api-sports.io/football/teams/${awayId}.png`
-      : fooballIcon.src,
+      : footballIcon.src,
   };
 
   function handleModal() {
@@ -143,7 +143,7 @@ export function PredictionList({
           className="w-6 h-6 rounded-full bg-white"
           loading="lazy"
           onError={(e) => {
-            e.currentTarget.src = fooballIcon.src;
+            e.currentTarget.src = footballIcon.src;
           }}
         />
         <p className="truncate w-[70%] text-left">{home.name}</p>
@@ -163,7 +163,7 @@ export function PredictionList({
           className="w-6 h-6 rounded-full bg-white"
           loading="lazy"
           onError={(e) => {
-            e.currentTarget.src = fooballIcon.src;
+            e.currentTarget.src = footballIcon.src;
           }}
         />
         <p className="truncate w-[70%] text-left">{away.name}</p>
