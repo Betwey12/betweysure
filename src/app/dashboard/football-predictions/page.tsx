@@ -5,7 +5,7 @@ export default function FootballPredictionsPage({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const country = searchParams.country as string;
+  const country = (searchParams.country as string) ?? "all";
 
   return <FootballPredictions country={country} />;
 }
