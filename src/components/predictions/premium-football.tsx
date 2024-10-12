@@ -18,7 +18,8 @@ export default function PremiumFootball() {
     queryKey: ["premium-football"],
     predictionsPerPage,
   });
-  console.log(data);
+  const premiumPredictions =
+    (data?.data as unknown as TPremiumPrediction[]) ?? [];
 
   return (
     <>
@@ -43,8 +44,23 @@ export default function PremiumFootball() {
                 for free
               </p>
             </div>
+
             <div className="flex flex-col">
-              <FootballPremiumTable />
+              {premiumPredictions.slice(from, to).map((predictionObj) => (
+                <FootballPremiumTable
+                  key={predictionObj._id}
+                  awayGoals={predictionObj.awayGoals}
+                  awayLogo={predictionObj.awayLogo}
+                  awayTeam={predictionObj.awayTeam}
+                  competitionName={predictionObj.competition}
+                  homeGoals={predictionObj.homeGoals}
+                  homeLogo={predictionObj.homeLogo}
+                  homeTeam={predictionObj.awayTeam}
+                  leagueLogo={predictionObj.competitionLogo}
+                  matchStatus={predictionObj.status}
+                  tip={predictionObj.tip}
+                />
+              ))}
             </div>
 
             {([]?.length ?? 0) > 0 && (
