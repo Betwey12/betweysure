@@ -35,7 +35,7 @@ declare global {
       wallet: number;
       currency: string;
       plan: {
-        type: "free" | "standard" | "premium";
+        type: TPlanType;
         expiry: number;
       };
       expiry: number;
@@ -643,6 +643,12 @@ declare global {
     data: TAnnouncement[];
   };
 
+  enum TPlanType {
+    FREE = "free",
+    MIXED = "mixed",
+    PREMIUM = "premium",
+  }
+
   interface TUser extends User {
     _id: string;
     uid: string;
@@ -654,7 +660,7 @@ declare global {
     wallet: number;
     currency: string;
     plan: {
-      type: string;
+      type: TPlanType;
       expiry: number;
     };
     expiry: number;

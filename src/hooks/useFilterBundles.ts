@@ -50,16 +50,8 @@ const useFilterBundles = ({
           threshold: 85,
           option: "Over 1.5",
         }),
-      };
 
-      const allStandard: Record<
-        string,
-        TMatchPredictionAndPrediction[] | undefined
-      > = {
-        ...allFree,
-        "HT/FT": assignByKey("hftfpred"),
         "Correct Score": assignByKey("correctscore"),
-        Cards: assignByKey("bookings"),
 
         "Home win": assignByThreshold({
           key: "home_win",
@@ -96,7 +88,6 @@ const useFilterBundles = ({
           threshold: 50,
           option: "HT Draw",
         }),
-
         "Over 3.5": assignByThreshold({
           key: "over35goals",
           threshold: 50,
@@ -120,18 +111,33 @@ const useFilterBundles = ({
           threshold: 60,
           option: "Win to Nil Tips",
         }),
-      };
 
-      const allPremium: Record<
-        string,
-        TMatchPredictionAndPrediction[] | undefined
-      > = {
-        ...allStandard,
         "Over 2.5": assignByThreshold({
           key: "over25goals",
           threshold: 70,
           option: "Over 2.5",
         }),
+
+        "BTTS HT&FT": assignByThreshold({
+          key: "btsibh",
+          threshold: 50,
+          option: "BTTS HT&FT",
+        }),
+      };
+
+      const allMixed: Record<
+        string,
+        TMatchPredictionAndPrediction[] | undefined
+      > = {
+        ...allFree,
+      };
+      const allPremium: Record<
+        string,
+        TMatchPredictionAndPrediction[] | undefined
+      > = {
+        ...allMixed,
+        Cards: assignByKey("bookings"),
+        "HT/FT": assignByKey("hftfpred"),
 
         BTTS: assignByThreshold({
           key: "both_teams_to_score",
@@ -150,12 +156,6 @@ const useFilterBundles = ({
           threshold: 60,
           option: "BTTS & Win",
         }),
-
-        "BTTS HT&FT": assignByThreshold({
-          key: "btsibh",
-          threshold: 50,
-          option: "BTTS HT&FT",
-        }),
       };
 
       const planPredictions: Record<
@@ -163,7 +163,7 @@ const useFilterBundles = ({
         Record<string, TMatchPredictionAndPrediction[] | undefined>
       > = {
         free: allFree,
-        standard: allStandard,
+        mixed: allMixed,
         premium: allPremium,
       };
       const allPredictions = plan

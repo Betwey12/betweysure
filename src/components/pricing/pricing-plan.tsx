@@ -39,7 +39,7 @@ function PackageCard({
 }) {
   const t = useTranslations("PRICING_PLANS");
   const { user } = useAuth();
-  const isFree = predictionPackage.name === "free";
+  const isFree = predictionPackage.name === TPlanType.FREE;
 
   return (
     <div
@@ -47,9 +47,9 @@ function PackageCard({
         "flex relative flex-col border border-gray-two items-center justify-between gap-4 px-4 lg:p-6 py-12 lg:rounded-xl shadow-lg bg-white text-blue-three dark:bg-blue-one dark:border-0 dark:text-white rounded",
         {
           "dark:bg-blue-one dark:text-white":
-            predictionPackage.name !== "premium",
+            predictionPackage.name !== TPlanType.PREMIUM,
           "bg-gradient-to-bl to-purple-royal from-purple-800 via-purple-500 text-white":
-            predictionPackage.name === "premium",
+            predictionPackage.name === TPlanType.PREMIUM,
         }
       )}
     >
@@ -75,7 +75,7 @@ function PackageCard({
             <div className="flex items-center gap-2" key={feature}>
               <FaCheck
                 className={cn("text-white", {
-                  "text-cyan": predictionPackage.name !== "Standard",
+                  "text-cyan": predictionPackage.name !== TPlanType.MIXED,
                 })}
               />
               <p className="text-xs">{feature}</p>
@@ -113,7 +113,7 @@ function usePricingPlans() {
   const packages = [
     {
       title: "Free",
-      name: "free",
+      name: TPlanType.FREE,
       price: 0,
       features: [
         t("FREE_FEATURES.ONE"),
@@ -128,7 +128,7 @@ function usePricingPlans() {
     },
     {
       title: "Premium Football",
-      name: "premium",
+      name: TPlanType.PREMIUM,
       price: plan["premium"]["1 month"],
       features: [
         t("PREMIUM_FEATURES.ONE"),
@@ -140,7 +140,7 @@ function usePricingPlans() {
     },
     {
       title: "Premium Mixed Sport",
-      name: "mixed",
+      name: TPlanType.MIXED,
       price: plan["mixed"]["1 month"],
       features: [t("MIXED_FEATURES.ONE"), t("MIXED_FEATURES.TWO")],
     },
