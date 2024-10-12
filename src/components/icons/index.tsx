@@ -419,7 +419,7 @@ export function CalendarIcon(props: React.SVGProps<SVGSVGElement>) {
           <path
             id="Vector"
             d="M9.75008 21.6666H6.50008C5.35081 21.6666 4.24861 21.2101 3.43595 20.3974C2.62329 19.5848 2.16675 18.4826 2.16675 17.3333V7.58329C2.16675 6.43402 2.62329 5.33182 3.43595 4.51916C4.24861 3.70651 5.35081 3.24996 6.50008 3.24996H18.4167C19.566 3.24996 20.6682 3.70651 21.4809 4.51916C22.2935 5.33182 22.7501 6.43402 22.7501 7.58329V10.8333M8.66675 2.16663V4.33329M16.2501 2.16663V4.33329M2.16675 8.66663H22.7501M20.0417 16.9465L18.4167 18.5715"
-            stroke={props.stroke || "white"}
+            stroke={props.stroke || "currentColor"}
             strokeWidth="2.16667"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -427,7 +427,7 @@ export function CalendarIcon(props: React.SVGProps<SVGSVGElement>) {
           <path
             id="Vector_2"
             d="M18.4167 23.8333C21.4082 23.8333 23.8333 21.4082 23.8333 18.4167C23.8333 15.4251 21.4082 13 18.4167 13C15.4251 13 13 15.4251 13 18.4167C13 21.4082 15.4251 23.8333 18.4167 23.8333Z"
-            stroke={props.stroke || "white"}
+            stroke={props.stroke || "currentColor"}
             strokeWidth="2.16667"
             strokeLinecap="round"
             strokeLinejoin="round"
