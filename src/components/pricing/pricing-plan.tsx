@@ -8,12 +8,22 @@ import useSelectCurrency from "@/hooks/useSelectCurrency";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { TPlanType } from "@/constants";
+import MySelect from "../ui/my-select";
 
 export default function PricingPlans() {
-  const { packages } = usePricingPlans();
+  const { packages, supportedCountries, selectedCurrency, setSelectedCurrency } = usePricingPlans();
 
   return (
     <div className="flex flex-col lg:gap-40 gap-20 dark:text-white md:px-10 px-4 lg:px-20">
+         <div className="z-10 w-full max-w-xs">
+            <MySelect
+              options={supportedCountries}
+              bgDashboard
+              selectedOption={selectedCurrency}
+              setSelectedOption={setSelectedCurrency}
+            />
+          </div>
+
       <div className="grid lg:grid-cols-3 gap-10 lg:px-0">
         {packages.map((predictionPackage) => (
           <PackageCard
