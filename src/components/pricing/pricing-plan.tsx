@@ -11,24 +11,30 @@ import { TPlanType } from "@/constants";
 import MySelect from "../ui/my-select";
 
 export default function PricingPlans() {
-  const { packages, supportedCountries, selectedCurrency, setSelectedCurrency } = usePricingPlans();
+  const {
+    packages,
+    supportedCountries,
+    selectedCurrency,
+    setSelectedCurrency,
+  } = usePricingPlans();
 
   return (
-    <div className="flex flex-col lg:gap-40 gap-20 dark:text-white md:px-10 px-4 lg:px-20">
-         <div className="z-10 w-full max-w-xs">
-            <MySelect
-              options={supportedCountries}
-              bgDashboard
-              selectedOption={selectedCurrency}
-              setSelectedOption={setSelectedCurrency}
-            />
-          </div>
+    <div className="flex flex-col gap-10 dark:text-white md:px-10 px-4 lg:px-20">
+      <div className="z-10 w-full max-w-xs border-gray-two rounded border">
+        <MySelect
+          options={supportedCountries}
+          bgDashboard
+          selectedOption={selectedCurrency}
+          setSelectedOption={setSelectedCurrency}
+        />
+      </div>
 
-      <div className="grid lg:grid-cols-3 gap-10 lg:px-0">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:px-0">
         {packages.map((predictionPackage) => (
           <PackageCard
             predictionPackage={predictionPackage}
             key={predictionPackage.name}
+            selectedCurrency={selectedCurrency}
           />
         ))}
       </div>
@@ -45,12 +51,16 @@ type TPackage = {
 
 function PackageCard({
   predictionPackage,
+  selectedCurrency,
 }: {
   predictionPackage: TPackage[number];
+  selectedCurrency: string;
 }) {
   const t = useTranslations("PRICING_PLANS");
   const { user } = useAuth();
   const isFree = predictionPackage.name === TPlanType.FREE;
+  const currencyCode =
+    selectedCurrency?.split(" ")[selectedCurrency?.split(" ")?.length - 1];
 
   return (
     <div
@@ -74,19 +84,24 @@ function PackageCard({
 
           <div className="flex items-center">
             <p className="font-bold text-2xl">
-              {formatCurrency(predictionPackage.price, "NGN")}
+              {formatCurrency(predictionPackage.price, currencyCode)}
             </p>
             <p className="font-bold">/month</p>
           </div>
 
           <div className="w-[40%] h-[1px] bg-yellow-sunset lg:my-4 my-2" />
         </div>
-        <div className="flex flex-col gap-2 lg:gap-4 w-full">
+        <div
+          className={cn("grid gap-2 lg:gap-4 w-full", {
+            "grid-cols-2": predictionPackage.features.length > 9,
+          })}
+        >
           {predictionPackage.features.map((feature) => (
             <div className="flex items-center gap-2" key={feature}>
               <FaCheck
-                className={cn("text-white", {
-                  "text-cyan": predictionPackage.name !== TPlanType.MIXED,
+                className={cn("dark:text-white", {
+                  "text-cyan dark:text-cyan":
+                    predictionPackage.name === TPlanType.PREMIUM,
                 })}
               />
               <p className="text-xs">{feature}</p>
@@ -135,6 +150,18 @@ function usePricingPlans() {
         t("FREE_FEATURES.SIX"),
         t("FREE_FEATURES.SEVEN"),
         t("FREE_FEATURES.EIGHT"),
+        t("FREE_FEATURES.NINE"),
+        t("FREE_FEATURES.TEN"),
+        t("FREE_FEATURES.ELEVEN"),
+        t("FREE_FEATURES.TWELVE"),
+        t("FREE_FEATURES.THIRTEEN"),
+        t("FREE_FEATURES.FOURTEEN"),
+        t("FREE_FEATURES.FIFTEEN"),
+        t("FREE_FEATURES.SiXTEEN"),
+        t("FREE_FEATURES.SEVENTEEN"),
+        t("FREE_FEATURES.EIGHTEEN"),
+        t("FREE_FEATURES.NINETEEN"),
+        t("FREE_FEATURES.TWENTY"),
       ],
     },
     {
@@ -147,13 +174,26 @@ function usePricingPlans() {
         t("PREMIUM_FEATURES.THREE"),
         t("PREMIUM_FEATURES.FOUR"),
         t("PREMIUM_FEATURES.FIVE"),
+        t("PREMIUM_FEATURES.SIX"),
+        t("PREMIUM_FEATURES.SEVEN"),
+        t("PREMIUM_FEATURES.EIGHT"),
+        t("PREMIUM_FEATURES.NINE"),
+        t("PREMIUM_FEATURES.TEN"),
+        t("PREMIUM_FEATURES.ELEVEN"),
       ],
     },
     {
       title: "Premium Mixed Sport",
       name: TPlanType.MIXED,
       price: plan["mixed"]["1 month"],
-      features: [t("MIXED_FEATURES.ONE"), t("MIXED_FEATURES.TWO")],
+      features: [
+        t("MIXED_FEATURES.ONE"),
+        t("MIXED_FEATURES.TWO"),
+        t("MIXED_FEATURES.THREE"),
+        t("MIXED_FEATURES.FOUR"),
+        t("MIXED_FEATURES.FIVE"),
+        t("MIXED_FEATURES.SIX"),
+      ],
     },
   ];
   return {

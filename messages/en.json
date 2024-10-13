@@ -157,23 +157,45 @@
     "FREE_FEATURES": {
       "ONE": "Correct score",
       "TWO": "Over",
-      "THREE": "1x2",
+      "THREE": "12",
       "FOUR": "BTTS",
       "FIVE": "Inplay",
       "SIX": "HT/FT",
       "SEVEN": "Bet of the day",
-      "EIGHT": "Win to Nil Tips"
+      "EIGHT": "Win to Nil Tips",
+      "NINE": "1X",
+      "TEN": "Home win",
+      "ELEVEN": "Away win",
+      "TWELVE": "Over 3.5",
+      "THIRTEEN": "Draw tips",
+      "FOURTEEN": "2X",
+      "FIFTEEN": "HT Home",
+      "SiXTEEN": "HT Away",
+      "SEVENTEEN": "Over 1.5FHG",
+      "EIGHTEEN": "Win to Nil Tips",
+      "NINETEEN": "Over 2.5",
+      "TWENTY": "Inplay live"
     },
     "PREMIUM_FEATURES": {
       "ONE": "Everything in free +",
-      "TWO": "SMS & Email",
-      "THREE": "Midweek games",
-      "FOUR": "Weekend games",
-      "FIVE": "Daily 2 - 5 odds"
+      "TWO": "Daily 2 - 5 odds",
+      "THREE": "SMS & Email",
+      "FOUR": "Midweek games",
+      "FIVE": "Weekend games",
+      "SIX": "BTTS",
+      "SEVEN": "Bet of the day",
+      "EIGHT": "Win & Over 2.5",
+      "NINE": "HT/FT",
+      "TEN": "Corners",
+      "ELEVEN": "Cards"
     },
     "MIXED_FEATURES": {
-      "ONE": "Everything in premium +",
-      "TWO": "Other sports games"
+      "ONE": "Everything in premium football plan +",
+      "TWO": "Other sports games",
+      "THREE": "Basketball premium tips",
+      "FOUR": "Baseball premium tips",
+      "FIVE": "Tennis premium tips",
+      "SIX": "Ice hockey premium tips"
     },
     "GET_STARTED": "Get started",
     "CHOOSE_PLAN": "Choose a plan"
@@ -198,6 +220,9 @@
     "FREE_PLAN_DESC": "Get started with our Free Plan and enjoy access to a selection of curated betting tips, covering various sports and leagues. It's the perfect way to experience the quality of our predictions and see how Betweysure can help you win.",
     "STANDARD_PLAN": "Standard Plan",
     "STANDARD_PLAN_DESC": "Take your betting to the next level with our Standard Plan. Get daily surefire tips, access to games across 103 leagues, and 24/7 support. Our Standard Plan is designed for bettors who want to increase their winning potential without breaking the bank.",
+    "MIXED_PLAN": "Mixed Plan",
+    "MIXED_PLAN_DESC": "Take your betting to the next level with our Mixed Plan. Get daily surefire tips, access to games across 103 leagues in football, and other premium predictions for basketball, baseball, baseball, and ice-hockey, with 24/7 support. Our Mixed Plan is designed for bettors who want to increase their winning potential accross all sports without breaking the bank.",
+
     "PREMIUM_PLAN": "Premium Plan",
     "PREMIUM_PLAN_DESC": "For the serious bettor, our Premium Plan offers the ultimate betting experience. Enjoy all the benefits of the Standard Plan, plus exclusive access to premium tip categories, weekend bundles, and personalized support. Maximize your earnings with our strategic betting tips and increase your odds of success.",
     "BENEFIT_TWELVE": "Increase your odds of success"
