@@ -61,8 +61,8 @@ function useWhatIsIncluded() {
       description: t("FREE_PLAN_DESC"),
     },
     {
-      title: t("STANDARD_PLAN"),
-      description: t("STANDARD_PLAN_DESC"),
+      title: t("MIXED_PLAN"),
+      description: t("MIXED_PLAN_DESC"),
     },
     {
       title: t("PREMIUM_PLAN"),
