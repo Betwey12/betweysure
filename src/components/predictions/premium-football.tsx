@@ -92,7 +92,7 @@ export default function PremiumFootball() {
                   awayGoals={predictionObj.awayGoals}
                   awayLogo={predictionObj.awayLogo}
                   awayTeam={predictionObj.awayTeam}
-                  competitionName={predictionObj.competition}
+                  competitionName={predictionObj.competitionFull}
                   homeGoals={predictionObj.homeGoals}
                   homeLogo={predictionObj.homeLogo}
                   homeTeam={predictionObj.awayTeam}
