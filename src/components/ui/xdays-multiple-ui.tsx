@@ -7,6 +7,17 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import usePopUp from "@/hooks/usePopUp";
+import bet9ja from "@/assets/images/bet9ja.png";
+import sportybet from "@/assets/images/sportybet.png";
+
+const logos: Record<string, any> = {
+  "1xbetDark": oneXBet,
+  "1xbetLight": oneXBetLight,
+  bet9jaDark: bet9ja,
+  bet9jaLight: bet9ja,
+  sportybetsDark: sportybet,
+  sportybetsLight: sportybet,
+};
 
 interface XdaysMultipleUiProps {
   topPredictions: {
@@ -20,6 +31,7 @@ interface XdaysMultipleUiProps {
   partnerLink: string;
   canShowImage?: boolean;
   investment: number;
+  bookie?: string;
 }
 
 export default function XdaysMultipleUi({
@@ -28,6 +40,7 @@ export default function XdaysMultipleUi({
   partnerLink,
   canShowImage,
   investment = 300,
+  bookie = "1xbet",
 }: XdaysMultipleUiProps) {
   const { theme } = useTheme();
   const { setPopUp } = usePopUp();
@@ -41,7 +54,7 @@ export default function XdaysMultipleUi({
           <Image
             width={70}
             height={21}
-            src={isDark ? oneXBet : oneXBetLight}
+            src={logos[`${bookie}${isDark ? "Dark" : "Light"}`]}
             alt="1xbet"
             className="w-[70px] h-[21px]"
             loading="lazy"
