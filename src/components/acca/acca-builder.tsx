@@ -24,7 +24,13 @@ const builderSchema = yup.object().shape({
 
 type TBuilderValues = yup.InferType<typeof builderSchema>;
 
-export default function AccumulatorBuilderForm() {
+interface AccumulatorBuilderFormProps {
+  bookie?: string;
+}
+
+export default function AccumulatorBuilderForm({
+  bookie = "1xbet",
+}: AccumulatorBuilderFormProps) {
   const t = useTranslations("ACCA_BUILDER");
   const {
     register,
@@ -135,6 +141,7 @@ export default function AccumulatorBuilderForm() {
           investment={300}
           noOfGames={3}
           partnerLink="https://refpa7921972.top/L?tag=d_2927467m_1573c_&site=2927467&ad=1573"
+          bookie={bookie}
         />
 
         <form
@@ -249,6 +256,7 @@ export default function AccumulatorBuilderForm() {
           investment={500}
           noOfGames={3}
           partnerLink="https://combodef.com/L?tag=d_3380999m_38497c_&site=3380999&ad=38497"
+          bookie={bookie}
         />
       </div>
 

@@ -1,5 +1,6 @@
 import { getDate } from "@/lib/utils";
 import usePredictions from "./usePredictions";
+import dayjs from "dayjs";
 
 interface IUseXdaysMultiple {
   maxAccuracy: number;
@@ -35,7 +36,9 @@ export default function useXdaysMultiple({
   const topPredictions = predictions
     ?.filter((prediction) =>
       oddPredictionsKeys.some(
-        (key) => +(prediction[key.key] ?? "0") >= maxAccuracy
+        (key) =>
+          +(prediction[key.key] ?? "0") >= maxAccuracy &&
+          dayjs(prediction.date).isAfter(dayjs().add(1, "minute"))
       )
     )
     .reduce((acc, prediction) => {
