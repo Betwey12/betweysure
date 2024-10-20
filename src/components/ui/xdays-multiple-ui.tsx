@@ -15,8 +15,8 @@ const logos: Record<string, any> = {
   "1xbetLight": oneXBetLight,
   bet9jaDark: bet9ja,
   bet9jaLight: bet9ja,
-  sportybetsDark: sportybet,
-  sportybetsLight: sportybet,
+  sportybetDark: sportybet,
+  sportybetLight: sportybet,
 };
 
 interface XdaysMultipleUiProps {
