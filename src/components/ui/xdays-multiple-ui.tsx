@@ -9,6 +9,7 @@ import Link from "next/link";
 import usePopUp from "@/hooks/usePopUp";
 import bet9ja from "@/assets/images/bet9ja.png";
 import sportybet from "@/assets/images/sportybet.png";
+import sportybetLight from "@/assets/images/sportybet-red.png";
 
 const logos: Record<string, any> = {
   "1xbetDark": oneXBet,
@@ -16,7 +17,7 @@ const logos: Record<string, any> = {
   bet9jaDark: bet9ja,
   bet9jaLight: bet9ja,
   sportybetDark: sportybet,
-  sportybetLight: sportybet,
+  sportybetLight: sportybetLight,
 };
 
 interface XdaysMultipleUiProps {
