@@ -22,7 +22,7 @@ export default function OneXBet() {
           <h1 className="text-2xl text-center">{t("TITLE")}</h1>
           <p className="text-center">{t("DESCRIPTION")}</p>
         </div>
-        <AccumulatorBuilderForm bookie={"bet9ja"} />
+        <AccumulatorBuilderForm bookie={"1xbet"} />
         <AccumulatorBuilderExplained />
 
         <div className="w-full my-10 lg:my-20 dark:text-white">
