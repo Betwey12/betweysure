@@ -1,3 +1,4 @@
+"use client";
 import { useOnClickOutside } from "usehooks-ts";
 import { useRef } from "react";
 import CloseTimes from "../ui/close";

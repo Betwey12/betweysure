@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 
-export type TPopUp = "newsletter" | "popUp" | null;
+export type TPopUp = "newsletter" | "popUp" | "premium" | null;
 
 export type TPopUpContext = {
   popUp: TPopUp;

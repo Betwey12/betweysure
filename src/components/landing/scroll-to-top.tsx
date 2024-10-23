@@ -1,5 +1,3 @@
-"use client";
-
 import { FaCaretUp } from "react-icons/fa";
 import { useState, useEffect } from "react";
 

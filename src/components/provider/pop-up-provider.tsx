@@ -1,10 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { PopUpContext, TPopUp } from "../../hooks/usePopUp";
-import ScrollToTop from "../landing/scroll-to-top";
-import QuickLinks from "../landing/quicklinks";
-import PopUp from "../landing/popup";
-import NewsLetterPopUp from "../landing/newsletter-pop-up";
 import { useAuth } from "@/hooks/useAuth";
 
 interface IPopUpProvider {
@@ -14,8 +10,7 @@ interface IPopUpProvider {
 export default function PopUpProvider({ children }: IPopUpProvider) {
   const [popUp, setPopUp] = useState<TPopUp>(null);
   const { user, isLoading } = useAuth();
-
-  const isPopUp = popUp === "popUp";
+  const hasPlan = user?.plan?.type?.toLowerCase() !== "free";
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
@@ -31,14 +26,18 @@ export default function PopUpProvider({ children }: IPopUpProvider) {
     return () => clearTimeout(timeOut);
   }, [user?.subscribed, isLoading]);
 
+  useEffect(() => {
+    if (isLoading) return;
+    const timeOut = setTimeout(() => {
+      setPopUp(!hasPlan ? "premium" : null);
+    }, 60000);
+
+    return () => clearTimeout(timeOut);
+  }, [hasPlan, isLoading]);
+
   return (
     <PopUpContext.Provider value={{ popUp, setPopUp }}>
       {children}
-
-      <ScrollToTop />
-      {isPopUp && <PopUp />}
-      <NewsLetterPopUp />
-      <QuickLinks />
     </PopUpContext.Provider>
   );
 }

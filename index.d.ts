@@ -24,27 +24,30 @@ declare global {
     predictions: Prediction[];
   };
 
-  type TUserResponse = {
-    user: {
-      _id: string;
-      uid: string;
-      email: string;
-      fullName: string;
-      phone: string;
-      phonecode: string;
-      loyalty?: number;
-      wallet: number;
-      currency: string;
-      plan: {
-        type: TPlanType;
-        expiry: number;
-      };
+  type TUser = {
+    _id: string;
+    uid: string;
+    email: string;
+    fullName: string;
+    phone: string;
+    phonecode: string;
+    loyalty?: number;
+    wallet: number;
+    currency: string;
+    plan: {
+      type: TPlanType;
       expiry: number;
-      emailVerified: boolean;
-      createdAt: string;
-      fcmToken: string;
-      referralCode: string;
     };
+    expiry: number;
+    emailVerified: boolean;
+    createdAt: string;
+    fcmToken: string;
+    referralCode: string;
+    subscribed: boolean;
+  };
+
+  type TUserResponse = {
+    user: TUser;
   };
 
   type Prediction = {
@@ -644,23 +647,5 @@ declare global {
     data: TAnnouncement[];
   };
 
-  interface TUser extends User {
-    _id: string;
-    uid: string;
-    email: string;
-    fullName: string;
-    phone: string;
-    phonecode: string;
-    loyalty?: number;
-    wallet: number;
-    currency: string;
-    plan: {
-      type: TPlanType;
-      expiry: number;
-    };
-    expiry: number;
-    emailVerified: boolean;
-    subscribed: boolean;
-    referralCode: string;
-  }
+  type TAuthUser = TUser & User;
 }

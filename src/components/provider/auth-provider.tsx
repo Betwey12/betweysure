@@ -18,7 +18,7 @@ export default function AuthProvider({ children }: AuthProviderProps) {
     enabled: !!userId,
   });
 
-  const [user, setUser] = useState<TUser | null>(null); // Set an initial value for user
+  const [user, setUser] = useState<TAuthUser | null>(null); // Set an initial value for user
   const [loggedInUser, setLoggedInUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -41,6 +41,10 @@ export default function AuthProvider({ children }: AuthProviderProps) {
   }, []);
 
   useEffect(() => {
+    if (!userLoading && !data?.user) {
+      setUser(null);
+      return;
+    }
     if (!userLoading) {
       setIsLoading(false);
       setUser({
