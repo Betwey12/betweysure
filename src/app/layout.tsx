@@ -12,6 +12,7 @@ import MyMuiLocalizationProvider from "@/components/provider/mui-localization-pr
 import ReCaptchaProvider from "@/components/provider/recaptcha-provider";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
+import PopUpProvider from "@/components/provider/pop-up-provider";
 
 export const metadata: Metadata = {
   title: home.title,
@@ -40,7 +41,9 @@ export default async function RootLayout({
                     defaultTheme="system"
                     enableSystem
                   >
-                    <SlipProvider>{children}</SlipProvider>
+                    <PopUpProvider>
+                      <SlipProvider>{children}</SlipProvider>
+                    </PopUpProvider>
                   </ThemeProvider>
                 </AuthProvider>
               </MyMuiLocalizationProvider>

@@ -1,5 +1,3 @@
-"use client";
-
 import { FaPlus, FaTimes } from "react-icons/fa";
 import { useState } from "react";
 import { IoMdMenu } from "react-icons/io";

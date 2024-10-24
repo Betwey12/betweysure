@@ -1,5 +1,4 @@
 "use client";
-import useGetUser from "@/hooks/useGetUser";
 import { useEffect, useState } from "react";
 import { getToken, onMessage } from "firebase/messaging";
 import { messaging } from "@/firebase/config";
@@ -11,10 +10,11 @@ import SideNav from "./sidenav";
 import DashboardNav from "./top-nav";
 import { useAuth } from "@/hooks/useAuth";
 import JoyRide from "./joy-ride";
-import Modal from "../shared/modal";
-import NotificationPopup from "./notification-popup";
 import { useRouter } from "next/navigation";
 import { DashboardSpinner } from "../ui/spinner";
+import usePopUp from "@/hooks/usePopUp";
+import PremiumPopUp from "../ui/premium-popup";
+import NotificationPopup from "./notification-popup";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -22,14 +22,13 @@ interface DashboardLayoutProps {
 
 export default function DashboardWrapper({ children }: DashboardLayoutProps) {
   const router = useRouter();
+  const { popUp } = usePopUp();
   const [canRequestPermission, setCanRequestPermission] = useState(false);
   const searchParams = useSearchParams();
-  const { user, isLoading } = useGetUser();
-  const { user: loggedInUser, isLoading: loggedInLoading } = useAuth();
-  const loading = isLoading || loggedInLoading;
-  const isVerified = loggedInUser?.emailVerified || loading;
-  const hasPhone = user?.phone || loading;
-  const isLoggedIn = loggedInUser || loading;
+  const { user, isLoading } = useAuth();
+  const isVerified = user?.emailVerified || isLoading;
+  const hasPhone = user?.phone || isLoading;
+  const isLoggedIn = user || isLoading;
 
   const showTour = !!searchParams.get("tour") || false;
   const { mutateAsync, isError } = useMutation({
@@ -64,7 +63,7 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
 
   useEffect(() => {
     const permission = Notification.permission;
-    if (permission === "default" && !loading) {
+    if (permission === "default" && !isLoading) {
       const timer = setTimeout(() => {
         setCanRequestPermission(true); // Show modal after 30 seconds
       }, 30000);
@@ -72,7 +71,7 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
       // Cleanup function to clear the timeout
       return () => clearTimeout(timer);
     }
-  }, [loading]);
+  }, [isLoading]);
 
   async function handleNotificationSubscription() {
     setCanRequestPermission(false);
@@ -108,7 +107,7 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
   }
 
   useEffect(() => {
-    if (loading) return;
+    if (isLoading) return;
 
     if (!isLoggedIn) {
       router.push("/auth/login");
@@ -123,9 +122,9 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
     if (!hasPhone) {
       router.push("/auth/complete-profile");
     }
-  }, [hasPhone, isLoggedIn, isVerified, loading, router]);
+  }, [hasPhone, isLoading, isLoggedIn, isVerified, router]);
 
-  if (loading) return <DashboardSpinner />;
+  if (isLoading) return <DashboardSpinner />;
 
   return (
     <div className="flex flex-col h-screen lg:flex-row w-full">
@@ -139,13 +138,12 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
         </div>
       </div>
       {showTour && <JoyRide showTour={showTour} />}
+      {popUp === "premium" && user && <PremiumPopUp user={user} />}
       {canRequestPermission && (
-        <Modal className="absolute top-6">
-          <NotificationPopup
-            handleClose={() => setCanRequestPermission(false)}
-            handleNotificationSubscription={handleNotificationSubscription}
-          />
-        </Modal>
+        <NotificationPopup
+          handleClose={() => setCanRequestPermission(false)}
+          handleNotificationSubscription={handleNotificationSubscription}
+        />
       )}
     </div>
   );

@@ -1,4 +1,3 @@
-"use client";
 import { useTranslations } from "next-intl";
 import { Button } from "../ui/button";
 import usePopUp from "@/hooks/usePopUp";

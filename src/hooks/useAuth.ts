@@ -1,8 +1,8 @@
 import { createContext, useContext } from "react";
 
 interface AuthContext {
-  user: TUser | null;
-  setUser: (user: TUser | null) => void;
+  user: TAuthUser | null;
+  setUser: (user: TAuthUser | null) => void;
   isLoading: boolean;
 }
 
