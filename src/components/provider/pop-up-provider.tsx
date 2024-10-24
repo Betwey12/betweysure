@@ -15,14 +15,14 @@ export default function PopUpProvider({ children }: IPopUpProvider) {
   useEffect(() => {
     const timeOut = setTimeout(() => {
       setPopUp("popUp");
-    }, 60000);
+    }, 120000);
     return () => clearTimeout(timeOut);
   }, []);
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
       setPopUp(!user?.subscribed && !isLoading ? "newsletter" : null);
-    }, 120000);
+    }, 60000);
     return () => clearTimeout(timeOut);
   }, [user?.subscribed, isLoading]);
 
@@ -30,7 +30,7 @@ export default function PopUpProvider({ children }: IPopUpProvider) {
     if (isLoading) return;
     const timeOut = setTimeout(() => {
       setPopUp(!hasPlan ? "premium" : null);
-    }, 60000);
+    }, 90000);
 
     return () => clearTimeout(timeOut);
   }, [hasPlan, isLoading]);
