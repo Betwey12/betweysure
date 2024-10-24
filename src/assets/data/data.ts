@@ -1813,7 +1813,14 @@ export const clubkonnectBookies = [
   "supabet",
 ].sort((a, b) => a.localeCompare(b));
 
-export const otherSports = ["Basketball", "Baseball", "Tennis", "Ice Hockey"];
+export const otherSports = [
+  "Basketball",
+  "Baseball",
+  "Tennis",
+  "Ice Hockey",
+  "Handball",
+  "Futsal",
+];
 
 export const otherSPortsWorldLeagues = [
   "juniors",
