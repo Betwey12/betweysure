@@ -1828,6 +1828,7 @@ export const otherSPortsWorldLeagues = [
   "wrm",
   "atp",
   "wta",
+  "wta 125",
   "international",
   "virtual basketball",
   "itf men",
