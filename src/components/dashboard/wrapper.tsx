@@ -138,7 +138,7 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
         </div>
       </div>
       {showTour && <JoyRide showTour={showTour} />}
-      {popUp === "premium" && user && <PremiumPopUp user={user} />}
+      {popUp === "premium" && <PremiumPopUp user={user} />}
       {canRequestPermission && (
         <NotificationPopup
           handleClose={() => setCanRequestPermission(false)}
