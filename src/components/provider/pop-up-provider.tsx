@@ -10,7 +10,7 @@ interface IPopUpProvider {
 export default function PopUpProvider({ children }: IPopUpProvider) {
   const [popUp, setPopUp] = useState<TPopUp>(null);
   const { user, isLoading } = useAuth();
-  const hasPlan = user?.plan?.type?.toLowerCase() !== "free";
+  const hasPlan = (user?.plan?.type?.toLowerCase() ?? "free") !== "free";
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
@@ -22,7 +22,7 @@ export default function PopUpProvider({ children }: IPopUpProvider) {
   useEffect(() => {
     const timeOut = setTimeout(() => {
       setPopUp(!user?.subscribed && !isLoading ? "newsletter" : null);
-    }, 60000);
+    }, 30000);
     return () => clearTimeout(timeOut);
   }, [user?.subscribed, isLoading]);
 
@@ -30,7 +30,7 @@ export default function PopUpProvider({ children }: IPopUpProvider) {
     if (isLoading) return;
     const timeOut = setTimeout(() => {
       setPopUp(!hasPlan ? "premium" : null);
-    }, 90000);
+    }, 60000);
 
     return () => clearTimeout(timeOut);
   }, [hasPlan, isLoading]);
