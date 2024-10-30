@@ -51,8 +51,6 @@ export default function TipsCard() {
   const popularTips: any[] = [];
   const restTips: any[] = [];
 
-  console.log(predictions, "tips");
-
   tips.forEach((tip) => {
     const isPopular = popularTags.some((tag) =>
       tip.league?.toLowerCase().includes(tag)

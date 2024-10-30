@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
 import { FaSpinner } from "react-icons/fa";
 import TrendCard from "../trends/trend-card";
+import { useState } from "react";
 
 interface TrendsProps {
   league?: string;
@@ -16,6 +17,7 @@ export default function Trends({ league, category }: TrendsProps) {
   const queryKey = ["trending"];
   const date = getDate("today");
   const competition = category?.replace(/-/g, " ");
+  const [searchValue, setSearchValue] = useState("");
 
   const { data: trendsData, isLoading } = useQuery({
     queryKey,
@@ -41,19 +43,40 @@ export default function Trends({ league, category }: TrendsProps) {
   const { trends } = useTrends({
     trendsData: leagueTrends,
   });
+  console.log("herlo");
+
+  console.log(trends, "trends");
+
+  const filteredTrends = trends.filter((trend) => {
+    return (
+      trend.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+      trend?.opponent?.name?.toLowerCase().includes(searchValue.toLowerCase())
+    );
+  });
 
   return (
     <>
+      <input
+        type="search"
+        name=""
+        id=""
+        placeholder="🔍  Filter by leagues, country, games"
+        className="self-end mb-10 py-2 px-4 rounded focus:outline-none text-gray-one w-full lg:max-w-[360px] border border-gray-one"
+        onChange={(e) => {
+          setSearchValue(e.target.value);
+        }}
+      />
+
       {isLoading ? (
         <div className="flex items-center justify-center">
           <FaSpinner className="animate-spin" />
         </div>
-      ) : trends?.length > 0 ? (
+      ) : filteredTrends?.length > 0 ? (
         <>
           <p className="mb-6">{t("DESCRIPTION", { league: league })}</p>
 
           <div className="grid lg:grid-cols-2 gap-4">
-            {trends.map((trend, index) => (
+            {filteredTrends.map((trend, index) => (
               <TrendCard
                 key={index}
                 count={trend.count}

@@ -73,6 +73,9 @@ function BetMinerPredictions({ popularLeague, category }: PredictionsProps) {
             popularLeague?.name
               .toLowerCase()
               ?.includes(prediction.competition_full.toLowerCase()) ||
+            popularLeague?.name
+              .toLowerCase()
+              ?.includes(prediction.competition.toLowerCase()) ||
             prediction.competition_full
               .toLowerCase()
               .includes(
