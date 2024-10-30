@@ -554,7 +554,7 @@ export const leagueList: Record<string, TPopularLeague[]> = {
       apiFootballId: 266,
     },
     {
-      name: "Bolivia Primera Division",
+      name: "Bolivia Primera División",
       logo: "https://media.api-sports.io/football/leagues/344.png",
       apiFootballId: 344,
     },
@@ -725,7 +725,12 @@ export const leagueList: Record<string, TPopularLeague[]> = {
       apiFootballId: 45,
     },
     {
-      name: "England EFL Cup",
+      name: "England League Cup",
+      logo: "https://media.api-sports.io/football/leagues/48.png",
+      apiFootballId: 48,
+    },
+    {
+      name: "EFL Trophy",
       logo: "https://media.api-sports.io/football/leagues/46.png",
       apiFootballId: 46,
     },

@@ -13,8 +13,15 @@ export const formatCurrency = (amount: number, currency = "NGN") => {
   });
 };
 
+// export function capitalize(str: string) {
+//   return str.replace(/\b\w/g, (char) => char.toUpperCase());
+// }
+
 export function capitalize(str: string) {
-  return str.replace(/\b\w/g, (char) => char.toUpperCase());
+  return str
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
 }
 
 export function getDate(

@@ -15,6 +15,7 @@ export default function Trending() {
   const PREDICTIONS_PER_PAGE = 20;
   const [from, setFrom] = useState(0);
   const [to, setTo] = useState(PREDICTIONS_PER_PAGE);
+  const [searchValue, setSearchValue] = useState("");
   const queryKey = ["trending"];
   const date = getDate("today");
 
@@ -37,15 +38,33 @@ export default function Trending() {
     trendsData,
   });
 
+  const filteredTrends = trends.filter((trend) => {
+    return (
+      trend.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+      trend?.opponent?.name?.toLowerCase().includes(searchValue.toLowerCase())
+    );
+  });
+
   return (
     <div className="px-4 md:px-10 lg:px-20  lg:my-20 my-10 flex flex-col items-center justify-center dark:text-white">
+      <input
+        type="search"
+        name=""
+        id=""
+        placeholder="🔍  Filter by leagues, country, games"
+        className="self-end mb-10 py-2 px-4 rounded focus:outline-none text-gray-one w-full lg:max-w-[360px] border border-gray-one"
+        onChange={(e) => {
+          setSearchValue(e.target.value);
+        }}
+      />
+
       {isLoading ? (
         <div className="flex items-center justify-center">
           <FaSpinner className="animate-spin" />
         </div>
-      ) : trends?.length > 0 ? (
+      ) : filteredTrends?.length > 0 ? (
         <div className="grid lg:grid-cols-2 gap-4">
-          {trends.slice(from, to).map((trend, index) => (
+          {filteredTrends.slice(from, to).map((trend, index) => (
             <TrendCard
               key={index}
               count={trend.count}

@@ -43,7 +43,7 @@ export default function ResultIcon({
       className={cn(
         `w-7 h-7 bg-gray-light text-black flex flex-col items-center justify-center rounded-full`,
         {
-          "text-green-500 bg-green-200 lg:w-11 lg:h-11": isCheck && hasPlan,
+          "text-green-500 bg-green-200 lg:w-11 lg:h-11": isCheck,
           "text-red-500 bg-red-200 lg:w-11 lg:h-11":
             !isCheck && !isPending && hasPlan,
         }
@@ -53,10 +53,8 @@ export default function ResultIcon({
         <FaClock title="Pending" />
       ) : (
         <>
-          {!hasPlan && (
-            <FaLock title="You need to subscribe to access this feature" />
-          )}
-          {hasPlan && isCheck && (
+          {!hasPlan && !isCheck && <FaClock title="Pending" />}
+          {isCheck && (
             <>
               <FaCheck />
               <span className="hidden lg:block">

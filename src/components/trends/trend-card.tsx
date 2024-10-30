@@ -35,9 +35,9 @@ export default function TrendCard({
       />
       {type === "wins" && (
         <p className="">
-          <span className="font-bold">{name}</span>
-          has won <span className="text-green-500">{count}</span> {gameType} in
-          their last <span className="text-red-500">{total}</span> matches with{" "}
+          <span className="font-bold">{name}</span> has won{" "}
+          <span className="text-green-500">{count}</span> {gameType} in their
+          last <span className="text-red-500">{total}</span> matches with{" "}
           <span>{opponent?.name}</span>
         </p>
       )}
