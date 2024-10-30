@@ -62,14 +62,23 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
   }, []);
 
   useEffect(() => {
-    const permission = Notification.permission;
-    if (permission === "default" && !isLoading) {
-      const timer = setTimeout(() => {
-        setCanRequestPermission(true); // Show modal after 30 seconds
-      }, 30000);
+    // Check if Notification API is available
+    if ("Notification" in window) {
+      const permission = Notification.permission;
 
-      // Cleanup function to clear the timeout
-      return () => clearTimeout(timer);
+      if (permission === "default" && !isLoading) {
+        const timer = setTimeout(() => {
+          setCanRequestPermission(true);
+        }, 30000);
+
+        return () => clearTimeout(timer);
+      }
+    } else if (
+      navigator.userAgent.includes("Safari") &&
+      !navigator.userAgent.includes("Chrome")
+    ) {
+      // Fallback for Safari mobile, where Notification permission isn't available
+      console.log("Notification API not supported on Safari mobile.");
     }
   }, [isLoading]);
 
