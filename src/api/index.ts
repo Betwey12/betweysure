@@ -20,7 +20,7 @@ async function Get(endpoint: string) {
   return res.json();
 }
 
-async function Delete(endpoint: string) {
+async function Delete(endpoint: string, payload?: any) {
   const user = auth.currentUser;
   if (!user) return;
   const token = await getIdToken(user);
@@ -30,6 +30,7 @@ async function Delete(endpoint: string) {
       client: "betweysure",
       api_key: "betweysure_f3ae3547d1374eaacaf345",
       Authorization: `Bearer ${token}`,
+      body: JSON.stringify(payload),
     },
     method: "DELETE",
   });
