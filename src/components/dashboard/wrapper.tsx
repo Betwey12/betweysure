@@ -23,16 +23,14 @@ interface DashboardLayoutProps {
 export default function DashboardWrapper({ children }: DashboardLayoutProps) {
   const router = useRouter();
   const { popUp } = usePopUp();
-  const [canRequestPermission, setCanRequestPermission] = useState(false);
   const searchParams = useSearchParams();
+  const [canRequestPermission, setCanRequestPermission] = useState(false);
   const { user, isLoading } = useAuth();
   const isVerified = user?.emailVerified || isLoading;
   const hasPhone = user?.phone || isLoading;
   const isLoggedIn = user || isLoading;
-
-  console.log(user, "user");
-
   const showTour = !!searchParams.get("tour") || false;
+
   const { mutateAsync, isError } = useMutation({
     mutationFn: (data: { fcmToken: string }) =>
       HTTPRequest.Post("users/edit-profile", data),

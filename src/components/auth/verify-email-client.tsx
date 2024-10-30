@@ -63,7 +63,7 @@ export default function VerifyEmailClient({ token }: VerifyEmailClientProps) {
           <p className="text-2xl max-w-sm text-center">{t("EMAIL_VERIFIED")}</p>
           <Link
             className="py-3 text-center text-white justify-center bg-cyan px-4 rounded"
-            href="/dashboard?tour=true"
+            href={!user ? "#" : "/dashboard?tour=true"}
             onClick={handleGoToDashboard}
           >
             {t("GO_TO_DASHBOARD")}

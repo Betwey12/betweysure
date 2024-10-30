@@ -15,7 +15,7 @@ export default function VerifyEmailLayout({ children }: NonAuthedLayoutProps) {
 
   useEffect(() => {
     if (user && emailVerified) {
-      router.push("/dashboard");
+      router.push("/dashboard?tour=true");
     }
   }, [user, emailVerified, router]);
 
