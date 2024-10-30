@@ -10,7 +10,7 @@ export default function AuthPage({
 
   const modes: Record<string, string> = {
     resetPassword: `/auth/reset-password?token${token}`,
-    verifyEmail: `/auth/verify-email?token=${token}?tour=true`,
+    verifyEmail: `/auth/verify-email?token=${token}`,
   };
 
   if (!mode || !token) {

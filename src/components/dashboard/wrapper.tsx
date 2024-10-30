@@ -30,6 +30,8 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
   const hasPhone = user?.phone || isLoading;
   const isLoggedIn = user || isLoading;
 
+  console.log(user, "user");
+
   const showTour = !!searchParams.get("tour") || false;
   const { mutateAsync, isError } = useMutation({
     mutationFn: (data: { fcmToken: string }) =>
