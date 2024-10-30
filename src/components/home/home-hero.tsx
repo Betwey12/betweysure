@@ -1,10 +1,13 @@
+"use client";
 import { FaArrowRight } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 import MenuBar from "../landing/menu-bar";
 import Link from "next/link";
 import HomeHeroSwiper from "./home-hero-swiper";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function HomeHero() {
+  const { user } = useAuth();
   const t = useTranslations("HOME_HERO");
 
   return (
@@ -22,7 +25,7 @@ export default function HomeHero() {
         </p>
         <div className="flex flex-col gap-4">
           <Link
-            href="/dashboard/football-predictions"
+            href={user ? "/dashboard/football-predictions" : "/auth/login"}
             className="flex items-center gap-2 rounded-lg bg-cyan py-3 px-8 text-xs text-white"
           >
             {t("VIEW_PREDICTIONS")}
