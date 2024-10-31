@@ -14678,7 +14678,15 @@ const leagues = [
   },
 ];
 
-export const getLeague = (name: string) =>
+export const getLeague = ({
+  name,
+  country,
+}: {
+  name?: string;
+  country?: string;
+}) =>
   leagues.find(
-    (league) => league.league.name.toLowerCase() === name.toLowerCase()
+    (league) =>
+      league.league.name.toLowerCase() === name?.toLowerCase() &&
+      league.country.name.toLowerCase() === country?.toLowerCase()
   );

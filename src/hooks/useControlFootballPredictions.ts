@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useChangeDate from "./useChangeDate";
 import usePredictions from "./usePredictions";
 import useFilterBundles from "./useFilterBundles";
@@ -7,7 +7,6 @@ import { HTTPRequest } from "../api";
 import { period } from "../assets/data/data";
 
 const useControlFootballPredictions = () => {
-  const [showLive, setShowLive] = useState(false);
   const [periodIndex, setPeriodIndex] = useState(1);
 
   const currentPeriod = period[periodIndex] as TPeriod;
@@ -26,11 +25,8 @@ const useControlFootballPredictions = () => {
   });
 
   const payload = data?.data as TPredictionResponse["data"] | undefined;
-  const [tableData, setTableData] = useState(payload);
 
-  const [activeTab, setActiveTab] = useState("");
-
-  const transrmedData =
+  const transformedData =
     payload?.map((data) => {
       const {
         over0,
@@ -58,27 +54,12 @@ const useControlFootballPredictions = () => {
       };
     }) ?? [];
 
-  const { handlePrediction } = useFilterBundles({
-    data: transrmedData,
-    setTableData,
-    setShowLive,
-    setActiveTab,
-    handlePagination,
-  });
-
-  useEffect(() => {
-    const filteredData = payload
-      ?.map((prediction) => {
-        return {
-          ...prediction,
-          prediction: `${prediction.over15goals}%`,
-          resultKey: "over15goals",
-        };
-      })
-      .filter((prediction) => +prediction.over15goals >= 85);
-    setActiveTab("Over 1.5");
-    setTableData(filteredData);
-  }, [payload]);
+  const { handlePrediction, tableData, activeTab, showLive } = useFilterBundles(
+    {
+      data: transformedData,
+      handlePagination,
+    }
+  );
 
   const { data: inplayData, isLoading: isLoadingLive } = useQuery({
     queryKey: ["livePredictions"],

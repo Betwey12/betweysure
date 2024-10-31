@@ -12,7 +12,7 @@ interface UnsubscribeClientProps {
 export default function UnsubscribeClient({ email }: UnsubscribeClientProps) {
   const { isPending, mutateAsync } = useMutation({
     mutationFn: (data: { email: string }) =>
-      HTTPRequest.Delete("/newsletter", data),
+      HTTPRequest.Delete("newsletter", data),
   });
 
   async function handleUnsubscribe() {

@@ -178,6 +178,24 @@ const pageMetadata = {
     description:
       "Enhance your Serie A betting with Betweysure's expert predictions and analysis. We delve into matches, track trends, and provide valuable insights for informed wagers on Italy's top football league.",
   },
+  oneXBet: {
+    title: "Guaranteed 1xbet Predictions - Betweysure",
+    description:
+      "Get accurate 1xbet predictions and tips on Betweysure. Our expert analysis and insights will help you make informed betting decisions.",
+    keywords: "1xbet predictions, 1xbet tips",
+  },
+  sportybet: {
+    title: "Guaranteed Sportybet Predictions - Betweysure",
+    description:
+      "Get accurate Sportybet predictions and tips on Betweysure. Our expert analysis and insights will help you make informed betting decisions.",
+    keywords: "sportybet predictions, sportybet tips",
+  },
+  bet9ja: {
+    title: "Guaranteed Bet9ja Predictions - Betweysure",
+    description:
+      "Get accurate Bet9ja predictions and tips on Betweysure. Our expert analysis and insights will help you make informed betting decisions.",
+    keywords: "bet9ja predictions, bet9ja tips",
+  },
 };
 
 export const {
@@ -195,6 +213,9 @@ export const {
   auth,
   dashboard,
   acca,
+  oneXBet,
+  bet9ja,
+  sportybet,
   yesterday,
   today,
   tomorrow,

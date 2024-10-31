@@ -94,7 +94,7 @@ export default function PopularPage({
           </p>
           <Link
             href={cta.link}
-            className="text-center bg-cyan  py-3 px-4 rounded font-medium"
+            className="text-center bg-cyan  py-3 px-4 rounded font-medium text-white"
           >
             {t(`${formattedCategory}_CTA_TITLE` as any) !==
             `LEAGUE_INFO.${formattedCategory}_CTA_TITLE`

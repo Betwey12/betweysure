@@ -40,7 +40,9 @@ export default function PredictionSelect() {
     <RadixSelect
       handleValueChange={(v) =>
         router.push(
-          `/popular/${v.toLowerCase().replace(/\s/g, "-")}/predictions`
+          `/popular/${v.toLowerCase().replace(/\s/g, "-")}/${
+            period.includes(v) ? "predictions" : "standings"
+          }`
         )
       }
       selectItems={

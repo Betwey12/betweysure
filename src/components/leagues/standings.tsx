@@ -19,6 +19,7 @@ export default function Standings({
   const standings = leagueStandings?.[0]?.league?.standings || [];
   const [to, setTo] = useState(6);
   const season = leagueStandings?.[0]?.league?.season ?? "";
+  console.log(league, season);
 
   return isLoading ? (
     <div className="flex items-center justify-center">
@@ -68,7 +69,7 @@ export default function Standings({
               <tbody>
                 {standingGroup?.slice(0, to).map((standing) => (
                   <tr
-                    className="border-b border-b-gray-two odd:bg-blue-one dark:odd:bg-gray-two/20"
+                    className="border-b border-b-gray-two odd:bg-blue-one dark:odd:bg-gray-two/20 odd:text-white"
                     key={standing?.team?.id}
                   >
                     <td className="py-4 text-center">

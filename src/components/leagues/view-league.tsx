@@ -32,7 +32,6 @@ export default function ViewLeague({
   });
 
   const isPeriod = category && period.includes(category);
-
   const fixtures = leagueResponse?.data?.fixtures?.response;
   const standings = leagueResponse?.data.standings?.response;
 

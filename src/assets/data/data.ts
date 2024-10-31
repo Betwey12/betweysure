@@ -345,16 +345,14 @@ export type TPopularLeague = {
   name: string;
   logo: string;
   apiFootballId: number;
-  allowApiFootball?: boolean;
-  betMinerCompetitionFull?: string;
 };
 
 export const leagueList: Record<string, TPopularLeague[]> = {
   Popular: [
     {
       name: "UEFA Champions League",
-      logo: "https://media.api-sports.io/football/leagues/4.png",
-      apiFootballId: 4,
+      logo: "https://media.api-sports.io/football/leagues/2.png",
+      apiFootballId: 2,
     },
     {
       name: "England Premier League",
@@ -372,22 +370,17 @@ export const leagueList: Record<string, TPopularLeague[]> = {
       logo: "https://media.api-sports.io/football/leagues/4.png",
 
       apiFootballId: 4,
-      allowApiFootball: true,
     },
     {
       name: "Copa America",
       logo: "https://media.api-sports.io/football/leagues/9.png",
 
       apiFootballId: 9,
-      allowApiFootball: true,
     },
     {
-      name: "Paris 2024 Olympics",
+      name: "Olympics Men",
       logo: "https://media.api-sports.io/football/leagues/480.png",
-
       apiFootballId: 480,
-      allowApiFootball: true,
-      betMinerCompetitionFull: "Olympics Men",
     },
     {
       name: "Eredivisie",
@@ -417,7 +410,7 @@ export const leagueList: Record<string, TPopularLeague[]> = {
       apiFootballId: 78,
     },
     {
-      name: "Italian Serie A",
+      name: "Italy Serie A",
       logo: "https://media.api-sports.io/football/leagues/135.png",
       apiFootballId: 135,
     },
