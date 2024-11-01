@@ -7,7 +7,7 @@ import useUserPlan from "@/hooks/useUserPlan";
 import { cn, formatCurrency } from "@/lib/utils";
 import { FaInfo } from "react-icons/fa";
 import Link from "next/link";
-import { durations, planTypes } from "@/assets/data/data";
+import { durations, planNames } from "@/assets/data/data";
 
 export default function Bundles() {
   const { user } = useAuth();
@@ -21,7 +21,7 @@ export default function Bundles() {
     currency: selectedCurrency?.split(" ").pop() || "NGN",
   });
 
-  const plans = planTypes.map((planType) => {
+  const plans = planNames.map((planType) => {
     return {
       name: planType,
       duration: durations.map((duration) => {

@@ -65,7 +65,7 @@ export default function AirtimeForm() {
 
   const onSubmit: SubmitHandler<AirtimeForm> = async (data) => {
     const payload = {
-      phone: `${data.phonecode || "+234"}${data?.phone}`,
+      phone: `${data.phonecode || "234"}${data?.phone}`,
       amount: data?.amount,
       networkCode: data.network,
     };

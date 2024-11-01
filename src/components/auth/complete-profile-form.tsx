@@ -57,7 +57,7 @@ export default function CompleteProfileForm() {
   });
 
   async function onSubmit(data: ProfileForm) {
-    const phonecode = data.phonecode || "+234";
+    const phonecode = data.phonecode || "234";
     const authUser = auth.currentUser;
     if (!authUser) return toast.error("User not found");
     const currency = countries.find((country) =>

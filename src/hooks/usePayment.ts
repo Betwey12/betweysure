@@ -10,8 +10,8 @@ export default function usePayment({
 }: {
   amount: number;
   currency: string;
-  planCode: string;
-  flutterwavePlanCode: string;
+  planCode?: string;
+  flutterwavePlanCode?: string;
 }) {
   const { user } = useAuth();
   const handlePaystackPayment = usePaystackPayment({
