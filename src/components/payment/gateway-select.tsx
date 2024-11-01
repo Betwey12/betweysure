@@ -11,6 +11,8 @@ import { FaSpinner } from "react-icons/fa6";
 import { toast } from "react-toastify";
 import { closePaymentModal } from "flutterwave-react-v3";
 import {
+  EDuration,
+  EPlanName,
   flutterwavePlanCodes,
   paystackPlanCodes,
   plans,
@@ -31,12 +33,13 @@ type TPayload = {
 export default function GatewaySelect() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const planName = searchParams.get("plan");
-  const duration = searchParams.get("duration");
+  const planName = searchParams.get("plan") as EPlanName;
+  const durationParams = searchParams.get("duration");
   const currency = searchParams.get("currency") || "NGN";
   const plan = plans[currency] ? plans[currency] : plans["NGN"];
   const availableCurrency = plans[currency] ? currency : "NGN";
-  const amount = plan[planName!][duration!.replace(/-/, " ")] || 0;
+  const duration = durationParams!.replace(/-/, " ") as EDuration;
+  const amount = plan[planName!][duration] || 0;
 
   const [clickedIndex, setClickedIndex] = useState(0);
 
@@ -49,11 +52,11 @@ export default function GatewaySelect() {
     currency: availableCurrency,
     planCode:
       paystackPlanCodes[
-        `${planName}-${duration}` as keyof typeof paystackPlanCodes
+        `${planName}-${durationParams}` as keyof typeof paystackPlanCodes
       ],
     flutterwavePlanCode:
       flutterwavePlanCodes[
-        `${planName}-${duration}` as keyof typeof flutterwavePlanCodes
+        `${planName}-${durationParams}` as keyof typeof flutterwavePlanCodes
       ],
   });
 

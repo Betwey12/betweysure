@@ -14,8 +14,6 @@ export default function LeaguePredictions({
 }: LeaguePredictionsProps) {
   const popularLeagues = [...Object.values(leagueList)].flat();
 
-  console.log(category, "category");
-
   const popularLeague = popularLeagues?.find(
     (l) =>
       l.name.toLowerCase() ===

@@ -50,7 +50,10 @@ export function PredictionList({
   );
 
   const predictedScore = predictionObj?.correctscore || "N/A";
-  const leagueApiF = getLeague(predictionObj?.competition ?? "");
+  const leagueApiF = getLeague({
+    name: predictionObj?.competition,
+    country: predictionObj?.country,
+  });
   const imgSource = leagueApiF
     ? leagueApiF.country.flag || leagueApiF.league.logo
     : globeIcon;

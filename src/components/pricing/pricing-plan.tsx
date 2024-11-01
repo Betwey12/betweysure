@@ -3,12 +3,13 @@
 import { FaCheck } from "react-icons/fa";
 import { cn, formatCurrency } from "../../lib/utils";
 import { useAuth } from "../../hooks/useAuth";
-import { plans } from "@/assets/data/data";
+import { durations, EDuration, plans } from "@/assets/data/data";
 import useSelectCurrency from "@/hooks/useSelectCurrency";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { TPlanType } from "@/constants";
 import MySelect from "../ui/my-select";
+import { useState } from "react";
 
 export default function PricingPlans() {
   const {
@@ -16,17 +17,34 @@ export default function PricingPlans() {
     supportedCountries,
     selectedCurrency,
     setSelectedCurrency,
+    duration,
+    setDuration,
   } = usePricingPlans();
 
   return (
     <div className="flex flex-col gap-10 dark:text-white md:px-10 px-4 lg:px-20">
-      <div className="z-10 w-full max-w-xs border-gray-two rounded border">
-        <MySelect
-          options={supportedCountries}
-          bgDashboard
-          selectedOption={selectedCurrency}
-          setSelectedOption={setSelectedCurrency}
-        />
+      <div className="flex items-center flex-col lg:flex-row gap-4 justify-between">
+        <div className="max-w-[300px] w-full">
+          <MySelect
+            options={supportedCountries}
+            bgDashboard
+            selectedOption={selectedCurrency}
+            setSelectedOption={setSelectedCurrency}
+          />
+        </div>
+        <div className="flex items-center gap-3">
+          {durations.map((dur) => (
+            <button
+              key={dur}
+              onClick={() => setDuration(dur)}
+              className={cn("bg-cyan text-white text-sm px-3 py-1 rounded", {
+                "bg-purple-royal": dur === duration,
+              })}
+            >
+              {dur}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:px-0">
@@ -125,6 +143,7 @@ function PackageCard({
 function usePricingPlans() {
   const t = useTranslations("PRICING_PLANS");
   const { user } = useAuth();
+  const [duration, setDuration] = useState<EDuration>(EDuration.ONE_MONTH);
 
   const userCurrency = user?.currency || "NGN";
   const { supportedCountries, selectedCurrency, setSelectedCurrency } =
@@ -167,7 +186,7 @@ function usePricingPlans() {
     {
       title: "Premium Football",
       name: TPlanType.PREMIUM,
-      price: plan["premium"]["1 month"],
+      price: plan["premium"][duration],
       features: [
         t("PREMIUM_FEATURES.ONE"),
         t("PREMIUM_FEATURES.TWO"),
@@ -185,7 +204,7 @@ function usePricingPlans() {
     {
       title: "Premium Mixed Sport",
       name: TPlanType.MIXED,
-      price: plan["mixed"]["1 month"],
+      price: plan["mixed"][duration],
       features: [
         t("MIXED_FEATURES.ONE"),
         t("MIXED_FEATURES.TWO"),
@@ -203,5 +222,7 @@ function usePricingPlans() {
     selectedCurrency,
     currency,
     t,
+    duration,
+    setDuration,
   };
 }

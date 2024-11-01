@@ -63,7 +63,11 @@
     "OTHER_SPORTS": "Other Sports",
     "FREE_TIPS": "Free Tips",
     "JOIN_TELEGRAM": "Join our telegram (Betweysure) community",
-    "JOIN_WHATSAPP": "Chat with us on whatsapp"
+    "JOIN_WHATSAPP": "Chat with us on whatsapp",
+    "1XBET_PREDICTIONS": "1xbet Predictions",
+    "BET9JA_PREDICTIONS": "Bet9ja Predictions",
+    "BETKING_PREDICTIONS": "Betking Predictions",
+    "SPORTYBET_PREDICTIONS": "Sportybet Predictions"
   },
   "MENU_BAR": {
     "HOME": "Home",
@@ -345,7 +349,7 @@
     "CALL_TO_ACTION": "Ready to explore other leagues? Visit the dashboard to view all available leagues and predictions. Upgrade to access premium tips and exclusive content."
   },
   "STANDINGS": {
-    "DESCRIPTION": "Here is the latest {league} standings table for the {year}/{plusYear} season. View the standings table for the top teams, their points, and games played.",
+    "DESCRIPTION": "Here is the latest {league} standings table for the {year}/{yearPlusOne} season. View the standings table for the top teams, their points, and games played.",
     "NO_STANDINGS": "No standings found for this league"
   },
   "TRENDS": {

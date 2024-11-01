@@ -67,21 +67,10 @@ function BetMinerPredictions({ popularLeague, category }: PredictionsProps) {
   const filteredPredictions =
     tableData?.filter((prediction) => {
       return popularLeague
-        ? prediction.competition_full
-            .toLowerCase()
-            ?.includes(popularLeague.name.toLowerCase()) ||
-            popularLeague?.name
-              .toLowerCase()
-              ?.includes(prediction.competition_full.toLowerCase()) ||
-            popularLeague?.name
-              .toLowerCase()
-              ?.includes(prediction.competition.toLowerCase()) ||
-            prediction.competition_full
-              .toLowerCase()
-              .includes(
-                popularLeague?.betMinerCompetitionFull?.toLowerCase() ??
-                  "undefined"
-              )
+        ? prediction?.competition_full.toLowerCase() ===
+            popularLeague?.name.toLowerCase() ||
+            popularLeague?.name.toLowerCase() ===
+              prediction?.competition?.toLowerCase()
         : true;
     }) ?? [];
 
@@ -97,7 +86,7 @@ function BetMinerPredictions({ popularLeague, category }: PredictionsProps) {
   }, [category, setFullDate, setPeriodIndex]);
 
   return (
-    <>
+    <div className="flex flex-col gap-8">
       <div className="flex lg:items-center justify-between lg:flex-row flex-col gap-6">
         <div className="flex gap-6 flex-col">
           <Freetabs
@@ -141,7 +130,7 @@ function BetMinerPredictions({ popularLeague, category }: PredictionsProps) {
         </div>
       </div>
 
-      <div className="w-full flex flex-col my-10 border rounded dark:border-0 border-gray-two">
+      <div className="w-full flex flex-col mb-10 border rounded dark:border-0 border-gray-two">
         {showLive ? (
           <LivePredictions
             livePredictions={livePredictions}
@@ -167,7 +156,7 @@ function BetMinerPredictions({ popularLeague, category }: PredictionsProps) {
           />
         </div>
       )}
-    </>
+    </div>
   );
 }
 

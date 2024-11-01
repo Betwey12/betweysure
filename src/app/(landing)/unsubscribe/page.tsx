@@ -1,9 +1,5 @@
 import UnsubscribeClient from "@/components/home/unsubscribe-client";
 
-type Props = {
-  params: { email: string };
-};
-
 export default function UnsubscribePage({
   searchParams,
 }: {

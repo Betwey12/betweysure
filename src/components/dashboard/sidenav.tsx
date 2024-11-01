@@ -209,7 +209,7 @@ const navlinks = [
     ],
   },
   {
-    name: "Premium predictions",
+    name: "Premium Tips",
     icon: <BundlesIcon />,
     dropdown: [
       {

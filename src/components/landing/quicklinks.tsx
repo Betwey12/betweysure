@@ -86,6 +86,18 @@ function useQuickLinks() {
       href: "/acca-builder",
     },
     {
+      title: t("1XBET_PREDICTIONS"),
+      href: "/1xbet",
+    },
+    {
+      title: t("BET9JA_PREDICTIONS"),
+      href: "/bet9ja",
+    },
+    {
+      title: t("SPORTYBET_PREDICTIONS"),
+      href: "/sportybet",
+    },
+    {
       title: t("LIVESCORES"),
       href: "/livescores",
     },

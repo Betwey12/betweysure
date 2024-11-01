@@ -2,14 +2,14 @@ import AccumulatorBuilderForm from "@/components/acca/acca-builder";
 import AccumulatorBuilderExplained from "@/components/acca/accumulator-builder-explained";
 import FAQDropdown from "@/components/faq/faq-dropdown";
 import OtherPagesHero from "@/components/shared/other-pages-hero";
-import { acca } from "@/constants";
+import { sportybet } from "@/constants";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 
 export const metadata: Metadata = {
-  title: acca.title,
-  description: acca.description,
-  keywords: acca.keywords,
+  title: sportybet.title,
+  description: sportybet.description,
+  keywords: sportybet.keywords,
 };
 
 export default function SportyBet() {
