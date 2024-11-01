@@ -7,6 +7,7 @@ import useUserPlan from "@/hooks/useUserPlan";
 import { cn, formatCurrency } from "@/lib/utils";
 import { FaInfo } from "react-icons/fa";
 import Link from "next/link";
+import { durations, planTypes } from "@/assets/data/data";
 
 export default function Bundles() {
   const { user } = useAuth();
@@ -20,12 +21,12 @@ export default function Bundles() {
     currency: selectedCurrency?.split(" ").pop() || "NGN",
   });
 
-  const plans = Object.keys(userPlan).map((key) => {
+  const plans = planTypes.map((planType) => {
     return {
-      name: key,
-      duration: Object.keys(userPlan[key]).map((duration) => {
-        return `${duration} ${key} plan ${formatCurrency(
-          userPlan[key][duration],
+      name: planType,
+      duration: durations.map((duration) => {
+        return `${duration} ${planType} plan ${formatCurrency(
+          userPlan[planType][duration],
           availableCurrency
         )}`;
       }),
@@ -60,10 +61,10 @@ export default function Bundles() {
             </div>
             <div className="mt-4 flex flex-col gap-2">
               {plan.duration.map((duration, index) => {
-                const planType = duration.split(" ").splice(0, 2).join("-");
+                const planDuration = duration.split(" ").splice(0, 2).join("-");
                 return (
                   <Link
-                    href={`/dashboard/payment/?currency=${availableCurrency}&plan=${plan.name}&duration=${planType}`}
+                    href={`/dashboard/payment/?currency=${availableCurrency}&plan=${plan.name}&duration=${planDuration}`}
                     key={index}
                     className={cn(
                       "px-4 rounded flex bg-yellow-sunset text-white py-4 hover:bg-white hover:border hover:border-yellow-sunset items-center justify-between gap-4 hover:text-yellow-sunset",

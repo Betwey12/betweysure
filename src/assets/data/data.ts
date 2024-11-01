@@ -1396,99 +1396,113 @@ export const paymentSupportedCountries = [
 ];
 
 export const flutterwavePlanCodes = {
-  // "standard-2-weeks": "124241",
-  "mixed-1-month":
-    process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH ?? "124242",
-  // "standard-3-months": "124244",
-  // "standard-6-months": "124245",
-  // "standard-1-year": "124246",
-  // "premium-2-weeks": "124247",
+  "premium-1-week":
+    process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK ?? "124248",
+  "mixed-1-week":
+    process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK ?? "124243",
   "premium-1-month":
     process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH ?? "124249",
-  // "premium-3-months": "124250",
-  // "premium-6-months": "124251",
-  // "premium-1-year": "124252",
+  "mixed-1-month":
+    process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH ?? "124242",
 };
 
-// test PLN_ar8p19q43d0mcsw
 export const paystackPlanCodes = {
-  // "standard-2-weeks": "PLN_b9gv27ezigqc79y",
+  "premium-1-week":
+    process.env.NEXT_PUBLIC_PAYSTACK_PREMIUM_ONE_WEEK ?? "PLN_3qal83zxjkygqyp",
 
-  "mixed-1-month":
-    process.env.NEXT_PUBLIC_PAYSTACK_MIXED_ONE_MONTH ?? "PLN_hzpujs5jyttkrm8",
+  "mixed-1-week":
+    process.env.NEXT_PUBLIC_PAYSTACK_MIXED_ONE_WEEK ?? "PLN_hzpujs5jyttkrm8",
 
-  // "standard-3-months": "PLN_wwlp2xzg0xs7e7j",
-  // "standard-6-months": "PLN_kougi7kdo4b9r19",
-  // "standard-1-year": "PLN_rjq3senvt7755d5",
-  // "premium-2-weeks": "PLN_pmr7exuc1sg778p",
   "premium-1-month":
     process.env.NEXT_PUBLIC_PAYSTACK_PREMIUM_ONE_MONTH ?? "PLN_3qal83zxjkygqyp",
-
-  // "premium-3-months": "PLN_isv5go847e4sfra",
-  // "premium-6-months": "PLN_hvqi6qbazeepk9t",
-  // "premium-1-year": "PLN_3db7ite70fnc9z4",
+  "mixed-1-month":
+    process.env.NEXT_PUBLIC_PAYSTACK_MIXED_ONE_MONTH ?? "PLN_hzpujs5jyttkrm8",
 };
 
-export const plans: {
-  [key: string]: {
-    [key: string]: {
-      [key: string]: number;
-    };
-  };
-} = {
+export enum EDuration {
+  "ONE_WEEK" = "1 week",
+  "ONE_MONTH" = "1 month",
+}
+
+export enum EPlanName {
+  PREMIUM = "premium",
+  MIXED = "mixed",
+}
+
+export const durations = Object.values(EDuration);
+export const planNames = Object.values(EPlanName);
+
+export const plans: Record<
+  string,
+  Record<EPlanName, Record<EDuration, number>>
+> = {
   NGN: {
     premium: {
+      "1 week": 5000,
       "1 month": 15000,
     },
     mixed: {
+      "1 week": 10000,
       "1 month": 40000,
     },
   },
   GHS: {
     premium: {
+      "1 week": 12,
       "1 month": 45,
     },
     mixed: {
+      "1 week": 25,
       "1 month": 90,
     },
   },
   KES: {
     premium: {
+      "1 week": 110,
       "1 month": 455,
     },
     mixed: {
+      "1 week": 200,
       "1 month": 910,
     },
   },
   UGX: {
     premium: {
+      "1 week": 5000,
       "1 month": 13450,
     },
     mixed: {
+      "1 week": 5000,
       "1 month": 26800,
     },
   },
   TZS: {
     premium: {
+      "1 week": 2200,
       "1 month": 8800,
     },
     mixed: {
+      "1 week": 4200,
       "1 month": 18240,
     },
   },
   ZAR: {
     premium: {
+      "1 week": 20,
       "1 month": 70,
     },
     mixed: {
+      "1 week": 40,
       "1 month": 135,
     },
   },
   USD: {
     premium: {
+      "1 week": 5,
       "1 month": 15,
     },
     mixed: {
+      "1 week": 8,
       "1 month": 25,
     },
   },
