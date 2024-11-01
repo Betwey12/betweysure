@@ -1408,10 +1408,10 @@ export const flutterwavePlanCodes = {
 
 export const paystackPlanCodes = {
   "premium-1-week":
-    process.env.NEXT_PUBLIC_PAYSTACK_PREMIUM_ONE_WEEK ?? "PLN_3qal83zxjkygqyp",
+    process.env.NEXT_PUBLIC_PAYSTACK_PREMIUM_ONE_WEEK ?? "PLN_pmr7exuc1sg778p",
 
   "mixed-1-week":
-    process.env.NEXT_PUBLIC_PAYSTACK_MIXED_ONE_WEEK ?? "PLN_hzpujs5jyttkrm8",
+    process.env.NEXT_PUBLIC_PAYSTACK_MIXED_ONE_WEEK ?? "PLN_b9gv27ezigqc79y",
 
   "premium-1-month":
     process.env.NEXT_PUBLIC_PAYSTACK_PREMIUM_ONE_MONTH ?? "PLN_3qal83zxjkygqyp",
@@ -1458,17 +1458,17 @@ export const plans: Record<
   },
   KES: {
     premium: {
-      "1 week": 110,
+      "1 week": 115,
       "1 month": 455,
     },
     mixed: {
-      "1 week": 200,
+      "1 week": 250,
       "1 month": 910,
     },
   },
   UGX: {
     premium: {
-      "1 week": 5000,
+      "1 week": 3500,
       "1 month": 13450,
     },
     mixed: {

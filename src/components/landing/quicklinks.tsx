@@ -111,7 +111,7 @@ function useQuickLinks() {
     },
     {
       title: t("FREE_TIPS"),
-      href: "/dashboard/free-predictions?category=football",
+      href: "/dashboard/football-predictions?country=all",
     },
   ];
 
