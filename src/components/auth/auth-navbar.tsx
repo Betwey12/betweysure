@@ -70,7 +70,7 @@ export default function AuthNavBar() {
         <ToggleTheme />
       </div>
       <Button
-        className="lg:hidden bg-transparent text-inherit p-0 text-2xl dark:text-white"
+        className="lg:hidden bg-transparent text-inherit p-0 text-2xl dark:text-white hover:bg-transparent"
         onClick={() => setIsMenuOpen((prev) => !prev)}
       >
         {isMenuOpen ? <FaTimes /> : <IoMdMenu />}
