@@ -1,4 +1,4 @@
-import { plans } from "@/assets/data/data";
+import { EDuration, EPlanName, plans } from "@/assets/data/data";
 import GatewaySelect from "@/components/payment/gateway-select";
 import { formatCurrency } from "@/lib/utils";
 import { redirect } from "next/navigation";
@@ -8,14 +8,16 @@ export default function PaymentPage({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const planName = searchParams.plan as string;
-  const duration = searchParams.duration as string;
+  const planName = searchParams.plan as EPlanName;
+  const durationParams = searchParams.duration as EDuration;
   const currency = (searchParams.currency as string) || "NGN";
   const plan = plans[currency] ? plans[currency] : plans["NGN"];
   const availableCurrency = plans[currency] ? currency : "NGN";
-  const amount = plan[planName!][duration!.replace(/-/, " ")] || 0;
+  const duration = durationParams!.replace(/-/, " ") as EDuration;
 
-  if (!plan || !duration) {
+  const amount = plan[planName!][duration] || 0;
+
+  if (!plan || !durationParams) {
     redirect("/dashboard/buy-plan");
   }
 
@@ -31,7 +33,7 @@ export default function PaymentPage({
           <p>
             Duration:{" "}
             <span className="text-cyan">
-              {duration?.split("-").join(" ")} plan
+              {durationParams?.split("-").join(" ")} plan
             </span>
           </p>
         </div>

@@ -24,16 +24,10 @@ const PhoneInput = ({
   ...props
 }: IInputProps) => {
   const countryNamesAndFlags = Country.getAllCountries().map((country) => {
-    const phonecode = country.phonecode.includes("and")
-      ? country.phonecode.split("and")[0]
-      : country.phonecode;
-
-    const code = (phonecode.includes("+") ? phonecode : `+${phonecode}`).trim();
-
     return {
       name: country.name,
       flag: country.flag,
-      code,
+      code: country.phonecode,
     };
   });
 
@@ -43,6 +37,7 @@ const PhoneInput = ({
 
   function handleSelectCode(country: string) {
     const code = country.split("-")[1];
+    console.log(country);
 
     setValue(phonecodeName, code);
   }
@@ -56,7 +51,7 @@ const PhoneInput = ({
       <span className="flex gap-2 items-center flex-row-reverse">
         <span className="flex items-center gap-2">
           <span>{country.name}</span>
-          <span className={""}>({country.code})</span>
+          <span className={""}>+({country.code.replace("+", "")})</span>
         </span>
         <span>{country.flag}</span>
       </span>

@@ -12,10 +12,12 @@ import { toast } from "react-toastify";
 import { closePaymentModal } from "flutterwave-react-v3";
 import {
   EDuration,
+  EPlanKeys,
   EPlanName,
   flutterwavePlanCodes,
   paystackPlanCodes,
   plans,
+  plansKeys,
 } from "@/assets/data/data";
 import usePayment from "@/hooks/usePayment";
 import { HTTPRequest } from "@/api";
@@ -46,6 +48,10 @@ export default function GatewaySelect() {
   const { isPending, isError, mutateAsync } = useMutation({
     mutationFn: (data: TPayload) => HTTPRequest.Post("wallet/subscribe", data),
   });
+  const planKey = plansKeys.find(
+    (key) =>
+      `${durationParams?.toLowerCase()}-${planName?.toLowerCase()}` === key
+  );
 
   const { handleFlutterPayment, handlePaystackPayment } = usePayment({
     amount,
@@ -54,17 +60,19 @@ export default function GatewaySelect() {
       paystackPlanCodes[
         `${planName}-${durationParams}` as keyof typeof paystackPlanCodes
       ],
-    flutterwavePlanCode:
-      flutterwavePlanCodes[
-        `${planName}-${durationParams}` as keyof typeof flutterwavePlanCodes
-      ],
+    flutterwavePlanCode: planKey
+      ? flutterwavePlanCodes[planKey][currency]
+      : undefined,
   });
 
   async function handleUpdatePlan(reference?: string, planGateway?: string) {
+    if (!planKey) {
+      return toast.error("Invalid plan");
+    }
     const response = await mutateAsync({
       method: planGateway!,
       reference: reference!,
-      plan: `${duration?.toLowerCase()}-${planName?.toLowerCase()}`,
+      plan: planKey,
     });
 
     if (!response.success || isError) {
@@ -92,7 +100,7 @@ export default function GatewaySelect() {
   };
 
   function handlePayment(gateway: string) {
-    if (!plan || !duration) {
+    if (!plan || !durationParams) {
       toast.error("Please select a plan");
       router.push("/dashboard/buy-plan");
     }

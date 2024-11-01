@@ -4,7 +4,7 @@ import Link from "next/link";
 import Or from "../ui/or";
 import { Button } from "../ui/button";
 import { GoogleIcon } from "../icons";
-import { FaCheck, FaSpinner } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 import PhoneInput from "../ui/phone-input";
 import * as yup from "yup";
@@ -76,9 +76,10 @@ export default function SignUpForm() {
 
   const onSubmit: SubmitHandler<RegisterForm> = async (data) => {
     const token = await handleReCaptchaVerify("signup");
-    const phonecode = data.phonecode ? data.phonecode : "+234";
-    const currency = countries.find((country) =>
-      phonecode.includes(country.phonecode)
+
+    const phonecode = data.phonecode ? data.phonecode : "234";
+    const currency = countries.find(
+      (country) => phonecode === country.phonecode
     )?.currency;
     const newPhone = `${phonecode}${data.phone}`;
     const referredBy =

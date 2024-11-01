@@ -1395,27 +1395,63 @@ export const paymentSupportedCountries = [
   "ZAR",
 ];
 
-export const flutterwavePlanCodes = {
-  "premium-1-week":
-    process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK ?? "124248",
-  "mixed-1-week":
-    process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK ?? "124243",
-  "premium-1-month":
-    process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH ?? "124249",
-  "mixed-1-month":
-    process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH ?? "124242",
+export enum EPlanKeys {
+  ONE_WEEK_PREMIUM = "1-week-premium",
+  ONE_MONTH_PREMIUM = "1-month-premium",
+  ONE_WEEK_MIXED = "1-week-mixed",
+  ONE_MONTH_MIXED = "1-month-mixed",
+}
+export const plansKeys = Object.values(EPlanKeys);
+
+export const flutterwavePlanCodes: Record<EPlanKeys, Record<string, string>> = {
+  [EPlanKeys.ONE_WEEK_PREMIUM]: {
+    NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK ?? "128468",
+    GHS: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_GHS ?? "129634",
+    KES: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_KES ?? "129640",
+    USD: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_USD ?? "128468",
+    UGX: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_UGX ?? "128468",
+    TZS: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_TZS ?? "128468",
+    ZAR: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_ZAR ?? "128468",
+  },
+  [EPlanKeys.ONE_MONTH_PREMIUM]: {
+    NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH ?? "128468",
+    GHS: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH_GHS ?? "129643",
+    KES: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH_KES ?? "129644",
+    USD: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH_USD ?? "128468",
+    UGX: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH_UGX ?? "128468",
+    TZS: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH_TZS ?? "128468",
+    ZAR: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH_ZAR ?? "128468",
+  },
+  [EPlanKeys.ONE_WEEK_MIXED]: {
+    NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK ?? "129631",
+    GHS: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_GHS ?? "129642",
+    KES: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_KES ?? "129646",
+    USD: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_USD ?? "129631",
+    UGX: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_UGX ?? "129631",
+    TZS: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_TZS ?? "129631",
+    ZAR: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_ZAR ?? "129631",
+  },
+  [EPlanKeys.ONE_MONTH_MIXED]: {
+    NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH ?? "129631",
+    GHS: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH_GHS ?? "129641",
+    KES: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH_KES ?? "129645",
+    USD: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH_USD ?? "129631",
+    UGX: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH_UGX ?? "129631",
+    TZS: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH_TZS ?? "129631",
+    ZAR: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH_ZAR ?? "129631",
+  },
 };
 
 export const paystackPlanCodes = {
-  "premium-1-week":
+  [EPlanKeys.ONE_WEEK_PREMIUM]:
     process.env.NEXT_PUBLIC_PAYSTACK_PREMIUM_ONE_WEEK ?? "PLN_pmr7exuc1sg778p",
 
-  "mixed-1-week":
+  [EPlanKeys.ONE_MONTH_PREMIUM]:
     process.env.NEXT_PUBLIC_PAYSTACK_MIXED_ONE_WEEK ?? "PLN_b9gv27ezigqc79y",
 
-  "premium-1-month":
+  [EPlanKeys.ONE_WEEK_MIXED]:
     process.env.NEXT_PUBLIC_PAYSTACK_PREMIUM_ONE_MONTH ?? "PLN_3qal83zxjkygqyp",
-  "mixed-1-month":
+  [EPlanKeys.ONE_MONTH_MIXED]:
     process.env.NEXT_PUBLIC_PAYSTACK_MIXED_ONE_MONTH ?? "PLN_hzpujs5jyttkrm8",
 };
 
@@ -1438,72 +1474,72 @@ export const plans: Record<
 > = {
   NGN: {
     premium: {
-      "1 week": 5000,
-      "1 month": 15000,
+      [EDuration.ONE_WEEK]: 5000,
+      [EDuration.ONE_MONTH]: 15000,
     },
     mixed: {
-      "1 week": 10000,
-      "1 month": 40000,
+      [EDuration.ONE_WEEK]: 10000,
+      [EDuration.ONE_MONTH]: 40000,
     },
   },
   GHS: {
     premium: {
-      "1 week": 12,
-      "1 month": 45,
+      [EDuration.ONE_WEEK]: 12,
+      [EDuration.ONE_MONTH]: 25,
     },
     mixed: {
-      "1 week": 25,
-      "1 month": 90,
+      [EDuration.ONE_WEEK]: 45,
+      [EDuration.ONE_MONTH]: 90,
     },
   },
   KES: {
     premium: {
-      "1 week": 115,
-      "1 month": 455,
+      [EDuration.ONE_WEEK]: 115,
+      [EDuration.ONE_MONTH]: 455,
     },
     mixed: {
-      "1 week": 250,
-      "1 month": 910,
+      [EDuration.ONE_WEEK]: 250,
+      [EDuration.ONE_MONTH]: 910,
     },
   },
   UGX: {
     premium: {
-      "1 week": 3500,
-      "1 month": 13450,
+      [EDuration.ONE_WEEK]: 3500,
+      [EDuration.ONE_MONTH]: 13450,
     },
     mixed: {
-      "1 week": 5000,
-      "1 month": 26800,
+      [EDuration.ONE_WEEK]: 5000,
+      [EDuration.ONE_MONTH]: 26800,
     },
   },
   TZS: {
     premium: {
-      "1 week": 2200,
-      "1 month": 8800,
+      [EDuration.ONE_WEEK]: 2200,
+      [EDuration.ONE_MONTH]: 8800,
     },
     mixed: {
-      "1 week": 4200,
-      "1 month": 18240,
+      [EDuration.ONE_WEEK]: 4200,
+      [EDuration.ONE_MONTH]: 18240,
     },
   },
   ZAR: {
     premium: {
-      "1 week": 20,
-      "1 month": 70,
+      [EDuration.ONE_WEEK]: 20,
+      [EDuration.ONE_MONTH]: 70,
     },
     mixed: {
-      "1 week": 40,
-      "1 month": 135,
+      [EDuration.ONE_WEEK]: 40,
+      [EDuration.ONE_MONTH]: 135,
     },
   },
   USD: {
     premium: {
-      "1 week": 5,
-      "1 month": 15,
+      [EDuration.ONE_WEEK]: 5,
+      [EDuration.ONE_MONTH]: 15,
     },
     mixed: {
-      "1 week": 8,
-      "1 month": 25,
+      [EDuration.ONE_WEEK]: 8,
+      [EDuration.ONE_MONTH]: 25,
     },
   },
 };

@@ -67,7 +67,7 @@ export default function BuyDataForm() {
 
   const onSubmit: SubmitHandler<AirtimeForm> = async (data) => {
     const payload: TPayload = {
-      phone: `${data.phonecode || "+234"}${data.phone}`,
+      phone: `${data.phonecode || "234"}${data.phone}`,
       bundleSize: data.plan,
       scheme: data.network,
     };
