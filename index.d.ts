@@ -44,6 +44,7 @@ declare global {
     fcmToken: string;
     referralCode: string;
     subscribed: boolean;
+    accaUseLeft: number;
   };
 
   type TUserResponse = {

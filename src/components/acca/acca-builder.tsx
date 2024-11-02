@@ -2,14 +2,20 @@
 import { cn, getDate } from "@/lib/utils";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { FaCheck, FaSpinner } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 import * as yup from "yup";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import usePredictions from "@/hooks/usePredictions";
 import { outcomes } from "@/assets/data/data";
 import { useTranslations } from "next-intl";
 import { Button } from "../ui/button";
 import XdaysMultiple from "../home/xdays-multiple";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { HTTPRequest } from "@/api";
+import { toast } from "react-toastify";
+import { useAuth } from "@/hooks/useAuth";
+import useHasPlan from "@/hooks/useHasPlan";
+import Spinner from "../ui/spinner";
 
 const builderSchema = yup.object().shape({
   games: yup.number().required("Please select number of games"),
@@ -31,40 +37,48 @@ interface AccumulatorBuilderFormProps {
 export default function AccumulatorBuilderForm({
   bookie = "1xbet",
 }: AccumulatorBuilderFormProps) {
+  const queryClient = useQueryClient();
+  const { hasPlan } = useHasPlan();
+  const { user } = useAuth();
+  const accaUseLeft = user?.accaUseLeft;
+  const canUseAcca = (accaUseLeft ?? 5) > 0 || hasPlan;
   const t = useTranslations("ACCA_BUILDER");
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
+    defaultValues: {
+      games: 3,
+      timeframe: "Next 4 hours",
+      markets: [],
+    },
     resolver: yupResolver(builderSchema),
   });
   const [accaOptions, setAccaOptions] = useState<TBuilderValues>();
   const [fullDate, setFullDate] = useState(getDate("today"));
   const today = getDate("today");
   const queryKey = ["predictions", fullDate];
-  const endpoint = `tips/football/${today}/${fullDate}`;
+  const endpoint = `tips/football-history/${today}/${fullDate}`;
 
   const { data, isLoading } = usePredictions({
     endpoint,
     predictionsPerPage: 10,
     queryKey,
   });
-  const predictions = data?.data as Prediction[];
+  const predictions = (data?.data ?? []) as Prediction[];
 
-  function onSubmit(data: TBuilderValues) {
-    const days: Record<
-      string,
-      "yesterday" | "today" | "tomorrow" | "last week" | "next two days"
-    > = {
-      "Next 4 hours": "today",
-      "Next 12 hours": "today",
-      "Next 24 hours": "tomorrow",
-      "Next 48 hours": "next two days",
-    };
-    setAccaOptions(data);
-    setFullDate(getDate(days[data.timeframe]));
-  }
+  const { mutateAsync } = useMutation({
+    mutationFn: (data: { accaUsed: boolean }) =>
+      HTTPRequest.Post("users/edit-profile", data),
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["user", user?.uid],
+      });
+    },
+  });
+
   const durations: Record<string, number> = {
     "Next 4 hours": 4,
     "Next 12 hours": 12,
@@ -132,17 +146,51 @@ export default function AccumulatorBuilderForm({
     });
   const accaGames = filteredPredictions?.slice(0, accaOptions?.games);
 
+  function onSubmit(data: TBuilderValues) {
+    const days: Record<
+      string,
+      "yesterday" | "today" | "tomorrow" | "last week" | "next two days"
+    > = {
+      "Next 4 hours": "today",
+      "Next 12 hours": "today",
+      "Next 24 hours": "tomorrow",
+      "Next 48 hours": "next two days",
+    };
+    setAccaOptions(data);
+    setFullDate(getDate(days[data.timeframe]));
+  }
+
+  useEffect(() => {
+    const updateAccaUse = async () => {
+      try {
+        const response = await mutateAsync({ accaUsed: true });
+        if (response?.success) {
+          toast.success("Your acca has been built successfully");
+        }
+      } catch (error) {
+        console.error("Error building acca:", error);
+      }
+    };
+    if (accaGames?.length === accaOptions?.games) {
+      updateAccaUse();
+    }
+  }, [accaGames.length, accaOptions?.games, mutateAsync]);
+
   return (
     <div className="w-full px-4 relative text-blue-one dark:text-white flex flex-col items-center">
       <div className="grid lg:grid-cols-3 gap-20 w-full">
-        <XdaysMultiple
-          maxAccuracy={60}
-          maxOdds={3}
-          investment={300}
-          noOfGames={3}
-          partnerLink="https://refpa7921972.top/L?tag=d_2927467m_1573c_&site=2927467&ad=1573"
-          bookie={bookie}
-        />
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <XdaysMultiple
+            maxAccuracy={60}
+            maxOdds={3}
+            investment={300}
+            noOfGames={3}
+            partnerLink="https://refpa7921972.top/L?tag=d_2927467m_1573c_&site=2927467&ad=1573"
+            bookie={bookie}
+          />
+        )}
 
         <form
           className="flex flex-col w-full items-center justify-center my-6"
@@ -245,28 +293,35 @@ export default function AccumulatorBuilderForm({
                 </p>
               )}
             </fieldset>
-            <Button className="bg-cyan flex items-center justify-center py-3">
+            <Button
+              disabled={!canUseAcca}
+              className="bg-cyan text-white disabled:bg-gray-one disabled:cursor-not-allowed flex items-center justify-center py-3"
+            >
               {t("BUILD_ACCA")}
             </Button>
           </fieldset>
         </form>
-        <XdaysMultiple
-          maxAccuracy={60}
-          maxOdds={4}
-          investment={500}
-          noOfGames={3}
-          partnerLink="https://combodef.com/L?tag=d_3380999m_38497c_&site=3380999&ad=38497"
-          bookie={bookie}
-        />
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <XdaysMultiple
+            maxAccuracy={60}
+            maxOdds={4}
+            investment={500}
+            noOfGames={3}
+            partnerLink="https://combodef.com/L?tag=d_3380999m_38497c_&site=3380999&ad=38497"
+            bookie={bookie}
+          />
+        )}
       </div>
+
+      {!canUseAcca && (
+        <p className="text-red-400 mt-4 max-w-lg text-center">{t("UPGRADE")}</p>
+      )}
 
       {accaOptions?.markets?.length && (
         <>
-          {isLoading ? (
-            <div className="flex items-center justify-center">
-              <FaSpinner className="animate-spin" />
-            </div>
-          ) : accaGames?.length > 0 ? (
+          {accaGames?.length > 0 ? (
             <div className="flex flex-col gap-2 my-20 items-start">
               {accaGames.length < (accaOptions?.games ?? 0) && (
                 <p className="text-red-400 mb-10 leading-4">
