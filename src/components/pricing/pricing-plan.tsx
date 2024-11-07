@@ -23,7 +23,7 @@ export default function PricingPlans() {
 
   return (
     <div className="flex flex-col gap-10 dark:text-white md:px-10 px-4 lg:px-20">
-      <div className="flex items-center flex-col lg:flex-row gap-4 justify-between">
+      <div className="flex items-center flex-col lg:flex-row gap-4 justify-between z-10">
         <div className="max-w-[300px] w-full">
           <MySelect
             options={supportedCountries}
