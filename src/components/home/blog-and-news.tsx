@@ -57,7 +57,7 @@ function NewsCard({ news }: { news: any }) {
         <p className="text-sm text-gray-one mt-2">{content}...</p>
         <Link
           target="_blank"
-          href={`${blogUrl}/${link}`}
+          href={`${blogUrl}${link}`}
           className="flex items-center gap-2 mt-8 text-cyan"
         >
           {t("READ")} <FaArchive />
