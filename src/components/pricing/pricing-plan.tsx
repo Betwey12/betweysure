@@ -18,6 +18,7 @@ export default function PricingPlans() {
     selectedCurrency,
     setSelectedCurrency,
     duration,
+    timeframe,
     setDuration,
   } = usePricingPlans();
 
@@ -37,8 +38,8 @@ export default function PricingPlans() {
             <button
               key={dur}
               onClick={() => setDuration(dur)}
-              className={cn("bg-cyan text-white text-sm px-3 py-1 rounded", {
-                "bg-purple-royal": dur === duration,
+              className={cn("bg-blue-one text-white px-4 py-2 rounded", {
+                "bg-cyan": dur === duration,
               })}
             >
               {dur}
@@ -53,6 +54,7 @@ export default function PricingPlans() {
             predictionPackage={predictionPackage}
             key={predictionPackage.name}
             selectedCurrency={selectedCurrency}
+            timeframe={timeframe}
           />
         ))}
       </div>
@@ -70,9 +72,11 @@ type TPackage = {
 function PackageCard({
   predictionPackage,
   selectedCurrency,
+  timeframe,
 }: {
   predictionPackage: TPackage[number];
   selectedCurrency: string;
+  timeframe: string;
 }) {
   const t = useTranslations("PRICING_PLANS");
   const { user } = useAuth();
@@ -104,7 +108,7 @@ function PackageCard({
             <p className="font-bold text-2xl">
               {formatCurrency(predictionPackage.price, currencyCode)}
             </p>
-            <p className="font-bold">/month</p>
+            <p className="font-bold">/{timeframe}</p>
           </div>
 
           <div className="w-[40%] h-[1px] bg-yellow-sunset lg:my-4 my-2" />
@@ -154,6 +158,11 @@ function usePricingPlans() {
   const currency =
     selectedCurrency?.split(" ")[selectedCurrency?.split(" ").length - 1];
   const plan = plans[currency] ? plans[currency] : plans["NGN"];
+  const timeframs = {
+    [EDuration.ONE_MONTH]: "month",
+    [EDuration.ONE_WEEK]: "week",
+  };
+  const timeframe = timeframs[duration];
 
   const packages = [
     {
@@ -224,5 +233,6 @@ function usePricingPlans() {
     t,
     duration,
     setDuration,
+    timeframe,
   };
 }
