@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { FaCheck } from "react-icons/fa";
 import * as yup from "yup";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import usePredictions from "@/hooks/usePredictions";
 import { outcomes } from "@/assets/data/data";
 import { useTranslations } from "next-intl";
@@ -16,6 +16,8 @@ import { toast } from "react-toastify";
 import { useAuth } from "@/hooks/useAuth";
 import useHasPlan from "@/hooks/useHasPlan";
 import Spinner from "../ui/spinner";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const builderSchema = yup.object().shape({
   games: yup.number().required("Please select number of games"),
@@ -37,6 +39,7 @@ interface AccumulatorBuilderFormProps {
 export default function AccumulatorBuilderForm({
   bookie = "1xbet",
 }: AccumulatorBuilderFormProps) {
+  const router = useRouter();
   const queryClient = useQueryClient();
   const { hasPlan } = useHasPlan();
   const { user } = useAuth();
@@ -293,12 +296,14 @@ export default function AccumulatorBuilderForm({
                 </p>
               )}
             </fieldset>
-            <Button
-              disabled={!canUseAcca}
-              className="bg-cyan text-white disabled:bg-gray-one disabled:cursor-not-allowed flex items-center justify-center py-3"
-            >
-              {t("BUILD_ACCA")}
-            </Button>
+            {user && (
+              <Button
+                disabled={!canUseAcca}
+                className="bg-cyan text-white disabled:bg-gray-one disabled:cursor-not-allowed flex items-center justify-center py-3"
+              >
+                {t("BUILD_ACCA")}
+              </Button>
+            )}
           </fieldset>
         </form>
         {isLoading ? (
@@ -315,8 +320,27 @@ export default function AccumulatorBuilderForm({
         )}
       </div>
 
-      {!canUseAcca && (
-        <p className="text-red-400 mt-4 max-w-lg text-center">{t("UPGRADE")}</p>
+      {!user ? (
+        <Link
+          href="/auth/login"
+          className="bg-cyan px-4 py-2 rounded text-white mt-4 cursor-pointer"
+        >
+          {t("LOGIN_TO_BUILD")}
+        </Link>
+      ) : (
+        !canUseAcca && (
+          <>
+            <p className="text-red-400 mt-4 max-w-lg text-center">
+              {t("MAX_SLIPS")}
+            </p>
+            <Link
+              href={"/dashboard/buy-plan"}
+              className="bg-cyan px-4 py-2 rounded text-white mt-4 cursor-pointer"
+            >
+              {t("UPGRADE_BUTTON")}
+            </Link>
+          </>
+        )
       )}
 
       {accaOptions?.markets?.length && (

@@ -404,7 +404,9 @@
     "NO_OF_GAMES": "Number of games",
     "FORM_TITLE": "With just a few clicks, you can build an accumulator using our AI driven tips, Select how many games you would like to have and generate your slip",
     "WHAT_MARKETS": "What markets?",
-    "UPGRADE": "You've reached the maximum number of slips for your plan. Please upgrade to continue generating more.",
+    "MAX_SLIPS": "You've reached the maximum number of slips for your plan. Please upgrade to continue generating more.",
+    "UPGRADE_BUTTON": "Upgrade",
+    "LOGIN_TO_BUILD": "Login to build your Acca",
     "INCOMPLETE_GAMES": "Only {noOfGames} found matches your criteria, please expand your criteria and try again"
   },
   "AUTH": {
