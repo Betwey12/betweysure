@@ -38,9 +38,12 @@ export default function PricingPlans() {
             <button
               key={dur}
               onClick={() => setDuration(dur)}
-              className={cn("bg-blue-one text-white px-4 py-2 rounded", {
-                "bg-cyan": dur === duration,
-              })}
+              className={cn(
+                "border border-gray-two px-4 py-2 rounded dark:bg-blue-one dark:border-0 dark:text-white",
+                {
+                  "bg-cyan text-white dark:bg-cyan": dur === duration,
+                }
+              )}
             >
               {dur}
             </button>

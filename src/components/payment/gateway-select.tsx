@@ -12,7 +12,6 @@ import { toast } from "react-toastify";
 import { closePaymentModal } from "flutterwave-react-v3";
 import {
   EDuration,
-  EPlanKeys,
   EPlanName,
   flutterwavePlanCodes,
   paystackPlanCodes,
@@ -78,7 +77,7 @@ export default function GatewaySelect() {
     if (!response.success || isError) {
       return toast.error(response.errorMessage || response.message);
     }
-    toast.success("Payment successfull");
+    toast.success(`Payment successfull. You are now a ${planName} subscriber`);
     router.push("/dashboard");
   }
 
