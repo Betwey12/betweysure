@@ -9,7 +9,7 @@ import globeIcon from "../../assets/icons/globe.png";
 import { FaLock } from "react-icons/fa";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import Link from "next/link";
+import AuthedLink from "./authed-link";
 
 interface OtherSportMatchListProps {
   predictionObj: TOtherSPortsMatchData;
@@ -135,12 +135,15 @@ export default function OtherSportMatchList({
         </span>
       </p>
       {hidePrediction ? (
-        <Link
-          href={user ? "/pricing" : "/auth/login"}
+        <AuthedLink
+          href={"/pricing"}
           className="place-self-center gap-2 flex-col lg:flex-row flex items-center border border-red-300 text-red-300 px-2 py-1 rounded"
-        >
-          Show <FaLock />
-        </Link>
+          title={
+            <>
+              Show <FaLock />
+            </>
+          }
+        />
       ) : (
         <div className="flex items-center gap-2  place-self-center flex-col lg:flex-row">
           <button className="gap-1 flex-col lg:flex-row flex items-center border border-cyan px-2 py-1 rounded">

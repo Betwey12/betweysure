@@ -78,7 +78,7 @@ export default function GatewaySelect() {
       return toast.error(response.errorMessage || response.message);
     }
     toast.success(`Payment successfull. You are now a ${planName} subscriber`);
-    router.push("/dashboard");
+    router.push("/payment-confirmation");
   }
 
   const onSuccess = (response: any) => {

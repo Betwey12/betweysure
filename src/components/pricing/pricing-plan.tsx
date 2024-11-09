@@ -1,15 +1,14 @@
 "use client";
-
 import { FaCheck } from "react-icons/fa";
 import { cn, formatCurrency } from "../../lib/utils";
 import { useAuth } from "../../hooks/useAuth";
 import { durations, EDuration, plans } from "@/assets/data/data";
 import useSelectCurrency from "@/hooks/useSelectCurrency";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { TPlanType } from "@/constants";
 import MySelect from "../ui/my-select";
 import { useState } from "react";
+import AuthedLink from "../ui/authed-link";
 
 export default function PricingPlans() {
   const {
@@ -135,14 +134,11 @@ function PackageCard({
         </div>
       </div>
 
-      <Link
-        href={
-          !user ? "/auth/login" : isFree ? "/dashboard" : "/dashboard/buy-plan"
-        }
+      <AuthedLink
+        href="/dashboard/buy-plan"
+        title={isFree ? t("GET_STARTED") : t("SUBSCRIBE_NOW")}
         className="w-full rounded lg:text-base text-xs px-2 lg:px-4 flex items-center justify-center py-3 bg-yellow-sunset mt-20 text-white"
-      >
-        {isFree ? t("GET_STARTED") : t("SUBSCRIBE_NOW")}
-      </Link>
+      />
     </div>
   );
 }
