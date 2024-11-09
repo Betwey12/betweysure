@@ -26,7 +26,7 @@ export default function CallToAction() {
         <AuthedLink
           href="/dashboard"
           className="bg-cyan px-4 py-3 text-center font-medium rounded"
-          name={t("CTA_TITLE")}
+          title={t("CTA_TITLE")}
         />
       </div>
     </div>

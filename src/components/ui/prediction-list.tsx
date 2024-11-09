@@ -8,6 +8,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { getLeague } from "@/assets/data/leagueApiF";
 import Image from "next/image";
 import Link from "next/link";
+import AuthedLink from "./authed-link";
 
 interface PredictionListProps {
   highestPrediction?: string;
@@ -217,12 +218,15 @@ export function PredictionList({
 
       <div className="flex items-center justify-center">
         {hidePrediction ? (
-          <Link
-            href={user ? "/pricing" : "/auth/login"}
+          <AuthedLink
+            href={"/pricing"}
             className="flex items-center gap-2 text-red-300"
-          >
-            Show <FaArrowRight />
-          </Link>
+            title={
+              <>
+                Show <FaArrowRight />
+              </>
+            }
+          />
         ) : (
           <ResultIcon
             awayGoals={predictionObj?.away_goals ?? 0}

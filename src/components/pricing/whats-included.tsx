@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import {
   FaCartPlus,
   FaFileInvoice,
@@ -13,6 +12,7 @@ import {
   FaTag,
 } from "react-icons/fa";
 import { FaBoltLightning, FaCartShopping } from "react-icons/fa6";
+import AuthedLink from "../ui/authed-link";
 
 export default function WhatsIncluded() {
   const { t, packages, plansDescriptions } = useWhatIsIncluded();
@@ -41,12 +41,11 @@ export default function WhatsIncluded() {
           <h2 className="text-2xl">{t("CALL_TO_ACTION")}</h2>
           <p>{t("CALL_TO_ACTION_DESC")}</p>
         </div>
-        <Link
+        <AuthedLink
           href="/dashboard/buy-plan"
           className="rounded lg:text-base text-xs px-2 lg:px-4 font-medium flex items-center justify-center py-3 bg-yellow-sunset text-white"
-        >
-          {t("CHOOSE_PLAN")}
-        </Link>
+          title={t("CHOOSE_PLAN")}
+        />
       </div>
     </div>
   );
