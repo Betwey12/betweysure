@@ -17,7 +17,6 @@ import { useAuth } from "@/hooks/useAuth";
 import useHasPlan from "@/hooks/useHasPlan";
 import Spinner from "../ui/spinner";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 const builderSchema = yup.object().shape({
   games: yup.number().required("Please select number of games"),
@@ -39,7 +38,6 @@ interface AccumulatorBuilderFormProps {
 export default function AccumulatorBuilderForm({
   bookie = "1xbet",
 }: AccumulatorBuilderFormProps) {
-  const router = useRouter();
   const queryClient = useQueryClient();
   const { hasPlan } = useHasPlan();
   const { user } = useAuth();
