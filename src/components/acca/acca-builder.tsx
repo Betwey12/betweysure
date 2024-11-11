@@ -42,7 +42,7 @@ export default function AccumulatorBuilderForm({
   const { hasPlan } = useHasPlan();
   const { user } = useAuth();
   const accaUseLeft = user?.accaUseLeft;
-  const canUseAcca = (accaUseLeft ?? 5) > 0 || hasPlan;
+  const canUseAcca = (accaUseLeft ?? 0) > 0 || hasPlan;
   const t = useTranslations("ACCA_BUILDER");
 
   const {
