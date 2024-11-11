@@ -19,7 +19,10 @@ export default function ResultsHistory() {
     queryKey: ["football"],
     predictionsPerPage: 10,
   });
-  const predictions = payload?.data;
+  const predictions = payload?.data as Prediction[];
+  const sortedPredictions = predictions?.sort(
+    (a, b) => a.date?.localeCompare(b.date) ?? 0
+  );
   const predictionsPerPage = 10;
 
   const count = Math.ceil((predictions?.length ?? 0) / predictionsPerPage);
@@ -28,7 +31,7 @@ export default function ResultsHistory() {
     <>
       <div className="flex flex-col gap-2 my-6">
         <FootballPredictionTable
-          predictions={predictions as Prediction[]}
+          predictions={sortedPredictions}
           from={from}
           to={to}
           isLoading={isLoading}
