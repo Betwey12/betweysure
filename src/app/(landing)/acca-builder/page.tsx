@@ -5,6 +5,7 @@ import OtherPagesHero from "@/components/shared/other-pages-hero";
 import { acca } from "@/constants";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: acca.title,
@@ -23,7 +24,32 @@ export default function AccumulatorBuilder() {
           <p className="text-center">{t("DESCRIPTION")}</p>
         </div>
         <AccumulatorBuilderForm />
+        <a
+          className="my-10 block"
+          href="https://aff.partners.io/visit/?bta=45585&nci=5689"
+          target="_top"
+        >
+          <Image
+            alt="banner"
+            src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1160175"
+            width="970"
+            height="90"
+          />
+        </a>
+
         <AccumulatorBuilderExplained />
+        <a
+          className="my-10 block"
+          href="https://aff.partners.io/visit/?bta=45585&nci=7925"
+          target="_top"
+        >
+          <Image
+            alt="banner"
+            src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1160193"
+            width="1200"
+            height="400"
+          />
+        </a>
 
         <div className="w-full my-10 lg:my-20 dark:text-white">
           <h1 className="lg:text-2xl text-xl font-semibold">

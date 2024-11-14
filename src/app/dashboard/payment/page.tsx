@@ -1,4 +1,4 @@
-import { EDuration, EPlanName, plans } from "@/assets/data/data";
+import { EDuration, EPaidPlanNames, plans } from "@/assets/data/data";
 import GatewaySelect from "@/components/payment/gateway-select";
 import { formatCurrency } from "@/lib/utils";
 import { redirect } from "next/navigation";
@@ -8,7 +8,7 @@ export default function PaymentPage({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const planName = searchParams.plan as EPlanName;
+  const planName = searchParams.plan as EPaidPlanNames;
   const durationParams = searchParams.duration as EDuration;
   const currency = (searchParams.currency as string) || "NGN";
   const plan = plans[currency] ? plans[currency] : plans["NGN"];

@@ -17,6 +17,7 @@ import { useAuth } from "@/hooks/useAuth";
 import useHasPlan from "@/hooks/useHasPlan";
 import Spinner from "../ui/spinner";
 import Link from "next/link";
+import Image from "next/image";
 
 const builderSchema = yup.object().shape({
   games: yup.number().required("Please select number of games"),
@@ -181,7 +182,17 @@ export default function AccumulatorBuilderForm({
     <div className="w-full px-4 relative text-blue-one dark:text-white flex flex-col items-center">
       <div className="grid lg:grid-cols-3 gap-20 w-full">
         {isLoading ? (
-          <Spinner />
+          <a
+            href="https://aff.partners.io/visit/?bta=45585&nci=5685"
+            target="_top"
+          >
+            <Image
+              alt="banner"
+              src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1160184"
+              width="300"
+              height="250"
+            />
+          </a>
         ) : (
           <XdaysMultiple
             maxAccuracy={60}
@@ -305,7 +316,17 @@ export default function AccumulatorBuilderForm({
           </fieldset>
         </form>
         {isLoading ? (
-          <Spinner />
+          <a
+            href="https://aff.partners.io/visit/?bta=45585&nci=5685"
+            target="_top"
+          >
+            <Image
+              alt="banner"
+              src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1160184"
+              width="300"
+              height="250"
+            />
+          </a>
         ) : (
           <XdaysMultiple
             maxAccuracy={60}

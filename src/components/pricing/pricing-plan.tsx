@@ -2,10 +2,15 @@
 import { FaCheck } from "react-icons/fa";
 import { cn, formatCurrency } from "../../lib/utils";
 import { useAuth } from "../../hooks/useAuth";
-import { durations, EDuration, plans } from "@/assets/data/data";
+import {
+  durations,
+  EDuration,
+  EPaidPlanNames,
+  EPlanNames,
+  plans,
+} from "@/assets/data/data";
 import useSelectCurrency from "@/hooks/useSelectCurrency";
 import { useTranslations } from "next-intl";
-import { TPlanType } from "@/constants";
 import MySelect from "../ui/my-select";
 import { useState } from "react";
 import AuthedLink from "../ui/authed-link";
@@ -81,8 +86,7 @@ function PackageCard({
   timeframe: string;
 }) {
   const t = useTranslations("PRICING_PLANS");
-  const { user } = useAuth();
-  const isFree = predictionPackage.name === TPlanType.FREE;
+  const isFree = predictionPackage.name === EPlanNames.FREE;
   const currencyCode =
     selectedCurrency?.split(" ")[selectedCurrency?.split(" ")?.length - 1];
 
@@ -92,9 +96,9 @@ function PackageCard({
         "flex relative flex-col border border-gray-two items-center justify-between gap-4 px-4 lg:p-6 py-12 lg:rounded-xl shadow-lg bg-white text-blue-three dark:bg-blue-one dark:border-0 dark:text-white rounded",
         {
           "dark:bg-blue-one dark:text-white":
-            predictionPackage.name !== TPlanType.PREMIUM,
+            predictionPackage.name !== EPaidPlanNames.PREMIUM,
           "bg-gradient-to-bl to-purple-royal from-purple-800 via-purple-500 text-white":
-            predictionPackage.name === TPlanType.PREMIUM,
+            predictionPackage.name === EPaidPlanNames.PREMIUM,
         }
       )}
     >
@@ -125,7 +129,7 @@ function PackageCard({
               <FaCheck
                 className={cn("dark:text-white", {
                   "text-cyan dark:text-cyan":
-                    predictionPackage.name === TPlanType.PREMIUM,
+                    predictionPackage.name === EPaidPlanNames.PREMIUM,
                 })}
               />
               <p className="text-xs">{feature}</p>
@@ -166,7 +170,7 @@ function usePricingPlans() {
   const packages = [
     {
       title: "Free",
-      name: TPlanType.FREE,
+      name: EPlanNames.FREE,
       price: 0,
       features: [
         t("FREE_FEATURES.ONE"),
@@ -193,7 +197,7 @@ function usePricingPlans() {
     },
     {
       title: "Premium Football",
-      name: TPlanType.PREMIUM,
+      name: EPlanNames.PREMIUM,
       price: plan["premium"][duration],
       features: [
         t("PREMIUM_FEATURES.ONE"),
@@ -211,7 +215,7 @@ function usePricingPlans() {
     },
     {
       title: "Premium Mixed Sport",
-      name: TPlanType.MIXED,
+      name: EPlanNames.MIXED,
       price: plan["mixed"][duration],
       features: [
         t("MIXED_FEATURES.ONE"),

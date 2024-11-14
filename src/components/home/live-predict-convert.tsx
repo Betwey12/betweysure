@@ -8,6 +8,19 @@ import Image from "next/image";
 export default function LivePredictConvert() {
   return (
     <div className="flex flex-col gap-8 lg:w-[25%] items-center">
+      <Link
+        className="w-full block"
+        href="https://aff.partners.io/visit/?bta=45585&nci=7670"
+        target="_blank"
+      >
+        <Image
+          width={300}
+          height={250}
+          src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1160147"
+          alt="banner"
+          className="w-full rounded"
+        />
+      </Link>
       <XdaysMultiple partnerLink="https://refpa7921972.top/L?tag=d_2927467m_1573c_&site=2927467&ad=1573" />
       <FUndBetAccount />
       <Link

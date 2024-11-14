@@ -1,6 +1,6 @@
-import { TPlanType } from "@/constants";
 import en from "./messages/en.json";
 import { User } from "firebase/auth";
+import { EPlanNames } from "@/assets/data/data";
 
 declare global {
   type Messages = typeof en;
@@ -35,7 +35,7 @@ declare global {
     wallet: number;
     currency: string;
     plan: {
-      type: TPlanType;
+      type: EPlanNames;
       expiry: number;
     };
     expiry: number;

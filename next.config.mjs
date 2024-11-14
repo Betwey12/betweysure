@@ -10,6 +10,7 @@ const nextConfig = {
       "media.api-sports.io",
       "flagcdn.com",
       "blog.betweysure.com",
+      "aff-partners-io.ck-cdn.com",
     ],
   },
 };
