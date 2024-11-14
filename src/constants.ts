@@ -1,9 +1,3 @@
-export enum TPlanType {
-  FREE = "free",
-  MIXED = "mixed",
-  PREMIUM = "premium",
-}
-
 const contactInfo = {
   email: "general@betweysure.com",
   phone: "+234 913 7158 913",

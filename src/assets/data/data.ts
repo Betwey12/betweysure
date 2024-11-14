@@ -1460,17 +1460,23 @@ export enum EDuration {
   "ONE_MONTH" = "1 month",
 }
 
-export enum EPlanName {
+export enum EPaidPlanNames {
+  PREMIUM = "premium",
+  MIXED = "mixed",
+}
+
+export enum EPlanNames {
+  FREE = "free",
   PREMIUM = "premium",
   MIXED = "mixed",
 }
 
 export const durations = Object.values(EDuration);
-export const planNames = Object.values(EPlanName);
+export const planNames = Object.values(EPaidPlanNames);
 
 export const plans: Record<
   string,
-  Record<EPlanName, Record<EDuration, number>>
+  Record<EPaidPlanNames, Record<EDuration, number>>
 > = {
   NGN: {
     premium: {
@@ -1861,14 +1867,7 @@ export const clubkonnectBookies = [
   "supabet",
 ].sort((a, b) => a.localeCompare(b));
 
-export const otherSports = [
-  "Basketball",
-  "Baseball",
-  "Tennis",
-  "Ice Hockey",
-  "Handball",
-  "Futsal",
-];
+export const otherSports = ["Basketball", "Baseball", "Tennis", "Ice Hockey"];
 
 export const otherSPortsWorldLeagues = [
   "juniors",

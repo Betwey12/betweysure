@@ -1,5 +1,7 @@
 import { useTranslations } from "next-intl";
 import FAQDropdown from "../faq/faq-dropdown";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function FrequentlyAskedQuestions() {
   const { t, faqs } = useFrequentlyAskedQuestions();
@@ -9,7 +11,6 @@ export default function FrequentlyAskedQuestions() {
       <h1 className="lg:text-2xl text-xl font-semibold">
         {t("FREQ_ASKED_QUESTIONS")}
       </h1>
-
       <FAQDropdown faqs={faqs} />
     </div>
   );

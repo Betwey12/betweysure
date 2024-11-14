@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 import { closePaymentModal } from "flutterwave-react-v3";
 import {
   EDuration,
-  EPlanName,
+  EPaidPlanNames,
   flutterwavePlanCodes,
   paystackPlanCodes,
   plans,
@@ -34,7 +34,7 @@ type TPayload = {
 export default function GatewaySelect() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const planName = searchParams.get("plan") as EPlanName;
+  const planName = searchParams.get("plan") as EPaidPlanNames;
   const durationParams = searchParams.get("duration");
   const currency = searchParams.get("currency") || "NGN";
   const plan = plans[currency] ? plans[currency] : plans["NGN"];

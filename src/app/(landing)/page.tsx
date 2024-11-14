@@ -35,6 +35,21 @@ export default function HomePage({
         />
       </div>
       <WhyBetWeySure />
+
+      <a
+        href="https://aff.partners.io/visit/?bta=45585&nci=5689"
+        target="_top"
+        className="mt-10 block"
+      >
+        <Image
+          alt="banner"
+          src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1160175"
+          width="970"
+          height="90"
+          className="w-full"
+        />
+      </a>
+
       <AboutBetWeySure />
       <CallToAction />
       <FrequentlyAskedQuestions />

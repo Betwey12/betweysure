@@ -48,12 +48,12 @@ function NewsCard({ news }: { news: any }) {
       <Image
         width={300}
         height={200}
-        src={news.featuredImage.node.sourceUrl ?? ""}
-        alt={news.title}
+        src={news?.featuredImage?.node?.sourceUrl ?? ""}
+        alt={news?.title}
         className="w-full rounded-[12px_12px_0_0] h-[200px] object-cover"
       />
       <div className="flex flex-col justify-between h-full bg-white shadow-md rounded-[0_0_12px_12px] px-4 py-6 dark:bg-blue-one dark:text-white">
-        <h4 className="text-dark dark:text-white">{news.title}</h4>
+        <h4 className="text-dark dark:text-white">{news?.title}</h4>
         <p className="text-sm text-gray-one mt-2">{content}...</p>
         <Link
           target="_blank"
