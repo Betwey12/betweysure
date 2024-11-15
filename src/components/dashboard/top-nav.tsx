@@ -201,6 +201,6 @@ const dropdownLinks = [
   {
     name: "about betweysure",
     icon: <FaInfoCircle />,
-    href: "/about",
+    href: "/about-us",
   },
 ];

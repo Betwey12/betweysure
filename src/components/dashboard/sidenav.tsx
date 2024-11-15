@@ -273,24 +273,24 @@ const navlinks = [
       },
       // {
       //   name: "Airtime",
-      //   path: "/dashboard/perform?task=airtime",
+      //   path: "/dashboard/perform-action?task=airtime",
       //   icon: <FaSimCard />,
       // },
       // {
       //   name: "Data",
-      //   path: "/dashboard/perform?task=data",
+      //   path: "/dashboard/perform-action?task=data",
       //   icon: <FaExchangeAlt />,
       // },
     ],
   },
   {
     name: "Convert Booking Code",
-    path: "/dashboard/perform?task=convert-bet-code",
+    path: "/dashboard/perform-action?task=convert-bet-code",
     icon: <FaArrowsSpin />,
   },
   {
     name: "Fund Betting Wallet",
-    path: "/dashboard/perform?task=fund-bet-wallet",
+    path: "/dashboard/perform-action?task=fund-bet-wallet",
     icon: <FaMoneyCheck />,
   },
 ];
