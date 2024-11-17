@@ -8,15 +8,16 @@ interface XdaysMultipleProps {
   maxOdds?: number;
   investment?: number;
   noOfGames?: number;
+  bookie?: string;
 }
 
 export default function XdaysMultiple({
   partnerLink,
-  canShowImage,
   maxAccuracy = 70,
   maxOdds = 2,
   investment = 300,
   noOfGames = 3,
+  bookie,
 }: XdaysMultipleProps) {
   const { topPredictions, returns } = useXdaysMultiple({
     maxAccuracy,
@@ -30,8 +31,8 @@ export default function XdaysMultiple({
       topPredictions={topPredictions}
       returns={returns}
       partnerLink={partnerLink}
-      canShowImage={canShowImage}
       investment={investment}
+      bookie={bookie}
     />
   );
 }

@@ -10,6 +10,8 @@ import usePopUp from "@/hooks/usePopUp";
 import bet9ja from "@/assets/images/bet9ja.png";
 import sportybet from "@/assets/images/sportybet.png";
 import sportybetLight from "@/assets/images/sportybet-red.png";
+import sportsbet from "@/assets/images/sportsbet-dark.png";
+import sportsbetLight from "@/assets/images/sportsbet-light.png";
 
 const logos: Record<string, any> = {
   "1xbetDark": oneXBet,
@@ -18,6 +20,8 @@ const logos: Record<string, any> = {
   bet9jaLight: bet9ja,
   sportybetDark: sportybet,
   sportybetLight: sportybetLight,
+  sportsbetDark: sportsbet,
+  sportsbetLight: sportsbetLight,
 };
 
 interface XdaysMultipleUiProps {
@@ -30,7 +34,6 @@ interface XdaysMultipleUiProps {
   }[];
   returns: number;
   partnerLink: string;
-  canShowImage?: boolean;
   investment: number;
   bookie?: string;
 }
@@ -39,9 +42,8 @@ export default function XdaysMultipleUi({
   topPredictions,
   returns,
   partnerLink,
-  canShowImage,
   investment = 300,
-  bookie = "1xbet",
+  bookie = "sportsbet",
 }: XdaysMultipleUiProps) {
   const { theme } = useTheme();
   const { setPopUp } = usePopUp();
@@ -81,25 +83,23 @@ export default function XdaysMultipleUi({
       </div>
     </div>
   ) : (
-    canShowImage && (
-      <Link
-        href="https://refpa4293501.top/L?tag=d_2898437m_1573c_&site=2898437&ad=1573"
-        target="_blank"
-        onClick={() => setPopUp(null)}
-      >
-        <Image
-          width={360}
-          height={400}
-          className="w-[360px] lg:w-[400px]"
-          alt=""
-          src="https://refpa4293501.top/img/AdAgent_1/7fe5d5c2-38ba-4d9c-843d-0368b1109742.gif"
-          onError={(e) => {
-            e.currentTarget.src = popUpImage.src;
-          }}
-          loading="lazy"
-        />
-      </Link>
-    )
+    <Link
+      href="https://aff.partners.io/visit/?bta=45585&nci=7670"
+      target="_blank"
+      onClick={() => setPopUp(null)}
+    >
+      <Image
+        width={360}
+        height={400}
+        className="w-[360px] lg:w-[400px]"
+        alt=""
+        src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1164189"
+        onError={(e) => {
+          e.currentTarget.src = popUpImage.src;
+        }}
+        loading="lazy"
+      />
+    </Link>
   );
 }
 

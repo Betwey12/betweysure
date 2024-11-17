@@ -9,7 +9,6 @@ import usePredictions from "@/hooks/usePredictions";
 import { outcomes } from "@/assets/data/data";
 import { useTranslations } from "next-intl";
 import { Button } from "../ui/button";
-import XdaysMultiple from "../home/xdays-multiple";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { HTTPRequest } from "@/api";
 import { toast } from "react-toastify";
@@ -17,6 +16,7 @@ import { useAuth } from "@/hooks/useAuth";
 import useHasPlan from "@/hooks/useHasPlan";
 import Spinner from "../ui/spinner";
 import Link from "next/link";
+import XdaysMultiple from "../landing/xdays-multiple";
 
 const builderSchema = yup.object().shape({
   games: yup.number().required("Please select number of games"),
@@ -36,7 +36,7 @@ interface AccumulatorBuilderFormProps {
 }
 
 export default function AccumulatorBuilderForm({
-  bookie = "1xbet",
+  bookie,
 }: AccumulatorBuilderFormProps) {
   const queryClient = useQueryClient();
   const { hasPlan } = useHasPlan();
@@ -189,7 +189,7 @@ export default function AccumulatorBuilderForm({
             investment={300}
             noOfGames={3}
             partnerLink="https://refpa7921972.top/L?tag=d_2927467m_1573c_&site=2927467&ad=1573"
-            bookie={bookie}
+            bookie={bookie ?? "1xbet"}
           />
         )}
 
@@ -312,8 +312,8 @@ export default function AccumulatorBuilderForm({
             maxOdds={4}
             investment={500}
             noOfGames={3}
-            partnerLink="https://combodef.com/L?tag=d_3380999m_38497c_&site=3380999&ad=38497"
-            bookie={bookie}
+            partnerLink="https://aff.partners.io/visit/?bta=45585&nci=7672"
+            bookie={bookie ?? "sportsbet"}
           />
         )}
       </div>

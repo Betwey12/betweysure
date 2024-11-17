@@ -24,18 +24,22 @@ import LivePredictions from "../predictions/live-predictions";
 interface PredictionsProps {
   popularLeague?: TPopularLeague;
   category: string;
+  isPeriod?: boolean;
 }
 
 export default function Predictions({
   popularLeague,
   category,
+  isPeriod,
 }: PredictionsProps) {
   return (
     <div className="flex flex-col gap-20">
-      <ApiFootballPredictions
-        popularLeague={popularLeague}
-        category={category}
-      />
+      {!isPeriod && (
+        <ApiFootballPredictions
+          popularLeague={popularLeague}
+          category={category}
+        />
+      )}
       <BetMinerPredictions popularLeague={popularLeague} category={category} />
     </div>
   );
