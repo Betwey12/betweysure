@@ -1,9 +1,9 @@
 import ConvertCode from "../ui/convert-code";
 import paripersaBanner from "../../assets/images/peripesa-gy.webp";
-import XdaysMultiple from "./xdays-multiple";
 import FUndBetAccount from "./fund-bet-account";
 import Link from "next/link";
 import Image from "next/image";
+import XdaysMultiple from "../landing/xdays-multiple";
 
 export default function LivePredictConvert() {
   return (
@@ -21,7 +21,7 @@ export default function LivePredictConvert() {
           className="w-full rounded"
         />
       </Link>
-      <XdaysMultiple partnerLink="https://refpa7921972.top/L?tag=d_2927467m_1573c_&site=2927467&ad=1573" />
+      <XdaysMultiple partnerLink="https://aff.partners.io/visit/?bta=45585&nci=7670" />
       <FUndBetAccount />
       <Link
         href="https://combodef.com/L?tag=d_3380999m_38497c_&site=3380999&ad=38497"

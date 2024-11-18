@@ -16,10 +16,7 @@ export default function PopUp() {
         ref={popUpRef}
         className="bg-white overflow-hidden rounded-lg lg:rounded-3xl flex flex-col items-center text-sm relative lg:min-w-[400px] min-w-[360px]"
       >
-        <XdaysMultiple
-          partnerLink="https://refpa7921972.top/L?tag=d_2927467m_1573c_&site=2927467&ad=1573"
-          canShowImage={true}
-        />
+        <XdaysMultiple partnerLink="https://aff.partners.io/visit/?bta=45585&nci=7673" />
 
         <CloseTimes onClick={() => setPopUp(null)} />
       </div>

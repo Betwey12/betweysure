@@ -38,16 +38,17 @@ export default function AccumulatorBuilder() {
         </a>
 
         <AccumulatorBuilderExplained />
+
         <a
-          className="my-10 block"
-          href="https://aff.partners.io/visit/?bta=45585&nci=7925"
-          target="_top"
+          href="https://aff.partners.io/visit/?bta=45585&nci=6593"
+          target="_blank"
         >
           <Image
+            src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1160391"
             alt="banner"
-            src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1160193"
-            width="1200"
-            height="400"
+            width={1024}
+            height={400}
+            className="w-full mt-10"
           />
         </a>
 

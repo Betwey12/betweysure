@@ -31,7 +31,7 @@ export default function ViewLeague({
       HTTPRequest.Get(`tips/football-league/${popularLeague?.apiFootballId}`),
   });
 
-  const isPeriod = category && period.includes(category);
+  const isPeriod = category ? period.includes(category) : false;
   const fixtures = leagueResponse?.data?.fixtures?.response;
   const standings = leagueResponse?.data.standings?.response;
 
@@ -76,7 +76,11 @@ export default function ViewLeague({
         <Fixtures fixtures={fixtures} isLoading={isLoading} />
       )}
       {activeTab === "predictions" && (
-        <Predictions popularLeague={popularLeague} category={category} />
+        <Predictions
+          popularLeague={popularLeague}
+          category={category}
+          isPeriod={isPeriod}
+        />
       )}
     </>
   );

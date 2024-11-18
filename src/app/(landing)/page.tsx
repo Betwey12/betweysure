@@ -1,5 +1,4 @@
 import WhyBetWeySure from "@/components/home/why-betweysure";
-import banner from "../../assets/images/banner.webp";
 import {
   AboutBetWeySure,
   BlogAndNews,
@@ -28,8 +27,8 @@ export default function HomePage({
       <div className="my-10 lg:my-20 px-4 md:px-10 lg:px-20">
         <Image
           width={1200}
-          height={300}
-          src={banner}
+          height="150"
+          src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1164136"
           alt="betway-banner"
           className="w-full"
         />
