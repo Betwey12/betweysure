@@ -12,8 +12,12 @@ export default function useSelectCurrency({
   const availableCountries = Country.getAllCountries().filter(
     (country) =>
       paymentSupportedCountries.includes(country.currency) &&
-      !(country.currency === "USD" && country.isoCode !== "US")
+      !(
+        (country.currency === "USD" && country.isoCode !== "US") ||
+        (country.currency === "EUR" && country.isoCode !== "DE")
+      )
   );
+
   const supportedCountries = availableCountries.map(
     (country) => `${country.flag} ${country.name} ${country.currency}`
   );
