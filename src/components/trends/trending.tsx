@@ -11,7 +11,7 @@ import { getDate } from "@/lib/utils";
 import KeywordListItem from "../ui/keyword-list-item";
 
 export default function Trending() {
-  const { t, aboutTrends, howToUse, restAbout } = useTrending();
+  const { t, aboutTrends } = useTrending();
   const PREDICTIONS_PER_PAGE = 20;
   const [from, setFrom] = useState(0);
   const [to, setTo] = useState(PREDICTIONS_PER_PAGE);
@@ -90,30 +90,28 @@ export default function Trending() {
       />
       <div className="mt-10 dark:bg-blue-one rounded p-4 dark:text-white">
         <ul className="flex flex-col gap-4">
-          {aboutTrends.map((trend, index) => (
-            <KeywordListItem
-              key={index}
-              keyword={trend.keyword}
-              value={trend.value}
-            />
-          ))}
+          {aboutTrends.map((trend, index) => {
+            const paragraphs = trend.value.split("\t");
+            const description = paragraphs[0];
+            const list = paragraphs.slice(1);
 
-          <li>
-            <strong>{t("ABOUT_TRENDS_THREE")}</strong>{" "}
-            {t("ABOUT_TRENDS_THREE_DESC")}
-            <ul className="mt-4 list-disc pl-5 flex flex-col gap-2">
-              {howToUse.map((tip, index) => (
-                <li key={index}>{tip}</li>
-              ))}
-            </ul>
-          </li>
-          {restAbout.map((trend, index) => (
-            <KeywordListItem
-              key={index}
-              keyword={trend.keyword}
-              value={trend.value}
-            />
-          ))}
+            return (
+              <li key={index}>
+                <strong>{trend.keyword}</strong>
+                <span>{description}</span>
+                {list.map((item, index) => {
+                  return (
+                    <ul
+                      className="list-disc pl-5 flex flex-col gap-2 mt-4"
+                      key={index}
+                    >
+                      <li>{item}</li>
+                    </ul>
+                  );
+                })}
+              </li>
+            );
+          })}
         </ul>
         <p className="mt-4">{t("CALL_TO_ACTION")}</p>
       </div>
@@ -123,32 +121,16 @@ export default function Trending() {
 
 function useTrending() {
   const t = useTranslations("FOOTBALL_TRENDS");
-  const aboutTrends = [
-    {
-      keyword: t("ABOUT_TRENDS_ONE"),
-      value: t("ABOUT_TRENDS_ONE_DESC"),
-    },
-    {
-      keyword: t("ABOUT_TRENDS_TWO"),
-      value: t("ABOUT_TRENDS_TWO_DESC"),
-    },
-  ];
-  const howToUse = [t("TIP_ONE"), t("TIP_TWO"), t("TIP_THREE")];
-  const restAbout = [
-    {
-      keyword: t("ABOUT_TRENDS_FOUR"),
-      value: t("ABOUT_TRENDS_FOUR_DESC"),
-    },
-    {
-      keyword: t("ABOUT_TRENDS_FIVE"),
-      value: t("ABOUT_TRENDS_FIVE_DESC"),
-    },
-  ];
+  const trendsTitle = t("ABOUT_TRENDS_TITLES").split("\n");
+  const descriptions = t("ABOUT_TRENDS_DESCRIPTIONS").split("\n");
+
+  const aboutTrends = descriptions.map((description, index) => ({
+    keyword: trendsTitle[index],
+    value: description,
+  }));
 
   return {
     t,
     aboutTrends,
-    howToUse,
-    restAbout,
   };
 }

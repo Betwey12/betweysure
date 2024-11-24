@@ -1,7 +1,5 @@
 import { useTranslations } from "next-intl";
 import FAQDropdown from "../faq/faq-dropdown";
-import Link from "next/link";
-import Image from "next/image";
 
 export default function FrequentlyAskedQuestions() {
   const { t, faqs } = useFrequentlyAskedQuestions();
@@ -18,33 +16,13 @@ export default function FrequentlyAskedQuestions() {
 
 function useFrequentlyAskedQuestions() {
   const t = useTranslations("FREQ_ASKED_QUESTIONS");
+  const questions = t("QUESTIONS_LIST")?.split("\n");
+  const answers = t("ANSWERS_LIST")?.split("\n");
 
-  const faqs = [
-    {
-      question: t("QUESTION_ONE"),
-      answer: t("ANSWER_ONE"),
-    },
-    {
-      question: t("QUESTION_TWO"),
-      answer: t("ANSWER_TWO"),
-    },
-    {
-      question: t("QUESTION_THREE"),
-      answer: t("ANSWER_THREE"),
-    },
-    {
-      question: t("QUESTION_FOUR"),
-      answer: t("ANSWER_FOUR"),
-    },
-    {
-      question: t("QUESTION_FIVE"),
-      answer: t("ANSWER_FIVE"),
-    },
-    {
-      question: t("QUESTION_SIX"),
-      answer: t("ANSWER_SIX"),
-    },
-  ];
+  const faqs = questions.map((question, index) => ({
+    question,
+    answer: answers[index],
+  }));
 
   return {
     t,

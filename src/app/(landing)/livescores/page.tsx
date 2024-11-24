@@ -42,33 +42,13 @@ export default function LivescoresPage() {
 
 function useLiveScores() {
   const t = useTranslations("LIVESCORES");
+  const benefits = t("BENEFITS")
+    .split("\n")
+    .map((benefit) => ({
+      title: `${benefit.split(":")[0]}:`,
+      value: benefit.split(":")[1],
+    }));
 
-  const benefits = [
-    {
-      title: t("BENEFIT_ONE"),
-      value: t("BENEFIT_ONE_DESC"),
-    },
-    {
-      title: t("BENEFIT_TWO"),
-      value: t("BENEFIT_TWO_DESC"),
-    },
-    {
-      title: t("BENEFIT_THREE"),
-      value: t("BENEFIT_THREE_DESC"),
-    },
-    {
-      title: t("BENEFIT_FOUR"),
-      value: t("BENEFIT_FOUR_DESC"),
-    },
-    {
-      title: t("BENEFIT_FIVE"),
-      value: t("BENEFIT_FIVE_DESC"),
-    },
-    {
-      title: t("BENEFIT_SIX"),
-      value: t("BENEFIT_SIX_DESC"),
-    },
-  ];
   return {
     t,
     benefits,
