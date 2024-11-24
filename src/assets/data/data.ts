@@ -1450,10 +1450,10 @@ export const paystackPlanCodes = {
   [EPlanKeys.ONE_WEEK_PREMIUM]:
     process.env.NEXT_PUBLIC_PAYSTACK_PREMIUM_ONE_WEEK ?? "PLN_pmr7exuc1sg778p",
 
-  [EPlanKeys.ONE_MONTH_PREMIUM]:
+  [EPlanKeys.ONE_WEEK_MIXED]:
     process.env.NEXT_PUBLIC_PAYSTACK_MIXED_ONE_WEEK ?? "PLN_b9gv27ezigqc79y",
 
-  [EPlanKeys.ONE_WEEK_MIXED]:
+  [EPlanKeys.ONE_MONTH_PREMIUM]:
     process.env.NEXT_PUBLIC_PAYSTACK_PREMIUM_ONE_MONTH ?? "PLN_3qal83zxjkygqyp",
   [EPlanKeys.ONE_MONTH_MIXED]:
     process.env.NEXT_PUBLIC_PAYSTACK_MIXED_ONE_MONTH ?? "PLN_hzpujs5jyttkrm8",
