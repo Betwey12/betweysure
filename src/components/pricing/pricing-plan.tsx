@@ -97,7 +97,7 @@ function PackageCard({
         {
           "dark:bg-blue-one dark:text-white":
             predictionPackage.name !== EPaidPlanNames.PREMIUM,
-          "bg-gradient-to-bl to-purple-royal from-purple-800 via-purple-500 text-white":
+          "bg-gradient-to-bl to-purple-royal from-purple-800 via-purple-500 text-white scale-y-110":
             predictionPackage.name === EPaidPlanNames.PREMIUM,
         }
       )}
@@ -137,7 +137,6 @@ function PackageCard({
           ))}
         </div>
       </div>
-
       <AuthedLink
         href="/dashboard/buy-plan"
         title={isFree ? t("GET_STARTED") : t("SUBSCRIBE_NOW")}
