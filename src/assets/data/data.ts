@@ -1407,7 +1407,7 @@ export const plansKeys = Object.values(EPlanKeys);
 
 export const flutterwavePlanCodes: Record<EPlanKeys, Record<string, string>> = {
   [EPlanKeys.ONE_WEEK_PREMIUM]: {
-    NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK ?? "128468",
+    NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK ?? "130060",
     GHS: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_GHS ?? "134014",
     KES: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_KES ?? "134011",
     USD: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_USD ?? "134034",
@@ -1416,7 +1416,7 @@ export const flutterwavePlanCodes: Record<EPlanKeys, Record<string, string>> = {
     ZAR: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_ZAR ?? "134018",
   },
   [EPlanKeys.ONE_MONTH_PREMIUM]: {
-    NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH ?? "128468",
+    NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH ?? "130061",
     GHS: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH_GHS ?? "134016",
     KES: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH_KES ?? "134013",
     USD: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH_USD ?? "134035",
@@ -1427,6 +1427,7 @@ export const flutterwavePlanCodes: Record<EPlanKeys, Record<string, string>> = {
   [EPlanKeys.ONE_WEEK_MIXED]: {
     NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK ?? "129631",
     GHS: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_GHS ?? "134015",
+    EUR: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_USD ?? "134032",
     KES: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_KES ?? "134012",
     USD: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_USD ?? "134032",
     UGX: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_UGX ?? "134027",
@@ -1436,6 +1437,7 @@ export const flutterwavePlanCodes: Record<EPlanKeys, Record<string, string>> = {
   [EPlanKeys.ONE_MONTH_MIXED]: {
     NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH ?? "129631",
     GHS: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH_GHS ?? "134017",
+    EUR: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH_USD ?? "134031",
     KES: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH_KES ?? "134000",
     USD: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH_USD ?? "134031",
     UGX: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH_UGX ?? "134030",
