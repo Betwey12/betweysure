@@ -44,16 +44,6 @@ export default function SlideBenefits() {
 
 function useBenefits() {
   const t = useTranslations("AUTH");
-  const benefits = [
-    t("BENEFIT_ONE"),
-    t("BENEFIT_TWO"),
-    t("BENEFIT_THREE"),
-    t("BENEFIT_FOUR"),
-    t("BENEFIT_FIVE"),
-    t("BENEFIT_SIX"),
-    t("BENEFIT_SEVEN"),
-    t("BENEFIT_EIGHT"),
-    t("BENEFIT_NINE"),
-  ];
+  const benefits = t("SIGNUP_BENEFITS").split("\n");
   return { t, benefits };
 }

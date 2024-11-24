@@ -69,56 +69,27 @@ function useWhatIsIncluded() {
     },
   ];
 
-  const packages = [
-    {
-      title: t("BENEFIT_ONE"),
-      icon: <FaCartPlus />,
-    },
-    {
-      title: t("BENEFIT_TWO"),
-      icon: <FaSuitcase />,
-    },
-    {
-      title: t("BENEFIT_THREE"),
-      icon: <FaMicroscope />,
-    },
-    {
-      title: t("BENEFIT_FOUR"),
-      icon: <FaPrint />,
-    },
-    {
-      title: t("BENEFIT_FIVE"),
-      icon: <FaTag />,
-    },
-    {
-      title: t("BENEFIT_SIX"),
-      icon: <FaBoltLightning />,
-    },
-    {
-      title: t("BENEFIT_SEVEN"),
-      icon: <FaIdBadge />,
-    },
-    {
-      title: t("BENEFIT_EIGHT"),
-      icon: <FaFileInvoice />,
-    },
-    {
-      title: t("BENEFIT_NINE"),
-      icon: <FaReceipt />,
-    },
-    {
-      title: t("BENEFIT_TEN"),
-      icon: <FaGift />,
-    },
-    {
-      title: t("BENEFIT_ELEVEN"),
-      icon: <FaCartShopping />,
-    },
-    {
-      title: t("BENEFIT_TWELVE"),
-      icon: <FaLayerGroup />,
-    },
+  const icons = [
+    <FaCartPlus key={1} />,
+    <FaSuitcase key={2} />,
+    <FaMicroscope key={3} />,
+    <FaPrint key={4} />,
+    <FaTag key={5} />,
+    <FaBoltLightning key={6} />,
+    <FaIdBadge key={7} />,
+    <FaFileInvoice key={8} />,
+    <FaReceipt key={9} />,
+    <FaGift key={10} />,
+    <FaCartShopping key={11} />,
+    <FaLayerGroup key={12} />,
   ];
+
+  const packages = t("BENEFITS_LIST")
+    .split(",")
+    .map((title, index) => ({
+      title,
+      icon: icons[index],
+    }));
 
   return {
     t,

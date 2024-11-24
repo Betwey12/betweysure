@@ -28,26 +28,7 @@ const useFilterBundles = ({ data, handlePagination }: useFilterBundles) => {
       value: "12",
     }),
 
-    Corners: assignByKey("corners"),
-    "Over 1.5": assignByThreshold({
-      key: "over15goals",
-      threshold: 85,
-      option: "Over 1.5",
-    }),
-
     "Correct Score": assignByKey("correctscore"),
-
-    "Home win": assignByThreshold({
-      key: "home_win",
-      threshold: 60,
-      option: "Home Win",
-    }),
-
-    "Away win": assignByThreshold({
-      key: "away_win",
-      threshold: 60,
-      option: "Away Win",
-    }),
 
     "Draw Tips": assignByThreshold({
       key: "draw",
@@ -72,11 +53,6 @@ const useFilterBundles = ({ data, handlePagination }: useFilterBundles) => {
       threshold: 50,
       option: "HT Draw",
     }),
-    "Over 3.5": assignByThreshold({
-      key: "over35goals",
-      threshold: 50,
-      option: "Over 3.5",
-    }),
 
     "Over 0.5 FHG": assignByThreshold({
       key: "fhover0",
@@ -95,6 +71,21 @@ const useFilterBundles = ({ data, handlePagination }: useFilterBundles) => {
       threshold: 60,
       option: "Win to Nil Tips",
     }),
+  };
+
+  const allPremium: Record<
+    string,
+    TMatchPredictionAndPrediction[] | undefined
+  > = {
+    ...allFree,
+    Corners: assignByKey("corners"),
+    "Over 1.5": assignByThreshold({
+      key: "over15goals",
+      threshold: 85,
+      option: "Over 1.5",
+    }),
+    Cards: assignByKey("bookings"),
+    "HT/FT": assignByKey("hftfpred"),
 
     "Over 2.5": assignByThreshold({
       key: "over25goals",
@@ -102,24 +93,29 @@ const useFilterBundles = ({ data, handlePagination }: useFilterBundles) => {
       option: "Over 2.5",
     }),
 
+    "Over 3.5": assignByThreshold({
+      key: "over35goals",
+      threshold: 50,
+      option: "Over 3.5",
+    }),
+
     "BTTS HT&FT": assignByThreshold({
       key: "btsibh",
       threshold: 50,
       option: "BTTS HT&FT",
     }),
-  };
 
-  const allMixed: Record<string, TMatchPredictionAndPrediction[] | undefined> =
-    {
-      ...allFree,
-    };
-  const allPremium: Record<
-    string,
-    TMatchPredictionAndPrediction[] | undefined
-  > = {
-    ...allMixed,
-    Cards: assignByKey("bookings"),
-    "HT/FT": assignByKey("hftfpred"),
+    "Home win": assignByThreshold({
+      key: "home_win",
+      threshold: 60,
+      option: "Home Win",
+    }),
+
+    "Away win": assignByThreshold({
+      key: "away_win",
+      threshold: 60,
+      option: "Away Win",
+    }),
 
     BTTS: assignByThreshold({
       key: "both_teams_to_score",
@@ -139,6 +135,11 @@ const useFilterBundles = ({ data, handlePagination }: useFilterBundles) => {
       option: "BTTS & Win",
     }),
   };
+
+  const allMixed: Record<string, TMatchPredictionAndPrediction[] | undefined> =
+    {
+      ...allPremium,
+    };
 
   const planPredictions: Record<
     TUserResponse["user"]["plan"]["type"],

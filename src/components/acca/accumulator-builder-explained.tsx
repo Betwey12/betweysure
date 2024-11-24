@@ -1,106 +1,64 @@
 import { useTranslations } from "next-intl";
+import KeywordListItem from "../ui/keyword-list-item";
 
 export default function AccumulatorBuilderExplained() {
-  const t = useTranslations("ACCA_BUILDER_EXPLAINED");
+  const { t, howItWorks, whyItWorks, howToUse, benefits } =
+    useAccaBuilderExplained();
   return (
     <div className="mt-10 dark:bg-blue-one rounded p-4 dark:text-white">
       <h2 className="text-xl font-bold">{t("WHAT_IS_ACCA_BUILDER")}</h2>
       <p className="mt-4">{t("WHAT_IS_ACCA_BUILDER_DESC")}</p>
 
       <h2 className="text-xl font-bold mt-4">{t("HOW_IT_WORKS")}</h2>
-
       <p className="mt-4">{t("HOW_IT_WORKS_DESC")}</p>
+
       <ul className="mt-4 list-disc pl-5 flex flex-col gap-2">
-        <li>
-          <strong>{t("HOW_IT_WORKS_STEP_ONE")}</strong>{" "}
-          {t("HOW_IT_WORKS_STEP_ONE_DESC")}
-        </li>
-        <li>
-          <strong>{t("HOW_IT_WORKS_STEP_TWO")}</strong>{" "}
-          {t("HOW_IT_WORKS_STEP_TWO_DESC")}
-        </li>
-        <li>
-          <strong>{t("HOW_IT_WORKS_STEP_THREE")}</strong>{" "}
-          {t("HOW_IT_WORKS_STEP_THREE_DESC")}
-        </li>
-        <li>
-          <strong>{t("HOW_IT_WORKS_STEP_FOUR")}</strong>{" "}
-          {t("HOW_IT_WORKS_STEP_FOUR_DESC")}
-        </li>
+        {howItWorks.map((step, index) => (
+          <KeywordListItem
+            key={index}
+            keyword={step.title}
+            value={step.description}
+          />
+        ))}
       </ul>
 
       <h2 className="text-xl font-bold mt-4">{t("WHY_ACCA_BUILDER")}</h2>
       <ul className="list-disc pl-5 mt-4 flex flex-col gap-2">
-        <li>
-          <strong>{t("WHY_ACCA_BUILDER_ONE")}</strong>{" "}
-          {t("WHY_ACCA_BUILDER_ONE_DESC")}
-        </li>
-        <li>
-          <strong>{t("WHY_ACCA_BUILDER_TWO")}</strong>{" "}
-          {t("WHY_ACCA_BUILDER_TWO_DESC")}
-        </li>
-        <li>
-          <strong>{t("WHY_ACCA_BUILDER_THREE")}</strong>{" "}
-          {t("WHY_ACCA_BUILDER_THREE_DESC")}
-        </li>
+        {whyItWorks.map((step, index) => (
+          <KeywordListItem
+            key={index}
+            keyword={step.title}
+            value={step.description}
+          />
+        ))}
       </ul>
 
       <h2 className="text-xl font-bold mt-4">{t("HOW_TO_USE_ACCA_BUILDER")}</h2>
       <p className="mt-4">{t("HOW_TO_USE_ACCA_BUILDER_DESC")}</p>
 
       <ol className="mt-4 list-decimal pl-5 flex flex-col gap-4">
-        <li>
-          <strong>{t("HOW_TO_USE_ACCA_BUILDER_STEP_ONE")}</strong>
+        {howToUse.map((step, index) => {
+          const paragraphs = step.description.split("\t");
+          const description = paragraphs[0];
+          const list = paragraphs.slice(1);
 
-          <ul className="mt-4">
-            <li>{t("HOW_TO_USE_ACCA_BUILDER_STEP_ONE_DESC")}</li>
-          </ul>
-        </li>
-
-        <li>
-          <strong>{t("HOW_TO_USE_ACCA_BUILDER_STEP_TWO")}</strong>
-          <ul className="mt-4">
-            <li>
-              {t("HOW_TO_USE_ACCA_BUILDER_STEP_TWO_DESC")}
-
-              <ul className="list-disc pl-5 flex flex-col gap-2 mt-4">
-                <li>{t("POPULAR_MARKET_ONE")}</li>
-                <li>{t("POPULAR_MARKET_TWO")}</li>
-                <li>{t("POPULAR_MARKET_THREE")}</li>
-                <li>{t("POPULAR_MARKET_FOUR")}</li>
-              </ul>
+          return (
+            <li key={index}>
+              <strong>{step.title}</strong>
+              <p className="mt-2">{description}</p>
+              {list.map((item, index) => {
+                return (
+                  <ul
+                    className="list-disc pl-5 flex flex-col gap-2 mt-4"
+                    key={index}
+                  >
+                    <li>{item}</li>
+                  </ul>
+                );
+              })}
             </li>
-          </ul>
-        </li>
-
-        <li>
-          <strong>{t("HOW_TO_USE_ACCA_BUILDER_STEP_THREE")}</strong>
-          <ul className="mt-2">
-            <li>
-              {t("HOW_TO_USE_ACCA_BUILDER_STEP_THREE_DESC")}
-              <ul className="list-disc pl-5 flex flex-col gap-2 mt-4">
-                <li>{t("TIME_FRAME_ONE")}</li>
-                <li>{t("TIME_FRAME_TWO")}</li>
-                <li>{t("TIME_FRAME_THREE")}</li>
-                <li>{t("TIME_FRAME_THREE")}</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          <strong>{t("HOW_TO_USE_ACCA_BUILDER_STEP_FOUR")}</strong>
-          <ul className="mt-2">
-            <li>{t("HOW_TO_USE_ACCA_BUILDER_STEP_FOUR_DESC")}</li>
-          </ul>
-        </li>
-
-        <li>
-          <strong>{t("HOW_TO_USE_ACCA_BUILDER_STEP_FIVE")}</strong>
-          <ul className="mt-2">
-            <li>{t("HOW_TO_USE_ACCA_BUILDER_STEP_FIVE_DESC")}</li>
-          </ul>
-        </li>
+          );
+        })}
       </ol>
 
       <h2 className="text-xl font-bold mt-4">
@@ -109,22 +67,51 @@ export default function AccumulatorBuilderExplained() {
       <p className="mt-4">{t("BENEFITS_OF_ACCA_BUILDER_DESC")}</p>
 
       <ul className="mt-4 list-disc pl-5 flex flex-col gap-2">
-        <li>
-          <strong>{t("BENEFITS_ONE")}</strong> {t("BENEFITS_ONE_DESC")}
-        </li>
-        <li>
-          <strong>{t("BENEFITS_TWO")}</strong> {t("BENEFITS_TWO_DESC")}
-        </li>
-        <li>
-          <strong>{t("BENEFITS_THREE")}</strong> {t("BENEFITS_THREE_DESC")}
-        </li>
-        <li>
-          <strong>{t("BENEFITS_FOUR")}</strong> {t("BENEFITS_FOUR_DESC")}
-        </li>
-        <li>
-          <strong>{t("BENEFITS_FIVE")}</strong> {t("BENEFITS_FIVE_DESC")}
-        </li>
+        {benefits.map((benefit, index) => (
+          <KeywordListItem
+            key={index}
+            keyword={benefit.title}
+            value={benefit.description}
+          />
+        ))}
       </ul>
     </div>
   );
+}
+
+function useAccaBuilderExplained() {
+  const t = useTranslations("ACCA_BUILDER_EXPLAINED");
+  const howItWorksTitles = t("HOW_IT_WORKS_STEP_TITLE_LIST").split("\n");
+  const howItWorksDesc = t("HOW_IT_WORKS_STEP_DESC_LIST").split("\n");
+
+  const howItWorks = howItWorksTitles.map((title, index) => ({
+    title,
+    description: howItWorksDesc[index],
+  }));
+
+  const whyItWorksTitles = t("WHY_ACCA_BUILDER_TITLES").split("\n");
+  const whyItWorksDesc = t("WHY_ACCA_BUILDER_DESCS").split("\n");
+
+  const whyItWorks = whyItWorksTitles.map((title, index) => ({
+    title,
+    description: whyItWorksDesc[index],
+  }));
+
+  const howToUseTitles = t("HOW_TO_USE_ACCA_BUILDER_TITLES").split("\n");
+  const howToUseDesc = t("HOW_TO_USE_ACCA_BUILDER_DESCS").split("\n");
+
+  const howToUse = howToUseTitles.map((title, index) => ({
+    title,
+    description: howToUseDesc[index],
+  }));
+
+  const benefitsTitles = t("BENEFITS_OF_ACCA_BUILDER_TITLES").split("\n");
+  const benefitsDesc = t("BENEFITS_OF_ACCA_BUILDER_DESCS").split("\n");
+
+  const benefits = benefitsTitles.map((title, index) => ({
+    title,
+    description: benefitsDesc[index],
+  }));
+
+  return { t, howItWorks, whyItWorks, howToUse, benefits };
 }

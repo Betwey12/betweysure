@@ -35,32 +35,12 @@ export default function WhatWeStrive() {
 
 function useWhatWeStrive() {
   const t = useTranslations("WHAT_WE_STRIVE");
-  const values = [
-    {
-      key: "01",
-      value: t("VALUE_ONE"),
-    },
-    {
-      key: "02",
-      value: t("VALUE_TWO"),
-    },
-    {
-      key: "03",
-      value: t("VALUE_THREE"),
-    },
-    {
-      key: "04",
-      value: t("VALUE_FOUR"),
-    },
-    {
-      key: "05",
-      value: t("VALUE_FIVE"),
-    },
-    {
-      key: "06",
-      value: t("VALUE_SIX"),
-    },
-  ];
+  const values = t("VALUES_LIST")
+    .split("\n")
+    .map((value, i) => ({
+      key: `0${i + 1}`,
+      value: value.split(" ").slice(1).join(" "),
+    }));
 
   return {
     t,

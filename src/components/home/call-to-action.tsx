@@ -16,7 +16,7 @@ export default function CallToAction() {
             {tips.map((tip, index) => (
               <KeywordListItem
                 key={index}
-                keyword={tip.title}
+                keyword={`${tip.title}:`}
                 value={tip.description}
               />
             ))}
@@ -35,20 +35,13 @@ export default function CallToAction() {
 
 function useCallToAction() {
   const t = useTranslations("CALL_TO_ACTION");
-  const tips = [
-    {
-      title: t("TIP_ONE"),
-      description: t("TIP_ONE_DESC"),
-    },
-    {
-      title: t("TIP_TWO"),
-      description: t("TIP_TWO_DESC"),
-    },
-    {
-      title: t("TIP_THREE"),
-      description: t("TIP_THREE_DESC"),
-    },
-  ];
+  const tips = t("TIPS_LIST")
+    .split("\n")
+    .map((tip) => {
+      const [title, description] = tip.split(":");
+      return { title, description };
+    });
+
   return {
     t,
     tips,
