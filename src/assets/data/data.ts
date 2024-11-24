@@ -333,6 +333,7 @@ export const outcomes: {
   home_both_teams_to_score: "Home BTTS",
   away_both_teams_to_score: "Away BTTS",
 };
+
 export const popularTags = [
   "uefa champions",
   "england premier",
@@ -1354,13 +1355,18 @@ export const leagueList: Record<string, TPopularLeague[]> = {
 export const period = ["yesterday", "today", "tomorrow"];
 
 export const footballPaidTabs = [
+  "Bet of the Day",
   "HT/FT",
   "BTTS",
   "Win & Over 2.5",
   "BTTS & Win",
+  "Home win",
+  "Away win",
+  "BTTS HT&FT",
+  "Over 3.5",
+  "Over 2.5",
   "Corners",
   "Cards",
-  "Bet of the Day",
 ];
 
 export const footballFreeTabs = [
@@ -1370,18 +1376,13 @@ export const footballFreeTabs = [
   "12",
   "Correct Score",
   "Over 1.5",
-  "Home win",
-  "Away win",
-  "Over 3.5",
   "Draw Tips",
   "HT Home",
-  "BTTS HT&FT",
   "HT Away",
   "HT Draw",
   "Over 0.5 FHG",
   "Over 1.5 FHG",
   "Win to Nil Tips",
-  "Over 2.5",
   "Inplay Live",
 ];
 
