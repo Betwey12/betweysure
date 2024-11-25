@@ -67,10 +67,10 @@ export default function PricingPlans() {
       </div>
       <Image
         width={1080}
-        height={107}
+        height={607}
         src={premiumPopUp}
         alt="banner"
-        className="w-full h-[300px] mt-20 object-cover"
+        className="w-full h-full"
       />
 
       <div className="grid lg:grid-cols-4 mt-10 gap-4 lg:gap-6">

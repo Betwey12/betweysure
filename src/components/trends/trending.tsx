@@ -8,7 +8,9 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { HTTPRequest } from "@/api";
 import { getDate } from "@/lib/utils";
-import KeywordListItem from "../ui/keyword-list-item";
+import Image from "next/image";
+import peripesaBanner from "@/assets/images/peripesa-banner.webp";
+import oneXbetBanner from "@/assets/images/1xbet-banner.gif";
 
 export default function Trending() {
   const { t, aboutTrends } = useTrending();
@@ -88,6 +90,21 @@ export default function Trending() {
         onChange={handlePagination}
         className="mt-4"
       />
+
+      <a
+        href="https://refpa7921972.top/L?tag=d_2898437m_1573c_&site=2898437&ad=1573"
+        target="_top"
+        className="mt-10 w-full block"
+      >
+        <Image
+          alt="banner"
+          src={oneXbetBanner}
+          width="970"
+          height="90"
+          className="w-full h-[200px] mt-20 object-cover"
+        />
+      </a>
+
       <div className="mt-10 dark:bg-blue-one rounded p-4 dark:text-white">
         <ul className="flex flex-col gap-4">
           {aboutTrends.map((trend, index) => {
@@ -115,6 +132,20 @@ export default function Trending() {
         </ul>
         <p className="mt-4">{t("CALL_TO_ACTION")}</p>
       </div>
+
+      <a
+        href="https://combodef.com/L?tag=d_3380999m_38497c_&site=3380999&ad=38497"
+        target="_top"
+        className="mt-10 block w-full"
+      >
+        <Image
+          alt="banner"
+          src={peripesaBanner}
+          width="970"
+          height="90"
+          className="w-full h-[200px] mt-20 object-cover"
+        />
+      </a>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import QuickLinks from "@/components/landing/quicklinks";
 import ScrollToTop from "@/components/landing/scroll-to-top";
 import Footer from "@/components/shared/footer";
 import Navbar from "@/components/shared/navbar";
+import BottomPopUp from "@/components/ui/bottom-pop-up";
 import PremiumPopUp from "@/components/ui/premium-popup";
 import { useAuth } from "@/hooks/useAuth";
 import usePopUp from "@/hooks/usePopUp";
@@ -31,7 +32,7 @@ export default function LandingLayout({ children }: ILandingLayout) {
       {isPopUp && <PopUp />}
       <NewsLetterPopUp />
       {popUp === "premium" && <PremiumPopUp user={user} />}
-
+      {popUp === "bottom" && <BottomPopUp />}
       <QuickLinks />
     </div>
   );
