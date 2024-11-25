@@ -18,7 +18,7 @@ export default function PopUp() {
       >
         <XdaysMultiple partnerLink="https://aff.partners.io/visit/?bta=45585&nci=7673" />
 
-        <CloseTimes onClick={() => setPopUp(null)} />
+        <CloseTimes onClick={() => setPopUp("bottom")} />
       </div>
     </div>
   );

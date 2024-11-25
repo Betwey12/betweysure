@@ -17,6 +17,7 @@ export default function TrendsPage() {
     <>
       <OtherPagesHero />
       <PageHeader title={t("TITLE")} description={t("DESCRIPTION")} />
+
       <Trending />
     </>
   );

@@ -11,10 +11,8 @@ export default function CloseTimes({ className, ...props }: ButtonProps) {
   return (
     <button
       className={cn(
-        "absolute lg:top-6 dark:text-white lg:right-6 top-4 right-4 text-2xl text-inherit hover:text-red-500 transition-all text-blue-one",
-        {
-          className,
-        }
+        "absolute  flex items-center justify-center top-4 right-4 lg:top-6 lg:right-6 text-2xl text-inherit hover:text-red-500 transition-all",
+        className
       )}
       {...props}
     >
