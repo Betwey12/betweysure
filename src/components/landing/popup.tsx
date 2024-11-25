@@ -8,7 +8,7 @@ import usePopUp from "@/hooks/usePopUp";
 export default function PopUp() {
   const { setPopUp } = usePopUp();
   const popUpRef = useRef(null);
-  useOnClickOutside(popUpRef, () => setPopUp(null));
+  useOnClickOutside(popUpRef, () => setPopUp("bottom"));
 
   return (
     <div className="fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center bg-black/50 px-4 z-[90]">
@@ -18,7 +18,7 @@ export default function PopUp() {
       >
         <XdaysMultiple partnerLink="https://aff.partners.io/visit/?bta=45585&nci=7673" />
 
-        <CloseTimes onClick={() => setPopUp("bottom")} />
+        <CloseTimes onClick={() => setPopUp(() => "bottom")} />
       </div>
     </div>
   );

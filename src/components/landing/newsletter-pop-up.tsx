@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { cn } from "../../lib/utils";
-import { useOnClickOutside } from "usehooks-ts";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -30,7 +29,6 @@ export default function NewsLetterPopUp() {
     resolver: yupResolver(schema),
   });
 
-  useOnClickOutside(insideEl, () => setPopUp(null));
   const isNewsletter = popUp === "newsletter";
 
   const { isPending, mutateAsync, isError } = useMutation({

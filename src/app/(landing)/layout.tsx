@@ -19,8 +19,6 @@ export default function LandingLayout({ children }: ILandingLayout) {
   const { user } = useAuth();
   const { popUp } = usePopUp();
 
-  const isPopUp = popUp === "popUp";
-
   return (
     <div className="relative bg-light min-h-screen transition-colors overflow-x-hidden dark:bg-dark">
       <Navbar />
@@ -29,8 +27,8 @@ export default function LandingLayout({ children }: ILandingLayout) {
       <Footer />
 
       <ScrollToTop />
-      {isPopUp && <PopUp />}
       <NewsLetterPopUp />
+      {popUp === "popUp" && <PopUp />}
       {popUp === "premium" && <PremiumPopUp user={user} />}
       {popUp === "bottom" && <BottomPopUp />}
       <QuickLinks />

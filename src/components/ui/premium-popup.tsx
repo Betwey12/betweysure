@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import premiumPopUp from "@/assets/images/premium-popup.webp";
 import CloseTimes from "./close";
-import { formatCurrency } from "@/lib/utils";
-import AuthedLink from "./authed-link";
 
 interface PremiumPopUpProps {
   user?: TAuthUser | null;
