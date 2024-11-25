@@ -51,7 +51,6 @@ export default function GatewaySelect() {
     (key) =>
       `${durationParams?.toLowerCase()}-${planName?.toLowerCase()}` === key
   );
-  console.log(paystackPlanCodes[planKey], "eleyi");
 
   const { handleFlutterPayment, handlePaystackPayment } = usePayment({
     amount,
