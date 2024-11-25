@@ -8,7 +8,7 @@ interface IPopUpProvider {
 }
 
 export default function PopUpProvider({ children }: IPopUpProvider) {
-  const [popUp, setPopUp] = useState<TPopUp>("popUp");
+  const [popUp, setPopUp] = useState<TPopUp>(null);
   const { user, isLoading } = useAuth();
   const hasPlan = (user?.plan?.type?.toLowerCase() ?? "free") !== "free";
 

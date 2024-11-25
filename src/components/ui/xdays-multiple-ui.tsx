@@ -89,7 +89,7 @@ export default function XdaysMultipleUi({
       onClick={() => setPopUp(null)}
     >
       <Image
-        width={360}
+        width={540}
         height={400}
         className="w-[360px] lg:w-[540px]"
         alt=""
