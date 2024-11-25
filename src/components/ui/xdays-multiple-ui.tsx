@@ -91,7 +91,7 @@ export default function XdaysMultipleUi({
       <Image
         width={360}
         height={400}
-        className="w-[360px] lg:w-[400px]"
+        className="w-[360px] lg:w-[540px]"
         alt=""
         src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1164189"
         onError={(e) => {

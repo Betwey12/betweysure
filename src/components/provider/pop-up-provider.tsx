@@ -8,32 +8,27 @@ interface IPopUpProvider {
 }
 
 export default function PopUpProvider({ children }: IPopUpProvider) {
-  const [popUp, setPopUp] = useState<TPopUp>(null);
+  const [popUp, setPopUp] = useState<TPopUp>("popUp");
   const { user, isLoading } = useAuth();
   const hasPlan = (user?.plan?.type?.toLowerCase() ?? "free") !== "free";
 
-  useEffect(() => {
-    const timeOut = setTimeout(() => {
-      setPopUp("popUp");
-    }, 120000);
-    return () => clearTimeout(timeOut);
-  }, []);
-
-  useEffect(() => {
-    const timeOut = setTimeout(() => {
-      setPopUp(!user?.subscribed && !isLoading ? "newsletter" : null);
-    }, 30000);
-    return () => clearTimeout(timeOut);
-  }, [user?.subscribed, isLoading]);
-
+  console.log(user?.subscribed, isLoading);
   useEffect(() => {
     if (isLoading) return;
-    const timeOut = setTimeout(() => {
-      setPopUp(!hasPlan ? "premium" : null);
-    }, 60000);
 
-    return () => clearTimeout(timeOut);
-  }, [hasPlan, isLoading]);
+    if (!user?.subscribed) {
+      const timeout = setTimeout(() => setPopUp("newsletter"), 10000);
+      return () => clearTimeout(timeout);
+    }
+
+    if (!hasPlan) {
+      const timeout = setTimeout(() => setPopUp("premium"), 20000);
+      return () => clearTimeout(timeout);
+    }
+
+    const timeout = setTimeout(() => setPopUp("popUp"), 30000);
+    return () => clearTimeout(timeout);
+  }, [hasPlan, isLoading, user?.subscribed]);
 
   return (
     <PopUpContext.Provider value={{ popUp, setPopUp }}>
