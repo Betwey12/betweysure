@@ -51,22 +51,21 @@ export default function PremiumPopUp({ user }: PremiumPopUpProps) {
         </div>
       )}
       {randPopUp === "image" && (
-        <Link
-          href={user ? "/dashboard/buy-plan" : "/auth/login"}
-          className="relative text-white lg:w-[720px] h-[320px] lg:h-[400px] bg-blend-multiply"
-        >
-          <Image
-            width={1080}
-            height={607}
-            src={premiumPopUp}
-            alt="banner"
-            className="w-full h-full"
-          />
+        <div className="relative lg:w-[720px] h-[320px] lg:h-[400px]">
+          <Link href={user ? "/dashboard/buy-plan" : "/auth/login"}>
+            <Image
+              width={1080}
+              height={607}
+              src={premiumPopUp}
+              alt="banner"
+              className="w-full h-full"
+            />
+          </Link>
           <CloseTimes
             onClick={() => setPopUp(null)}
             className="text-white hover:text-red-500"
           />
-        </Link>
+        </div>
       )}
     </Modal>
   );
