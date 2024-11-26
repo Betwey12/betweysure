@@ -62,7 +62,10 @@ export default function PremiumPopUp({ user }: PremiumPopUpProps) {
             alt="banner"
             className="w-full h-full"
           />
-          <CloseTimes onClick={() => setPopUp(null)} className="text-white" />
+          <CloseTimes
+            onClick={() => setPopUp(null)}
+            className="text-white hover:text-red-500"
+          />
         </Link>
       )}
     </Modal>

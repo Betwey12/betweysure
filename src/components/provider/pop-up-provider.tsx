@@ -12,22 +12,28 @@ export default function PopUpProvider({ children }: IPopUpProvider) {
   const { user, isLoading } = useAuth();
   const hasPlan = (user?.plan?.type?.toLowerCase() ?? "free") !== "free";
 
-  console.log(user?.subscribed, isLoading);
+  console.log(user?.subscribed, isLoading, hasPlan);
   useEffect(() => {
     if (isLoading) return;
 
+    const timeouts: NodeJS.Timeout[] = [];
+
     if (!user?.subscribed) {
-      const timeout = setTimeout(() => setPopUp("newsletter"), 10000);
-      return () => clearTimeout(timeout);
+      const newsletterTimeout = setTimeout(() => setPopUp("newsletter"), 10000);
+      timeouts.push(newsletterTimeout);
     }
 
     if (!hasPlan) {
-      const timeout = setTimeout(() => setPopUp("premium"), 20000);
-      return () => clearTimeout(timeout);
+      const premiumTimeout = setTimeout(() => setPopUp("premium"), 20000);
+      timeouts.push(premiumTimeout);
     }
 
-    const timeout = setTimeout(() => setPopUp("popUp"), 30000);
-    return () => clearTimeout(timeout);
+    const popUpTimeout = setTimeout(() => setPopUp("popUp"), 30000);
+    timeouts.push(popUpTimeout);
+
+    return () => {
+      timeouts.forEach(clearTimeout);
+    };
   }, [hasPlan, isLoading, user?.subscribed]);
 
   return (
