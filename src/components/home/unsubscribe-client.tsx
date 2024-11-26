@@ -6,17 +6,17 @@ import { Button } from "../ui/button";
 import { toast } from "react-toastify";
 
 interface UnsubscribeClientProps {
-  email: string;
+  token: string;
 }
 
-export default function UnsubscribeClient({ email }: UnsubscribeClientProps) {
+export default function UnsubscribeClient({ token }: UnsubscribeClientProps) {
   const { isPending, mutateAsync } = useMutation({
-    mutationFn: (data: { email: string }) =>
+    mutationFn: (data: { token: string }) =>
       HTTPRequest.Delete("newsletter", data),
   });
 
   async function handleUnsubscribe() {
-    const res = await mutateAsync({ email });
+    const res = await mutateAsync({ token });
     if (res?.success) {
       toast.success("Unsubscribed successfully");
       return;
