@@ -24,7 +24,6 @@ async function Delete(endpoint: string, payload?: any) {
   const user = auth.currentUser;
   if (!user) return;
   const token = await getIdToken(user);
-  console.log(payload, "payload");
 
   const res = await fetch(`${baseUrl}/${endpoint}`, {
     headers: {

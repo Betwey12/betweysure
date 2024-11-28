@@ -16,8 +16,6 @@ export default function UnsubscribeClient({ token }: UnsubscribeClientProps) {
   });
 
   async function handleUnsubscribe() {
-    console.log(token);
-
     const res = await mutateAsync({ token });
     if (res?.success) {
       toast.success("Unsubscribed successfully");
