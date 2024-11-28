@@ -12,7 +12,6 @@ export default function PopUpProvider({ children }: IPopUpProvider) {
   const { user, isLoading } = useAuth();
   const hasPlan = (user?.plan?.type?.toLowerCase() ?? "free") !== "free";
 
-  console.log(user?.subscribed, isLoading, hasPlan);
   useEffect(() => {
     if (isLoading) return;
 
