@@ -24,14 +24,16 @@ async function Delete(endpoint: string, payload?: any) {
   const user = auth.currentUser;
   if (!user) return;
   const token = await getIdToken(user);
+  console.log(payload, "payload");
+
   const res = await fetch(`${baseUrl}/${endpoint}`, {
     headers: {
       "Content-Type": "application/json",
       client: "betweysure",
       api_key: "betweysure_f3ae3547d1374eaacaf345",
       Authorization: `Bearer ${token}`,
-      body: JSON.stringify(payload),
     },
+    body: JSON.stringify(payload),
     method: "DELETE",
   });
   return res.json();
