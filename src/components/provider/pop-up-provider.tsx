@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { PopUpContext, TPopUp } from "../../hooks/usePopUp";
 import { useAuth } from "@/hooks/useAuth";
+import useHasPlan from "@/hooks/useHasPlan";
 
 interface IPopUpProvider {
   children: React.ReactNode;
@@ -10,7 +11,7 @@ interface IPopUpProvider {
 export default function PopUpProvider({ children }: IPopUpProvider) {
   const [popUp, setPopUp] = useState<TPopUp>(null);
   const { user, isLoading } = useAuth();
-  const hasPlan = (user?.plan?.type?.toLowerCase() ?? "free") !== "free";
+  const { hasPlan } = useHasPlan();
 
   useEffect(() => {
     if (isLoading) return;

@@ -10,6 +10,8 @@ import PackageCard from "./package-card";
 import PlanCards from "./plan-cards";
 import Image from "next/image";
 import premiumPopUp from "@/assets/images/premium-popup.webp";
+import Link from "next/link";
+import AuthedLink from "../ui/authed-link";
 
 export default function PricingPlans() {
   const {
@@ -65,12 +67,20 @@ export default function PricingPlans() {
           />
         ))}
       </div>
-      <Image
-        width={1080}
-        height={107}
-        src={premiumPopUp}
-        alt="banner"
-        className="w-full h-[300px] mt-20 object-cover"
+
+      <AuthedLink
+        href="/dashboard/buy-plan"
+        title={
+          <>
+            <Image
+              width={1080}
+              height={107}
+              src={premiumPopUp}
+              alt="banner"
+              className="w-full h-[300px] mt-20"
+            />
+          </>
+        }
       />
 
       <div className="grid lg:grid-cols-4 mt-10 gap-4 lg:gap-6">
