@@ -143,7 +143,7 @@ export default function Trending() {
           src={peripesaBanner}
           width="970"
           height="90"
-          className="w-full h-[200px] mt-20 object-cover"
+          className="w-full h-[200px] mt-20"
         />
       </a>
     </div>

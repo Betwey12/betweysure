@@ -37,7 +37,7 @@ export default function LivescoresPage() {
             src={peripesaBanner}
             width="970"
             height="90"
-            className="w-full h-[200px] mt-20 object-cover"
+            className="w-full h-[200px] mt-20"
           />
         </a>
         <h2 className="text-xl lg:text-3xl"> {t("BENEFIT")}</h2>
