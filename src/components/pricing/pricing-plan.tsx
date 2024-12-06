@@ -9,8 +9,7 @@ import { useState } from "react";
 import PackageCard from "./package-card";
 import PlanCards from "./plan-cards";
 import Image from "next/image";
-import premiumPopUp from "@/assets/images/premium-popup.webp";
-import Link from "next/link";
+import premiumPopUp from "@/assets/images/premium-banner-desktop.webp";
 import AuthedLink from "../ui/authed-link";
 
 export default function PricingPlans() {
@@ -73,11 +72,11 @@ export default function PricingPlans() {
         title={
           <>
             <Image
-              width={1080}
-              height={107}
+              width={1280}
+              height={300}
               src={premiumPopUp}
               alt="banner"
-              className="w-full h-[300px] mt-20"
+              className="w-full mt-20"
             />
           </>
         }
