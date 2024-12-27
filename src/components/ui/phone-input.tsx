@@ -36,7 +36,7 @@ const PhoneInput = ({
   )?.code;
 
   function handleSelectCode(country: string) {
-    const code = country.split("-")[1];
+    const code = country.split("_")[1];
     console.log(country);
 
     setValue(phonecodeName, code);
@@ -45,7 +45,7 @@ const PhoneInput = ({
   const codeList = countryNamesAndFlags.map((country, i) => (
     <SelectItem
       className={"hover:bg-cyan/10 w-full cursor-pointer px-2 py-2 min-w-fit"}
-      value={`${country.name.toLowerCase()}-${country.code}`}
+      value={`${country.name.toLowerCase()}_${country.code}`}
       key={`${country.code}${i}`}
     >
       <span className="flex gap-2 items-center flex-row-reverse">
@@ -70,7 +70,9 @@ const PhoneInput = ({
         )}
       />
       <input
+        type="tel"
         id={name}
+        arial-label={name}
         {...(register && {
           ...register(name),
         })}
