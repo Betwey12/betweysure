@@ -2,7 +2,6 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import { useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import { useMutation } from "@tanstack/react-query";
 import { HTTPRequest } from "../../api";
@@ -61,7 +60,7 @@ export default function Settings() {
             placeholder="Enter new password"
           />
 
-          <Button className="mt-2 bg-cyan items-center justify-center text-white p-2 rounded">
+          <Button className="mt-2 bg-cyan items-center justify-center text-white gap-3 p-2 rounded">
             Change Password
             {isPending && <FaSpinner className="animate-spin" />}
           </Button>
