@@ -86,6 +86,7 @@ export default function SignUpForm() {
       sessionStorage.getItem("referralCode") || data.referredBy;
 
     if (!token) return toast.error("Recaptcha verification failed");
+    console.log("data", data);
 
     const body = {
       ...data,

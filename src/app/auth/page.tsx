@@ -9,9 +9,10 @@ export default function AuthPage({
   const token = searchParams.oobCode as string;
 
   const modes: Record<string, string> = {
-    resetPassword: `/auth/reset-password?token${token}`,
+    resetPassword: `/auth/reset-password?token=${token}`,
     verifyEmail: `/auth/verify-email?token=${token}`,
   };
+  console.log(token, "token");
 
   if (!mode || !token) {
     return redirect("/auth/login");
