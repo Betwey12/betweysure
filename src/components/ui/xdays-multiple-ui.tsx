@@ -12,6 +12,7 @@ import sportybet from "@/assets/images/sportybet.png";
 import sportybetLight from "@/assets/images/sportybet-red.png";
 import sportsbet from "@/assets/images/sportsbet-dark.png";
 import sportsbetLight from "@/assets/images/sportsbet-light.png";
+import kanuBanner from "@/assets/images/kanu-banner.webp";
 
 const logos: Record<string, any> = {
   "1xbetDark": oneXBet,
@@ -45,10 +46,10 @@ export default function XdaysMultipleUi({
   investment = 300,
   bookie = "sportsbet",
 }: XdaysMultipleUiProps) {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const { setPopUp } = usePopUp();
 
-  const isDark = theme === "dark";
+  const isDark = resolvedTheme === "dark";
 
   return topPredictions?.length ? (
     <div className="flex flex-col shadow border border-gray-three rounded-lg lg:rounded-[20px] py-4 px-2 justify-between lg:pt-8 w-full min-h-[400px] gap-4 dark:bg-blue-one dark:text-white dark:border-0">
@@ -93,7 +94,7 @@ export default function XdaysMultipleUi({
         height={400}
         className="w-[360px] lg:w-[540px]"
         alt=""
-        src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1164189"
+        src={kanuBanner}
         onError={(e) => {
           e.currentTarget.src = popUpImage.src;
         }}

@@ -10,6 +10,8 @@ import {
 import Image from "next/image";
 import SelectedGames from "@/components/ui/selected-games";
 import ReferralClientWapper from "@/components/home/referral-client";
+import sportsbetGif from "@/assets/images/sportsbet-gif.gif";
+import cryptoBanner from "@/assets/images/crypto-banner.webp";
 
 export default function HomePage({
   searchParams,
@@ -28,7 +30,7 @@ export default function HomePage({
         <Image
           width={1200}
           height="150"
-          src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1164136"
+          src={cryptoBanner}
           alt="betway-banner"
           className="w-full"
         />
@@ -42,7 +44,7 @@ export default function HomePage({
       >
         <Image
           alt="banner"
-          src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1160175"
+          src={sportsbetGif}
           width="970"
           height="90"
           className="w-full"

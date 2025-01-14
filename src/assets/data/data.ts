@@ -1896,6 +1896,8 @@ export const otherSPortsWorldLeagues = [
   "itf women",
   "world",
   "challenger",
+  "utr women",
+  "utr men",
 ];
 
 export const popularPredictionstabs = [
