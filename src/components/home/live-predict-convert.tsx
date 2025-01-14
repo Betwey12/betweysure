@@ -4,6 +4,7 @@ import FUndBetAccount from "./fund-bet-account";
 import Link from "next/link";
 import Image from "next/image";
 import XdaysMultiple from "../landing/xdays-multiple";
+import kanuBanner from "../../assets/images/kanu-banner.webp";
 
 export default function LivePredictConvert() {
   return (
@@ -16,7 +17,7 @@ export default function LivePredictConvert() {
         <Image
           width={300}
           height={250}
-          src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1160147"
+          src={kanuBanner}
           alt="banner"
           className="w-full rounded"
         />

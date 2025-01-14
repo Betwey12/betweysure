@@ -6,6 +6,8 @@ import { acca } from "@/constants";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import sportsbetGif from "@/assets/images/sportsbet-gif.gif";
+import newcastleBanner from "@/assets/images/newcastle-banner.webp";
 
 export const metadata: Metadata = {
   title: acca.title,
@@ -29,12 +31,7 @@ export default function AccumulatorBuilder() {
           href="https://aff.partners.io/visit/?bta=45585&nci=5689"
           target="_top"
         >
-          <Image
-            alt="banner"
-            src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1160175"
-            width="970"
-            height="90"
-          />
+          <Image alt="banner" src={sportsbetGif} width="970" height="90" />
         </a>
 
         <AccumulatorBuilderExplained />
@@ -44,7 +41,7 @@ export default function AccumulatorBuilder() {
           target="_blank"
         >
           <Image
-            src="https://aff-partners-io.ck-cdn.com/tn/serve/?cid=1160391"
+            src={newcastleBanner}
             alt="banner"
             width={1024}
             height={400}
