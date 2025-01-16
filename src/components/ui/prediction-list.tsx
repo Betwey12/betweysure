@@ -4,10 +4,8 @@ import ResultIcon from "./result-icon";
 import globeIcon from "../../assets/icons/globe.png";
 import footballIcon from "../../assets/icons/solar-football.png";
 import { useSlip } from "@/hooks/useSlip";
-import { useAuth } from "@/hooks/useAuth";
 import { getLeague } from "@/assets/data/leagueApiF";
 import Image from "next/image";
-import Link from "next/link";
 import AuthedLink from "./authed-link";
 
 interface PredictionListProps {
@@ -43,7 +41,6 @@ export function PredictionList({
   highestPrediction,
 }: PredictionListProps) {
   const { slip, setSlip } = useSlip();
-  const { user } = useAuth();
   const isClicked = slip?.predictions.some(
     (prediction) =>
       prediction.resultKey === predictionObj?.resultKey &&

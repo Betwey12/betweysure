@@ -4,7 +4,6 @@ import {
   rankMapping,
 } from "../../assets/data/data";
 import { cn } from "../../lib/utils";
-import { useAuth } from "@/hooks/useAuth";
 import globeIcon from "../../assets/icons/globe.png";
 import { FaLock } from "react-icons/fa";
 import { useTheme } from "next-themes";
@@ -24,7 +23,6 @@ export default function OtherSportMatchList({
   hidePrediction,
   scores,
 }: OtherSportMatchListProps) {
-  const { user } = useAuth();
   const { theme } = useTheme();
 
   const country = Object.entries(countries).find(
@@ -38,18 +36,23 @@ export default function OtherSportMatchList({
       (key) => (predictionObj[key] <= 1 ? predictionObj[key] : null)
     )
     .sort((a, b) => b - a);
+  console.log(predictionProbabilities, "predictionProbabilities");
+
   const highestProbability = predictionProbabilities[0];
   const nextHighestPrediction = predictionProbabilities[1];
+
   let highestPrediction = Object.keys(predictionObj).find(
     (predictionKey) =>
       // @ts-expect-error do not type
       +predictionObj[predictionKey] === highestProbability
   );
   // check if highest prediction is rank_to_lvl1_nt or rank_to_75_p1, replace prediction with the next highest
+
   if (
     (highestPrediction === "rank_to_lvl1_nt" ||
       highestPrediction === "rank_to_75_p1") &&
-    highestProbability - nextHighestPrediction < 0.1
+    highestProbability - nextHighestPrediction < 0.1 &&
+    predictionObj["botd"]
   ) {
     highestPrediction = Object.keys(predictionObj).find(
       (predictionKey) =>

@@ -278,6 +278,7 @@ declare global {
     rank_to_lvl4_nt: number;
     rank_to_lvl5_nt: number;
     percent: number;
+    botd?: boolean;
   };
 
   type TOtherSportsResponse = {
