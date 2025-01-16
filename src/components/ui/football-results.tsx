@@ -102,7 +102,8 @@ export default function PredictionsResult({
         const newHighest =
           highestPrediction &&
           outcomes[highestPrediction] === "Over 1.5" &&
-          highestProbability - predictionProbabilities[1] < 10
+          highestProbability - predictionProbabilities[1] < 10 &&
+          predictionObj.bet_of_the_day
             ? secondHighest
             : highestPrediction;
 

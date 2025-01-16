@@ -16,7 +16,6 @@ export default function OtherSportsPredictions() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [periodIndex, setPeriodIndex] = useState(1);
-  const [activeTab, setActiveTab] = useState("botd");
   const sport = searchParams.get("sport") ?? "basketball";
   const currentPeriod = period[periodIndex] as TPeriod;
 
@@ -40,11 +39,13 @@ export default function OtherSportsPredictions() {
   const payload = (data?.data || []) as TOtherSportsResponse["data"];
   const [searchValue, setSearchValue] = useState("");
 
-  const { tableData, handleFilterPrediction } = useFilterOtherSports({
-    payload,
-    setActiveTab,
-    handlePagination,
-  });
+  const { tableData, handleFilterPrediction, activeTab } = useFilterOtherSports(
+    {
+      payload,
+      handlePagination,
+    }
+  );
+  console.log(tableData, "tablwData");
 
   const filteredData = tableData
     ?.filter((item: any) => {
