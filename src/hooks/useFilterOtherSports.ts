@@ -10,7 +10,7 @@ export default function useFilterOtherSports({
 }: TUseFilterOtherSportsProps) {
   const [activeTab, setActiveTab] = useState("Home");
 
-  const filterMap: Record<string, any> = {
+  const filterMap: Record<string, TOtherSPortsMatchData[]> = {
     "Bet of the day": payload
       .filter((obj) =>
         // @ts-expect-error do not type

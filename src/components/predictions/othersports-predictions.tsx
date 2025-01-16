@@ -45,7 +45,6 @@ export default function OtherSportsPredictions() {
       handlePagination,
     }
   );
-  console.log(tableData, "tablwData");
 
   const filteredData = tableData
     ?.filter((item: any) => {
