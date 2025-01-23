@@ -1882,23 +1882,6 @@ export const clubkonnectBookies = [
 
 export const otherSports = ["Basketball", "Baseball", "Tennis", "Ice Hockey"];
 
-export const otherSPortsWorldLeagues = [
-  "juniors",
-  "wrw",
-  "wrm",
-  "atp",
-  "wta",
-  "wta 125",
-  "international",
-  "virtual basketball",
-  "itf men",
-  "itf women",
-  "world",
-  "challenger",
-  "utr women",
-  "utr men",
-];
-
 export const popularPredictionstabs = [
   "standings",
   "trends",
