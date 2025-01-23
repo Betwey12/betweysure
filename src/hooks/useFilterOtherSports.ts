@@ -99,18 +99,18 @@ export default function useFilterOtherSports({
     "Over 22.5": filterMapByThreshold(["rank_to_225_pall"], 0.5),
     "Over 23.5": filterMapByThreshold(["rank_to_235_pall"], 0.4),
     "Over 24.5": filterMapByThreshold(["rank_to_245_pall"], 0.4),
-    "Over 197.5": filterMapByThreshold(["rank_to_lvl1_nt"], 0.9),
-    "Over 205.5": filterMapByThreshold(["rank_to_lvl2_nt"], 0.9),
-    "Over 213.5": filterMapByThreshold(["rank_to_lvl3_nt"], 0.8),
-    "Over 221.5": filterMapByThreshold(["rank_to_lvl4_nt"], 0.7),
-    "Over 229.5": filterMapByThreshold(["rank_to_lvl5_nt"], 0.6),
-    "Over 100.5": filterMapByThreshold(["rank_ho_lvl1_nt"], 0.9),
-    "Over 108.5": filterMapByThreshold(["rank_ho_lvl2_nt"], 0.8),
-    "Over 116.5": filterMapByThreshold(["rank_ho_lvl3_nt"], 0.6),
-    "Over 97.5": filterMapByThreshold(["rank_ao_lvl1_nt"], 0.9),
-    "Over 105.5": filterMapByThreshold(["rank_ao_lvl2_nt"], 0.8),
-    "Over 113.5": filterMapByThreshold(["rank_ao_lvl3_nt"], 0.7),
-    "Over 47.5": filterMapByThreshold(
+    "Over 197.5 FT": filterMapByThreshold(["rank_to_lvl1_nt"], 0.9),
+    "Over 205.5 FT": filterMapByThreshold(["rank_to_lvl2_nt"], 0.9),
+    "Over 213.5 FT": filterMapByThreshold(["rank_to_lvl3_nt"], 0.8),
+    "Over 221.5 FT": filterMapByThreshold(["rank_to_lvl4_nt"], 0.7),
+    "Over 229.5 FT": filterMapByThreshold(["rank_to_lvl5_nt"], 0.6),
+    "Home Over 100.5 FT": filterMapByThreshold(["rank_ho_lvl1_nt"], 0.9),
+    "Home Over 108.5 FT": filterMapByThreshold(["rank_ho_lvl2_nt"], 0.8),
+    "Home Over 116.5 FT": filterMapByThreshold(["rank_ho_lvl3_nt"], 0.6),
+    "Away Over 97.5 FT": filterMapByThreshold(["rank_ao_lvl1_nt"], 0.9),
+    "Away Over 105.5 FT": filterMapByThreshold(["rank_ao_lvl2_nt"], 0.8),
+    "Away Over 113.5 FT": filterMapByThreshold(["rank_ao_lvl3_nt"], 0.7),
+    "Over 47.5 Q": filterMapByThreshold(
       [
         "rank_to_lvl1_p4",
         "rank_to_lvl1_p3",
@@ -119,7 +119,7 @@ export default function useFilterOtherSports({
       ],
       0.9
     ),
-    "Over 53.5": filterMapByThreshold(
+    "Over 53.5 Q": filterMapByThreshold(
       [
         "rank_to_lvl2_p4",
         "rank_to_lvl2_p3",
@@ -128,7 +128,7 @@ export default function useFilterOtherSports({
       ],
       0.8
     ),
-    "Over 59.5": filterMapByThreshold(
+    "Over 59.5 Q": filterMapByThreshold(
       [
         "rank_to_lvl3_p4",
         "rank_to_lvl3_p3",

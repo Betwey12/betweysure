@@ -56,9 +56,6 @@ export default function GatewaySelect() {
     amount,
     currency: availableCurrency,
     planCode: planKey ? paystackPlanCodes[planKey] : undefined,
-    flutterwavePlanCode: planKey
-      ? flutterwavePlanCodes[planKey][currency]
-      : undefined,
   });
 
   async function handleUpdatePlan(reference?: string, planGateway?: string) {

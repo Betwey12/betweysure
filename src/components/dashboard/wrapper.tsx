@@ -31,7 +31,6 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
   const hasPhone = user?.phone || isLoading;
   const isLoggedIn = user || isLoading;
   const showTour = !!searchParams.get("tour") || false;
-  const hasAnsweredSurvery = (user?.answeredSurvey ?? true) || isLoading;
 
   const { mutateAsync, isError } = useMutation({
     mutationFn: (data: { fcmToken: string }) =>
@@ -150,7 +149,7 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
       </div>
       {showTour && <JoyRide showTour={showTour} />}
       {popUp === "premium" && <PremiumPopUp user={user} />}
-      {!hasAnsweredSurvery && <SurveyPopUp user={user} />}
+      {popUp === "survey" && <SurveyPopUp user={user} />}
 
       {canRequestPermission && (
         <NotificationPopup
