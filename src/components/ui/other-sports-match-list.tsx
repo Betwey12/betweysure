@@ -1,8 +1,4 @@
-import {
-  countries,
-  otherSPortsWorldLeagues,
-  rankMapping,
-} from "../../assets/data/data";
+import { countries, rankMapping } from "../../assets/data/data";
 import { cn } from "../../lib/utils";
 import globeIcon from "../../assets/icons/globe.png";
 import { FaLock } from "react-icons/fa";
@@ -66,12 +62,9 @@ export default function OtherSportMatchList({
     // @ts-expect-error do not type
     rankMapping[highestPrediction] || "N/A";
 
-  const imgSource =
-    otherSPortsWorldLeagues.includes(
-      predictionObj?.country_name?.toLowerCase()
-    ) || !country
-      ? globeIcon
-      : `https://flagcdn.com/16x12/${country}.png`;
+  const imgSource = !country
+    ? globeIcon
+    : `https://flagcdn.com/16x12/${country}.png`;
 
   return (
     <div
