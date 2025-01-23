@@ -36,7 +36,6 @@ export default function OtherSportMatchList({
       (key) => (predictionObj[key] <= 1 ? predictionObj[key] : null)
     )
     .sort((a, b) => b - a);
-  console.log(predictionProbabilities, "predictionProbabilities");
 
   const highestProbability = predictionProbabilities[0];
   const nextHighestPrediction = predictionProbabilities[1];

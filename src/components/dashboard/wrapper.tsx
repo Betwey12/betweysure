@@ -15,6 +15,7 @@ import { DashboardSpinner } from "../ui/spinner";
 import usePopUp from "@/hooks/usePopUp";
 import PremiumPopUp from "../ui/premium-popup";
 import NotificationPopup from "./notification-popup";
+import SurveyPopUp from "../ui/survery-pop-up";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -30,6 +31,7 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
   const hasPhone = user?.phone || isLoading;
   const isLoggedIn = user || isLoading;
   const showTour = !!searchParams.get("tour") || false;
+  const hasAnsweredSurvery = (user?.answeredSurvey ?? true) || isLoading;
 
   const { mutateAsync, isError } = useMutation({
     mutationFn: (data: { fcmToken: string }) =>
@@ -148,6 +150,8 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
       </div>
       {showTour && <JoyRide showTour={showTour} />}
       {popUp === "premium" && <PremiumPopUp user={user} />}
+      {!hasAnsweredSurvery && <SurveyPopUp user={user} />}
+
       {canRequestPermission && (
         <NotificationPopup
           handleClose={() => setCanRequestPermission(false)}
