@@ -15,6 +15,7 @@ import { DashboardSpinner } from "../ui/spinner";
 import usePopUp from "@/hooks/usePopUp";
 import PremiumPopUp from "../ui/premium-popup";
 import NotificationPopup from "./notification-popup";
+import SurveyPopUp from "../ui/survery-pop-up";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -148,6 +149,8 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
       </div>
       {showTour && <JoyRide showTour={showTour} />}
       {popUp === "premium" && <PremiumPopUp user={user} />}
+      {popUp === "survey" && <SurveyPopUp user={user} />}
+
       {canRequestPermission && (
         <NotificationPopup
           handleClose={() => setCanRequestPermission(false)}

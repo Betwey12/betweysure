@@ -45,6 +45,7 @@ declare global {
     referralCode: string;
     subscribed: boolean;
     accaUseLeft: number;
+    answeredSurvey: boolean;
   };
 
   type TUserResponse = {

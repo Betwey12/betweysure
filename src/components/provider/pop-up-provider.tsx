@@ -12,6 +12,7 @@ export default function PopUpProvider({ children }: IPopUpProvider) {
   const [popUp, setPopUp] = useState<TPopUp>(null);
   const { user, isLoading } = useAuth();
   const { hasPlan } = useHasPlan();
+  const hasAnsweredSurvery = (user?.answeredSurvey ?? true) || isLoading;
 
   useEffect(() => {
     if (isLoading) return;
@@ -28,13 +29,18 @@ export default function PopUpProvider({ children }: IPopUpProvider) {
       timeouts.push(premiumTimeout);
     }
 
-    const popUpTimeout = setTimeout(() => setPopUp("popUp"), 30000);
-    timeouts.push(popUpTimeout);
+    if (hasAnsweredSurvery) {
+      const popUpTimeout = setTimeout(() => setPopUp("popUp"), 40000);
+      timeouts.push(popUpTimeout);
+    } else {
+      const surveyTimeout = setTimeout(() => setPopUp("survey"), 40000);
+      timeouts.push(surveyTimeout);
+    }
 
     return () => {
       timeouts.forEach(clearTimeout);
     };
-  }, [hasPlan, isLoading, user?.subscribed]);
+  }, [hasAnsweredSurvery, hasPlan, isLoading, user?.subscribed]);
 
   return (
     <PopUpContext.Provider value={{ popUp, setPopUp }}>
