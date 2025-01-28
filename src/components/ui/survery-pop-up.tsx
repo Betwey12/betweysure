@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Modal from "../shared/modal";
 import usePopUp from "@/hooks/usePopUp";
-import { Button } from "./button";
+// import { Button } from "./button";
 
 interface PremiumPopUpProps {
   user?: TAuthUser | null;
@@ -29,13 +29,13 @@ export default function SurveyPopUp({ user }: PremiumPopUpProps) {
           >
             Take Survey
           </Link>
-          <Button
-            onClick={() => setPopUp(null)}
-            variant="secondary"
-            className="w-full h-auto py-3 font-medium rounded text-center"
-          >
-            Not Interested
-          </Button>
+          {/* <Button */}
+          {/*   onClick={() => setPopUp(null)} */}
+          {/*   variant="secondary" */}
+          {/*   className="w-full h-auto py-3 font-medium rounded text-center" */}
+          {/* > */}
+          {/*   Not Interested */}
+          {/* </Button> */}
         </div>
       </div>
     </Modal>
