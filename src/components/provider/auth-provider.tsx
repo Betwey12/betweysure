@@ -18,7 +18,7 @@ export default function AuthProvider({ children }: AuthProviderProps) {
     enabled: !!userId,
   });
 
-  const [user, setUser] = useState<TAuthUser | null>(null); // Set an initial value for user
+  const [user, setUser] = useState<TAuthUser | null>(null);
   const [loggedInUser, setLoggedInUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -26,6 +26,7 @@ export default function AuthProvider({ children }: AuthProviderProps) {
     // Subscribe to authentication state changes
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       setIsLoading(false);
+
       if (firebaseUser) {
         setUserId(firebaseUser.uid);
         setLoggedInUser(firebaseUser);
@@ -41,10 +42,6 @@ export default function AuthProvider({ children }: AuthProviderProps) {
   }, []);
 
   useEffect(() => {
-    if (!userLoading && !data?.user) {
-      setUser(null);
-      return;
-    }
     if (!userLoading) {
       setIsLoading(false);
       setUser({
