@@ -3,7 +3,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Country } from "country-state-city";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { HTTPRequest } from "@/api";
 import { auth } from "@/firebase/config";
 import { toast } from "react-toastify";
@@ -39,7 +39,7 @@ type TPayload = {
 
 export default function CompleteProfileForm() {
   const router = useRouter();
-  const { user, isLoading } = useAuth();
+  const { user, isLoading, setUser } = useAuth();
   const t = useTranslations("AUTH");
 
   const {
@@ -85,6 +85,10 @@ export default function CompleteProfileForm() {
       return toast.error(response.message);
     }
     toast.success(response.message);
+    setUser({
+      ...user,
+      ...response.user,
+    });
 
     router.push("/dashboard");
     // window.location.replace("/dashboard");

@@ -11,6 +11,7 @@ const nextConfig = {
       "flagcdn.com",
       "blog.betweysure.com",
       "aff-partners-io.ck-cdn.com",
+      "lh3.googleusercontent.com",
     ],
   },
 };
