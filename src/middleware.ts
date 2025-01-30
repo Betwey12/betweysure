@@ -2,6 +2,10 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(req: NextRequest) {
+  if (process.env.NODE_ENV === "development") {
+    return NextResponse.next(); // Skip redirection in development
+  }
+
   const host = req.headers.get("host");
   const protocol = req.headers.get("x-forwarded-proto") || "http";
 
@@ -10,7 +14,6 @@ export function middleware(req: NextRequest) {
     !host?.includes("localhost")
   ) {
     const correctedHost = host?.slice(0, 4) === "www." ? host : `www.${host}`;
-
     const redirectUrl = `https://${correctedHost}${req.nextUrl.pathname}${req.nextUrl.search}`;
 
     return NextResponse.redirect(redirectUrl, 301);
