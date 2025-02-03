@@ -11,6 +11,8 @@ export type TPopUp =
 export type TPopUpContext = {
   popUp: TPopUp;
   setPopUp: React.Dispatch<React.SetStateAction<TPopUp>>;
+  showAny: boolean;
+  setShowAny: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const PopUpContext = createContext<TPopUpContext | undefined>(undefined);

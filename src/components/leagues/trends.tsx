@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { FaSpinner } from "react-icons/fa";
 import TrendCard from "../trends/trend-card";
 import { useState } from "react";
+import Image from "next/image";
 
 interface TrendsProps {
   league?: string;
@@ -43,14 +44,15 @@ export default function Trends({ league, category }: TrendsProps) {
   const { trends } = useTrends({
     trendsData: leagueTrends,
   });
-  console.log("herlo");
-
-  console.log(trends, "trends");
 
   const filteredTrends = trends.filter((trend) => {
     return (
-      trend.name.toLowerCase().includes(searchValue.toLowerCase()) ||
-      trend?.opponent?.name?.toLowerCase().includes(searchValue.toLowerCase())
+      trend.trends.find((trend) =>
+        trend.name.toLowerCase().includes(searchValue.toLowerCase())
+      ) ||
+      trend.trends.find((trend) =>
+        trend?.opponent?.name.toLowerCase().includes(searchValue.toLowerCase())
+      )
     );
   });
 
@@ -75,19 +77,48 @@ export default function Trends({ league, category }: TrendsProps) {
         <>
           <p className="mb-6">{t("DESCRIPTION", { league: league })}</p>
 
-          <div className="grid lg:grid-cols-2 gap-4">
+          <div className="flex flex-col gap-20">
             {filteredTrends.map((trend, index) => (
-              <TrendCard
-                key={index}
-                count={trend.count}
-                logo={trend.logo}
-                name={trend.name}
-                total={trend.total}
-                type={trend?.type}
-                gameType={trend?.gameType}
-                opponent={trend.opponent}
-                place={trend?.place}
-              />
+              <div key={index} className="flex flex-col gap-8">
+                <div className="bg-gray-one py-2 px-4 rounded dark:bg-blue-one grid grid-cols-3 items-center justify-center">
+                  {trend.match.map((match, i) => (
+                    <>
+                      <div
+                        key={match.name}
+                        className="flex flex-col lg:flex-row items-center justify-center gap-4"
+                      >
+                        <Image
+                          src={match.logo}
+                          alt={match.name}
+                          width="40"
+                          height="40"
+                        />
+                        <p className="text-2xl font-semibold text-center">
+                          {match.name}
+                        </p>
+                      </div>
+                      {i === 0 && (
+                        <p className="text-2xl font-semibold text-center">Vs</p>
+                      )}
+                    </>
+                  ))}
+                </div>
+                <div className="grid lg:grid-cols-2 gap-4">
+                  {trend.trends.map((trend, index) => (
+                    <TrendCard
+                      key={index}
+                      count={trend.count}
+                      logo={trend.logo}
+                      name={trend.name}
+                      total={trend.total}
+                      type={trend?.type}
+                      gameType={trend?.gameType}
+                      opponent={trend.opponent}
+                      place={trend?.place}
+                    />
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </>

@@ -149,127 +149,139 @@ export default function useTrends({
         ? match?.homeTeam
         : match?.awayTeam;
 
-    return [
-      {
-        logo: highestWinningTeam?.logo,
-        name: highestWinningTeam?.name,
-        count: highestWinningTeam?.ftWins,
-        total: match?.matches,
-        opponent: {
-          logo: highestWinningTeam?.opponent?.logo,
-          name: highestWinningTeam?.opponent?.name,
+    return {
+      match: [
+        {
+          name: match?.homeTeam?.name,
+          logo: match?.homeTeam?.logo,
         },
-        type: "wins",
-        gameType: "games",
-      },
-      {
-        logo: match.homeTeam?.logo,
-        name: match.homeTeam?.name,
-        count: match.homeTeam?.consecutiveWins,
-        total: match?.homeMatches,
-        type: "placeWins",
-        place: "home",
-      },
-      {
-        logo: match.awayTeam?.logo,
-        name: match.awayTeam?.name,
-        count: match.awayTeam?.consecutiveWins,
-        total: match?.awayMatches,
-        type: "placeWins",
-        place: "away",
-      },
-      {
-        logo: winningHt?.logo,
-        name: winningHt?.name,
-        count: winningHt?.htWins,
-        total: match?.matches,
-        opponent: {
-          logo: winningHt?.opponent?.logo,
-          name: winningHt?.opponent?.name,
+        {
+          name: match?.awayTeam?.name,
+          logo: match?.awayTeam?.logo,
         },
-        type: "wins",
-        gameType: "half time games",
-      },
-      ...(highestOverHt.over > 0
-        ? [
-            {
-              logo: highestOverHt?.logo,
-              name: highestOverHt?.name,
-              count: highestOverHt?.over,
-              total: match?.matches,
-              type: "over",
-              gameType: "half time games",
-            },
-          ]
-        : []),
-      ...(highestOverTeam.over > 0
-        ? [
-            {
-              logo: highestOverTeam?.logo,
-              name: highestOverTeam?.name,
-              count: highestOverTeam?.over,
-              total: match?.matches,
-              type: "over",
-              gameType: "games",
-            },
-          ]
-        : []),
-      ...(highestWInStreak?.winStreak > 3
-        ? [
-            {
-              logo: highestWInStreak?.logo,
-              name: highestWInStreak?.name,
-              count: highestWInStreak?.winStreak,
-              total: match?.matches,
-              type: "winStreak",
-            },
-          ]
-        : []),
-      ...(match?.homeTeam?.consecutiveWins > 3
-        ? [
-            {
-              logo: match?.homeTeam?.logo,
-              name: match?.homeTeam?.name,
-              count: match?.homeTeam?.consecutiveWins,
-              total: match?.matches,
-              type: "consecutiveWins",
-            },
-          ]
-        : []),
-      ...(match?.awayTeam?.consecutiveWins > 3
-        ? [
-            {
-              logo: match?.awayTeam?.logo,
-              name: match?.awayTeam?.name,
-              count: match?.awayTeam?.consecutiveWins,
-              total: match?.matches,
-              type: "consecutiveWins",
-            },
-          ]
-        : []),
-      ...(match?.homeTeam?.cleanSheets?.length > 2
-        ? [
-            {
-              logo: match?.homeTeam?.logo,
-              name: match?.homeTeam?.name,
-              count: match?.homeTeam?.cleanSheets?.length,
-              total: match?.matches,
-              type: "cleanSheets",
-            },
-          ]
-        : []),
-      ...(match?.awayTeam?.cleanSheets?.length > 2
-        ? [
-            {
-              logo: match?.awayTeam?.logo,
-              name: match?.awayTeam?.name,
-              count: match?.awayTeam?.cleanSheets?.length,
-              total: match?.matches,
-              type: "cleanSheets",
-            },
-          ]
-        : []),
-    ];
+      ],
+      trends: [
+        {
+          logo: highestWinningTeam?.logo,
+          name: highestWinningTeam?.name,
+          count: highestWinningTeam?.ftWins,
+          total: match?.matches,
+          opponent: {
+            logo: highestWinningTeam?.opponent?.logo,
+            name: highestWinningTeam?.opponent?.name,
+          },
+          type: "wins",
+          gameType: "games",
+        },
+        {
+          logo: match.homeTeam?.logo,
+          name: match.homeTeam?.name,
+          count: match.homeTeam?.consecutiveWins,
+          total: match?.homeMatches,
+          type: "placeWins",
+          place: "home",
+        },
+        {
+          logo: match.awayTeam?.logo,
+          name: match.awayTeam?.name,
+          count: match.awayTeam?.consecutiveWins,
+          total: match?.awayMatches,
+          type: "placeWins",
+          place: "away",
+        },
+        {
+          logo: winningHt?.logo,
+          name: winningHt?.name,
+          count: winningHt?.htWins,
+          total: match?.matches,
+          opponent: {
+            logo: winningHt?.opponent?.logo,
+            name: winningHt?.opponent?.name,
+          },
+          type: "wins",
+          gameType: "half time games",
+        },
+        ...(highestOverHt.over > 0
+          ? [
+              {
+                logo: highestOverHt?.logo,
+                name: highestOverHt?.name,
+                count: highestOverHt?.over,
+                total: match?.matches,
+                type: "over",
+                gameType: "half time games",
+              },
+            ]
+          : []),
+        ...(highestOverTeam.over > 0
+          ? [
+              {
+                logo: highestOverTeam?.logo,
+                name: highestOverTeam?.name,
+                count: highestOverTeam?.over,
+                total: match?.matches,
+                type: "over",
+                gameType: "games",
+              },
+            ]
+          : []),
+        ...(highestWInStreak?.winStreak > 3
+          ? [
+              {
+                logo: highestWInStreak?.logo,
+                name: highestWInStreak?.name,
+                count: highestWInStreak?.winStreak,
+                total: match?.matches,
+                type: "winStreak",
+              },
+            ]
+          : []),
+        ...(match?.homeTeam?.consecutiveWins > 3
+          ? [
+              {
+                logo: match?.homeTeam?.logo,
+                name: match?.homeTeam?.name,
+                count: match?.homeTeam?.consecutiveWins,
+                total: match?.matches,
+                type: "consecutiveWins",
+              },
+            ]
+          : []),
+        ...(match?.awayTeam?.consecutiveWins > 3
+          ? [
+              {
+                logo: match?.awayTeam?.logo,
+                name: match?.awayTeam?.name,
+                count: match?.awayTeam?.consecutiveWins,
+                total: match?.matches,
+                type: "consecutiveWins",
+              },
+            ]
+          : []),
+        ...(match?.homeTeam?.cleanSheets?.length > 2
+          ? [
+              {
+                logo: match?.homeTeam?.logo,
+                name: match?.homeTeam?.name,
+                count: match?.homeTeam?.cleanSheets?.length,
+                total: match?.matches,
+                type: "cleanSheets",
+              },
+            ]
+          : []),
+        ...(match?.awayTeam?.cleanSheets?.length > 2
+          ? [
+              {
+                logo: match?.awayTeam?.logo,
+                name: match?.awayTeam?.name,
+                count: match?.awayTeam?.cleanSheets?.length,
+                total: match?.matches,
+                type: "cleanSheets",
+              },
+            ]
+          : []),
+      ].sort((a, b) => a.name.localeCompare(b.name)),
+    };
   });
 
   return {

@@ -35,6 +35,8 @@ export default function SelectLanguage() {
 
   function onChange(value: string) {
     const locale = value as Locale;
+    console.log("locale", locale);
+
     startTransition(() => {
       setUserLocale(locale);
     });
@@ -64,9 +66,9 @@ export default function SelectLanguage() {
           {languages.map((language) => (
             <Button
               key={language.code}
-              className="text-sm gap-4 justify-start disabled:opacity-50 disabled:cursor-not-allowed"
+              className="text-sm bg-transparent rounded-none gap-4 justify-start disabled:opacity-50 disabled:cursor-not-allowed"
               onClick={() => onChange(language.code)}
-              disabled={locale === language.code}
+              disabled={locale === language.code || true}
             >
               <Image
                 width={20}
