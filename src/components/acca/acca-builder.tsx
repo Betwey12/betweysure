@@ -368,6 +368,14 @@ export default function AccumulatorBuilderForm({
                   <p className="font-bold">{game.prediction}</p>
                 </div>
               ))}
+
+              <Link
+                target="_blank"
+                href="https://aff.partners.io/visit/?bta=45585&nci=7672"
+                className="font-semibold w-full mt-6 bg-cyan py-3 rounded flex items-center justify-center text-white"
+              >
+                Place Bet
+              </Link>
             </div>
           ) : (
             <p className="text-red-400 mb-10">{t("NO_MATCHES")}</p>

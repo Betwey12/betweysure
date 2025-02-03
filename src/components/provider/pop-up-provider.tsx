@@ -10,6 +10,7 @@ interface IPopUpProvider {
 
 export default function PopUpProvider({ children }: IPopUpProvider) {
   const [popUp, setPopUp] = useState<TPopUp>(null);
+  const [showAny, setShowAny] = useState(false);
   const { user, isLoading } = useAuth();
   const { hasPlan } = useHasPlan();
   const hasAnsweredSurvery = (user?.answeredSurvey ?? true) || isLoading;
@@ -18,6 +19,8 @@ export default function PopUpProvider({ children }: IPopUpProvider) {
     if (isLoading) return;
 
     const timeouts: NodeJS.Timeout[] = [];
+    const thoughtsTimeout = setTimeout(() => setShowAny(true), 10000);
+    timeouts.push(thoughtsTimeout);
 
     if (!user?.subscribed) {
       const newsletterTimeout = setTimeout(() => setPopUp("newsletter"), 10000);
@@ -43,7 +46,7 @@ export default function PopUpProvider({ children }: IPopUpProvider) {
   }, [hasAnsweredSurvery, hasPlan, isLoading, user?.subscribed]);
 
   return (
-    <PopUpContext.Provider value={{ popUp, setPopUp }}>
+    <PopUpContext.Provider value={{ popUp, setPopUp, showAny, setShowAny }}>
       {children}
     </PopUpContext.Provider>
   );

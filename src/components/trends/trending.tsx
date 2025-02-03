@@ -29,8 +29,6 @@ export default function Trending() {
 
   const trendsData = trendsQuery?.data || [];
 
-  const count = Math.ceil((trendsData?.length ?? 0) / PREDICTIONS_PER_PAGE);
-
   function handlePagination(_event: React.ChangeEvent<unknown>, value: number) {
     setFrom((value - 1) * PREDICTIONS_PER_PAGE);
     setTo(value * PREDICTIONS_PER_PAGE);
@@ -42,10 +40,16 @@ export default function Trending() {
 
   const filteredTrends = trends.filter((trend) => {
     return (
-      trend.name.toLowerCase().includes(searchValue.toLowerCase()) ||
-      trend?.opponent?.name?.toLowerCase().includes(searchValue.toLowerCase())
+      trend.trends.find((trend) =>
+        trend.name.toLowerCase().includes(searchValue.toLowerCase())
+      ) ||
+      trend.trends.find((trend) =>
+        trend?.opponent?.name.toLowerCase().includes(searchValue.toLowerCase())
+      )
     );
   });
+
+  const count = Math.ceil(filteredTrends.length / PREDICTIONS_PER_PAGE);
 
   return (
     <div className="px-4 md:px-10 lg:px-20  lg:my-20 my-10 flex flex-col items-center justify-center dark:text-white">
@@ -56,6 +60,7 @@ export default function Trending() {
         placeholder="🔍  Filter by leagues, country, games"
         className="self-end mb-10 py-2 px-4 rounded focus:outline-none text-gray-one w-full lg:max-w-[360px] border border-gray-one"
         onChange={(e) => {
+          setFrom(0);
           setSearchValue(e.target.value);
         }}
       />
@@ -65,19 +70,48 @@ export default function Trending() {
           <FaSpinner className="animate-spin" />
         </div>
       ) : filteredTrends?.length > 0 ? (
-        <div className="grid lg:grid-cols-2 gap-4">
+        <div className="flex flex-col gap-20">
           {filteredTrends.slice(from, to).map((trend, index) => (
-            <TrendCard
-              key={index}
-              count={trend.count}
-              logo={trend.logo}
-              name={trend.name}
-              total={trend.total}
-              type={trend?.type}
-              gameType={trend?.gameType}
-              opponent={trend.opponent}
-              place={trend?.place}
-            />
+            <div key={index} className="flex flex-col gap-8">
+              <div className="bg-gray-one py-2 px-4 rounded dark:bg-blue-one grid grid-cols-3 items-center justify-center">
+                {trend.match.map((match, i) => (
+                  <>
+                    <div
+                      key={match.name}
+                      className="flex flex-col lg:flex-row items-center justify-center gap-4"
+                    >
+                      <Image
+                        src={match.logo}
+                        alt={match.name}
+                        width="40"
+                        height="40"
+                      />
+                      <p className="text-2xl font-semibold text-center">
+                        {match.name}
+                      </p>
+                    </div>
+                    {i === 0 && (
+                      <p className="text-2xl font-semibold text-center">Vs</p>
+                    )}
+                  </>
+                ))}
+              </div>
+              <div className="grid lg:grid-cols-2 gap-4">
+                {trend.trends.map((trend, index) => (
+                  <TrendCard
+                    key={index}
+                    count={trend.count}
+                    logo={trend.logo}
+                    name={trend.name}
+                    total={trend.total}
+                    type={trend?.type}
+                    gameType={trend?.gameType}
+                    opponent={trend.opponent}
+                    place={trend?.place}
+                  />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       ) : (

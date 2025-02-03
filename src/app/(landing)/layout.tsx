@@ -8,6 +8,7 @@ import Footer from "@/components/shared/footer";
 import Navbar from "@/components/shared/navbar";
 import BottomPopUp from "@/components/ui/bottom-pop-up";
 import PremiumPopUp from "@/components/ui/premium-popup";
+import ThoughtsPopup from "@/components/ui/thoughts-popup";
 import { useAuth } from "@/hooks/useAuth";
 import usePopUp from "@/hooks/usePopUp";
 
@@ -31,6 +32,7 @@ export default function LandingLayout({ children }: ILandingLayout) {
       {popUp === "popUp" && <PopUp />}
       {popUp === "premium" && <PremiumPopUp user={user} />}
       {popUp === "bottom" && <BottomPopUp />}
+      <ThoughtsPopup link="/acca-builder" />
       <QuickLinks />
     </div>
   );
