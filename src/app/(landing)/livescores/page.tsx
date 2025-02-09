@@ -3,12 +3,13 @@ import { Metadata } from "next";
 import OtherPagesHero from "@/components/shared/other-pages-hero";
 import MatchResults from "@/components/livescores/match-results";
 
-import { livescores } from "@/constants";
+import { livescores, otherPagesSeoText } from "@/constants";
 import { useTranslations } from "next-intl";
 import KeywordListItem from "@/components/ui/keyword-list-item";
 import PageHeader from "@/components/shared/page-header";
 import Image from "next/image";
 import peripesaBanner from "@/assets/images/peripesa-banner.webp";
+import PurifiedHtml from "@/components/shared/purified-html";
 
 export const metadata: Metadata = {
   title: livescores.title,
@@ -41,7 +42,7 @@ export default function LivescoresPage() {
           />
         </a>
         <h2 className="text-xl lg:text-3xl"> {t("BENEFIT")}</h2>
-        <ul className="flex flex-col gap-2 mt-4">
+        <ul className="flex flex-col gap-2 mt-4 mb-20">
           {benefits.map((benefit, i) => (
             <KeywordListItem
               key={i}
@@ -50,6 +51,8 @@ export default function LivescoresPage() {
             />
           ))}
         </ul>
+
+        <PurifiedHtml html={otherPagesSeoText.livescores} />
       </div>
     </>
   );

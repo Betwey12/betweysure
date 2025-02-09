@@ -5,6 +5,7 @@ import Image from "next/image";
 
 interface LeagueInfoProps {
   category: string;
+  tab: string;
   popularLeague?: {
     name: string;
     logo: string;
@@ -13,6 +14,7 @@ interface LeagueInfoProps {
 
 export default function LeagueInfo({
   category,
+  tab,
   popularLeague,
 }: LeagueInfoProps) {
   const t = useTranslations("LEAGUE_INFO");
@@ -35,7 +37,7 @@ export default function LeagueInfo({
                 width={40}
                 height={40}
                 src={popularLeague?.logo}
-                alt="logo"
+                alt={`${popularLeague?.name} ${tab} page`}
                 className="w-10 h-10 bg-white text-blue-one rounded-full object-contain"
               />
               <h1 className="lg:text-4xl text-3xl text-center">

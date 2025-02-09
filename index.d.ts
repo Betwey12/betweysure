@@ -651,4 +651,25 @@ declare global {
   };
 
   type TAuthUser = TUser & User;
+  type TLeagueTabs =
+    | "fixtures"
+    | "standings"
+    | "trends"
+    | "predictions"
+    | "form";
+
+  type TLeagueMetaTabs = TLeagueTabs | "DEFAULT";
+
+  type TLeagueMeta = Record<
+    string,
+    {
+      [K in TLeagueMetaTabs]?: { title: string; description: string };
+    }
+  >;
+  type TLeagueSeoText = Record<
+    string,
+    {
+      [K in Omit<"DEFAULT">]?: string;
+    }
+  >;
 }

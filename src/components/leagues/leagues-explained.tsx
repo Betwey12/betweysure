@@ -1,14 +1,24 @@
 import { useTranslations } from "next-intl";
 import KeywordListItem from "../ui/keyword-list-item";
+import PurifiedHtml from "../shared/purified-html";
+import { specificLeagueSeoText } from "@/constants";
 
 interface LeaguesExplainedProps {
   category: string;
+  tab: TLeagueTabs;
 }
 
-export default function LeaguesExplained({ category }: LeaguesExplainedProps) {
+export default function LeaguesExplained({
+  category,
+  tab,
+}: LeaguesExplainedProps) {
   const { seoTexts } = useLeaguesExplained();
   const seoText = seoTexts[category] || [];
-  return (
+
+  const tabSpecificSeoText = specificLeagueSeoText[category]?.[tab];
+  return tabSpecificSeoText ? (
+    <PurifiedHtml html={tabSpecificSeoText} />
+  ) : (
     seoText.length > 0 && (
       <div className="dark:bg-blue-one  rounded p-4 dark:text-white flex flex-col lg:flex-row lg:py-8 lg:px-6 gap-4 lg:items-center justify-between">
         <ul className="flex flex-col gap-4">
