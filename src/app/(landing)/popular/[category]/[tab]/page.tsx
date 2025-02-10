@@ -28,20 +28,14 @@ import LeaguesExplained from "@/components/leagues/leagues-explained";
 import { period } from "@/assets/data/data";
 
 type Props = {
-  params: { category: string };
+  params: { category: string; tab: TLeagueMetaTabs };
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // read route params
   const category = params.category;
-  const categories: Record<
-    string,
-    {
-      title: string;
-      description: string;
-      keywords?: string;
-    }
-  > = {
+  const tab = params.tab;
+  const categories: TLeagueMeta = {
     yesterday,
     today,
     tomorrow,
@@ -60,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     "england-premier-league": englandPremierLeague,
     "uefa-europa-league": uefaEuropaLeague,
   };
-  const meta = categories[category];
+  const meta = categories[category][tab] ?? categories[category]["DEFAULT"];
 
   return {
     title: meta?.title || leagues.title,
@@ -73,7 +67,7 @@ export default function PopularPage({
   params: { [key: string]: string | string[] | undefined };
 }) {
   const category = (params["category"] || "") as string;
-  const tab = (params["tab"] || "") as string;
+  const tab = (params["tab"] || "") as TLeagueTabs;
   const { t, cta } = usePopularLeagues(category);
   const formattedCategory = category?.toUpperCase().replace(/-/g, "_");
   const isPeriod = category && period.includes(category);
@@ -83,7 +77,7 @@ export default function PopularPage({
       <OtherPagesHero />
       <LeaguePredictions category={category} tab={tab} />
       <div className="px-4 md:px-10 lg:px-20 flex flex-col gap-4 lg:gap-6">
-        {!isPeriod && <LeaguesExplained category={category} />}
+        {!isPeriod && <LeaguesExplained category={category} tab={tab} />}
 
         <div className="dark:bg-blue-one border border-gray-two dark:border-0 rounded  p-4 lg:px-10 lg:py-20 dark:text-white flex flex-col lg:flex-row  gap-4 lg:items-center justify-between">
           <p className="max-w-lg">

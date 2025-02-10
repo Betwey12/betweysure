@@ -22,7 +22,7 @@ export default function LeaguePredictions({
 
   return (
     <div className="text-blue-one lg:px-20 md:px-10 px-4 py-10 lg:py-20 dark:text-white">
-      <LeagueInfo popularLeague={popularLeague} category={category} />
+      <LeagueInfo popularLeague={popularLeague} category={category} tab={tab} />
 
       <div className="lg:hidden mb-6">
         <PredictionSelect />
