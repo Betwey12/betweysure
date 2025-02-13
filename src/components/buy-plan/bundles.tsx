@@ -36,14 +36,18 @@ export default function Bundles() {
   return (
     <>
       <div className="flex items-center gap-6 justify-between">
-        <h3 className="min-w-fit">Select a plan</h3>
-        <div className="max-w-xs w-full">
-          <MySelect
-            options={supportedCountries}
-            bgDashboard
-            selectedOption={selectedCurrency}
-            setSelectedOption={setSelectedCurrency}
-          />
+        <h3 className="flex-1 font-semibold">Select a plan</h3>
+        <div className="flex items-center justify-end gap-4 flex-1">
+          <p className="font-medium">Change currency: </p>
+
+          <div className="max-w-xs w-full flex-1">
+            <MySelect
+              options={supportedCountries}
+              bgDashboard
+              selectedOption={selectedCurrency}
+              setSelectedOption={setSelectedCurrency}
+            />
+          </div>
         </div>
       </div>
       <h3 className="text-3xl mt-6">Football plans</h3>

@@ -73,7 +73,6 @@ export default function LoginForm() {
         return toast.error(message);
       }
       await signInWithEmailAndPassword(auth, data.email, data.password);
-      console.log(res);
 
       setIsPending(false);
       toast.success("Login successful");

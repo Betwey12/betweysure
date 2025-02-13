@@ -27,7 +27,7 @@ export default function usePayment({
     tx_ref: new Date().getTime().toString(),
     amount,
     currency,
-    payment_options: "card,mobilemoney,ussd",
+    payment_options: "card, mobilemoney, ussd",
     payment_plan: flutterwavePlanCode,
     customer: {
       email: user?.email || "",

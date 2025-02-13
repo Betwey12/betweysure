@@ -28,15 +28,18 @@ export default function PricingPlans() {
     selectedCurrency?.split(" ")[selectedCurrency?.split(" ")?.length - 1];
 
   return (
-    <div className="flex flex-col gap-10 dark:text-white md:px-10 px-4 lg:px-20">
+    <div className="flex flex-col gap-20 dark:text-white md:px-10 px-4 lg:px-20">
       <div className="flex items-center flex-col lg:flex-row gap-4 justify-between z-10">
-        <div className="max-w-[300px] w-full border border-cyan">
-          <MySelect
-            options={supportedCountries}
-            bgDashboard
-            selectedOption={selectedCurrency}
-            setSelectedOption={setSelectedCurrency}
-          />
+        <div className="flex items-center gap-4 flex-1">
+          <p className="font-medium">Change currency: </p>
+          <div className="max-w-[300px] w-full border border-cyan">
+            <MySelect
+              options={supportedCountries}
+              bgDashboard
+              selectedOption={selectedCurrency}
+              setSelectedOption={setSelectedCurrency}
+            />
+          </div>
         </div>
         <div className="flex items-center gap-3">
           {durations.map((dur) => (
