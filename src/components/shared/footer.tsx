@@ -12,8 +12,15 @@ import {
 } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa6";
 
+import visa from "@/assets/icons/visa-card.png";
+import verve from "@/assets/icons/verve-card.png";
+import masterCard from "@/assets/icons/mastercard.png";
+import discover from "@/assets/icons/discover-card.png";
+import bank from "@/assets/icons/bank-transfer.png";
+import Divider from "./divider";
+
 export default function Footer() {
-  const { t, footerLinks } = useFooter();
+  const { t, footerLinks, paymentMethods } = useFooter();
   return (
     <footer className="footer_bg w-full  px-4 md:px-10 lg:px-20 py-20 text-white mt-10 lg:mt-20">
       <div className="flex flex-col lg:flex-row justify-between lg:gap-0 gap-8">
@@ -101,9 +108,21 @@ export default function Footer() {
           </div>
         ))}
       </div>
-      <p className="text-center mt-10 text-xs text-gray-two">
-        {t("COPYRIGHT")}
-      </p>
+      <Divider className="border-[#252a33]" />
+      <div className="flex items-center mt-10 justify-center gap-4">
+        {paymentMethods.map((method, index) => (
+          <div key={index} className="h-3 w-6">
+            <Image
+              alt="payment method"
+              width={24}
+              height={16}
+              src={method}
+              className="w-full"
+            />
+          </div>
+        ))}
+      </div>
+      <p className="text-center mt-8 text-xs text-gray-two">{t("COPYRIGHT")}</p>
     </footer>
   );
 }
@@ -185,5 +204,8 @@ function useFooter() {
       ],
     },
   ];
-  return { t, footerLinks };
+
+  const paymentMethods = [visa, verve, masterCard, bank, discover];
+
+  return { t, footerLinks, paymentMethods };
 }

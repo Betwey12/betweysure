@@ -3,6 +3,7 @@ import flutterwave from "@/assets/icons/flutterwave.webp";
 import paystack from "@/assets/icons/paystack.png";
 import wallet from "@/assets/icons/wallet.png";
 import bank from "@/assets/icons/bank.png";
+import mobileMoney from "@/assets/icons/mobile-money.png";
 
 import Image from "next/image";
 import { FaInfo } from "react-icons/fa";
@@ -155,7 +156,7 @@ export default function GatewaySelect() {
               handlePayment(gateway.name);
             }}
             className="text-white gap-2 text-sm bg-yellow-sunset hover:bg-white hover:border hover:border-yellow-sunset hover:text-yellow-sunset text-center px-4 py-2 rounded disabled:cursor-not-allowed disabled:opacity-50"
-            disabled={isPending || gateway.name === "bank transfer"}
+            disabled={isPending}
             title={
               gateway.name === "bank transfer"
                 ? "Complete bank transfer using paystack or flutter"
@@ -163,7 +164,7 @@ export default function GatewaySelect() {
             }
           >
             <span className="flex items-center gap-2">
-              Pay with {gateway.name}
+              Pay with {gateway.title}
             </span>
             {isPending && clickedIndex === index && (
               <FaSpinner className="animate-spin" />
@@ -179,19 +180,28 @@ const paymentGateways = [
   {
     name: "flutterwave",
     logo: flutterwave,
+    title: "flutterwave",
+  },
+  {
+    name: "flutterwave",
+    logo: mobileMoney,
+    title: "mobile money",
   },
 
   {
     name: "wallet",
     logo: wallet,
+    title: "wallet",
   },
 
   {
     name: "paystack",
     logo: paystack,
+    title: "paystack",
   },
   {
-    name: "bank transfer",
+    name: "flutterwave",
     logo: bank,
+    title: "bank transfer",
   },
 ];
