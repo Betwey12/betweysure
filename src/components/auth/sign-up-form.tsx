@@ -11,7 +11,7 @@ import * as yup from "yup";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 import { HTTPRequest } from "@/api";
 import { Country } from "country-state-city";
@@ -66,6 +66,8 @@ export default function SignUpForm() {
   } = useForm<RegisterForm>({
     resolver: yupResolver(registerSchema),
   });
+  const searchParams = useSearchParams();
+  const action = searchParams.get("action");
 
   const { isPending, mutateAsync, isError } = useMutation({
     mutationFn: (data: RegisterData) => HTTPRequest.Post("auth/onboard", data),
@@ -109,6 +111,7 @@ export default function SignUpForm() {
     toast.success(response.message);
 
     await signInWithEmailAndPassword(auth, data.email, data.password);
+    if (action === "register") return;
     router.push("/auth/verify-email");
   };
 
