@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/firebase/config";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { FaCheck } from "react-icons/fa";
@@ -37,8 +37,10 @@ type LoginData = {
 export default function LoginForm() {
   const t = useTranslations("AUTH");
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [isPending, setIsPending] = useState(false);
   const { google, handleReCaptchaVerify } = useGoogleWithCaptcha();
+  const redirectTo = searchParams.get("redirect_to");
 
   const {
     register,
@@ -76,6 +78,9 @@ export default function LoginForm() {
 
       setIsPending(false);
       toast.success("Login successful");
+      if (redirectTo === "forum") {
+        return;
+      }
       router.push("/dashboard");
     } catch (e: any) {
       setIsPending(false);
