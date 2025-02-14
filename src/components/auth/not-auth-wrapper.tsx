@@ -37,7 +37,12 @@ export default function NotAuthedWrapper({ children }: NotAuthedWrapperProps) {
         redirectTo === "forum" ||
         (action === "register" && flarumUserToken)
       ) {
-        Cookie.set("flarum_remember", flarumUserToken);
+        Cookie.set("flarum_remember", flarumUserToken, {
+          domain: process.env.NEXT_PUBLIC_COOKIE_DOMAIN,
+          path: "/",
+          secure: true,
+          sameSite: "None",
+        });
 
         router.replace(forumUrl);
         return;
