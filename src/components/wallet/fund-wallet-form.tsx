@@ -102,7 +102,7 @@ export default function FundWalletForm() {
                       width={128}
                       height={48}
                       src={method.image}
-                      alt=""
+                      alt="payment method"
                       className="w-32 h-12 rounded shadow"
                     />
                     {method.name === "bank-transfer" && (

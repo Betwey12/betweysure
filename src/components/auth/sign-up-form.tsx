@@ -29,7 +29,8 @@ const registerSchema = yup.object().shape({
     .string()
     .required("Phone number is required")
     .matches(/^[0-9]+$/, "Phone number must be a number")
-    .min(10, "Phone number must be at least 10 characters"),
+    .min(10, "Phone number must be at least 10 characters")
+    .max(15, "Phone number must be at most 15 characters"),
   phonecode: yup.string(),
   referredBy: yup
     .string()

@@ -33,7 +33,7 @@ export default function LivePredictConvert() {
           width={300}
           height={300}
           src={paripersaBanner}
-          alt=""
+          alt="peripesa banner"
           className="w-full"
         />
       </Link>

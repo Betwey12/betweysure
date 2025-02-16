@@ -30,7 +30,7 @@ export default function AuthNavBar() {
 
   return (
     <nav className="absolute top-0 flex lg:items-center justify-between w-full px-4 md:px-10 lg:px-20 py-4 md:py-6 text-blue-three lg:text-white z-50">
-      <Link href="/?category=trending">
+      <Link href="/">
         <Image
           width={160}
           height={40}

@@ -28,9 +28,9 @@ export default function PaidTabs({
 
   return (
     <div className="flex gap-4 flex-col">
-      <h1 className="font-bold min-w-max">
+      <h3 className="font-bold min-w-max">
         {t("TITLE", { sport: capitalize(sport) })}
-      </h1>
+      </h3>
 
       <div className="grid grid-cols-3 lg:flex flex-wrap gap-2">
         {paidTabs.map((option) => {

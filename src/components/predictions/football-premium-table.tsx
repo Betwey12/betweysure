@@ -34,7 +34,7 @@ export default function FootballPremiumTable({
           width={30}
           height={30}
           src={leagueLogo}
-          alt=""
+          alt="home-team-logo"
           className="w-6 h-6 rounded-full bg-white"
           loading="lazy"
         />
@@ -51,7 +51,7 @@ export default function FootballPremiumTable({
           width={30}
           height={30}
           src={homeLogo ?? footballIcon}
-          alt=""
+          alt="home team logo"
           className="w-6 h-6 rounded-full bg-white"
           loading="lazy"
           onError={(e) => {
@@ -66,7 +66,7 @@ export default function FootballPremiumTable({
           width={30}
           height={30}
           src={awayLogo ?? footballIcon}
-          alt=""
+          alt="away-team-logo"
           className="w-6 h-6 rounded-full bg-white"
           loading="lazy"
           onError={(e) => {

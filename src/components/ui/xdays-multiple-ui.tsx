@@ -93,7 +93,7 @@ export default function XdaysMultipleUi({
         width={540}
         height={400}
         className="w-[360px] lg:w-[540px]"
-        alt=""
+        alt="kanu-banner"
         src={kanuBanner}
         onError={(e) => {
           e.currentTarget.src = popUpImage.src;

@@ -36,7 +36,7 @@ export default function Bundles() {
   return (
     <>
       <div className="flex items-center gap-6 justify-between">
-        <h3 className="flex-1 font-semibold">Select a plan</h3>
+        <p className="flex-1 font-semibold">Select a plan</p>
         <div className="flex items-center justify-end gap-4 flex-1">
           <p className="font-medium">Change currency: </p>
 
@@ -50,7 +50,7 @@ export default function Bundles() {
           </div>
         </div>
       </div>
-      <h3 className="text-3xl mt-6">Football plans</h3>
+      <h1 className="text-3xl mt-6">Football plans</h1>
       <div className="flex justify-between flex-col lg:flex-row gap-4 mt-10">
         {plans?.map((plan) => (
           <div

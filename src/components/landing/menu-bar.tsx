@@ -9,7 +9,8 @@ import PredictionSelect from "../ui/prediction-select";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL ?? "";
+const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL ?? "#";
+const forumUrl = process.env.NEXT_PUBLIC_FORUM_URL ?? "#";
 
 export default function MenuBar() {
   const { t, navigations } = useMenu();
@@ -32,8 +33,8 @@ export default function MenuBar() {
               target={nav?.link.includes("http") ? "_blank" : "_self"}
               href={nav.link}
             >
-              {nav.name}
-              {nav.name === t("FREE_TIPS") && (
+              {nav.title}
+              {nav.title === t("FREE_TIPS") && (
                 <sup className="text-red-500 text-xs ml-1 animate-pulse">
                   {t("ACCURACY")}
                 </sup>
@@ -74,31 +75,36 @@ function useMenu() {
   const t = useTranslations("MENU_BAR");
   const navigations = [
     {
-      name: t("HOME"),
+      title: t("HOME"),
       link: "/",
     },
     {
-      name: t("FREE_TIPS"),
+      title: t("FREE_TIPS"),
       link: user ? "/dashboard/football-predictions" : "/auth/login",
     },
     {
-      name: t("PRICING"),
+      title: t("PRICING"),
       link: "/pricing",
     },
     {
-      name: t("ACCA_BUILDER"),
+      title: t("ACCA_BUILDER"),
       link: "/acca-builder",
     },
     {
-      name: t("LIVESCORES"),
+      title: t("LIVESCORES"),
       link: "/livescores",
     },
     {
-      name: t("BLOG"),
+      title: t("BLOG"),
       link: blogUrl,
     },
     {
-      name: t("TRENDS"),
+      title: t("FORUM"),
+      link: forumUrl,
+    },
+
+    {
+      title: t("TRENDS"),
       link: "/football-trends",
     },
   ];

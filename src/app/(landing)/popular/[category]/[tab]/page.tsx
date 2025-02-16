@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     "england-premier-league": englandPremierLeague,
     "uefa-europa-league": uefaEuropaLeague,
   };
-  const meta = categories[category][tab] ?? categories[category]["DEFAULT"];
+  const meta = categories[category]?.[tab] ?? categories[category]?.["DEFAULT"];
 
   return {
     title: meta?.title || leagues.title,
