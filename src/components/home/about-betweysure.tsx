@@ -18,7 +18,7 @@ export default function AboutBetWeySure() {
             </p>
           ))}
         <Link
-          href="/about"
+          href="/about-us"
           className="flex items-center gap-2 px-4 py-2 min-w-max border border-cyan rounded-lg self-start mt-4 lg:mt-8 text-cyan"
         >
           {t("LEARN_MORE")}

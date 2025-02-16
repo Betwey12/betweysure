@@ -108,7 +108,7 @@ export function PredictionList({
           width={30}
           height={30}
           src={imgSource}
-          alt=""
+          alt="league logo"
           className="w-6 h-6 rounded-full bg-white"
           loading="lazy"
         />
@@ -140,7 +140,7 @@ export function PredictionList({
           width={30}
           height={30}
           src={home.logo}
-          alt=""
+          alt="home team logo"
           className="w-6 h-6 rounded-full bg-white"
           loading="lazy"
           onError={(e) => {
@@ -160,7 +160,7 @@ export function PredictionList({
           width={30}
           height={30}
           src={away.logo}
-          alt=""
+          alt="away team logo"
           className="w-6 h-6 rounded-full bg-white"
           loading="lazy"
           onError={(e) => {

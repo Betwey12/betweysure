@@ -88,7 +88,7 @@ export default function PredictionModal({
           <div className="flex items-center justify-center flex-col text-center">
             <Image
               src={`https://media.api-sports.io/football/teams/${match?.matchdetails?.homeID}.png`}
-              alt=""
+              alt="home team logo"
               className="w-8"
               loading="lazy"
               width={100}
@@ -103,7 +103,7 @@ export default function PredictionModal({
           <div className="flex items-center justify-center flex-col text-center">
             <Image
               src={`https://media.api-sports.io/football/teams/${match?.matchdetails?.awayID}.png`}
-              alt=""
+              alt="away team logo"
               className="w-8"
               loading="lazy"
               width={100}

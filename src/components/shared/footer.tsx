@@ -19,6 +19,9 @@ import discover from "@/assets/icons/discover-card.png";
 import bank from "@/assets/icons/bank-transfer.png";
 import Divider from "./divider";
 
+const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL ?? "#";
+const forumUrl = process.env.NEXT_PUBLIC_FORUM_URL ?? "#";
+
 export default function Footer() {
   const { t, footerLinks, paymentMethods } = useFooter();
   return (
@@ -96,7 +99,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2">
               {links.map(({ title, link }, i) => (
                 <Link
-                  href={link}
+                  href={link ?? "#"}
                   key={i}
                   className="text-xs"
                   aria-label={title}
@@ -111,7 +114,7 @@ export default function Footer() {
       <Divider className="border-[#252a33]" />
       <div className="flex items-center mt-10 justify-center gap-4">
         {paymentMethods.map((method, index) => (
-          <div key={index} className="h-3 w-6">
+          <div key={index} className="h-5 w-10">
             <Image
               alt="payment method"
               width={24}
@@ -134,7 +137,11 @@ function useFooter() {
     {
       title: t("ABOUT_US"),
       links: [
-        { title: t("BLOG"), link: "/sports-news" },
+        {
+          title: t("FORUM"),
+          link: forumUrl,
+        },
+        { title: t("BLOG"), link: blogUrl },
         {
           title: t("FAQ"),
           link: "/faq",
@@ -182,7 +189,7 @@ function useFooter() {
         { title: t("PRICING"), link: "/pricing" },
         { title: t("RESULTS"), link: "/results" },
         { title: t("PRIVACY_POLICY"), link: "/privacy" },
-        { title: t("TERMS_AMP_CONDITIONS"), link: "/t&c" },
+        { title: t("TERMS_AMP_CONDITIONS"), link: "/terms-and-conditions" },
       ],
     },
     {

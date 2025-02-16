@@ -38,7 +38,7 @@ export default function WhatsIncluded() {
 
       <div className="flex flex-col lg:flex-row gap-4 lg:items-center justify-between mt-20 dark:bg-blue-one p-4 lg:py-20 lg:px-10 border border-gray-two rounded dark:border-0">
         <div className="flex flex-col gap-2">
-          <h2 className="text-2xl">{t("CALL_TO_ACTION")}</h2>
+          <h4 className="text-2xl">{t("CALL_TO_ACTION")}</h4>
           <p>{t("CALL_TO_ACTION_DESC")}</p>
         </div>
         <AuthedLink

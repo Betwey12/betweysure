@@ -10,7 +10,8 @@ import SelectLanguage from "../ui/select-language";
 import ToggleTheme from "../ui/toggle-theme";
 import { useAuth } from "@/hooks/useAuth";
 
-const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL as string;
+const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL ?? "#";
+const forumUrl = process.env.NEXT_PUBLIC_FORUM_URL ?? "#";
 
 export default function Navbar() {
   const { navLinks, t, user } = useNav();
@@ -125,6 +126,11 @@ function useNav() {
       name: t("BLOG"),
       link: blogUrl,
     },
+    {
+      name: t("FORUM"),
+      link: forumUrl,
+    },
+
     {
       name: t("LIVESCORES"),
       link: "/livescores",

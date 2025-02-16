@@ -108,7 +108,7 @@ export default function BuyDataForm() {
                   width={48}
                   height={48}
                   src={network.logo}
-                  alt=""
+                  alt="network logo"
                   className="w-12 h-12 rounded"
                 />
               </label>

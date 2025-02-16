@@ -32,7 +32,7 @@ export default function MatchList({ result }: MatchListProps) {
           width={30}
           height={30}
           src={result?.teams?.home?.logo}
-          alt=""
+          alt="home team logo"
           className="w-4 h-4 rounded-full"
         />
         <p className="truncate">{result?.teams?.home?.name}</p>
@@ -44,7 +44,7 @@ export default function MatchList({ result }: MatchListProps) {
       <div className="lg:flex hidden items-center gap-2">
         <Image
           src={result?.teams?.away?.logo}
-          alt=""
+          alt="away team logo"
           width={30}
           height={30}
           className="w-4 h-4 rounded-full"

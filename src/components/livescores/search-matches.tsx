@@ -16,7 +16,7 @@ export default function SearchMatches({
       <div className="flex flex-col gap-2">
         <p className="font-semibold">{t("MATCH_FIXTURES_TODAY")}</p>
         <div className="flex lg:items-center gap-2 lg:text-xl">
-          <h1>{t("ALL_LEAGUES_AND_COUNTRIES")} </h1>
+          <h2>{t("ALL_LEAGUES_AND_COUNTRIES")} </h2>
           <p>|</p>
           <p>
             {noOfMatches} {t("MATCHES")}

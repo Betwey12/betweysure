@@ -10,6 +10,7 @@
     "PRICING": "Pricing",
     "ACCA_BUILDER": "ACCA Builder",
     "BLOG": "Blog",
+    "FORUM": "Forum",
     "LIVESCORES": "Livescores",
     "TRENDS": "Trends",
     "GO_TO_DASHBOARD": "Go to Dashboard"
@@ -25,6 +26,7 @@
     "FAQ": "FAQ",
     "CONTACT_US": "Contact Us",
     "BLOG": "Blog",
+    "FORUM": "Forum",
     "PREDICTIONS": "Predictions",
     "HOME_WIN": "Home Win",
     "AWAY_WIN": "Away Win",
@@ -76,6 +78,7 @@
     "ACCA_BUILDER": "ACCA Builder",
     "LIVESCORES": "Livescores",
     "BLOG": "Blog",
+    "FORUM": "Forum",
     "TRENDS": "Trends",
     "ACCURACY": "Accuracy"
   },

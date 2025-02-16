@@ -86,7 +86,7 @@ export default function OtherSportMatchList({
           height={24}
           width={24}
           src={imgSource}
-          alt=""
+          alt="country flag"
           className="w-6 h-6 rounded-full"
         />
         <p className="truncate w-[90%] text-center lg:text-left">
