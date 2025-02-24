@@ -305,9 +305,6 @@ export const countries = {
   za: "South Africa",
   zm: "Zambia",
   zw: "Zimbabwe",
-  wr: "World",
-  wrw: "ITF Women",
-  wrm: "ITF Men",
 };
 
 export const outcomes: {
