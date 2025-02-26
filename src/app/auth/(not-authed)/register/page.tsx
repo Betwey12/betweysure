@@ -1,6 +1,14 @@
+import { Metadata } from "next";
+
 import SignUpForm from "@/components/auth/sign-up-form";
 import SlideBenefits from "@/components/auth/slide-benefits";
 import { useTranslations } from "next-intl";
+import { register } from "@/constants";
+
+export const metadata: Metadata = {
+  title: register.title,
+  description: register.description,
+};
 
 export default function RegisterPage() {
   const t = useTranslations("AUTH");

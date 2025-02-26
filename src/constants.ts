@@ -16,7 +16,7 @@ const pageMetadata = {
   pricing: {
     title: "Accurate Betting Tips | Affordable Pricing Plans - Betweysure",
     description:
-      "Get access to highly accurate betting tips and predictions at affordable prices. Our flexible plans cater to all levels of bettors. Explore Betweysure's pricing today.",
+      "Get accurate betting tips at great prices. Choose a plan that fits your needs with Betweysure.",
     keywords: "accurate betting tips",
   },
   about: {
@@ -32,7 +32,7 @@ const pageMetadata = {
     title:
       "Live Football Scores & Match Updates – Real-Time Results | Betweysure",
     description:
-      "Get real-time live football scores and match updates for leagues worldwide. Follow your favorite teams with instant results, stats, and game insights on Betweysure.",
+      "Get live football scores, updates, and stats for leagues worldwide on Betweysure.",
     keywords: "live scores, football, basketball, tennis, baseball",
   },
   leagues: {
@@ -64,21 +64,42 @@ const pageMetadata = {
     keywords: "football trends, recent form analysis",
   },
   acca: {
-    title:
-      "Acca Builder: Build Winning Accumulators with Betweysure's Tips - Betweysure",
+    title: "Acca Builder: Build Winning Accumulators with Free Tips",
     description:
       "Create your accumulator with Betweysure's Acca Builder. Use AI-driven tips to select games, and customize your bets. Start building now!",
     keywords: "acca builder accumulator",
   },
+  register: {
+    title: "Get started - Betweysure",
+    description: " Set up your account to get started with Betweysure.",
+  },
+  login: {
+    title: "Get started - Betweysure",
+    description: "Create your account to start using Betweysure.",
+  },
   auth: {
     title: "Get started - Betweysure",
-    description: "Set up your account to get started with Betweysure.",
+    description: "Create your account to start using Betweysure.",
   },
+  forgotPassword: {
+    title: "Get started - Betweysure",
+    description: " Get started with Betweysure by setting up your account",
+  },
+
   dashboard: {
     title: "Dashboard - Betweysure",
-    description:
-      "Get predictions, fund your betting wallet, upgrade your plan, purchase airtime or data and more.",
+    description: "Create your account to get started with Betweysure.",
   },
+  buyPlan: {
+    title: "Buy plan - Betweysure",
+    description: "Sign up now to start your Betweysure journey.",
+    keywords: "buy plan, betweysure plan",
+  },
+  footballPredictions: {
+    title: "Football Predictions - Betweysure",
+    description: "Set up your account and start using Betweysure.",
+  },
+
   yesterday: {
     DEFAULT: {
       title: "Yesterday's Football Predictions & Results - Betweysure",
@@ -110,8 +131,7 @@ const pageMetadata = {
   },
   englandPremierLeague: {
     DEFAULT: {
-      title:
-        "Premier League Predictions & Betting Tips: Expert Analysis - Betweysure",
+      title: "Premier League Standings & Betting Tips: Expert Analysis ",
       description:
         "Stay ahead in the Premier League with Betweysure's expert predictions and betting tips. We analyze matches, track trends, and provide insights to help you make informed wagers.",
     },
@@ -186,7 +206,7 @@ const pageMetadata = {
     },
     fixtures: {
       title:
-        "Ligue 1 Fixtures & Match Schedule – Upcoming French League Games | Betweysure",
+        "Ligue 1 Fixtures & Match Schedule – Upcoming French League Games ",
       description:
         "Check the latest Ligue 1 fixtures for upcoming matches, including kick-off times, venues, and team matchups. Stay updated on the full French Ligue 1 schedule.",
     },
@@ -217,8 +237,7 @@ const pageMetadata = {
         "Enhance your La Liga betting with Betweysure's expert predictions and analysis. We delve into matches, track trends, and provide valuable insights for informed wagers.",
     },
     predictions: {
-      title:
-        "La Liga Predictions & Betting Tips – Expert Analysis & Match Insights | Betweysure",
+      title: "La Liga Predictions & Betting Tips – Expert Insights ",
       description:
         "Get expert La Liga predictions and betting tips for today's matches. Analyze team form, stats, and odds to make informed bets on Spanish La Liga games.",
     },
@@ -259,6 +278,11 @@ const pageMetadata = {
 };
 
 export const {
+  buyPlan,
+  footballPredictions,
+  forgotPassword,
+  login,
+  register,
   home,
   pricing,
   about,
