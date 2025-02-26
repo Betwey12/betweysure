@@ -1,5 +1,13 @@
+import { Metadata } from "next";
+
 import ForgotPasswordForm from "@/components/auth/forgot-password-form";
 import { useTranslations } from "next-intl";
+import { forgotPassword } from "@/constants";
+
+export const metadata: Metadata = {
+  title: forgotPassword.title,
+  description: forgotPassword.description,
+};
 
 export default function ForgotPasswordPage() {
   const t = useTranslations("AUTH");

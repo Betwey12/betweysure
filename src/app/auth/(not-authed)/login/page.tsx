@@ -3,6 +3,14 @@ import Image from "next/image";
 import LoginForm from "@/components/auth/login-form";
 import { useTranslations } from "next-intl";
 
+import { Metadata } from "next";
+import { login } from "@/constants";
+
+export const metadata: Metadata = {
+  title: login.title,
+  description: login.description,
+};
+
 export default function Login() {
   const t = useTranslations("AUTH");
   return (
