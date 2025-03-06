@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
     <!-- Landing Page -->
     <url>
@@ -25,75 +25,96 @@
         <loc>https://www.betweysure.com/dashboard/buy-plan</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/dashboard/football-predictions?country=all</loc>
+        <loc>
+        https://www.betweysure.com/dashboard/football-predictions?country=all</loc>
     </url>
     <!-- Predictions Pages -->
     <url>
-        <loc>https://www.betweysure.com/popular/today/predictions</loc>
+        <loc>
+        https://www.betweysure.com/popular/today/predictions</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/tomorrow/predictions</loc>
+        <loc>
+        https://www.betweysure.com/popular/tomorrow/predictions</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/england-premier-league/predictions</loc>
+        <loc>
+        https://www.betweysure.com/popular/england-premier-league/predictions</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/la-liga/predictions</loc>
+        <loc>
+        https://www.betweysure.com/popular/la-liga/predictions</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/bundesliga/predictions</loc>
+        <loc>
+        https://www.betweysure.com/popular/bundesliga/predictions</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/ligue-1/predictions</loc>
+        <loc>
+        https://www.betweysure.com/popular/ligue-1/predictions</loc>
     </url>
     <!-- Fixtures, Standings, Trends, and Form -->
     <url>
-        <loc>https://www.betweysure.com/popular/bundesliga/fixtures</loc>
+        <loc>
+        https://www.betweysure.com/popular/bundesliga/fixtures</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/ligue-1/standings</loc>
+        <loc>
+        https://www.betweysure.com/popular/ligue-1/standings</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/la-liga/trends</loc>
+        <loc>
+        https://www.betweysure.com/popular/la-liga/trends</loc>
     </url>
     <url>
         <loc>https://www.betweysure.com/popular/la-liga/form</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/ligue-1/fixtures</loc>
+        <loc>
+        https://www.betweysure.com/popular/ligue-1/fixtures</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/england-premier-league/standings</loc>
+        <loc>
+        https://www.betweysure.com/popular/england-premier-league/standings</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/bundesliga/trends</loc>
+        <loc>
+        https://www.betweysure.com/popular/bundesliga/trends</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/england-premier-league/trends</loc>
+        <loc>
+        https://www.betweysure.com/popular/england-premier-league/trends</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/bundesliga/standings</loc>
+        <loc>
+        https://www.betweysure.com/popular/bundesliga/standings</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/la-liga/standings</loc>
+        <loc>
+        https://www.betweysure.com/popular/la-liga/standings</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/ligue-1/trends</loc>
+        <loc>
+        https://www.betweysure.com/popular/ligue-1/trends</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/england-premier-league/form</loc>
+        <loc>
+        https://www.betweysure.com/popular/england-premier-league/form</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/la-liga/fixtures</loc>
+        <loc>
+        https://www.betweysure.com/popular/la-liga/fixtures</loc>
     </url>
     <url>
         <loc>https://www.betweysure.com/popular/ligue-1/form</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/england-premier-league/fixtures</loc>
+        <loc>
+        https://www.betweysure.com/popular/england-premier-league/fixtures</loc>
     </url>
     <url>
-        <loc>https://www.betweysure.com/popular/bundesliga/form</loc>
+        <loc>
+        https://www.betweysure.com/popular/bundesliga/form</loc>
     </url>
     <!-- Other Important Pages -->
     <url>
@@ -126,5 +147,13 @@
     <url>
         <loc>https://www.betweysure.com/terms-and-conditions</loc>
     </url>
+    <url>
+        <loc>https://www.betweysure.com/1xbet</loc>
+    </url>
+    <url>
+        <loc>https://www.betweysure.com/sportybet</loc>
+    </url>
+    <url>
+        <loc>https://www.betweysure.com/bet9ja</loc>
+    </url>
 </urlset>
-

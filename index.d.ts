@@ -672,4 +672,81 @@ declare global {
       [K in Omit<"DEFAULT">]?: string;
     }
   >;
+
+  type TPredictionsParams =
+    | "withdrawin"
+    | "statarea"
+    | "footballpredictions"
+    | "mybets"
+    | "soccereco"
+    | "soccervital"
+    | "forebet"
+    | "predictz"
+    | "olbg"
+    | "soccervista"
+    | "adibet"
+    | "zulubet"
+    | "betwizad"
+    | "focuspredict"
+    | "kingspredict"
+    | "180tips-prediction"
+    | "zuluprediction"
+    | "primatips-prediction"
+    | "legitpredict"
+    | "solopredict"
+    | "betensured"
+    | "feedinco"
+    | "tips180"
+    | "victors-predict"
+    | "supatips";
+
+  type TBettingParams =
+    | "bet9ja-prediction"
+    | "1xbet-prediction"
+    | "sportybet-prediction"
+    | "betking-prediction"
+    | "betway-prediction"
+    | "betwinner-prediction"
+    | "betano-prediction"
+    | "22bet-prediction"
+    | "betbonanza-prediction"
+    | "betika-prediction"
+    | "sportpesa-prediction"
+    | "mozzartbet-prediction"
+    | "odibets-prediction"
+    | "m-bets-prediction"
+    | "bet365-prediction"
+    | "melbet-prediction"
+    | "hollywoodbets-prediction"
+    | "worldsportsbetting"
+    | "sunbet-prediction"
+    | "bet.co.za"
+    | "sportingbet-prediction"
+    | "betway-prediction"
+    | "betpawa-prediction"
+    | "fortebet-prediction"
+    | "gal sports betting"
+    | "championbet-prediction"
+    | "bangbet-prediction"
+    | "world star betting"
+    | "meridianbet-prediction"
+    | "wasafibet-prediction"
+    | "888bet-prediction"
+    | "premierbet-prediction";
+
+  type TMediaParams =
+    | "livescore"
+    | "sofascore"
+    | "flashscore"
+    | "fotmob"
+    | "besoccer"
+    | "futbol24"
+    | "marca"
+    | "soccerway"
+    | "teamtalk"
+    | "football365"
+    | "fourfourtwo"
+    | "90min";
+
+  type TParams = TBettingParams | TMediaParams | TPredictionsParams;
 }
