@@ -674,7 +674,7 @@ declare global {
   >;
 
   type TPredictionsParams =
-    | "withdrawin"
+    | "windrawwin"
     | "statarea"
     | "footballpredictions"
     | "mybets"
@@ -725,10 +725,10 @@ declare global {
     | "betway-prediction"
     | "betpawa-prediction"
     | "fortebet-prediction"
-    | "gal sports betting"
+    | "gal-sports-betting"
     | "championbet-prediction"
     | "bangbet-prediction"
-    | "world star betting"
+    | "world-star-betting"
     | "meridianbet-prediction"
     | "wasafibet-prediction"
     | "888bet-prediction"

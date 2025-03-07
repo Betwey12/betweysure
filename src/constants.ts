@@ -783,7 +783,10 @@ export const {
   uefaEuropaLeague,
 } = pageMetadata;
 
-export const paramsaMetaData = {
+export const paramsaMetaData: Record<
+  TParams,
+  { title: string; description: string; keywords: string }
+> = {
   "1xbet-prediction": {
     title: "Guaranteed 1xbet Predictions - Betweysure",
     description:
@@ -1070,49 +1073,49 @@ export const paramsaMetaData = {
       "Get the latest football news, transfer updates, and fan-driven content with 90min. Stay connected with trending stories and analysis.",
     keywords: "90min news",
   },
-  betika: {
+  "betika-prediction": {
     title: "Betika Predictions Today – Expert Betting Tips & Insights",
     description:
       "Get daily Betika predictions, expert betting tips, and match insights to increase your winning chances.",
     keywords: "Betika predictions, Betika prediction, Betika tips",
   },
-  sportpesa: {
+  "sportpesa-prediction": {
     title: "SportPesa Predictions Today – Accurate Betting Tips & Odds",
     description:
       "Find the best SportPesa predictions today with expert analysis and football betting tips for maximum wins",
     keywords: "SportPesa predictions, SportPesa prediction, SportPesa tips",
   },
-  mozzartbet: {
+  "mozzartbet-prediction": {
     title: "MozzartBet Predictions Today – Sure Betting Insights",
     description:
       "Get MozzartBet’s top betting predictions, expert analysis, and sure football tips to help you win big.",
     keywords: "MozzartBet predictions, MozzartBet prediction, MozzartBet tips",
   },
-  odibets: {
+  "odibets-prediction": {
     title: "OdiBets Predictions Today – Sure Football Betting Tips",
     description:
       "Stay ahead with OdiBets predictions, daily expert tips, and accurate football betting analysis",
     keywords: "OdiBets predictions, OdiBets prediction, OdiBets tips",
   },
-  "m-bets": {
+  "m-bets-prediction": {
     title: "M-Bets Predictions Today – Expert Football Betting Tips",
     description:
       "Get the best M-Bets predictions with expert football tips and match insights for higher winning chances.",
     keywords: "M-Bets predictions, M-Bets prediction, M-Bets tips",
   },
-  bet365: {
+  "bet365-prediction": {
     title: "Bet365 Predictions Today – Winning Tips & Match Analysis",
     description:
       "Bet smart with Bet365 predictions! Get daily betting tips and expert match analysis for the best odds.",
     keywords: "Bet365 predictions, Bet365 prediction, Bet365 tips",
   },
-  melbet: {
+  "melbet-prediction": {
     title: "Melbet Predictions Today – Sure Betting Tips & Odds",
     description:
       "Find top Melbet predictions today, with expert betting tips and match previews to help you make informed bets.",
     keywords: "Melbet predictions, Melbet prediction, Melbet tips",
   },
-  hollywoodbets: {
+  "hollywoodbets-prediction": {
     title: "HollywoodBets Predictions – Expert Betting Tips & Analysis",
     description:
       "Get top betting predictions for HollywoodBets with expert insights, match analysis, and winning tips.",
@@ -1143,7 +1146,7 @@ export const paramsaMetaData = {
     description:
       "Get the latest SportingBet predictions with top betting strategies, odds analysis, and expert insights.",
     keywords:
-      "sportingbet predictions, sportingbet prediction, sportingbet tips",
+      "SportingBet predictions, SportingBet prediction, SportingBet tips",
   },
   "betpawa-prediction": {
     title: "BetPawa Prediction – Accurate Betting Tips & Match Analysis",
