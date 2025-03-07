@@ -1886,3 +1886,217 @@ export const popularPredictionstabs = [
   "form",
   "fixtures",
 ];
+
+export const bettingSites: Record<TBettingParams, { title: string }> = {
+  "bet9ja-prediction": {
+    title: "Bet9ja predictions: Expert Betting Tips & Insights",
+  },
+  "1xbet-prediction": {
+    title: "1xbet Predictions: Football Betting Tips with Expert Analysis",
+  },
+  "sportybet-prediction": {
+    title: "Sportybet Predictions: Football Betting Tips with Expert Analysis",
+  },
+  "betking-prediction": {
+    title: "BetKing Predictions & Expert Betting Tips for Today",
+  },
+  "betway-prediction": {
+    title: "Betway Predictions & Expert Betting Tips for Maximum Wins",
+  },
+  "betwinner-prediction": {
+    title: "BetWinner Predictions & Sure Betting Tips for Today",
+  },
+  "betano-prediction": {
+    title: "Betano Predictions & Pro Betting Tips for Smart Bettors",
+  },
+  "22bet-prediction": {
+    title: "22Bet Predictions & Expert Betting Insights for Today",
+  },
+  "betbonanza-prediction": {
+    title: "BetBonanza Predictions & Pro Betting Picks for Big Wins",
+  },
+  "betika-prediction": {
+    title: "Betika Predictions & Sure Betting Tips for Today",
+  },
+  "sportpesa-prediction": {
+    title: "SportPesa Predictions Today – Accurate Betting Tips & Odds",
+  },
+  "mozzartbet-prediction": {
+    title: "MozzartBet Predictions & Pro Betting Advice",
+  },
+  "odibets-prediction": {
+    title: "OdiBets Predictions & Winning Betting Strategies",
+  },
+  "m-bets-prediction": {
+    title: "M-Bets Predictions & Smart Betting Advice",
+  },
+  "bet365-prediction": {
+    title: "Bet365 Predictions & Football Betting Insights",
+  },
+  "melbet-prediction": {
+    title: "Melbet Predictions & Expert Football Betting Advice",
+  },
+  "hollywoodbets-prediction": {
+    title: "HollywoodBets Betting Predictions & Tips",
+  },
+  worldsportsbetting: {
+    title: "WorldSportsBetting Match Predictions & Insights",
+  },
+  "sunbet-prediction": {
+    title: "SunBet Betting Predictions & Match Analysis",
+  },
+  "bet.co.za": {
+    title: "Bet.co.za Betting Predictions & Expert Tips",
+  },
+  "sportingbet-prediction": {
+    title: "SportingBet Match Predictions & Betting Tips",
+  },
+  "betpawa-prediction": {
+    title: "BetPawa Betting Predictions & Expert Tips",
+  },
+  "fortebet-prediction": {
+    title: "ForteBet Betting Predictions & Odds Insights",
+  },
+  "gal-sports-betting": {
+    title: "Gal Sports Betting Tips & Match Predictions",
+  },
+  "championbet-prediction": {
+    title: "ChampionBet Expert Betting Predictions",
+  },
+  "bangbet-prediction": {
+    title: "BangBet Betting Tips & Match Forecasts",
+  },
+  "world-star-betting": {
+    title: "World Star Betting Expert Predictions & Strategies",
+  },
+  "meridianbet-prediction": {
+    title: "MeridianBet Betting Predictions & Insights",
+  },
+  "wasafibet-prediction": {
+    title: "WasafiBet Expert Betting Predictions & Strategies",
+  },
+  "888bet-prediction": {
+    title: "888Bet Betting Predictions & Match Insights",
+  },
+  "premierbet-prediction": {
+    title: "PremierBet Expert Betting Predictions & Insights",
+  },
+};
+
+export const predictionSites: Record<TPredictionsParams, { title: string }> = {
+  windrawwin: {
+    title: "Windrawwin Football Predictions: Expert Tips & Match Insights",
+  },
+  statarea: {
+    title: "Statarea Football Predictions: Data-Driven Betting Tips",
+  },
+  footballpredictions: {
+    title: "FootballPredictions: Expert Betting Tips & Match Forecasts",
+  },
+  mybets: {
+    title: "MyBets Football Predictions: Daily Tips & Winning Strategies",
+  },
+  soccereco: {
+    title: "SoccerEco Football Predictions: Expert Analysis & Betting Tips",
+  },
+  soccervital: {
+    title: "SoccerVital Football Predictions: Stats, Tips & Winning Strategies",
+  },
+  forebet: {
+    title: "Forebet AI Football Predictions: Smart Betting Tips & Analysis",
+  },
+  predictz: {
+    title: "PredictZ Football Predictions: Free Tips & Expert Insights",
+  },
+  olbg: {
+    title: "OLBG Football Predictions: Top Tipsters & Betting Tips",
+  },
+  soccervista: {
+    title: "SoccerVista Football Predictions: Daily Tips & Match Insights",
+  },
+  adibet: {
+    title: "Adibet Football Predictions: Expert Tips & Match Analysis",
+  },
+  zulubet: {
+    title: "Zulubet Football Predictions: Expert Tips & Betting Insights",
+  },
+  betwizad: {
+    title: "Betwizad Football Predictions: Expert Tips & Winning Strategies",
+  },
+  focuspredict: {
+    title: "FocusPredict Football Predictions: Expert Analysis & Tips",
+  },
+  kingspredict: {
+    title: "KingsPredict Football Predictions: Winning Tips & Strategies",
+  },
+  "180tips-prediction": {
+    title: "180Tips Football Predictions: Expert Insights & Betting Tips",
+  },
+  zuluprediction: {
+    title: "ZuluPrediction Football Predictions: Expert Tips & Analysis",
+  },
+  "primatips-prediction": {
+    title: "Primatips Football Predictions: Winning Strategies & Tips",
+  },
+  legitpredict: {
+    title: "LegitPredict Football Predictions: Reliable Tips & Analysis",
+  },
+  solopredict: {
+    title: "SoloPredict Football Predictions: Expert Tips & Winning Strategies",
+  },
+  betensured: {
+    title: "Betensured Football Predictions: Expert Tips & Insights",
+  },
+  feedinco: {
+    title: "Feedinco Football Predictions: AI-Powered Tips & Analysis",
+  },
+  tips180: {
+    title: "Tips180 Football Predictions: Expert Tips & Winning Insights",
+  },
+  "victors-predict": {
+    title:
+      "Victors Predict Football Tips: Expert Insights & Winning Strategies",
+  },
+  supatips: {
+    title: "SupaTips Football Predictions: Expert Tips & Winning Advice",
+  },
+};
+
+export const mediaSites: Record<TMediaParams, { title: string }> = {
+  livescore: {
+    title: "Live Football Scores & Match Updates – LiveScore",
+  },
+  sofascore: {
+    title: "Real-Time Sports Scores & Analytics – SofaScore",
+  },
+  flashscore: {
+    title: "Fast & Accurate Live Scores – FlashScore",
+  },
+  fotmob: {
+    title: "Live Football Scores & Latest News – FotMob",
+  },
+  besoccer: {
+    title: "Live Football Scores & Breaking News – BeSoccer",
+  },
+  futbol24: {
+    title: "Quickest Live Football Scores & Results – Futbol24",
+  },
+  marca: {
+    title: "Spanish Football News & La Liga Insights – Marca",
+  },
+  soccerway: {
+    title: "Football Statistics & Match Insights – Soccerway",
+  },
+  teamtalk: {
+    title: "Football News & Transfer Rumors – TeamTalk",
+  },
+  football365: {
+    title: "Latest Football News & Expert Analysis – Football365",
+  },
+  fourfourtwo: {
+    title: "Football Features, Interviews & Analysis – FourFourTwo",
+  },
+  "90min": {
+    title: "Football News & Transfer Rumors – 90min",
+  },
+};

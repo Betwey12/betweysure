@@ -25,7 +25,8 @@ import {
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import LeaguesExplained from "@/components/leagues/leagues-explained";
-import { period } from "@/assets/data/data";
+import { leagueList, period } from "@/assets/data/data";
+import { capitalize } from "@/lib/utils";
 
 type Props = {
   params: { category: string; tab: TLeagueMetaTabs };
@@ -70,12 +71,41 @@ export default function PopularPage({
   const tab = (params["tab"] || "") as TLeagueTabs;
   const { t, cta } = usePopularLeagues(category);
   const formattedCategory = category?.toUpperCase().replace(/-/g, "_");
-  const isPeriod = category && period.includes(category);
+  const isPeriod = !!category && period.includes(category);
+  const popularLeagues = [...Object.values(leagueList)].flat();
+
+  const popularLeague = popularLeagues?.find(
+    (l) =>
+      l.name.toLowerCase() ===
+      decodeURIComponent(category)?.toLowerCase()?.replace(/-/g, " ")
+  );
+
+  const formatCategory = category?.toUpperCase()?.replace(/-/g, "_");
 
   return (
     <>
       <OtherPagesHero />
-      <LeaguePredictions category={category} tab={tab} />
+      <LeaguePredictions
+        isPeriod={isPeriod}
+        category={category}
+        tab={tab}
+        periodTitle={t(`${formatCategory}_TITLE` as any)}
+        popularLeague={popularLeague}
+        description={
+          t(`${formattedCategory}_DESCRIPTION` as any) !==
+          `LEAGUE_INFO.${formatCategory}_DESCRIPTION`
+            ? t(`${formatCategory}_DESCRIPTION` as any)
+            : t("DESCRIPTION", {
+                league: capitalize(popularLeague?.name ?? ""),
+              })
+        }
+        title={
+          t(`${formatCategory}_TITLE` as any) !==
+          `LEAGUE_INFO.${formatCategory}_TITLE`
+            ? t(`${formatCategory}_TITLE` as any)
+            : t("TITLE", { league: capitalize(popularLeague?.name ?? "") })
+        }
+      />
       <div className="px-4 md:px-10 lg:px-20 flex flex-col gap-4 lg:gap-6">
         {!isPeriod && <LeaguesExplained category={category} tab={tab} />}
 
