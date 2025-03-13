@@ -35,6 +35,7 @@ export default function ParamsPage({ params }: { params: { param: TParams } }) {
       <PredictionPage
         title={predictionSite.title}
         description={t("TODAY_DESCRIPTION")}
+        predictionSite={param}
       />
     );
   if (mediaSite) return <MediaPage />;
