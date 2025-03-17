@@ -38,5 +38,7 @@ export const olbgContent = `
     <li  style="margin-bottom:16px"><strong>Opt for Betweysure</strong> if you’re a beginner or casual bettor seeking simple, reliable tips and step-by-step guidance.</li>
 </ul>
 
+    <p style="margin: 10px 0;">Visit <a href="https://www.olbg.com/" target="_blank" style="color: #13c1d6"><strong>OLBG</strong></a> today and take your soccer betting game to the next level!</p>
+
 <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/adibet" style="color: #13c1d6"><strong>Adibet</strong></a> page!</p>
 `;

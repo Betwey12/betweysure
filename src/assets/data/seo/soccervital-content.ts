@@ -75,5 +75,8 @@ export const soccervitalContent = `
 
 <p style="margin: 10px 0;">For beginners, Betweysure offers a simpler, more guided approach, while Soccervital caters to all bettors with its wide coverage and advanced analytics.</p>
 
+    <p style="margin: 10px 0;"><strong>Don’t wait — visit <a href="https://www.soccervital.com/" target="_blank" style="color: #13c1d6">Soccervital</a> today and elevate your betting strategy!</strong></p>
+
+
 <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/forebet" style="color: #13c1d6"><strong>Forebet</strong></a> page!</p>
 `;

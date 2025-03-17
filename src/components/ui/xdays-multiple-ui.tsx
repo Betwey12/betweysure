@@ -37,6 +37,7 @@ interface XdaysMultipleUiProps {
   partnerLink: string;
   investment: number;
   bookie?: string;
+  currency?: string;
 }
 
 export default function XdaysMultipleUi({
@@ -45,6 +46,7 @@ export default function XdaysMultipleUi({
   partnerLink,
   investment = 300,
   bookie = "sportsbet",
+  currency = "NGN",
 }: XdaysMultipleUiProps) {
   const { resolvedTheme } = useTheme();
   const { setPopUp } = usePopUp();
@@ -78,7 +80,8 @@ export default function XdaysMultipleUi({
           href={partnerLink}
           className="font-semibold bg-cyan py-3 rounded flex items-center justify-center text-white"
         >
-          {investment} returns {formatCurrency(returns, "NGN")}
+          {formatCurrency(investment, currency)} returns{" "}
+          {formatCurrency(returns, currency)}
         </Link>
         <p className="self-end text-yellow-500">18+</p>
       </div>

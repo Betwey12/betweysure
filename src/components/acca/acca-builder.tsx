@@ -178,8 +178,8 @@ export default function AccumulatorBuilderForm({
   }, [accaGames.length, accaOptions?.games, mutateAsync]);
 
   return (
-    <div className="w-full px-4 relative text-blue-one dark:text-white flex flex-col items-center">
-      <div className="grid lg:grid-cols-3 gap-20 w-full">
+    <div className="relative flex w-full flex-col items-center px-4 text-blue-one dark:text-white">
+      <div className="grid w-full gap-20 lg:grid-cols-3">
         {isLoading ? (
           <Spinner />
         ) : (
@@ -194,11 +194,11 @@ export default function AccumulatorBuilderForm({
         )}
 
         <form
-          className="flex flex-col w-full items-center justify-center my-6"
+          className="my-6 flex w-full flex-col items-center justify-center"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <fieldset className="w-full lg:max-w-xs flex flex-col gap-4">
-            <fieldset className="flex flex-col gap-2 w-full">
+          <fieldset className="flex w-full flex-col gap-4 lg:max-w-xs">
+            <fieldset className="flex w-full flex-col gap-2">
               <label htmlFor="games" className="text-center">
                 {t("NO_OF_GAMES")}
               </label>
@@ -208,7 +208,7 @@ export default function AccumulatorBuilderForm({
                   "w-full px-4 py-3 rounded bg-white text-lg text-gray-one focus:outline-none shadaow border-gray-one border",
                   {
                     "border-red-500": errors.games,
-                  }
+                  },
                 )}
                 {...register("games")}
               >
@@ -219,10 +219,10 @@ export default function AccumulatorBuilderForm({
                 ))}
               </select>
               {errors.games && (
-                <p className="text-red-500 text-xs">{errors.games.message}</p>
+                <p className="text-xs text-red-500">{errors.games.message}</p>
               )}
             </fieldset>
-            <fieldset className="flex flex-col gap-2 w-full">
+            <fieldset className="flex w-full flex-col gap-2">
               <label className="text-center">{t("WHAT_MARKETS")}</label>
               {[
                 "1X2",
@@ -233,7 +233,7 @@ export default function AccumulatorBuilderForm({
                 <label
                   key={m}
                   htmlFor={m}
-                  className="flex items-center gap-2 text-sm cursor-pointer select-none"
+                  className="flex cursor-pointer select-none items-center gap-2 text-sm"
                 >
                   <input
                     {...register("markets")}
@@ -248,7 +248,7 @@ export default function AccumulatorBuilderForm({
                       "w-5 h-5 rounded bg-white border border-cyan peer-checked:bg-[#2A2E45] flex items-center justify-center text-white",
                       {
                         "border-red-500": errors.markets,
-                      }
+                      },
                     )}
                   >
                     <FaCheck className="text-xs" />
@@ -257,13 +257,13 @@ export default function AccumulatorBuilderForm({
                 </label>
               ))}
               {errors.markets && (
-                <p className="italic text-xs text-red-500">
+                <p className="text-xs italic text-red-500">
                   {errors.markets.message}
                 </p>
               )}
             </fieldset>
 
-            <fieldset className="flex flex-col gap-2 w-full">
+            <fieldset className="flex w-full flex-col gap-2">
               <label htmlFor="timeframe" className="text-center">
                 {t("SELECT_TIMEFRAME")}
               </label>
@@ -273,7 +273,7 @@ export default function AccumulatorBuilderForm({
                   "w-full px-4 py-3 rounded bg-white text-lg text-gray-one focus:outline-none shadaow border-gray-one border",
                   {
                     "border border-red-500": errors.timeframe,
-                  }
+                  },
                 )}
                 {...register("timeframe")}
               >
@@ -289,7 +289,7 @@ export default function AccumulatorBuilderForm({
                 ))}
               </select>
               {errors.timeframe && (
-                <p className="text-red-500 text-xs">
+                <p className="text-xs text-red-500">
                   {errors.timeframe.message}
                 </p>
               )}
@@ -297,7 +297,7 @@ export default function AccumulatorBuilderForm({
             {user && (
               <Button
                 disabled={!canUseAcca}
-                className="bg-cyan text-white disabled:bg-gray-one disabled:cursor-not-allowed flex items-center justify-center py-3"
+                className="flex items-center justify-center bg-cyan py-3 text-white disabled:cursor-not-allowed disabled:bg-gray-one"
               >
                 {t("BUILD_ACCA")}
               </Button>
@@ -310,10 +310,11 @@ export default function AccumulatorBuilderForm({
           <XdaysMultiple
             maxAccuracy={60}
             maxOdds={4}
-            investment={500}
+            investment={5}
             noOfGames={3}
             partnerLink="https://aff.partners.io/visit/?bta=45585&nci=7672"
             bookie={bookie ?? "sportsbet"}
+            currency="USD"
           />
         )}
       </div>
@@ -321,19 +322,19 @@ export default function AccumulatorBuilderForm({
       {!user ? (
         <Link
           href="/auth/login"
-          className="bg-cyan px-4 py-2 rounded text-white mt-4 cursor-pointer"
+          className="mt-4 cursor-pointer rounded bg-cyan px-4 py-2 text-white"
         >
           {t("LOGIN_TO_BUILD")}
         </Link>
       ) : (
         !canUseAcca && (
           <>
-            <p className="text-red-400 mt-4 max-w-lg text-center">
+            <p className="mt-4 max-w-lg text-center text-red-400">
               {t("MAX_SLIPS")}
             </p>
             <Link
               href={"/dashboard/buy-plan"}
-              className="bg-cyan px-4 py-2 rounded text-white mt-4 cursor-pointer"
+              className="mt-4 cursor-pointer rounded bg-cyan px-4 py-2 text-white"
             >
               {t("UPGRADE_BUTTON")}
             </Link>
@@ -344,23 +345,23 @@ export default function AccumulatorBuilderForm({
       {accaOptions?.markets?.length && (
         <>
           {accaGames?.length > 0 ? (
-            <div className="flex flex-col gap-2 my-20 items-start">
+            <div className="my-20 flex flex-col items-start gap-2">
               {accaGames.length < (accaOptions?.games ?? 0) && (
-                <p className="text-red-400 mb-10 leading-4">
+                <p className="mb-10 leading-4 text-red-400">
                   {t("INCOMPLETE_GAMES", {
                     noOfGames: accaGames?.length,
                   })}
                 </p>
               )}
 
-              <p className="bg-cyan rounded-[0_999px_999px_0] px-4 py-2 text-white">
+              <p className="rounded-[0_999px_999px_0] bg-cyan px-4 py-2 text-white">
                 {t("YOUR_ACCA")}
               </p>
 
               {accaGames?.map((game, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center shadow justify-center w-full py-3 gap-3 border-gray-two odd:border-b dark:bg-blue-one dark:border-0"
+                  className="flex w-full flex-col items-center justify-center gap-3 border-gray-two py-3 shadow odd:border-b dark:border-0 dark:bg-blue-one"
                 >
                   <p className="text-gray-one">
                     {game.home} VS {game.away}
@@ -372,13 +373,13 @@ export default function AccumulatorBuilderForm({
               <Link
                 target="_blank"
                 href="https://aff.partners.io/visit/?bta=45585&nci=7672"
-                className="font-semibold w-full mt-6 bg-cyan py-3 rounded flex items-center justify-center text-white"
+                className="mt-6 flex w-full items-center justify-center rounded bg-cyan py-3 font-semibold text-white"
               >
                 Place Bet
               </Link>
             </div>
           ) : (
-            <p className="text-red-400 mb-10">{t("NO_MATCHES")}</p>
+            <p className="mb-10 text-red-400">{t("NO_MATCHES")}</p>
           )}
         </>
       )}

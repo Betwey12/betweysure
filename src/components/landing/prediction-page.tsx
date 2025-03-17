@@ -15,8 +15,6 @@ export default function PredictionPage({
   description,
   predictionSite,
 }: IPredictionPageProps) {
-  console.log(paramsSeoText[predictionSite] ?? "", "here pred");
-
   return (
     <>
       <OtherPagesHero />

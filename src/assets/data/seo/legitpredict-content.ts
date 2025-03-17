@@ -64,5 +64,7 @@ If you're a football enthusiast looking for accurate and reliable soccer predict
   <li style="margin-bottom: 16px;">Both platforms are excellent choices, but your decision should depend on your betting experience and preferences.</li>
 </ul>
 
+    <p style="margin: 10px 0;">Visit <a href="https://legitpredict.com/" target="_blank" style="color: #13c1d6"><strong>legitpredict</strong></a> today and take your soccer betting game to the next level!</p>
+
 <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/solopredict" style="color: #13c1d6"><strong>Solopredict</strong></a> page!</p>
 `;

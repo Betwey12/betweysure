@@ -43,5 +43,7 @@ If you’re searching for a platform that combines cutting-edge technology with 
   <li style="margin-bottom: 16px;">While platforms like Betweysure focus on beginner-friendly tips and strategies, Feedinco caters to a broader audience with its in-depth analysis and global coverage. Feedinco is ideal for both beginners and experienced bettors, offering detailed insights into match outcomes.</li>
 </ul>
 
+    <p style="margin: 10px 0;">Visit <a href="https://www.feedinco.com/" target="_blank" style="color: #13c1d6"><strong>Feedinco</strong></a> today and take your soccer betting game to the next level!</p>
+
 <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/victors-predict" style="color: #13c1d6"><strong>Victor's Predict</strong></a> page!</p>
 `;

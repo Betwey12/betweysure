@@ -38,6 +38,9 @@ export const footballpredictionsContent = `
     <li>Opt for FootballPredictions.com if you’re an experienced bettor seeking global coverage, in-depth analysis, and multiple betting markets.</li>
     <li>Both platforms are excellent choices, but your decision should depend on your betting experience and preferences.</li>
 </ul>
+
+    <p style="margin: 10px 0;">Visit <a href="https://footballpredictions.com/" target="_blank" style="color: #13c1d6"><strong>FootballPredictions</strong></a> today and take your soccer betting game to the next level!</p>
+
     <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/soccereco" style="color: #13c1d6"><strong>Soccereco</strong></a> page!</p>
 
 `;

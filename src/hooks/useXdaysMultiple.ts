@@ -38,23 +38,32 @@ export default function useXdaysMultiple({
       oddPredictionsKeys.some(
         (key) =>
           +(prediction[key.key] ?? "0") >= maxAccuracy &&
-          dayjs(prediction.date).isAfter(dayjs().add(1, "minute"))
-      )
+          dayjs(prediction.date).isAfter(dayjs().add(1, "minute")),
+      ),
     )
-    .reduce((acc, prediction) => {
-      oddPredictionsKeys.forEach(({ key, oddsKey }) => {
-        if (+(prediction[key] ?? "0") >= maxAccuracy) {
-          acc.push({
-            id: prediction.id,
-            home: prediction.homeTeam,
-            away: prediction.awayTeam,
-            prediction: key,
-            odds: +(prediction[oddsKey] ?? "0"),
-          });
-        }
-      });
-      return acc;
-    }, [] as Array<{ id: number; home: string; away: string; prediction: keyof Prediction; odds: number }>)
+    .reduce(
+      (acc, prediction) => {
+        oddPredictionsKeys.forEach(({ key, oddsKey }) => {
+          if (+(prediction[key] ?? "0") >= maxAccuracy) {
+            acc.push({
+              id: prediction.id,
+              home: prediction.homeTeam,
+              away: prediction.awayTeam,
+              prediction: key,
+              odds: +(prediction[oddsKey] ?? "0"),
+            });
+          }
+        });
+        return acc;
+      },
+      [] as Array<{
+        id: number;
+        home: string;
+        away: string;
+        prediction: keyof Prediction;
+        odds: number;
+      }>,
+    )
     .filter((prediction) => prediction.odds <= maxOdds)
     .sort((a, b) => b.odds - a.odds)
     ?.slice(0, noOfGames);

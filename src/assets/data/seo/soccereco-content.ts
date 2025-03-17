@@ -50,6 +50,8 @@ export const soccerecoContent = `
     <li>Each platform has its strengths, so your choice should depend on your betting experience, preferences, and the level of detail you need.</li>
 </ul>
 
+    <p style="margin: 10px 0;">Visit <a href="https://www.soccereco.com/" target="_blank" style="color: #13c1d6"><strong>Soccereco</strong></a> today and take your soccer betting game to the next level!</p>
+
     <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/soccervital" style="color: #13c1d6"><strong>Soccervital</strong></a> page!</p>
 
 

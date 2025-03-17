@@ -50,5 +50,7 @@ export const focuspredictContent = `
   <li style="margin-bottom: 16px;">Both platforms are excellent choices, but your decision should depend on your betting experience and preferences.</li>
 </ul>
 
+    <p style="margin: 10px 0;">Visit <a href="https://focuspredict.com/" target="_blank" style="color: #13c1d6"><strong>Focuspredict</strong></a> today and take your soccer betting game to the next level!</p>
+
 <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/kingspredict" style="color: #13c1d6"><strong>Kingspredict</strong></a> page!</p>
 `;

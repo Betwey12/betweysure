@@ -87,19 +87,27 @@ function useQuickLinks() {
     },
     {
       title: t("1XBET_PREDICTIONS"),
-      href: "/1xbet",
+      href: "/1xbet-prediction",
     },
     {
       title: t("BET9JA_PREDICTIONS"),
-      href: "/bet9ja",
+      href: "/bet9ja-prediction",
     },
     {
       title: t("SPORTYBET_PREDICTIONS"),
-      href: "/sportybet",
+      href: "/sportybet-prediction",
+    },
+    {
+      title: "Predictz Betting Tips",
+      href: "/predictz",
+    },
+    {
+      title: "Jackpot Betting",
+      href: "/jackpot-betting",
     },
     {
       title: t("LIVESCORES"),
-      href: "/livescores",
+      href: "/livescore",
     },
     {
       title: t("OVER/UNDER"),

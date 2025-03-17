@@ -37,5 +37,9 @@ export const zulubetContent = `
   <li style="margin-bottom: 16px;">Both platforms are excellent choices, but your decision should depend on your betting experience and preferences.</li>
 </ul>
 
+    <p style="margin: 10px 0;">Visit <a href="https://www.zulubet.com/" target="_blank" rel="noopener noreferrer" style="color: #13c1d6"><strong>Zulubet</strong></a> today and take your soccer betting game to the next level!</p>
+
+<p style="margin: 10px 0;">Visit <a href="https://www.zulubet.com/" target="_blank" style="color: #13c1d6"><strong>Zulubet</strong></a> today and take your soccer betting game to the next level!</p>
+
 <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/betwizad" style="color: #13c1d6"><strong>Betwizad</strong></a> page!</p>
 `;

@@ -90,5 +90,7 @@ export const forebetContent = `
 <p style="margin: 10px 0;">Betweysure is best for beginners seeking simple, guided strategies to improve their betting performance.</p>
 <p style="margin: 10px 0;">Each platform has its strengths, so your choice should depend on your betting style and preferences.</p>
 
+    <p style="margin: 10px 0;">Visit <a href="https://www.forebet.com/" target="_blank" style="color: #13c1d6"><strong>Forebet</strong></a> today and take your soccer betting game to the next level!</p>
+
 <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/olbg" style="color: #13c1d6"><strong>OLBG</strong></a> page!</p>
 `;

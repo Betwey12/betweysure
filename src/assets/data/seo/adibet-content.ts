@@ -78,5 +78,7 @@ export const adibetContent = `
 <p style="margin: 10px 0;">Betweysure is perfect for beginners seeking simple, reliable tips and step-by-step guidance.</p>
 <p style="margin: 10px 0;">Both platforms are excellent choices, but your decision should depend on your betting experience and preferences.</p>
 
+    <p style="margin: 10px 0;">Visit <a href="https://www.adibet.com/" target="_blank" style="color: #13c1d6"><strong>Adibet</strong></a> today and take your soccer betting game to the next level!</p>
+
 <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/zulubet" style="color: #13c1d6"><strong>Zulubet</strong></a> page!</p>
 `;
