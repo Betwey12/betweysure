@@ -6,7 +6,9 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const formatCurrency = (amount: number, currency = "NGN") => {
-  return amount.toLocaleString("en-NG", {
+  const locale =
+    currency === "NGN" ? "en-NG" : currency === "USD" ? "en-US" : "en-GB";
+  return amount.toLocaleString(locale, {
     style: "currency",
     currency,
     minimumFractionDigits: 2,
@@ -25,7 +27,7 @@ export function capitalize(str: string) {
 }
 
 export function getDate(
-  filter: "yesterday" | "today" | "tomorrow" | "last week" | "next two days"
+  filter: "yesterday" | "today" | "tomorrow" | "last week" | "next two days",
 ) {
   const todaysDate = new Date();
   const offsets = {

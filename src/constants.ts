@@ -1,28 +1,78 @@
 import { adibetContent } from "./assets/data/seo/adibet-content";
+import { bangbetContent } from "./assets/data/seo/bangbet-content";
+import { besoccerContent } from "./assets/data/seo/besoccer-content";
+import { bet365Content } from "./assets/data/seo/bet365-content";
+import { bet9jaContent } from "./assets/data/seo/bet9ja-content";
+import { betanoContent } from "./assets/data/seo/betano-content";
+import { betbonanzaContent } from "./assets/data/seo/betbonanza-content";
+import { betcozaContent } from "./assets/data/seo/betcoza-content";
+import { betikaContent } from "./assets/data/seo/betika-content";
+import { betpawaContent } from "./assets/data/seo/betpawa-content";
+import { betwayContent } from "./assets/data/seo/betway-content";
+import { betwinnerContent } from "./assets/data/seo/betwinner-content";
 import { betwizadContent } from "./assets/data/seo/betwizad-content";
+import { bookingCodesContent } from "./assets/data/seo/booking-codes-content";
+import { bothTeamsToScoreContent } from "./assets/data/seo/both-teams-content";
 import { bundesligaContent } from "./assets/data/seo/bundesliga-content";
+import { championsbetContent } from "./assets/data/seo/championsbet-content";
+import { correctscoreContent } from "./assets/data/seo/correct-score-content";
+import { drawContent } from "./assets/data/seo/draw-content";
 import { englandPremierLeagueContent } from "./assets/data/seo/england-premier-league-content";
+import { flashscoreContent } from "./assets/data/seo/flashscore-content";
 import { focuspredictContent } from "./assets/data/seo/focuspredict-content";
+import { football365Content } from "./assets/data/seo/football365-content";
 import { footballpredictionsContent } from "./assets/data/seo/footballprediction-content";
 import { forebetContent } from "./assets/data/seo/forebet-content";
+import { fortebetContent } from "./assets/data/seo/fortebet-content";
+import { fotmobContent } from "./assets/data/seo/fotmob-content";
+import { fourfourtwoContent } from "./assets/data/seo/fourfourtwo-content";
 import { freedincoContent } from "./assets/data/seo/freedinco-content";
+import { futbol24Content } from "./assets/data/seo/futbol-content";
+import { galSportsBettingContent } from "./assets/data/seo/gal-content";
+import { HollywoodbetsContent } from "./assets/data/seo/hollywood-content";
+import { jackpotBettingContent } from "./assets/data/seo/jackpot-betting-content";
 import { kingspredictContent } from "./assets/data/seo/kingspredict-content";
 import { laLigaContent } from "./assets/data/seo/laliga-content";
 import { legitpredictContent } from "./assets/data/seo/legitpredict-content";
 import { ligue1Content } from "./assets/data/seo/ligue-1-content";
-import { livescoresContent } from "./assets/data/seo/livescore-content";
+import { livescoreContent } from "./assets/data/seo/livescore-content";
+import { livescoresContent } from "./assets/data/seo/livescores-content";
+import { mBetsContent } from "./assets/data/seo/m-bet-content";
+import { marcaContent } from "./assets/data/seo/marca-content";
+import { melbetContent } from "./assets/data/seo/melbet-content";
+import { meridianbetContent } from "./assets/data/seo/meridianbet-content";
+import { mozzartbetContent } from "./assets/data/seo/mozzar-content";
+import { ninetyMinContent } from "./assets/data/seo/ninetymin-content";
+import { odibetContent } from "./assets/data/seo/odibets-content";
 import { olbgContent } from "./assets/data/seo/olbg-content";
+import { over15Content } from "./assets/data/seo/over1-content";
+import { over25Content } from "./assets/data/seo/over2-content";
 import { predictZContent } from "./assets/data/seo/predictz-content";
+import { premierbetContent } from "./assets/data/seo/premier-bet-content";
 import { primaTipsContent } from "./assets/data/seo/primatips-content";
 import { soccerecoContent } from "./assets/data/seo/soccereco-content";
 import { soccervistaContent } from "./assets/data/seo/soccervista-content";
 import { soccervitalContent } from "./assets/data/seo/soccervital-content";
+import { soccerwayContent } from "./assets/data/seo/soccerway-content";
+import { sofascoreContent } from "./assets/data/seo/sofascore-content";
 import { solopredictContent } from "./assets/data/seo/solopredict-content";
+import { sportsbetContent } from "./assets/data/seo/sportbet-content";
+import { sportpesaContent } from "./assets/data/seo/sportpesa-content";
+import { sportybetContent } from "./assets/data/seo/sportybet-content";
+import { stakePredictionContent } from "./assets/data/seo/stake-content";
 import { statareaContent } from "./assets/data/seo/statarea-content";
+import { sunbetContent } from "./assets/data/seo/sunbet-content";
 import { supatipsContent } from "./assets/data/seo/supatips-content";
+import { teamtalkContent } from "./assets/data/seo/teamtalk-content";
 import { tips180Content } from "./assets/data/seo/tips180-content";
+import { trippleEightBetContent } from "./assets/data/seo/tripple-eight-content";
+import { tewntyTwoBetContent } from "./assets/data/seo/twnty-two-content";
 import { victorspredictContent } from "./assets/data/seo/victorspredict-content";
+import { wasafibetContent } from "./assets/data/seo/wasafibet-content";
 import { windrawwinContent } from "./assets/data/seo/windrawwin-content";
+import { worldsportsbettingContent } from "./assets/data/seo/wordsport-content";
+import { worldStarBettingContent } from "./assets/data/seo/world-star-content";
+import { xbetContent } from "./assets/data/seo/xbet-content";
 import { zulubetContent } from "./assets/data/seo/zulubet-content";
 
 export const specificLeagueSeoText: TLeagueSeoText = {
@@ -36,7 +86,7 @@ export const otherPagesSeoText = {
   livescores: livescoresContent,
 };
 
-// @ts-expect-error TODO: Remove ignore and continue
+// @ts-expect-error ignore for now
 export const paramsSeoText: Record<TParams, string> = {
   predictz: predictZContent,
   soccervista: soccervistaContent,
@@ -59,6 +109,56 @@ export const paramsSeoText: Record<TParams, string> = {
   feedinco: freedincoContent,
   "victors-predict": victorspredictContent,
   supatips: supatipsContent,
+  "bet9ja-prediction": bet9jaContent,
+  "sportybet-prediction": sportybetContent,
+  "1xbet-prediction": xbetContent,
+  "betway-prediction": betwayContent,
+  "betwinner-prediction": betwinnerContent,
+  "betano-prediction": betanoContent,
+  "22bet-prediction": tewntyTwoBetContent,
+  "betbonanza-prediction": betbonanzaContent,
+  "betika-prediction": betikaContent,
+  "sportpesa-prediction": sportpesaContent,
+  "mozzartbet-prediction": mozzartbetContent,
+  "odibets-prediction": odibetContent,
+  "m-bets-prediction": mBetsContent,
+  "bet365-prediction": bet365Content,
+  "melbet-prediction": melbetContent,
+  "hollywoodbets-prediction": HollywoodbetsContent,
+  worldsportsbetting: worldsportsbettingContent,
+  "sunbet-prediction": sunbetContent,
+  "bet.co.za": betcozaContent,
+  "betpawa-prediction": betpawaContent,
+  "fortebet-prediction": fortebetContent,
+  "gal-sports-betting": galSportsBettingContent,
+  "championbet-prediction": championsbetContent,
+  "bangbet-prediction": bangbetContent,
+  "world-star-betting": worldStarBettingContent,
+  "meridianbet-prediction": meridianbetContent,
+  "wasafibet-prediction": wasafibetContent,
+  "888bet-prediction": trippleEightBetContent,
+  "premierbet-prediction": premierbetContent,
+  "stake-prediction": stakePredictionContent,
+  "sportsbet.io-prediction": sportsbetContent,
+  "jackpot-betting": jackpotBettingContent,
+  "correct-score-betting": correctscoreContent,
+  "over-1.5-betting": over15Content,
+  "over-2.5-betting": over25Content,
+  "both-teams-to-score-betting": bothTeamsToScoreContent,
+  "draw-betting": drawContent,
+  "free-booking-codes": bookingCodesContent,
+  livescore: livescoreContent,
+  sofascore: sofascoreContent,
+  fotmob: fotmobContent,
+  flashscore: flashscoreContent,
+  besoccer: besoccerContent,
+  futbol24: futbol24Content,
+  marca: marcaContent,
+  soccerway: soccerwayContent,
+  teamtalk: teamtalkContent,
+  football365: football365Content,
+  fourfourtwo: fourfourtwoContent,
+  "90min": ninetyMinContent,
 };
 
 const contactInfo = {
@@ -794,5 +894,61 @@ export const paramsaMetaData: Record<
     description:
       "Explore expert PremierBet match predictions, betting tips, and strategies. Win more with our accurate insights.",
     keywords: "PremierBet predictions, PremierBet prediction, PremierBet tips",
+  },
+  "free-booking-codes": {
+    title: "Free Booking Codes – Unlock Free Bets & Betting Offers",
+    description:
+      "Discover the best free booking codes and exclusive betting offers to maximize your betting potential. Get your free bets now!",
+    keywords: "free booking codes, free betting codes, free bet offers",
+  },
+  "jackpot-betting": {
+    title: "Jackpot Betting – Tips for Winning Big with Accumulators",
+    description:
+      "Maximize your chances of winning big with jackpot betting. Explore our expert jackpot betting tips and strategies for higher payouts.",
+    keywords: "jackpot betting, jackpot betting tips, accumulator betting",
+  },
+  "correct-score-betting": {
+    title: "Correct Score Betting – Accurate Predictions for Maximum Profits",
+    description:
+      "Master correct score betting with expert predictions and tips. Increase your chances of hitting the perfect score for bigger wins.",
+    keywords:
+      "correct score betting, correct score tips, football score predictions",
+  },
+  "over-1.5-betting": {
+    title: "Over 1.5 Betting – Best Tips for High-Scoring Matches",
+    description:
+      "Bet on high-scoring matches with over 1.5 betting. Find expert tips and strategies to make the most of over 1.5 betting markets.",
+    keywords: "over 1.5 betting, over 1.5 tips, over 1.5 predictions",
+  },
+  "over-2.5-betting": {
+    title: "Over 2.5 Betting – Expert Tips for High-Scoring Football Matches",
+    description:
+      "Explore the best over 2.5 betting strategies for football. Get expert tips to bet on matches with more than 2.5 goals for higher returns.",
+    keywords: "over 2.5 betting, over 2.5 tips, over 2.5 football predictions",
+  },
+  "both-teams-to-score-betting": {
+    title: "Both Teams to Score Betting – Win Big with BTTS Tips",
+    description:
+      "Bet on both teams to score with our expert BTTS predictions. Maximize your winning potential by betting on both teams scoring in football matches.",
+    keywords: "both teams to score betting, BTTS tips, BTTS predictions",
+  },
+  "draw-betting": {
+    title: "Draw Betting – Strategies for Profitable Draw Predictions",
+    description:
+      "Learn how to bet on draws with our expert strategies. Get insights into the best matches for draw betting to increase your profits.",
+    keywords: "draw betting, draw betting tips, draw betting predictions",
+  },
+  "stake-prediction": {
+    title: "Stake Prediction – Expert Betting Tips & Strategies",
+    description:
+      "Unlock the best stake predictions with expert analysis and insights. Increase your betting success by making informed stake choices.",
+    keywords: "stake prediction, stake betting tips, betting stake predictions",
+  },
+  "sportsbet.io-prediction": {
+    title: "SportsBet.io Predictions – Accurate Betting Tips & Insights",
+    description:
+      "Get expert SportsBet.io predictions and tips for better betting decisions. Maximize your potential with our detailed match analysis.",
+    keywords:
+      "SportsBet.io prediction, SportsBet.io tips, SportsBet.io betting predictions",
   },
 };

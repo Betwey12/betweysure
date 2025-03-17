@@ -61,6 +61,8 @@ export const primaTipsContent = `
 <h4 style="font-size: 32px; margin-top: 32px;">Final Thoughts</h4>
 <p style="margin: 10px 0;">If you’re looking for the best football prediction site, look no further than Betweysure. Our Prima Tips predictions, combined with advanced algorithms and expert analysis, ensure that you have the tools to succeed in football betting. Whether you’re betting on the Premier League, La Liga, or the Champions League, Betweysure provides the insights you need to win.</p>
 
+    <p style="margin: 10px 0;">Visit <a href="https://primatips.com/" target="_blank" style="color: #13c1d6"><strong>primatips</strong></a> today and take your soccer betting game to the next level!</p>
+
 <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/statarea" style="color: #13c1d6"><strong>Statarea</strong></a> page!</p>
 
 `;

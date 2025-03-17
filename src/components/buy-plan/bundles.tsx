@@ -27,7 +27,7 @@ export default function Bundles() {
       duration: durations.map((duration) => {
         return `${duration} ${planType} plan ${formatCurrency(
           userPlan[planType][duration],
-          availableCurrency
+          availableCurrency,
         )}`;
       }),
     };
@@ -75,7 +75,7 @@ export default function Bundles() {
                       {
                         "bg-purple-royal text-white hover:bg-white hover:border hover:border-purple-royal hover:text-purple-royal":
                           plan.name === "premium",
-                      }
+                      },
                     )}
                   >
                     <p>{duration}</p>

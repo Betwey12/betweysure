@@ -1981,122 +1981,253 @@ export const bettingSites: Record<TBettingParams, { title: string }> = {
   "premierbet-prediction": {
     title: "PremierBet Expert Betting Predictions & Insights",
   },
+  "sportsbet.io-prediction": {
+    title: "Sportsbet.io Betting Predictions & Expert Tips",
+  },
+  "stake-prediction": {
+    title: "Stake Betting Predictions & Expert Tips",
+  },
+  "jackpot-betting": {
+    title: "Tips for winning big with accurate jackpot predictions",
+  },
 };
 
-export const predictionSites: Record<TPredictionsParams, { title: string }> = {
+export const predictionSites: Record<
+  TPredictionsParams,
+  { title: string; description: string }
+> = {
   windrawwin: {
     title: "Windrawwin Football Predictions: Expert Tips & Match Insights",
+    description:
+      "Windrawwin offers expert football predictions for today’s matches, focusing on the key win-draw-win markets. Thier team of analysts provides up-to-date insights backed by performance data, team form, and injury reports, ensuring you have the best tips to make smarter, more profitable bets. Whether you’re backing favorites or spotting value in draws, Windrawwin helps you make informed betting decisions across top leagues and competitions.",
   },
   statarea: {
     title: "Statarea Football Predictions: Data-Driven Betting Tips",
+    description:
+      "Football never stands still — and neither do we. Statarea constantly updates thier predictions based on the latest stats, news, and team performances. Searching for today’s top betting tips? Statarea team has analyzed today’s matches to deliver accurate predictions across various markets. Whether you’re an experienced bettor or just getting started, Statarea’s insights can help you make smarter decisions and improve your chances of winning.",
   },
   footballpredictions: {
     title: "FootballPredictions: Expert Betting Tips & Match Forecasts",
+    description:
+      "Football is unpredictable — but experts at FootballPredictions work tirelessly to stay one step ahead. FootballPredictions analyze the latest stats, team form, injuries, and news to bring you up-to-date, reliable predictions for today’s matches. Whether you’re backing a favorite, chasing an underdog win, or exploring other markets, their carefully researched tips can help you make smarter bets and boost your chances of success.",
   },
   mybets: {
     title: "MyBets Football Predictions: Daily Tips & Winning Strategies",
+    description:
+      "MyBets delivers daily, expert football predictions and betting tips, updated with the latest stats, team news, and insights. Whether you’re backing favorites, hunting for value bets, or exploring markets like BTTS and Over/Under, our carefully crafted predictions help you make smarter, more informed bets. Stay ahead of the game with accurate forecasts across top leagues and competitions worldwide.",
   },
   soccereco: {
     title: "SoccerEco Football Predictions: Expert Analysis & Betting Tips",
+    description:
+      "Soccereco brings you the latest football predictions and expert betting tips, powered by in-depth analysis and real-time updates. From match winners to BTTS, Over/Under, and more, our predictions cover top leagues and competitions worldwide. Whether you’re a seasoned punter or just getting started, Soccereco’s insights help you make smarter, more profitable betting decisions.",
   },
   soccervital: {
     title: "SoccerVital Football Predictions: Stats, Tips & Winning Strategies",
+    description:
+      "Stay on top of the latest football predictions with Soccervital. Soccervital's expert tips combine stats, form analysis, and up-to-date team news to deliver accurate forecasts across major leagues and competitions. Whether you’re eyeing match winners, goal markets, or value bets, Soccervital’s insights help you make smarter, more confident picks.",
   },
   forebet: {
     title: "Forebet AI Football Predictions: Smart Betting Tips & Analysis",
+    description:
+      "Forebet delivers data-driven football predictions using advanced algorithms and statistical analysis. From match outcomes to goal markets like Over/Under and Both Teams to Score (BTTS), they provide reliable tips across the world’s biggest leagues — giving you the edge to make more informed bets.",
   },
   predictz: {
     title: "PredictZ Football Predictions: Free Tips & Expert Insights",
+    description:
+      "Get today’s best football betting tips with Predictz. Their carefully analyzed predictions cover everything from win-draw-win markets to BTTS, accumulators, and more. Updated daily with the latest team form, injury news, and stats, Predictz helps you stay one step ahead of the bookies.",
   },
   olbg: {
     title: "OLBG Football Predictions: Top Tipsters & Betting Tips",
+    description:
+      "OLBG is home to a community of expert tipsters sharing their best football predictions and betting tips. Whether you’re looking for today’s top bets, accumulators, or BTTS picks, their insights cover a wide range of markets and competitions. With detailed analysis, team news, and stats, OLBG helps you make smarter, more profitable bets.",
   },
   soccervista: {
     title: "SoccerVista Football Predictions: Daily Tips & Match Insights",
+    description:
+      "SoccerVista offers daily football predictions and betting tips, covering a wide range of markets and leagues. With expert analysis, team news, and the latest stats, SoccerVista helps you make more informed bets and boost your chances of success.",
   },
   adibet: {
     title: "Adibet Football Predictions: Expert Tips & Match Analysis",
+    description:
+      "Adibet provides expert football predictions and betting tips, updated daily with the latest stats, team news, and insights. Whether you’re backing favorites, hunting for value bets, or exploring other markets, Adibet’s carefully researched tips can help you make smarter bets and improve your chances of winning.",
   },
   zulubet: {
     title: "Zulubet Football Predictions: Expert Tips & Betting Insights",
+    description:
+      "Zulubet offers expert football predictions and betting tips, updated daily with the latest stats, team news, and insights. Whether you’re backing favorites, hunting for value bets, or exploring other markets, Zulubet’s carefully researched tips can help you make smarter bets and improve your chances of winning.",
   },
   betwizad: {
     title: "Betwizad Football Predictions: Expert Tips & Winning Strategies",
+    description:
+      "Betwizad brings you top football predictions, blending expert insights with data analysis to deliver accurate tips for today’s matches. From win-draw-win markets to goal predictions and accumulators, Betwizad helps you make smarter, more profitable bets — updated daily with the latest stats and news.",
   },
   focuspredict: {
     title: "FocusPredict Football Predictions: Expert Analysis & Tips",
+    description:
+      "Looking for reliable football betting tips? FocusPredict provides daily predictions backed by team form, performance stats, and insider updates. Whether you’re betting on match winners, BTTS, or Over/Under goals, FocusPredict keeps you ahead of the game with smart, data-driven forecasts.",
   },
   kingspredict: {
     title: "KingsPredict Football Predictions: Winning Tips & Strategies",
+    description:
+      "KingsPredict offers expert football predictions across all major leagues and competitions. Our analysts combine stats, form, and injury news to give you reliable tips for match results, goal markets, and more — helping you bet with confidence and precision.",
   },
   "180tips-prediction": {
     title: "180Tips Football Predictions: Expert Insights & Betting Tips",
+    description:
+      "Get ahead of the bookmakers with 180Tips-Prediction. Their daily football tips are built on thorough analysis of stats, team form, and key updates, ensuring accurate predictions for win-draw-win, goals, and value bets. Whether you’re a seasoned punter or just getting started, 180Tips helps you make smarter picks.",
   },
   zuluprediction: {
     title: "ZuluPrediction Football Predictions: Expert Tips & Analysis",
+    description:
+      "Zuluprediction delivers daily, expert football predictions backed by in-depth analysis and the latest stats. From win-draw-win to goals and accumulators, our accurate tips cover top leagues and competitions worldwide — helping you make smarter, more profitable bets.",
   },
   "primatips-prediction": {
     title: "Primatips Football Predictions: Winning Strategies & Tips",
+    description:
+      "PrimaTips-Prediction offers reliable football tips based on performance data, form analysis, and real-time updates. Whether you’re betting on match results, BTTS, or Over/Under goals, PrimaTips helps you stay ahead of the bookies with actionable insights.",
   },
   legitpredict: {
     title: "LegitPredict Football Predictions: Reliable Tips & Analysis",
+    description:
+      "Looking for trusted betting tips? LegitPredict brings you daily football predictions, combining expert analysis with key stats and team news. From win-draw-win markets to goal bets and double chance, LegitPredict helps you bet smarter and win more.",
   },
   solopredict: {
     title: "SoloPredict Football Predictions: Expert Tips & Winning Strategies",
+    description:
+      "SoloPredict offers single, high-confidence football predictions for punters looking to make the most of their bets. Updated daily with performance data, form analysis, and injury news, SoloPredict helps you find the best value picks — one match at a time.",
   },
   betensured: {
     title: "Betensured Football Predictions: Expert Tips & Insights",
+    description:
+      "BetEnsured provides top football predictions and betting tips for all major leagues and competitions. With a mix of data analysis, form stats, and expert insights, BetEnsured helps you make informed bets — from match winners to goal markets and more.",
   },
   feedinco: {
     title: "Feedinco Football Predictions: AI-Powered Tips & Analysis",
+    description:
+      "Feedinco’s AI-powered football predictions deliver daily tips and insights across major leagues and competitions. From win-draw-win markets to goal predictions and accumulators, our expert analysis helps you make smarter, data-driven bets.",
   },
   tips180: {
     title: "Tips180 Football Predictions: Expert Tips & Winning Insights",
+    description:
+      "Get today’s best football tips with Tips180. We analyze team performance, head-to-head stats, and injury updates to deliver accurate predictions for win-draw-win markets, goal bets, and more — helping you stay ahead of the bookies.",
   },
   "victors-predict": {
     title:
       "Victors Predict Football Tips: Expert Insights & Winning Strategies",
+    description:
+      "Victors Predict offers expert football tips and insights, updated daily with the latest stats, team news, and form analysis. Whether you’re betting on match winners, goal markets, or accumulators, our carefully researched tips help you make smarter, more profitable bets.",
   },
   supatips: {
     title: "SupaTips Football Predictions: Expert Tips & Winning Advice",
+    description:
+      "SupaTips on Betweysure delivers top football betting tips, backed by stats, form analysis, and the latest news. From win-draw-win to BTTS and Over/Under, our predictions are designed to help you make smarter, more confident bets — every single day.",
+  },
+  "both-teams-to-score-betting": {
+    title: "Both Teams to Score (BTTS) Betting Tips & Predictions",
+    description:
+      "Looking for the best BTTS betting tips? Our experts analyze team form, stats, and head-to-head records to deliver accurate predictions for both teams to score markets. Whether you’re backing goals or looking for value bets, our insights help you make smarter, more profitable picks.",
+  },
+  "correct-score-betting": {
+    title: "Correct Score Betting Tips & Predictions: Expert Analysis",
+    description:
+      "Correct score betting is one of the most challenging markets — but our experts are here to help. Our detailed analysis of team form, stats, and head-to-head records delivers accurate predictions for correct score markets, helping you make smarter, more profitable bets.",
+  },
+  "draw-betting": {
+    title: "Draw Betting Tips & Predictions: Expert Insights & Analysis",
+    description:
+      "Draw betting can be a lucrative market — but it requires careful analysis. Our experts combine team form, stats, and head-to-head records to deliver accurate predictions for draw markets, helping you make smarter, more profitable bets.",
+  },
+  "over-1.5-betting": {
+    title: "Over 1.5 Goals Betting Tips & Predictions: Expert Insights",
+    description:
+      "Over 1.5 goals betting is a popular market — but it requires careful analysis. Our experts combine team form, stats, and head-to-head records to deliver accurate predictions for Over 1.5 goals markets, helping you make smarter, more profitable bets.",
+  },
+  "over-2.5-betting": {
+    title: "Over 2.5 Goals Betting Tips & Predictions: Expert Insights",
+    description:
+      "Over 2.5 goals betting is a popular market — but it requires careful analysis. Our experts combine team form, stats, and head-to-head records to deliver accurate predictions for Over 2.5 goals markets, helping you make smarter, more profitable bets.",
   },
 };
 
-export const mediaSites: Record<TMediaParams, { title: string }> = {
+export const mediaSites: Record<
+  TMediaParams,
+  { title: string; description: string }
+> = {
   livescore: {
     title: "Live Football Scores & Match Updates – LiveScore",
+    description:
+      "Get real-time football scores and match updates from LiveScore, the world’s leading live sports scores service. From goals to cards, you’ll get minute-by-minute updates on all the top leagues and competitions.",
   },
   sofascore: {
     title: "Real-Time Sports Scores & Analytics – SofaScore",
+    description:
+      "Get real-time sports scores and analytics from SofaScore, the world’s leading live sports scores service. From football to tennis, you’ll get minute-by-minute updates on all the top leagues and competitions.",
   },
   flashscore: {
     title: "Fast & Accurate Live Scores – FlashScore",
+    description:
+      "Get fast and accurate live scores from FlashScore, the world’s leading live sports scores service. From goals to cards, you’ll get minute-by-minute updates on all the top leagues and competitions.",
   },
   fotmob: {
     title: "Live Football Scores & Latest News – FotMob",
+    description:
+      "Get live football scores and the latest news from FotMob, the world’s leading live sports scores service. From goals to cards, you’ll get minute-by-minute updates on all the top leagues and competitions.",
   },
   besoccer: {
     title: "Live Football Scores & Breaking News – BeSoccer",
+    description:
+      "Get live football scores and breaking news from BeSoccer, the world’s leading live sports scores service. From goals to cards, you’ll get minute-by-minute updates on all the top leagues and competitions.",
   },
   futbol24: {
     title: "Quickest Live Football Scores & Results – Futbol24",
+    description:
+      "Stay updated with the fastest live football scores and results from Futbol24. Get instant match updates, goal alerts, and detailed stats from leagues and tournaments around the world.",
   },
+};
+
+export const otherToolsSites: Record<
+  TOtherPagesParams,
+  { title: string; description: string }
+> = {
+  "free-booking-codes": {
+    title: "Free Booking Codes & Sure Bet Tips",
+    description:
+      "Use our free booking code converter tool to place sure bets and win big. Our expert tips and predictions help you make smarter betting decisions and maximize your profits.",
+  },
+};
+
+export const trendsSites: Record<
+  TTrendsParams,
+  { title: string; description: string }
+> = {
   marca: {
     title: "Spanish Football News & La Liga Insights – Marca",
+    description:
+      "Get the latest trends, scores, and in-depth analysis on Spanish football, La Liga, and top clubs from Marca — Spain’s leading sports publication.",
   },
   soccerway: {
     title: "Football Statistics & Match Insights – Soccerway",
+    description:
+      "Explore detailed football trends, statistics, match insights, and player data from leagues around the world with Soccerway’s comprehensive coverage.",
   },
   teamtalk: {
     title: "Football News & Transfer Rumors – TeamTalk",
+    description:
+      "Stay ahead of the game with TeamTalk’s latest football trends, news, transfer rumors, and expert opinions on the biggest clubs and players.",
   },
   football365: {
     title: "Latest Football News & Expert Analysis – Football365",
+    description:
+      "Your go-to source for breaking football trends, news, expert analysis, and lively opinion pieces on the Premier League and beyond — Football365.",
   },
   fourfourtwo: {
     title: "Football Features, Interviews & Analysis – FourFourTwo",
+    description:
+      "Dive into exclusive football trends, features, player interviews, tactical breakdowns, and top stories with FourFourTwo’s award-winning content.",
   },
   "90min": {
     title: "Football News & Transfer Rumors – 90min",
+    description:
+      "Catch up on the latest football trends, news, viral fan content, and transfer rumors from around the globe, brought to you by 90min.",
   },
 };

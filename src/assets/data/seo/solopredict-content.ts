@@ -51,5 +51,7 @@ export const solopredictContent = `
   <li style="margin-bottom: 16px;">While platforms like Betweysure focus on beginner-friendly tips and strategies, Solopredict caters to a broader audience with its in-depth analysis and global coverage. Solopredict is ideal for both beginners and experienced bettors, offering detailed insights into match outcomes.</li>
 </ul>
 
+    <p style="margin: 10px 0;"><strong>Don’t wait — visit <a href="https://www.solopredict.com/" target="_blank" style="color: #13c1d6">Solopredict</a> today and elevate your betting strategy!</strong></p>
+
 <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/feedinco" style="color: #13c1d6"><strong>Feedinco</strong></a> page!</p>
 `;

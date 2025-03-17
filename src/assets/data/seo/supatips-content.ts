@@ -67,9 +67,8 @@ export const supatipsContent = `
 <h4 style="font-size: 32px; margin-top: 32px;">Conclusion</h4>
 <p style="margin-bottom: 16px;">When it comes to free football betting tips, SupaTips is a leading prediction site that provides accurate, expert-driven insights. Whether you're looking for daily tips, live betting strategies, or deep statistical analysis, SupaTips has everything you need to improve your betting success.</p>
 
-<p style="margin-bottom: 16px;">👉 <strong>Visit SupaTips now and start placing smarter football bets today!</strong></p>
- <p style="margin: 10px 0;">Visit <a href="https://www.supatips.com/" target="_blank" style="color: #13c1d6"><strong>Supatips</strong></a> today and take your soccer betting game to the next level!</p>
 
+ <p style="margin: 10px 0;">👉 Visit <a href="https://www.supatips.com/" target="_blank" style="color: #13c1d6"><strong>Supatips</strong></a> now and start placing smarter football bets today!</p>
 
 <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/predictz" style="color: #13c1d6"><strong>PredictZ</strong></a> page!</p>
 `;

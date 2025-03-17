@@ -1,66 +1,45 @@
-export const livescoresContent = `
-<div>
-  <h2 style="font-size: 24px">Real-Time Live Football Scores & Match Updates</h2>
-  <p style="margin-top: 16px">Stay up to date with the latest live football scores and match results from leagues around the world. Whether you're tracking your favorite team or checking the latest betting odds, Betweysure provides:<br/><br/></p>
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
-  <ul style="margin-top: 16px; padding-left: 16px">
-    <li style="list-style-type: disc;margin-top: 8px"><strong>Instant Score Updates:</strong> Live results from ongoing matches</li>
-    <li style="list-style-type: disc; margin-top: 8px"><strong>In-Game Statistics:</strong> Possession, shots on target, corners, and more</li>
-    <li style="list-style-type: disc;margin-top: 8px"><strong>Goal Alerts:</strong> Notifications for goals, assists, and key match events</li>
-    <li style="list-style-type: disc; margin-top: 8px"><strong>League & Cup Coverage:</strong> Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League, and more</li>
-    <li style="list-style-type: disc;margin-top: 8px"><strong>Fixture & Results Archive:</strong> Check past and upcoming matches</li>
-  </ul><br/>
+export const livescoreContent = `
+<h4 style="margin: 32px 0; font-size: 32px;">LiveScore – Live Football Scores, Fixtures, and Results with Betweysure</h4>
 
-  <h2 style="font-size:24px">Today's Live Football Scores</h2>
-  <p style="margin-top: 16px">Our live scores feature covers matches from top competitions, including:<br/><br/></p>
+<h4 style="margin: 32px 0; font-size: 32px;">Introduction</h4>
+<p style="margin: 10px 0;"><a href="https://www.livescore.com/en" target="_blank" style="color: #13c1d6"><strong>LiveScore</strong></a> is one of the most popular real-time sports score platforms, providing instant updates on football matches, fixtures, results, and statistics. 
+  With a sleek and user-friendly interface, LiveScore covers major football leagues, international tournaments, and club competitions, making it a must-have tool for football fans and bettors alike.
+</p>
+<p style="margin: 10px 0;">
+  Whether you’re tracking the English Premier League, La Liga, Serie A, Bundesliga, Ligue 1, UEFA Champions League, or even lower-tier leagues, LiveScore ensures you stay updated with real-time match updates and in-depth team stats.
+</p>
 
-  <ul style="margin-top: 16px; padding-left: 16px">
-    <li style="list-style-type: disc;margin-top: 8px">Top European Leagues: Premier League, La Liga, Bundesliga, Serie A, Ligue 1</li>
-    <li style="list-style-type: disc; margin-top: 8px">International Tournaments: UEFA Champions League, Europa League, Copa Libertadores</li>
-    <li style="list-style-type: disc;margin-top: 8px">Domestic & Regional Competitions: FA Cup, Copa del Rey, Serie A Brazil</li>
-    <li style="list-style-type: disc; margin-top: 8px">Major Football Events: World Cup, European Championship, AFCON</li>
-  </ul><br/>
+<h4 style="margin: 32px 0; font-size: 32px;">Key Features of LiveScore</h4>
+<ul style="padding-left: 20px; list-style-type: disc;">
+  <li style="margin-top: 10px;"><strong>Live Match Tracking</strong> – Get instant goal updates, line-ups, possession stats, and in-game events.</li>
+  <li style="margin-top: 10px;"><strong>Fixtures & Results</strong> – View upcoming matches and past results from leagues worldwide.</li>
+  <li style="margin-top: 10px;"><strong>In-Depth Team & Player Stats</strong> – Access detailed team form, player performance, and league standings.</li>
+  <li style="margin-top: 10px;"><strong>Customizable Notifications</strong> – Set alerts for goals, match kick-offs, and breaking football news.</li>
+  <li style="margin-top: 10px;"><strong>Multi-Sport Coverage</strong> – Besides football, LiveScore also offers scores for tennis, basketball, cricket, and more.</li>
+</ul>
 
-  <p style="margin-top: 16px">Get live score updates with minute-by-minute commentary and game-changing moments as they happen.<br/><br/></p>
+<h4 style="margin: 32px 0; font-size: 32px;">How Betweysure Integrates LiveScore for Better Betting Predictions</h4>
+<p style="margin: 10px 0;">
+  LiveScore is not just for football fans—it’s also a valuable tool for sports bettors. Betweysure’s Football Trends leverages LiveScore’s real-time data to enhance betting insights by:
+</p>
 
-  <h2 style="font-size:24px">Why Choose Betweysure for Live Football Scores?</h2>
-  <ul style="margin-top: 16px; padding-left: 16px">
-    <li style="list-style-type: disc;margin-top: 8px">🏆 <strong>Fast & Accurate Updates:</strong> Instant score changes and match details</li>
-    <li style="list-style-type: disc; margin-top: 8px">📊 <strong>Wide Coverage:</strong> From top leagues to local tournaments worldwide</li>
-    <li style="list-style-type: disc;margin-top: 8px">📈 <strong>Detailed Match Stats:</strong> Goals, assists, cards, substitutions, and more</li>
-    <li style="list-style-type: disc; margin-top: 8px">📱 <strong>User-Friendly Interface:</strong> Easy-to-navigate live scores and fixtures</li>
-  </ul><br/>
+<ul style="padding-left: 20px; list-style-type: disc;">
+  <li style="margin-top: 10px;"><strong>Tracking Live Match Trends</strong> – Real-time data helps bettors make informed decisions for in-play betting on Betweysure.</li>
+  <li style="margin-top: 10px;"><strong>Analyzing Team Form & Performance</strong> – Pre-match form, injuries, and historical performance guide Over/Under, BTTS, and Correct Score predictions.</li>
+  <li style="margin-top: 10px;"><strong>Identifying Betting Value</strong> – Sudden odds shifts based on live match events can create profitable opportunities.</li>
+  <li style="margin-top: 10px;"><strong>Post-Match Analysis for Future Bets</strong> – Reviewing team performance helps refine betting strategies for upcoming matches.</li>
+</ul>
 
-  <h2 style="font-size:24px">Football Match Statistics & Betting Insights</h2>
-  <p style="margin-top: 16px">Looking beyond just the live scores? Our platform provides:<br/><br/></p>
+<h4 style="margin: 32px 0; font-size: 32px;">Conclusion</h4>
+<p style="margin: 10px 0;">
+  LiveScore is an essential platform for any football fan or bettor looking for fast and accurate match updates. 
+  By combining LiveScore’s real-time stats with Betweysure’s expert betting insights, you gain a powerful advantage in making smarter bets. 
+  Stay ahead of the game with LiveScore and Betweysure’s Football Trends!
+</p>
 
-  <ul style="margin-top: 16px; padding-left: 16px">
-    <li style="list-style-type: disc;margin-top: 8px"><strong>Match Previews:</strong> Head-to-head stats, form guides, and predictions</li>
-    <li style="list-style-type: disc; margin-top: 8px"><strong>In-Play Betting Insights:</strong> Key stats to help you place better live bets</li>
-    <li style="list-style-type: disc;margin-top: 8px"><strong>Live Odds Comparison:</strong> Track real-time betting odds across markets</li>
-    <li style="list-style-type: disc; margin-top: 8px"><strong>Team & Player Performance Analysis:</strong> Data-driven insights for smarter betting</li>
-  </ul><br/>
+    <p style="margin: 10px 0;">Visit <a href="https://www.livescore.com/en/" target="_blank" style="color: #13c1d6"><strong>Livescore</strong></a> today and take your soccer betting game to the next level!</p>
 
-  <h2 style="font-size:24px">Frequently Asked Questions (FAQs)</h2>
-  <ul style="margin-top: 16px; padding-left: 16px">
-    <li style="list-style-type: number;margin-top: 8px"><strong>Where can I check today’s live football scores?</strong><br/>
-      <span style="margin-top:8px; display: block">All live football scores are updated in real time on this page for leagues and tournaments worldwide.</span>
-    </li>
-    <li style="list-style-type: number;margin-top: 8px"><strong>How often are live scores updated?</strong><br/>
-      <span style="margin-top:8px; display: block">Our live scores are updated instantly to reflect every goal, booking, and key event.</span>
-    </li>
-    <li style="list-style-type: number;margin-top: 8px"><strong>Do you provide live match commentary?</strong><br/>
-      <span style="margin-top:8px; display: block">Yes, key match events such as goals, substitutions, and cards are updated in real-time.</span>
-    </li>
-    <li style="list-style-type: number;margin-top: 8px"><strong>Which leagues are covered in the live scores?</strong><br/>
-      <span style="margin-top:8px; display: block">We cover top European leagues, international tournaments, and domestic competitions.</span>
-    </li>
-    <li style="list-style-type: number;margin-top: 8px"><strong>Can I use Betweysure’s live scores for in-play betting?</strong><br/>
-      <span style="margin-top:8px; display: block">Yes, our live football scores provide key stats to help with in-play betting decisions.</span>
-    </li>
-  </ul><br/>
-
-  <p><strong>Get Instant Live Football Scores Now</strong> Follow your favorite teams and leagues with real-time live scores on Betweysure. Get instant updates, match stats, and betting insights for smarter football betting decisions.<br/><br/></p>
-  <p>🔹 Bookmark this page for the latest live scores<br/>🔹 Stay updated with match events and stats<br/>🔹 Never miss a goal with instant notifications</p>
-</div>
-    `;
+<p style="margin: 10px 0;">For an in-depth look at soccer tips and insights, check out our <a href="${baseUrl}/sofascore" style="color: #13c1d6"><strong>SofaScore</strong></a> page!</p>
+`;

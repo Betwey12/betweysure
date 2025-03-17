@@ -9,8 +9,6 @@ import { useQuery } from "@tanstack/react-query";
 import { HTTPRequest } from "@/api";
 import { getDate } from "@/lib/utils";
 import Image from "next/image";
-import peripesaBanner from "@/assets/images/peripesa-banner.webp";
-import oneXbetBanner from "@/assets/images/1xbet-banner.gif";
 
 export default function Trending() {
   const { t, aboutTrends } = useTrending();
@@ -41,10 +39,10 @@ export default function Trending() {
   const filteredTrends = trends.filter((trend) => {
     return (
       trend.trends.find((trend) =>
-        trend.name.toLowerCase().includes(searchValue.toLowerCase())
+        trend.name.toLowerCase().includes(searchValue.toLowerCase()),
       ) ||
       trend.trends.find((trend) =>
-        trend?.opponent?.name.toLowerCase().includes(searchValue.toLowerCase())
+        trend?.opponent?.name.toLowerCase().includes(searchValue.toLowerCase()),
       )
     );
   });
@@ -124,62 +122,6 @@ export default function Trending() {
         onChange={handlePagination}
         className="mt-4"
       />
-
-      <a
-        href="https://refpa7921972.top/L?tag=d_2898437m_1573c_&site=2898437&ad=1573"
-        target="_top"
-        className="mt-10 w-full block"
-      >
-        <Image
-          alt="banner"
-          src={oneXbetBanner}
-          width="970"
-          height="90"
-          className="w-full h-[200px] mt-20 object-cover"
-        />
-      </a>
-
-      <div className="mt-10 dark:bg-blue-one rounded p-4 dark:text-white">
-        <ul className="flex flex-col gap-4">
-          {aboutTrends.map((trend, index) => {
-            const paragraphs = trend.value.split("\t");
-            const description = paragraphs[0];
-            const list = paragraphs.slice(1);
-
-            return (
-              <li key={index}>
-                <strong>{trend.keyword}</strong>
-                <span>{description}</span>
-                {list.map((item, index) => {
-                  return (
-                    <ul
-                      className="list-disc pl-5 flex flex-col gap-2 mt-4"
-                      key={index}
-                    >
-                      <li>{item}</li>
-                    </ul>
-                  );
-                })}
-              </li>
-            );
-          })}
-        </ul>
-        <p className="mt-4">{t("CALL_TO_ACTION")}</p>
-      </div>
-
-      <a
-        href="https://combodef.com/L?tag=d_3380999m_38497c_&site=3380999&ad=38497"
-        target="_top"
-        className="mt-10 block w-full"
-      >
-        <Image
-          alt="banner"
-          src={peripesaBanner}
-          width="970"
-          height="90"
-          className="w-full h-[200px] mt-20"
-        />
-      </a>
     </div>
   );
 }

@@ -698,7 +698,12 @@ declare global {
     | "feedinco"
     | "tips180"
     | "victors-predict"
-    | "supatips";
+    | "supatips"
+    | "correct-score-betting"
+    | "over-1.5-betting"
+    | "over-2.5-betting"
+    | "both-teams-to-score-betting"
+    | "draw-betting";
 
   type TBettingParams =
     | "bet9ja-prediction"
@@ -732,7 +737,10 @@ declare global {
     | "meridianbet-prediction"
     | "wasafibet-prediction"
     | "888bet-prediction"
-    | "premierbet-prediction";
+    | "premierbet-prediction"
+    | "stake-prediction"
+    | "jackpot-betting"
+    | "sportsbet.io-prediction";
 
   type TMediaParams =
     | "livescore"
@@ -740,7 +748,9 @@ declare global {
     | "flashscore"
     | "fotmob"
     | "besoccer"
-    | "futbol24"
+    | "futbol24";
+
+  type TTrendsParams =
     | "marca"
     | "soccerway"
     | "teamtalk"
@@ -748,5 +758,12 @@ declare global {
     | "fourfourtwo"
     | "90min";
 
-  type TParams = TBettingParams | TMediaParams | TPredictionsParams;
+  type TOtherPagesParams = "free-booking-codes";
+
+  type TParams =
+    | TBettingParams
+    | TMediaParams
+    | TPredictionsParams
+    | TOtherPagesParams
+    | TTrendsParams;
 }

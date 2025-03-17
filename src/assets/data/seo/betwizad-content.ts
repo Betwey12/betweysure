@@ -43,5 +43,8 @@ export const betwizadContent = `
     <p style="margin: 10px 0;">Visit <a href="https://betwizad.com/" target="_blank" style="color: #13c1d6"><strong>Betwizad</strong></a> today and take your soccer betting game to the next level!</p>
 
 
+    <p style="margin: 10px 0;">Visit <a href="https://betwizad.com/" target="_blank" style="color: #13c1d6"><strong>Betwizad</strong></a> today and take your soccer betting game to the next level!</p>
+
+
 <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/focuspredict" style="color: #13c1d6"><strong>Focuspredict</strong></a> page!</p>
 `;
