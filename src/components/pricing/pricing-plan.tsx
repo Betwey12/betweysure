@@ -50,7 +50,7 @@ export default function PricingPlans() {
                 "border border-gray-two px-4 py-2 rounded dark:bg-blue-one dark:border-0 dark:text-white",
                 {
                   "bg-cyan text-white dark:bg-cyan": dur === duration,
-                }
+                },
               )}
             >
               {dur}
@@ -116,14 +116,14 @@ function usePricingPlans() {
   const plan = plans[currency] ? plans[currency] : plans["NGN"];
   const timeframs = {
     [EDuration.ONE_MONTH]: "month",
-    [EDuration.ONE_WEEK]: "week",
+    [EDuration.TWO_WEEKS]: "week",
   };
   const timeframe = timeframs[duration];
   const planCards = [
     {
       title: "Premium Football",
       duration: "Weekly",
-      price: plan["premium"][EDuration.ONE_WEEK],
+      price: plan["premium"][EDuration.TWO_WEEKS],
     },
     {
       title: "Premium Football",
@@ -133,7 +133,7 @@ function usePricingPlans() {
     {
       title: "Premium Mixed Sport",
       duration: "Weekly",
-      price: plan["mixed"][EDuration.ONE_WEEK],
+      price: plan["mixed"][EDuration.TWO_WEEKS],
     },
     {
       title: "Premium Mixed Sport",

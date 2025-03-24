@@ -6,7 +6,9 @@ import { bet9jaContent } from "./assets/data/seo/bet9ja-content";
 import { betanoContent } from "./assets/data/seo/betano-content";
 import { betbonanzaContent } from "./assets/data/seo/betbonanza-content";
 import { betcozaContent } from "./assets/data/seo/betcoza-content";
+import { betEnsuredContent } from "./assets/data/seo/betensured-content";
 import { betikaContent } from "./assets/data/seo/betika-content";
+import { betkingContent } from "./assets/data/seo/betking-content";
 import { betpawaContent } from "./assets/data/seo/betpawa-content";
 import { betwayContent } from "./assets/data/seo/betway-content";
 import { betwinnerContent } from "./assets/data/seo/betwinner-content";
@@ -42,6 +44,7 @@ import { marcaContent } from "./assets/data/seo/marca-content";
 import { melbetContent } from "./assets/data/seo/melbet-content";
 import { meridianbetContent } from "./assets/data/seo/meridianbet-content";
 import { mozzartbetContent } from "./assets/data/seo/mozzar-content";
+import { myBetsContent } from "./assets/data/seo/mybets-content";
 import { ninetyMinContent } from "./assets/data/seo/ninetymin-content";
 import { odibetContent } from "./assets/data/seo/odibets-content";
 import { olbgContent } from "./assets/data/seo/olbg-content";
@@ -57,6 +60,7 @@ import { soccerwayContent } from "./assets/data/seo/soccerway-content";
 import { sofascoreContent } from "./assets/data/seo/sofascore-content";
 import { solopredictContent } from "./assets/data/seo/solopredict-content";
 import { sportsbetContent } from "./assets/data/seo/sportbet-content";
+import { sportingbetContent } from "./assets/data/seo/sporting-content";
 import { sportpesaContent } from "./assets/data/seo/sportpesa-content";
 import { sportybetContent } from "./assets/data/seo/sportybet-content";
 import { stakePredictionContent } from "./assets/data/seo/stake-content";
@@ -86,7 +90,6 @@ export const otherPagesSeoText = {
   livescores: livescoresContent,
 };
 
-// @ts-expect-error ignore for now
 export const paramsSeoText: Record<TParams, string> = {
   predictz: predictZContent,
   soccervista: soccervistaContent,
@@ -159,6 +162,10 @@ export const paramsSeoText: Record<TParams, string> = {
   football365: football365Content,
   fourfourtwo: fourfourtwoContent,
   "90min": ninetyMinContent,
+  "betking-prediction": betkingContent,
+  "sportingbet-prediction": sportingbetContent,
+  mybets: myBetsContent,
+  betensured: betEnsuredContent,
 };
 
 const contactInfo = {
@@ -618,19 +625,6 @@ export const paramsaMetaData: Record<
       "KingsPredict delivers expert football predictions, betting tips, and match insights. Find daily value bets and high-accuracy forecasts",
     keywords:
       "KingsPredict predictions, KingsPredict prediction, KingsPredict tips",
-  },
-  "180tips-prediction": {
-    title: "180Tips Predictions | Football Betting Tips with Expert Insights",
-    description:
-      "180Tips provides expert football predictions, betting tips, and match analysis. Get the best odds and value bets daily.",
-    keywords: "180Tips predictions, 180Tips prediction, 180Tips tips",
-  },
-  zuluprediction: {
-    title: "ZuluPrediction | Accurate Football Betting Tips & Stats",
-    description:
-      "Get accurate football predictions, betting tips, and match stats from ZuluPrediction. Covers all major leagues and daily matches.",
-    keywords:
-      "ZuluPrediction predictions, ZuluPrediction prediction, ZuluPrediction tips",
   },
   "primatips-prediction": {
     title: "Primatips Predictions | Winning Football Betting Tips & Insights",
