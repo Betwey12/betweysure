@@ -1,22 +1,22 @@
 "use client";
 import { cn } from "../../lib/utils";
-import { useAuth } from "../../hooks/useAuth";
 import { durations, EDuration, EPlanNames, plans } from "@/assets/data/data";
 import useSelectCurrency from "@/hooks/useSelectCurrency";
 import { useTranslations } from "next-intl";
-import MySelect from "../ui/my-select";
 import { useState } from "react";
 import PackageCard from "./package-card";
 import PlanCards from "./plan-cards";
 import Image from "next/image";
 import premiumPopUp from "@/assets/images/premium-banner-desktop.webp";
 import AuthedLink from "../ui/authed-link";
+import { SelectItem } from "../ui/select";
+import RadixSelect from "../ui/radix-select";
 
 export default function PricingPlans() {
   const {
     packages,
     supportedCountries,
-    selectedCurrency,
+    currency,
     setSelectedCurrency,
     duration,
     timeframe,
@@ -24,20 +24,27 @@ export default function PricingPlans() {
     planCards,
   } = usePricingPlans();
 
-  const currencyCode =
-    selectedCurrency?.split(" ")[selectedCurrency?.split(" ")?.length - 1];
-
+  const selectItems = supportedCountries.map((country) => (
+    <SelectItem value={`${country.name.toLowerCase()}`} key={country.name}>
+      <span className="flex items-center gap-2">
+        <span className="flex flex-row-reverse items-center gap-2">
+          <span>{country.name} </span>
+          <span>{country.flag} </span>
+        </span>
+        <span>{country.currency} </span>
+      </span>
+    </SelectItem>
+  ));
   return (
     <div className="flex flex-col gap-20 dark:text-white md:px-10 px-4 lg:px-20">
       <div className="flex items-center flex-col lg:flex-row gap-4 justify-between z-10">
         <div className="flex items-center gap-4 flex-1">
           <p className="font-medium">Change currency: </p>
-          <div className="max-w-[300px] w-full border border-cyan">
-            <MySelect
-              options={supportedCountries}
-              bgDashboard
-              selectedOption={selectedCurrency}
-              setSelectedOption={setSelectedCurrency}
+          <div className="max-w-[300px] w-full">
+            <RadixSelect
+              selectItems={selectItems}
+              placeholder={"Select currency"}
+              handleValueChange={(v) => setSelectedCurrency(v)}
             />
           </div>
         </div>
@@ -65,7 +72,7 @@ export default function PricingPlans() {
             predictionPackage={predictionPackage}
             key={predictionPackage.name}
             timeframe={timeframe}
-            currencyCode={currencyCode}
+            currencyCode={currency}
           />
         ))}
       </div>
@@ -92,7 +99,7 @@ export default function PricingPlans() {
             title={plan.title}
             duration={plan.duration}
             price={plan.price}
-            currencyCode={currencyCode}
+            currencyCode={currency}
           />
         ))}
       </div>
@@ -102,18 +109,18 @@ export default function PricingPlans() {
 
 function usePricingPlans() {
   const t = useTranslations("PRICING_PLANS");
-  const { user } = useAuth();
   const [duration, setDuration] = useState<EDuration>(EDuration.ONE_MONTH);
 
-  const userCurrency = user?.currency || "NGN";
-  const { supportedCountries, selectedCurrency, setSelectedCurrency } =
-    useSelectCurrency({
-      defaultCurrency: userCurrency,
-    });
+  const { currency, supportedCountries, setSelectedCurrency } =
+    useSelectCurrency();
 
-  const currency =
-    selectedCurrency?.split(" ")[selectedCurrency?.split(" ").length - 1];
-  const plan = plans[currency] ? plans[currency] : plans["NGN"];
+  const isSupported = currency && plans[currency];
+  const plan = isSupported
+    ? plans[currency]
+    : currency
+      ? plans["USD"]
+      : plans["NGN"];
+
   const timeframs = {
     [EDuration.ONE_MONTH]: "month",
     [EDuration.TWO_WEEKS]: "week",
@@ -170,8 +177,7 @@ function usePricingPlans() {
     packages,
     supportedCountries,
     setSelectedCurrency,
-    selectedCurrency,
-    currency,
+    currency: isSupported ? currency : currency ? "USD" : "NGN",
     t,
     duration,
     setDuration,

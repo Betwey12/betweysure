@@ -1394,6 +1394,17 @@ export const paymentSupportedCountries = [
   "EUR",
 ];
 
+export const paymentSupportedCountryCodes = [
+  "NG",
+  "KE",
+  "GH",
+  "US",
+  "UG",
+  "TZ",
+  "ZA",
+  "FR",
+];
+
 export enum EPlanKeys {
   TWO_WEEKS_PREMIUM = "2-weeks-premium",
   ONE_MONTH_PREMIUM = "1-month-premium",
