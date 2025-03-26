@@ -70,5 +70,5 @@ export const supatipsContent = `
 
  <p style="margin: 10px 0;">👉 Visit <a href="https://www.supatips.com/" target="_blank" style="color: #13c1d6"><strong>Supatips</strong></a> now and start placing smarter football bets today!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/predictz" style="color: #13c1d6"><strong>PredictZ</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/mybets" style="color: #13c1d6"><strong>MyBets</strong></a> page!</p>
 `;

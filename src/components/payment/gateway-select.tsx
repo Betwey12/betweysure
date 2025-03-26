@@ -14,8 +14,6 @@ import { closePaymentModal } from "flutterwave-react-v3";
 import {
   EDuration,
   EPaidPlanNames,
-  flutterwavePlanCodes,
-  paystackPlanCodes,
   plans,
   plansKeys,
 } from "@/assets/data/data";
@@ -50,13 +48,12 @@ export default function GatewaySelect() {
   });
   const planKey = plansKeys.find(
     (key) =>
-      `${durationParams?.toLowerCase()}-${planName?.toLowerCase()}` === key
+      `${durationParams?.toLowerCase()}-${planName?.toLowerCase()}` === key,
   );
 
   const { handleFlutterPayment, handlePaystackPayment } = usePayment({
     amount,
     currency: availableCurrency,
-    planCode: planKey ? paystackPlanCodes[planKey] : undefined,
   });
 
   async function handleUpdatePlan(reference?: string, planGateway?: string) {
@@ -101,7 +98,7 @@ export default function GatewaySelect() {
 
     if (gateway === "paystack" && availableCurrency !== "NGN") {
       return toast.error(
-        "Paystack only supports NGN currency. Select a different payment method"
+        "Paystack only supports NGN currency. Select a different payment method",
       );
     }
 

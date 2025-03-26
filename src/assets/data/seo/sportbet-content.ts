@@ -42,4 +42,4 @@ export const sportsbetContent = `
 <p style="margin: 10px 0;">If you’re looking for fast crypto transactions, high odds, and a premium betting experience, Sportsbet.io is the way to go. And with Betweysure’s expert predictions, you increase your winning potential while enjoying a seamless, crypto-powered betting experience.</p>
 <p style="margin: 10px 0;">🔥 Join <a href="https://aff.partners.io/visit/?bta=45585&nci=7670" style="color: #13c1d6">Sportsbet.io</a> today and use Betweysure’s insights to bet smarter!</p>
 
-<p style="margin: 10px 0;">For an in-depth insight into sports betting, check out our <a href="${baseUrl}/jackpot-betting" style="color: #13c1d6"><strong>Jackpot Betting</strong></a> page!</p> `;
+<p style="margin: 10px 0;">For an in-depth insight into sports betting, check out our <a href="${baseUrl}/betking-prediction" style="color: #13c1d6"><strong>Betking</strong></a> page!</p> `;

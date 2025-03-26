@@ -45,6 +45,7 @@ export const bookingCodesContent = `
   <li style="margin-top: 10px;">✅ <strong>Ensure Best Odds</strong> – Compare different platforms before placing your bet.</li>
 </ul>
 
+<p style="margin: 16px 0;">For an in-depth insight into sports betting, check out our categories that we cover on Betweysure!</p>
 
     <ul style="padding-left: 20px; list-style-type: disc;">
     <li style="margin-top: 10px;"><a href="${baseUrl}/jackpot-betting" style="color: #13c1d6"><strong>Jackpot betting</strong></a></li>

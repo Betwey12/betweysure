@@ -1394,23 +1394,34 @@ export const paymentSupportedCountries = [
   "EUR",
 ];
 
+export const paymentSupportedCountryCodes = [
+  "NG",
+  "KE",
+  "GH",
+  "US",
+  "UG",
+  "TZ",
+  "ZA",
+  "FR",
+];
+
 export enum EPlanKeys {
-  ONE_WEEK_PREMIUM = "1-week-premium",
+  TWO_WEEKS_PREMIUM = "2-weeks-premium",
   ONE_MONTH_PREMIUM = "1-month-premium",
-  ONE_WEEK_MIXED = "1-week-mixed",
+  TWO_WEEKS_MIXED = "2-weeks-mixed",
   ONE_MONTH_MIXED = "1-month-mixed",
 }
 export const plansKeys = Object.values(EPlanKeys);
 
 export const flutterwavePlanCodes: Record<EPlanKeys, Record<string, string>> = {
-  [EPlanKeys.ONE_WEEK_PREMIUM]: {
-    NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK ?? "130060",
-    GHS: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_GHS ?? "134014",
-    KES: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_KES ?? "134011",
-    USD: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_USD ?? "134034",
-    UGX: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_UGX ?? "134028",
-    TZS: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_TZS ?? "134025",
-    ZAR: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_WEEK_ZAR ?? "134018",
+  [EPlanKeys.TWO_WEEKS_PREMIUM]: {
+    NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_TWO_WEEKS ?? "130060",
+    GHS: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_TWO_WEEKS_GHS ?? "134014",
+    KES: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_TWO_WEEKS_KES ?? "134011",
+    USD: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_TWO_WEEKS_USD ?? "134034",
+    UGX: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_TWO_WEEKS_UGX ?? "134028",
+    TZS: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_TWO_WEEKS_TZS ?? "134025",
+    ZAR: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_TWO_WEEKS_ZAR ?? "134018",
   },
   [EPlanKeys.ONE_MONTH_PREMIUM]: {
     NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH ?? "130061",
@@ -1421,15 +1432,15 @@ export const flutterwavePlanCodes: Record<EPlanKeys, Record<string, string>> = {
     TZS: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH_TZS ?? "134026",
     ZAR: process.env.NEXT_PUBLIC_FLUTTERWAVE_PREMIUM_ONE_MONTH_ZAR ?? "134020",
   },
-  [EPlanKeys.ONE_WEEK_MIXED]: {
-    NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK ?? "129631",
-    GHS: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_GHS ?? "134015",
-    EUR: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_USD ?? "134032",
-    KES: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_KES ?? "134012",
-    USD: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_USD ?? "134032",
-    UGX: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_UGX ?? "134027",
-    TZS: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_TZS ?? "134023",
-    ZAR: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_WEEK_ZAR ?? "134019",
+  [EPlanKeys.TWO_WEEKS_MIXED]: {
+    NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_TWO_WEEKS ?? "129631",
+    GHS: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_TWO_WEEKS_GHS ?? "134015",
+    EUR: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_TWO_WEEKS_USD ?? "134032",
+    KES: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_TWO_WEEKS_KES ?? "134012",
+    USD: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_TWO_WEEKS_USD ?? "134032",
+    UGX: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_TWO_WEEKS_UGX ?? "134027",
+    TZS: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_TWO_WEEKS_TZS ?? "134023",
+    ZAR: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_TWO_WEEKS_ZAR ?? "134019",
   },
   [EPlanKeys.ONE_MONTH_MIXED]: {
     NGN: process.env.NEXT_PUBLIC_FLUTTERWAVE_MIXED_ONE_MONTH ?? "129631",
@@ -1444,11 +1455,11 @@ export const flutterwavePlanCodes: Record<EPlanKeys, Record<string, string>> = {
 };
 
 export const paystackPlanCodes = {
-  [EPlanKeys.ONE_WEEK_PREMIUM]:
-    process.env.NEXT_PUBLIC_PAYSTACK_PREMIUM_ONE_WEEK ?? "PLN_pmr7exuc1sg778p",
+  [EPlanKeys.TWO_WEEKS_PREMIUM]:
+    process.env.NEXT_PUBLIC_PAYSTACK_PREMIUM_TWO_WEEKS ?? "PLN_pmr7exuc1sg778p",
 
-  [EPlanKeys.ONE_WEEK_MIXED]:
-    process.env.NEXT_PUBLIC_PAYSTACK_MIXED_ONE_WEEK ?? "PLN_b9gv27ezigqc79y",
+  [EPlanKeys.TWO_WEEKS_MIXED]:
+    process.env.NEXT_PUBLIC_PAYSTACK_MIXED_TWO_WEEKS ?? "PLN_b9gv27ezigqc79y",
 
   [EPlanKeys.ONE_MONTH_PREMIUM]:
     process.env.NEXT_PUBLIC_PAYSTACK_PREMIUM_ONE_MONTH ?? "PLN_3qal83zxjkygqyp",
@@ -1457,7 +1468,7 @@ export const paystackPlanCodes = {
 };
 
 export enum EDuration {
-  "ONE_WEEK" = "1 week",
+  "TWO_WEEKS" = "2 weeks",
   "ONE_MONTH" = "1 month",
 }
 
@@ -1481,81 +1492,81 @@ export const plans: Record<
 > = {
   NGN: {
     premium: {
-      [EDuration.ONE_WEEK]: 5000,
+      [EDuration.TWO_WEEKS]: 5000,
       [EDuration.ONE_MONTH]: 15000,
     },
     mixed: {
-      [EDuration.ONE_WEEK]: 10000,
+      [EDuration.TWO_WEEKS]: 10000,
       [EDuration.ONE_MONTH]: 30000,
     },
   },
   GHS: {
     premium: {
-      [EDuration.ONE_WEEK]: 50,
+      [EDuration.TWO_WEEKS]: 50,
       [EDuration.ONE_MONTH]: 145,
     },
     mixed: {
-      [EDuration.ONE_WEEK]: 100,
+      [EDuration.TWO_WEEKS]: 100,
       [EDuration.ONE_MONTH]: 290,
     },
   },
   KES: {
     premium: {
-      [EDuration.ONE_WEEK]: 400,
+      [EDuration.TWO_WEEKS]: 400,
       [EDuration.ONE_MONTH]: 1200,
     },
     mixed: {
-      [EDuration.ONE_WEEK]: 800,
+      [EDuration.TWO_WEEKS]: 800,
       [EDuration.ONE_MONTH]: 2400,
     },
   },
   UGX: {
     premium: {
-      [EDuration.ONE_WEEK]: 11000,
+      [EDuration.TWO_WEEKS]: 11000,
       [EDuration.ONE_MONTH]: 33000,
     },
     mixed: {
-      [EDuration.ONE_WEEK]: 22000,
+      [EDuration.TWO_WEEKS]: 22000,
       [EDuration.ONE_MONTH]: 66000,
     },
   },
   TZS: {
     premium: {
-      [EDuration.ONE_WEEK]: 8000,
+      [EDuration.TWO_WEEKS]: 8000,
       [EDuration.ONE_MONTH]: 24000,
     },
     mixed: {
-      [EDuration.ONE_WEEK]: 16000,
+      [EDuration.TWO_WEEKS]: 16000,
       [EDuration.ONE_MONTH]: 48000,
     },
   },
   ZAR: {
     premium: {
-      [EDuration.ONE_WEEK]: 60,
+      [EDuration.TWO_WEEKS]: 60,
       [EDuration.ONE_MONTH]: 170,
     },
     mixed: {
-      [EDuration.ONE_WEEK]: 120,
+      [EDuration.TWO_WEEKS]: 120,
       [EDuration.ONE_MONTH]: 340,
     },
   },
   USD: {
     premium: {
-      [EDuration.ONE_WEEK]: 5,
+      [EDuration.TWO_WEEKS]: 5,
       [EDuration.ONE_MONTH]: 10,
     },
     mixed: {
-      [EDuration.ONE_WEEK]: 10,
+      [EDuration.TWO_WEEKS]: 10,
       [EDuration.ONE_MONTH]: 20,
     },
   },
   EUR: {
     premium: {
-      [EDuration.ONE_WEEK]: 5,
+      [EDuration.TWO_WEEKS]: 5,
       [EDuration.ONE_MONTH]: 10,
     },
     mixed: {
-      [EDuration.ONE_WEEK]: 10,
+      [EDuration.TWO_WEEKS]: 10,
       [EDuration.ONE_MONTH]: 20,
     },
   },
@@ -2070,16 +2081,6 @@ export const predictionSites: Record<
     title: "KingsPredict Football Predictions: Winning Tips & Strategies",
     description:
       "KingsPredict offers expert football predictions across all major leagues and competitions. Our analysts combine stats, form, and injury news to give you reliable tips for match results, goal markets, and more — helping you bet with confidence and precision.",
-  },
-  "180tips-prediction": {
-    title: "180Tips Football Predictions: Expert Insights & Betting Tips",
-    description:
-      "Get ahead of the bookmakers with 180Tips-Prediction. Their daily football tips are built on thorough analysis of stats, team form, and key updates, ensuring accurate predictions for win-draw-win, goals, and value bets. Whether you’re a seasoned punter or just getting started, 180Tips helps you make smarter picks.",
-  },
-  zuluprediction: {
-    title: "ZuluPrediction Football Predictions: Expert Tips & Analysis",
-    description:
-      "Zuluprediction delivers daily, expert football predictions backed by in-depth analysis and the latest stats. From win-draw-win to goals and accumulators, our accurate tips cover top leagues and competitions worldwide — helping you make smarter, more profitable bets.",
   },
   "primatips-prediction": {
     title: "Primatips Football Predictions: Winning Strategies & Tips",

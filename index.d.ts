@@ -689,8 +689,6 @@ declare global {
     | "betwizad"
     | "focuspredict"
     | "kingspredict"
-    | "180tips-prediction"
-    | "zuluprediction"
     | "primatips-prediction"
     | "legitpredict"
     | "solopredict"

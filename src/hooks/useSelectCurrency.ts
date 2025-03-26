@@ -1,40 +1,35 @@
 import { Country } from "country-state-city";
-import { paymentSupportedCountries } from "../assets/data/data";
 import { useState } from "react";
+import { paymentSupportedCountryCodes } from "../assets/data/data";
 
-type TSelectCurrency = {
-  defaultCurrency: string;
-};
+export default function useSelectCurrency() {
+  const countries = Country.getAllCountries();
 
-export default function useSelectCurrency({
-  defaultCurrency,
-}: TSelectCurrency) {
-  const availableCountries = Country.getAllCountries().filter(
-    (country) =>
-      paymentSupportedCountries.includes(country.currency) &&
-      !(
-        (country.currency === "USD" && country.isoCode !== "US") ||
-        (country.currency === "EUR" && country.isoCode !== "DE")
-      )
+  const supportedCountries = countries.filter((country) =>
+    paymentSupportedCountryCodes.includes(country.isoCode),
+  );
+  const otherCountries = countries.filter(
+    (country) => !paymentSupportedCountryCodes.includes(country.isoCode),
   );
 
-  const supportedCountries = availableCountries.map(
-    (country) => `${country.flag} ${country.name} ${country.currency}`
+  const allCountries = [...supportedCountries, ...otherCountries].map(
+    (country) => ({
+      flag: country.flag,
+      name: country.name,
+      currency: country.currency,
+    }),
   );
 
-  const defaultCountry =
-    supportedCountries.find((country) => country.includes(defaultCurrency)) ??
-    supportedCountries[2];
-  const [selectedCurrency, setSelectedCurrency] =
-    useState<string>(defaultCountry);
-  const currency = availableCountries.find((country) =>
-    country.name.includes(selectedCurrency.split(" ")[1])
+  const [selectedCurrency, setSelectedCurrency] = useState<string>("");
+
+  const currency = countries.find(
+    (country) => country.name.toLowerCase() === selectedCurrency,
   )?.currency;
 
   return {
     selectedCurrency,
     setSelectedCurrency,
     currency,
-    supportedCountries,
+    supportedCountries: allCountries,
   };
 }
