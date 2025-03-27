@@ -39,7 +39,7 @@ function TransactionList({ transaction }: TransactionListProps) {
     <div className="grid  items-center lg:grid-cols-[1fr_200px] shadow p-4 rounded-3xl lg:px-10 bg-white border border-gray-two dark:bg-blue-two dark:text-white dark:border-0">
       <div className="flex items-center gap-4">
         <div
-          className={cn("w-3 h-3 bg-green-500 rounded-full", {
+          className={cn("w-3 h-3 bg-gray-one rounded-full", {
             "bg-green-500": transaction?.status === "success",
             "bg-red-500": transaction?.status === "failed",
             "bg-yellow-500": transaction?.status === "pending",
@@ -61,12 +61,14 @@ function TransactionList({ transaction }: TransactionListProps) {
       </div>
       <div className="flex flex-col items-end">
         <p
-          className={cn("text-base text-green-500", {
-            "text-red-500": transaction?.type === "debit",
+          className={cn("text-base text-gray-one", {
+            "text-green-500": transaction?.status === "success",
+            "text-red-500": transaction?.status === "failed",
+            "text-yellow-500": transaction?.status === "pending",
           })}
-        >{`${transaction.type === "debit" ? "+" : "-"}${formatCurrency(
+        >{`${transaction.type === "debit" ? "-" : "+"}${formatCurrency(
           transaction?.amount,
-          transaction?.currency ?? user?.currency ?? "NGN"
+          transaction?.currency ?? user?.currency ?? "NGN",
         )}`}</p>
         <p
           className={cn("text-sm text-gray-one capitalize", {
