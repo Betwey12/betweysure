@@ -21,6 +21,7 @@ import { auth } from "@/firebase/config";
 import PasswordInput from "../ui/password-input";
 import { useTranslations } from "next-intl";
 import LoadingButton from "../ui/loading-button";
+import { paymentSupportedCountries } from "@/assets/data/data";
 
 const registerSchema = yup.object().shape({
   fullName: yup.string().required("Full name is required"),
@@ -37,7 +38,7 @@ const registerSchema = yup.object().shape({
     .optional()
     .matches(
       /^(betwey-[a-zA-Z0-9]{7}|)$/,
-      "Invalid: leave empty if unavailable"
+      "Invalid: leave empty if unavailable",
     ),
   password: yup
     .string()
@@ -81,15 +82,18 @@ export default function SignUpForm() {
     const token = await handleReCaptchaVerify("signup");
 
     const phonecode = data.phonecode ? data.phonecode : "234";
-    const currency = countries.find(
-      (country) => phonecode === country.phonecode
-    )?.currency;
+    const currency =
+      countries.find((country) => phonecode === country.phonecode)?.currency ??
+      "USD";
+    const newCurrency = paymentSupportedCountries.includes(currency)
+      ? currency
+      : "USD";
+
     const newPhone = `${phonecode}${data.phone}`;
     const referredBy =
       sessionStorage.getItem("referralCode") || data.referredBy;
 
     if (!token) return toast.error("Recaptcha verification failed");
-    console.log("data", data);
 
     const body = {
       ...data,
@@ -98,7 +102,7 @@ export default function SignUpForm() {
       phonecode: phonecode,
       token: token,
       recaptchaAction: "signup",
-      currency: currency,
+      currency: newCurrency,
     };
 
     const response = await mutateAsync(body);
@@ -137,7 +141,7 @@ export default function SignUpForm() {
                 "px-4 border py-3 rounded focus:outline-none text-gray-neutral",
                 {
                   "border border-red-500": errors.fullName,
-                }
+                },
               )}
             />
             {errors.fullName && (
@@ -162,7 +166,7 @@ export default function SignUpForm() {
                 "px-4 py-3 border rounded focus:outline-none text-gray-neutral",
                 {
                   "border border-red-500": errors.email,
-                }
+                },
               )}
             />
             {errors.email && (
@@ -187,7 +191,7 @@ export default function SignUpForm() {
                 "px-4 py-3 border-y border-r focus:outline-none text-gray-neutral",
                 {
                   "border border-red-500": errors.phone,
-                }
+                },
               )}
             />
             {errors.phone && (
@@ -211,7 +215,7 @@ export default function SignUpForm() {
               "px-4 border py-3 rounded focus:outline-none text-gray-neutral",
               {
                 "border border-red-500": errors.referredBy,
-              }
+              },
             )}
           />
           {errors.referredBy && (
@@ -276,7 +280,7 @@ export default function SignUpForm() {
                 "w-5 h-5 rounded bg-white border border-cyan peer-checked:bg-[#2A2E45] flex items-center justify-center text-white",
                 {
                   "border border-red-500": errors.tos,
-                }
+                },
               )}
             >
               <FaCheck className="text-xs" />
