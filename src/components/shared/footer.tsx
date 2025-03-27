@@ -161,24 +161,29 @@ function useFooter() {
       links: [
         {
           title: t("HOME_WIN"),
-          link: "/dashboard/football-predictions?country=all",
-        },
-        {
-          title: t("AWAY_WIN"),
-          link: "/dashboard/football-predictions?country=all",
+          link: "/dashboard/football-predictions",
         },
         {
           title: t("CORRECT_SCORE"),
-          link: "/dashboard/football-predictions?country=all",
+          link: "/dashboard/football-predictions",
         },
-        { title: t("GG"), link: "/dashboard/football-predictions?country=all" },
+        { title: t("GG"), link: "/dashboard/football-predictions" },
         {
-          title: t("OVER_2"),
-          link: "/dashboard/football-predictions?country=all",
+          title: t("OVER_UNDER"),
+          link: "/dashboard/football-predictions",
         },
         {
-          title: t("UNDER_2"),
-          link: "/dashboard/football-predictions?country=all",
+          title: t("CONVERT_TOOL"),
+          link: "/convert-bet-codes",
+        },
+
+        {
+          title: t("ACCA_TOOL"),
+          link: "/acca-builder",
+        },
+        {
+          title: t("FREE_CODES"),
+          link: "/free-booking-codes",
         },
       ],
     },

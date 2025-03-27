@@ -4,6 +4,7 @@ import paystack from "@/assets/icons/paystack.png";
 import wallet from "@/assets/icons/wallet.png";
 import bank from "@/assets/icons/bank.png";
 import mobileMoney from "@/assets/icons/mobile-money.png";
+import crypto from "@/assets/icons/crypto.png";
 
 import Image from "next/image";
 import { FaInfo } from "react-icons/fa";
@@ -23,6 +24,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
+import useGetUser from "@/hooks/useGetUser";
 
 type TPayload = {
   method: string;
@@ -30,8 +32,17 @@ type TPayload = {
   plan: string;
 };
 
+const fonbnkDetails = {
+  source: process.env.NEXT_PUBLIC_FONBNK_SOURCE,
+  network: process.env.NEXT_PUBLIC_FONBNK_NETWORK,
+  address: process.env.NEXT_PUBLIC_FONBNK_WALLET_ADDRESS,
+  asset: process.env.NEXT_PUBLIC_FONBNK_ASSET ?? "USDC",
+  callbackUrl: process.env.NEXT_PUBLIC_BASE_URL + "/dashboard",
+};
+
 export default function GatewaySelect() {
   const router = useRouter();
+  const { user } = useGetUser();
   const searchParams = useSearchParams();
   const planName = searchParams.get("plan") as EPaidPlanNames;
   const durationParams = searchParams.get("duration");
@@ -90,34 +101,101 @@ export default function GatewaySelect() {
     console.log("closed");
   };
 
-  function handlePayment(gateway: string) {
-    if (!plan || !durationParams) {
-      toast.error("Please select a plan");
-      router.push("/dashboard/buy-plan");
-    }
-
-    if (gateway === "paystack" && availableCurrency !== "NGN") {
+  function handlePaystackGateway() {
+    if (availableCurrency !== "NGN") {
       return toast.error(
         "Paystack only supports NGN currency. Select a different payment method",
       );
     }
 
-    if (gateway === "paystack") {
-      handlePaystackPayment({
-        onSuccess,
-        onClose,
-      });
-      return;
-    }
-    if (gateway === "flutterwave") {
-      handleFlutterPayment({
-        callback: flutterCallback,
-        onClose,
-      });
-      return;
-    }
+    handlePaystackPayment({
+      onSuccess,
+      onClose,
+    });
+    return;
+  }
+
+  function handleFlutterGateway() {
+    handleFlutterPayment({
+      callback: flutterCallback,
+      onClose,
+    });
+    return;
+  }
+
+  function handleWalletPayment() {
     return handleUpdatePlan("wallet", "wallet");
   }
+
+  const paymentGateways = [
+    {
+      name: "flutterwave",
+      logo: flutterwave,
+      title: "flutterwave",
+      onClick: handleFlutterGateway,
+    },
+    {
+      name: "flutterwave",
+      logo: mobileMoney,
+      title: "mobile money",
+      onClick: handleFlutterGateway,
+    },
+    {
+      name: "wallet",
+      logo: wallet,
+      title: "wallet",
+      onClick: handleWalletPayment,
+    },
+    {
+      name: "paystack",
+      logo: paystack,
+      title: "paystack",
+      onClick: handlePaystackGateway,
+    },
+    {
+      name: "flutterwave",
+      logo: bank,
+      title: "bank transfer",
+      onClick: handleFlutterGateway,
+    },
+    ...(currency === "USD"
+      ? [
+          {
+            name: "crypto",
+            logo: crypto,
+            title: "crypto",
+            onClick: () => {
+              const userId = user?._id;
+              if (
+                !userId ||
+                !fonbnkDetails.source ||
+                !fonbnkDetails.address ||
+                !fonbnkDetails.network
+              ) {
+                toast.error("Please login to continue");
+                return;
+              }
+
+              const params = new URLSearchParams({
+                source: "ysIzEXl5",
+                orderParams: userId,
+                amount: amount.toString(),
+                freezeAmount: amount.toString(),
+                freezeWallet: "1",
+                network: fonbnkDetails.network,
+                address: fonbnkDetails.address,
+                currency: "usdc",
+                hideSwitch: "true",
+                callbackUrl: fonbnkDetails.callbackUrl,
+                asset: fonbnkDetails.asset,
+              }).toString();
+
+              router.push(`https://pay.fonbnk.com/?${params}`);
+            },
+          },
+        ]
+      : []),
+  ];
 
   return (
     <div className="grid gap-4 lg:grid-cols-4">
@@ -150,7 +228,11 @@ export default function GatewaySelect() {
           <Button
             onClick={() => {
               setClickedIndex(index);
-              handlePayment(gateway.name);
+              if (!plan || !durationParams) {
+                toast.error("Please select a plan");
+                router.push("/dashboard/buy-plan");
+              }
+              gateway.onClick();
             }}
             className="text-white gap-2 text-sm bg-yellow-sunset hover:bg-white hover:border hover:border-yellow-sunset hover:text-yellow-sunset text-center px-4 py-2 rounded disabled:cursor-not-allowed disabled:opacity-50"
             disabled={isPending}
@@ -172,33 +254,3 @@ export default function GatewaySelect() {
     </div>
   );
 }
-
-const paymentGateways = [
-  {
-    name: "flutterwave",
-    logo: flutterwave,
-    title: "flutterwave",
-  },
-  {
-    name: "flutterwave",
-    logo: mobileMoney,
-    title: "mobile money",
-  },
-
-  {
-    name: "wallet",
-    logo: wallet,
-    title: "wallet",
-  },
-
-  {
-    name: "paystack",
-    logo: paystack,
-    title: "paystack",
-  },
-  {
-    name: "flutterwave",
-    logo: bank,
-    title: "bank transfer",
-  },
-];

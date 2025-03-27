@@ -74,10 +74,6 @@ function useQuickLinks() {
 
   const quickLinks = [
     {
-      title: t("QUICK_LINKS"),
-      href: "/dashboard/football-predictions?country=all",
-    },
-    {
       title: t("TODAYS_PREDICTIONS"),
       href: "/dashboard/football-predictions?country=all",
     },

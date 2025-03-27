@@ -3,6 +3,7 @@ import { cn, formatCurrency } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import { FaCheck, FaMinus, FaTimes } from "react-icons/fa";
 import AuthedLink from "../ui/authed-link";
+import { FaStar } from "react-icons/fa6";
 
 type TPackage = {
   title: string;
@@ -33,7 +34,7 @@ export default function PackageCard({
             predictionPackage.name !== EPaidPlanNames.PREMIUM,
           "bg-gradient-to-bl to-purple-royal from-purple-800 via-purple-500 text-white scale-y-110":
             predictionPackage.name === EPaidPlanNames.PREMIUM,
-        }
+        },
       )}
     >
       <div className="flex flex-col gap-4 w-full">
@@ -58,6 +59,8 @@ export default function PackageCard({
             <li className="flex items-center gap-2" key={feature}>
               {feature.includes("No") ? (
                 <FaTimes className="text-red-700" />
+              ) : feature.includes("ACCA") || feature.includes("AI") ? (
+                <FaStar className="text-yellow-one" />
               ) : (
                 <FaCheck
                   className={cn("text-green-700", {
@@ -66,11 +69,11 @@ export default function PackageCard({
                   })}
                 />
               )}
-              <span className="text-xs">{feature}</span>
+              <span className="text-xs flex items-center gap-2">{feature}</span>
             </li>
           ))}
         </ul>
-        <ul className="pl-4">
+        <ul className="flex flex-col gap-2 w-full list-inside pl-4">
           {predictionPackage.types.map((type) => (
             <li key={type} className="flex items-center gap-2">
               <FaMinus />

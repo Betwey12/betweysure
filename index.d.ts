@@ -756,7 +756,7 @@ declare global {
     | "fourfourtwo"
     | "90min";
 
-  type TOtherPagesParams = "free-booking-codes";
+  type TOtherPagesParams = "free-booking-codes" | "convert-bet-codes";
 
   type TParams =
     | TBettingParams
