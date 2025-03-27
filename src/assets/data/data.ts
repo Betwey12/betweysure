@@ -2195,6 +2195,12 @@ export const otherToolsSites: Record<
     description:
       "Use our free booking code converter tool to place sure bets and win big. Our expert tips and predictions help you make smarter betting decisions and maximize your profits.",
   },
+
+  "convert-bet-codes": {
+    title: "Convert bet code tool",
+    description:
+      "Use our bet code converter tool to convert your bet codes and place sure bets. Our expert tips and predictions help you make smarter betting decisions and maximize your profits.",
+  },
 };
 
 export const trendsSites: Record<

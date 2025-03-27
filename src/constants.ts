@@ -150,6 +150,7 @@ export const paramsSeoText: Record<TParams, string> = {
   "both-teams-to-score-betting": bothTeamsToScoreContent,
   "draw-betting": drawContent,
   "free-booking-codes": bookingCodesContent,
+  "convert-bet-codes": bookingCodesContent,
   livescore: livescoreContent,
   sofascore: sofascoreContent,
   fotmob: fotmobContent,
@@ -475,6 +476,12 @@ export const paramsaMetaData: Record<
   TParams,
   { title: string; description: string; keywords: string }
 > = {
+  "convert-bet-codes": {
+    title: "Convert Bet Codes - Betweysure",
+    description:
+      "Convert bet codes to odds and predictions with Betweysure. Get accurate insights and tips for your sports bets.",
+    keywords: "convert bet codes, bet codes",
+  },
   "1xbet-prediction": {
     title: "Guaranteed 1xbet Predictions - Betweysure",
     description:
