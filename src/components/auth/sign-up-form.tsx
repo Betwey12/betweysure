@@ -205,7 +205,7 @@ export default function SignUpForm() {
         <fieldset className="flex flex-col gap-2 w-full text-sm">
           <label htmlFor="referralCode" className="flex items-center gap-2">
             {t("REFERAL_CODE")}
-            <span className="text-red-500">*</span>
+            <span className="text-xs">(optional)</span>
           </label>
           <input
             type="text"
