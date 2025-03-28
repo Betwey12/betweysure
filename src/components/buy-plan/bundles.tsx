@@ -78,7 +78,7 @@ export default function Bundles() {
                   <Link
                     href={
                       currency
-                        ? `/dashboard/payment/?currency=${newCurrency}&plan=${plan.name}&duration=${duration}`
+                        ? `/dashboard/payment/?currency=${newCurrency}&plan=${plan.name}&duration=${duration.replace(/\s/g, "-")}`
                         : "#"
                     }
                     key={index}

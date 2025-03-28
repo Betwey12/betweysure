@@ -57,6 +57,7 @@ export default function GatewaySelect() {
   const { isPending, isError, mutateAsync } = useMutation({
     mutationFn: (data: TPayload) => HTTPRequest.Post("wallet/subscribe", data),
   });
+
   const planKey = plansKeys.find(
     (key) =>
       `${durationParams?.toLowerCase()}-${planName?.toLowerCase()}` === key,
