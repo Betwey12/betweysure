@@ -3,7 +3,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Country } from "country-state-city";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { HTTPRequest } from "@/api";
 import { auth } from "@/firebase/config";
 import { toast } from "react-toastify";
@@ -15,6 +15,8 @@ import { FaSpinner } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import LoadingButton from "../ui/loading-button";
 import { useTranslations } from "next-intl";
+import { paymentSupportedCountries } from "@/assets/data/data";
+import { log } from "console";
 
 const schema = yup.object().shape({
   phone: yup
@@ -60,9 +62,14 @@ export default function CompleteProfileForm() {
     const phonecode = data.phonecode || "234";
     const authUser = auth.currentUser;
     if (!authUser) return toast.error("User not found");
-    const currency = countries.find((country) =>
-      phonecode?.includes(country.phonecode)
-    )?.currency;
+    const currency =
+      countries.find((country) => phonecode === country.phonecode)?.currency ??
+      "USD";
+
+    const newCurrency = paymentSupportedCountries.includes(currency)
+      ? currency
+      : "USD";
+
     const referredBy = sessionStorage.getItem("referralCode") || undefined;
 
     data.email &&
@@ -76,7 +83,7 @@ export default function CompleteProfileForm() {
       phone: `${phonecode}${data.phone}`,
       fullName: user?.displayName || "No name",
       phonecode,
-      currency: currency!,
+      currency: newCurrency,
       uid: authUser.uid,
       referredBy,
     });
@@ -110,7 +117,7 @@ export default function CompleteProfileForm() {
               "px-4 border py-3 w-full rounded focus:outline-none text-gray-neutral",
               {
                 "border border-red-500": errors.email,
-              }
+              },
             )}
             {...register("email")}
           />
