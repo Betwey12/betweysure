@@ -82,22 +82,6 @@ function useQuickLinks() {
       href: "/acca-builder",
     },
     {
-      title: t("1XBET_PREDICTIONS"),
-      href: "/1xbet-prediction",
-    },
-    {
-      title: t("BET9JA_PREDICTIONS"),
-      href: "/bet9ja-prediction",
-    },
-    {
-      title: t("SPORTYBET_PREDICTIONS"),
-      href: "/sportybet-prediction",
-    },
-    {
-      title: "Predictz Betting Tips",
-      href: "/predictz",
-    },
-    {
       title: "Jackpot Betting",
       href: "/jackpot-betting",
     },
