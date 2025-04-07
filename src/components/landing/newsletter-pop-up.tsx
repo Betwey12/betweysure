@@ -57,7 +57,7 @@ export default function NewsLetterPopUp() {
 
           {
             "translate-y-0": popUp === "newsletter",
-          }
+          },
         )}
       >
         <div
@@ -88,7 +88,7 @@ export default function NewsLetterPopUp() {
                     "w-full bg-white px-4 py-3 border rounded focus:outline-none text-gray-neutral",
                     {
                       "border-red-500 border": errors.name?.message,
-                    }
+                    },
                   )}
                 />
                 {errors.name && (
@@ -112,7 +112,7 @@ export default function NewsLetterPopUp() {
               </fieldset>
             </fieldset>
 
-            <Button className="mt-6 py-3 justify-center text-white">
+            <Button className="mt-6 py-3 justify-center text-white gap-2">
               Yes!, I want free tips
               {isPending && <FaSpinner className="animate-spin" />}
             </Button>
