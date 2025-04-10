@@ -66,16 +66,18 @@ export default function PricingPlans() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:px-0">
-        {packages.map((predictionPackage) => (
-          <PackageCard
-            predictionPackage={predictionPackage}
-            key={predictionPackage.name}
-            timeframe={timeframe}
-            currencyCode={currency}
-          />
-        ))}
-      </div>
+      {currency && (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:px-0">
+          {packages.map((predictionPackage) => (
+            <PackageCard
+              predictionPackage={predictionPackage}
+              key={predictionPackage.name}
+              timeframe={timeframe}
+              currencyCode={currency}
+            />
+          ))}
+        </div>
+      )}
 
       <AuthedLink
         href="/dashboard/buy-plan"
@@ -177,7 +179,7 @@ function usePricingPlans() {
     packages,
     supportedCountries,
     setSelectedCurrency,
-    currency: isSupported ? currency : currency ? "USD" : "NGN",
+    currency,
     t,
     duration,
     setDuration,
