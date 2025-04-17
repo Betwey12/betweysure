@@ -5,6 +5,7 @@ import {
   predictionSites,
   trendsSites,
 } from "@/assets/data/data";
+import { pageParams } from "@/assets/data/params";
 import BettingPage from "@/components/landing/betting-page";
 import MediaPage from "@/components/landing/media-page";
 import OtherToolsSite from "@/components/landing/other-tools-site";
@@ -72,4 +73,10 @@ export default function ParamsPage({ params }: { params: { param: TParams } }) {
     );
 
   return notFound();
+}
+
+export async function generateStaticParams() {
+  return pageParams.map((page) => ({
+    param: page,
+  }));
 }

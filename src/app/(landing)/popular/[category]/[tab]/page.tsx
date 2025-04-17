@@ -27,6 +27,7 @@ import Link from "next/link";
 import LeaguesExplained from "@/components/leagues/leagues-explained";
 import { leagueList, period } from "@/assets/data/data";
 import { capitalize } from "@/lib/utils";
+import { leagueTabParams, popularLeaguesParams } from "@/assets/data/params";
 
 type Props = {
   params: { category: string; tab: TLeagueMetaTabs };
@@ -77,7 +78,7 @@ export default function PopularPage({
   const popularLeague = popularLeagues?.find(
     (l) =>
       l.name.toLowerCase() ===
-      decodeURIComponent(category)?.toLowerCase()?.replace(/-/g, " ")
+      decodeURIComponent(category)?.toLowerCase()?.replace(/-/g, " "),
   );
 
   const formatCategory = category?.toUpperCase()?.replace(/-/g, "_");
@@ -160,18 +161,18 @@ function usePopularLeagues(category: string) {
   };
 }
 
-// export async function generateStaticParams() {
-//   const leagues = Object.values(leagueList).flat();
-//
-//   const leagueParams = leagues.map((league) => ({
-//     category: league.name.toLowerCase().replace(/-/g, " ").replace(/\s/g, "-"),
-//     tab: "predictions",
-//   }));
-//   const periodParams = period.map((period) => ({
-//     category: period.toLowerCase(),
-//     tab: "predictions",
-//   }));
-//
-//
-//   return [...leagueParams, ...periodParams];
-// }
+export async function generateStaticParams() {
+  const leagueParams = popularLeaguesParams.flatMap((league) =>
+    leagueTabParams.map((tab) => ({
+      category: league.toLowerCase().replace(/\s+/g, "-"),
+      tab,
+    })),
+  );
+
+  const periodParams = period.map((period) => ({
+    category: period.toLowerCase(),
+    tab: "predictions",
+  }));
+
+  return [...leagueParams, ...periodParams];
+}
