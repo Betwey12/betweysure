@@ -54,5 +54,4 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out # For static export (next export), change if using SSR
-
+          local-dir: ./out/
