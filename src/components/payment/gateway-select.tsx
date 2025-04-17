@@ -22,8 +22,7 @@ import usePayment from "@/hooks/usePayment";
 import { HTTPRequest } from "@/api";
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import useGetUser from "@/hooks/useGetUser";
 
 type TPayload = {

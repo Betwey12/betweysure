@@ -25,12 +25,12 @@ import {
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import LeaguesExplained from "@/components/leagues/leagues-explained";
-import { leagueList, period } from "@/assets/data/data";
+import { leagueList, period, popularLeagueSites } from "@/assets/data/data";
 import { capitalize } from "@/lib/utils";
 import { leagueTabParams, popularLeaguesParams } from "@/assets/data/params";
 
 type Props = {
-  params: { category: string; tab: TLeagueMetaTabs };
+  params: { category: TPopularTCategories; tab: TLeagueMetaTabs };
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -68,7 +68,7 @@ export default function PopularPage({
 }: {
   params: { [key: string]: string | string[] | undefined };
 }) {
-  const category = (params["category"] || "") as string;
+  const category = (params["category"] || "") as TPopularTCategories;
   const tab = (params["tab"] || "") as TLeagueTabs;
   const { t, cta } = usePopularLeagues(category);
   const formattedCategory = category?.toUpperCase().replace(/-/g, "_");
@@ -83,6 +83,8 @@ export default function PopularPage({
 
   const formatCategory = category?.toUpperCase()?.replace(/-/g, "_");
 
+  const popularSite = popularLeagueSites[category];
+
   return (
     <>
       <OtherPagesHero />
@@ -90,20 +92,18 @@ export default function PopularPage({
         isPeriod={isPeriod}
         category={category}
         tab={tab}
-        periodTitle={t(`${formatCategory}_TITLE` as any)}
+        periodTitle={popularSite?.title ?? t("DEFAULT_TITLE")}
         popularLeague={popularLeague}
         description={
-          t(`${formattedCategory}_DESCRIPTION` as any) !==
-          `LEAGUE_INFO.${formatCategory}_DESCRIPTION`
-            ? t(`${formatCategory}_DESCRIPTION` as any)
+          popularSite
+            ? popularSite.description
             : t("DESCRIPTION", {
                 league: capitalize(popularLeague?.name ?? ""),
               })
         }
         title={
-          t(`${formatCategory}_TITLE` as any) !==
-          `LEAGUE_INFO.${formatCategory}_TITLE`
-            ? t(`${formatCategory}_TITLE` as any)
+          popularSite
+            ? popularSite.title
             : t("TITLE", { league: capitalize(popularLeague?.name ?? "") })
         }
       />
@@ -112,19 +112,15 @@ export default function PopularPage({
 
         <div className="dark:bg-blue-one border border-gray-two dark:border-0 rounded  p-4 lg:px-10 lg:py-20 dark:text-white flex flex-col lg:flex-row  gap-4 lg:items-center justify-between">
           <p className="max-w-lg">
-            {t(`${formattedCategory}_CALL_TO_ACTION` as any) !==
-            `LEAGUE_INFO.${formattedCategory}_CALL_TO_ACTION`
-              ? t(`${formattedCategory}_CALL_TO_ACTION` as any)
+            {popularSite
+              ? popularSite.callToAction
               : t("CALL_TO_ACTION", { league: formattedCategory })}
           </p>
           <Link
             href={cta.link}
             className="text-center bg-cyan  py-3 px-4 rounded font-medium text-white"
           >
-            {t(`${formattedCategory}_CTA_TITLE` as any) !==
-            `LEAGUE_INFO.${formattedCategory}_CTA_TITLE`
-              ? t(`${formattedCategory}_CTA_TITLE` as any)
-              : t("DEFAULT_CTA_TITLE")}
+            {popularSite ? popularSite.ctaTitle : t("DEFAULT_CTA_TITLE")}
           </Link>
         </div>
       </div>

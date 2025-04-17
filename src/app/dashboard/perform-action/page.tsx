@@ -1,3 +1,4 @@
+"use client";
 import imageOne from "@/assets/images/image5.webp";
 import imageTwo from "@/assets/images/image6.webp";
 import imageThree from "@/assets/images/image7.webp";
@@ -8,13 +9,11 @@ import ConvertBettingCodeForm from "@/components/bills/convert-betting-code-form
 import FundBettingWalletForm from "@/components/bills/fund-betting-wallet-form";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
-export default function PerformActionPage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
-  const task = searchParams.task;
+export default function PerformActionPage() {
+  const searchParams = useSearchParams();
+  const task = searchParams.get("task");
 
   return (
     <div className="flex justify-between gap-4 flex-col lg:flex-row">

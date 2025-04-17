@@ -52,7 +52,6 @@ export default function Bundles() {
       </span>
     </SelectItem>
   ));
-  console.log(currency);
 
   return (
     <>

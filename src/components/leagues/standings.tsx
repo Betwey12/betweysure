@@ -19,7 +19,6 @@ export default function Standings({
   const standings = leagueStandings?.[0]?.league?.standings || [];
   const [to, setTo] = useState(6);
   const season = leagueStandings?.[0]?.league?.season ?? "";
-  console.log(league, season);
 
   return isLoading ? (
     <div className="flex items-center justify-center">

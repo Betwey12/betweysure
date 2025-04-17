@@ -15,11 +15,11 @@ import { useAuth } from "@/hooks/useAuth";
 export default function ReferralCard() {
   const { user } = useAuth();
   const [copied, setCopied] = useState(false);
-  const myLink = `${window.location.origin}?referralCode=${
-    user?.referralCode ?? ""
-  }`;
 
   function copyToClipboard() {
+    const myLink = `${window?.location.origin}?referralCode=${
+      user?.referralCode ?? ""
+    }`;
     navigator.clipboard.writeText(myLink);
     setCopied(true);
   }
@@ -64,7 +64,7 @@ export default function ReferralCard() {
               href={simpleSocialShare({
                 medium: site.medium,
                 message,
-                shareurl: myLink,
+                referralCode: user?.referralCode ?? "",
               })}
               target="_blank"
               rel="noreferrer"

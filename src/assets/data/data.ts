@@ -1,3 +1,5 @@
+import { CallToAction } from "@/components/home";
+
 export const countries = {
   ad: "Andorra",
   ae: "United Arab Emirates",
@@ -2236,5 +2238,157 @@ export const trendsSites: Record<
     title: "Football News & Transfer Rumors – 90min",
     description:
       "Catch up on the latest football trends, news, viral fan content, and transfer rumors from around the globe, brought to you by 90min.",
+  },
+};
+
+// @ts-ignore
+export const popularLeagueSites: Record<
+  TPopularTCategories,
+  {
+    title: string;
+    description: string;
+    callToAction?: string;
+    ctaTitle?: string;
+  }
+> = {
+  today: {
+    title: "Today's Football Predictions: Expert Tips & Insights",
+    description:
+      "The world of football is constantly changing. We keep our predictions up-to-date with the latest news and developments, so you can stay ahead of the curve. Looking for the best bets today? Betweysure's team of experts has analyzed today's matches and provided their top predictions. Whether you're a seasoned bettor or just starting out, our predictions and tips can help you make smarter bets and increase your chances of success.",
+    callToAction:
+      "Ready to Place Your Bets? Check out our top picks for today and make informed decisions with Betweysure.",
+  },
+  yesterday: {
+    title: "Yesterday's Football Predictions: Expert Analysis & Results",
+    description:
+      "Recap of Yesterday's Football Action: Get a comprehensive overview of yesterday's football matches, including final scores, key highlights, and notable upsets. Our team of experienced analysts breaks down yesterday's games, providing valuable insights into team performance, player form, and tactical decisions. Use our yesterday's predictions and results to inform your future betting decisions. Identify trends, spot potential value bets, and refine your strategies. Betweysure keeps you up-to-date with the latest football news and analysis. Check back regularly for daily predictions, tips, and in-depth match previews.",
+    callToAction:
+      "Ready for today's action? Check out our \"Today's Football Predictions\" page for expert tips and insights on upcoming matches.",
+  },
+
+  tomorrow: {
+    title: "Tomorrow's Football Predictions: Expert Insights for Smarter Bets",
+    description:
+      "Eager to know what tomorrow's matches hold? Our team of seasoned analysts has meticulously examined upcoming fixtures to bring you comprehensive predictions and betting tips. We go beyond simple predictions. Our analysis considers team form, head-to-head records, player injuries, and other crucial factors to give you a well-rounded view of each match. Whether you're interested in match outcomes, over/under goals, both teams to score, or more specialized markets, we have you covered. Our predictions cater to diverse betting preferences. Gain an edge with our early insights into tomorrow's matches. Our predictions are available well in advance, allowing you to make informed decisions and potentially identify value bets before the odds shift.",
+    callToAction:
+      "Don't Wait, Prepare for Tomorrow: Explore our expert predictions for tomorrow's matches and equip yourself with the knowledge to make smarter bets. Upgrade today and take your betting game to the next level.",
+  },
+
+  "euro-championship": {
+    callToAction:
+      "Boost your Euro Championship betting with our detailed match previews, expert strategies, and exclusive predictions. Upgrade your Betweysure membership today!",
+    title: "Dominate the Tournament",
+    description:
+      "The UEFA European Championship, or the Euros, is a major football tournament held every four years, featuring Europe’s top national teams. It’s one of the biggest and most-watched events in sports. Our team of experienced football analysts at Betweysure carefully studies each Euro match to bring you accurate predictions and helpful betting tips.",
+    ctaTitle: "Get Premium Euro Insights",
+  },
+  "uefa-champions-league": {
+    callToAction:
+      "Don't miss out on the opportunity to maximize your winnings during the Champions League season. Join Betweysure today and experience the difference that expert analysis and insights can make.",
+    description:
+      "At Betweysure, our team of football experts meticulously analyzes every Champions League match, providing you with in-depth predictions and betting tips to enhance your chances of success. Gain access to our exclusive Champions League predictions, in-depth match previews, and expert betting strategies by upgrading your Betweysure membership.",
+    title: "UEFA Champions League Predictions: Conquer Europe's Elite",
+    ctaTitle: "Get Premium Euro Insights",
+  },
+  "england-premier-league": {
+    callToAction:
+      "Stay ahead of the curve with Betweysure's expert predictions and analysis.",
+    title: "English Premier League Predictions: Your Guide to Betting Success",
+    description:
+      "We cover every aspect of the Premier League, from the top-of-the-table clashes to the crucial relegation battles. Our predictions help you navigate the entire spectrum of the league.",
+    ctaTitle: "Get Premium Euro Insights",
+  },
+  "uefa-europa-league": {
+    callToAction:
+      "Don't let valuable betting opportunities slip away. Join Betweysure and make the most of your Europa League wagers with our expert guidance.",
+    title: "UEFA Europa League Predictions: Uncover Hidden Gems",
+    description:
+      "Our team of football analysts dives deep into every Europa League match, meticulously analyzing team form, player performance, and tactical approaches. From the group stage to the knockout rounds, we provide comprehensive coverage of the Europa League, ensuring you have the insights you need to make informed decisions throughout the tournament.",
+    ctaTitle: "Get Premium Euro Insights",
+  },
+  "copa-america": {
+    callToAction:
+      "Immerse yourself in the passion and excitement of the Copa America with Betweysure's expert guidance. Join us today and make the most of this thrilling tournament!",
+
+    title:
+      "Copa America Predictions: Ignite Your Passion for South American Football",
+    description:
+      "At Betweysure, our team of passionate football analysts meticulously studies every Copa America match, providing you with in-depth predictions and betting tips to enhance your enjoyment of the tournament. We offer comprehensive coverage of the entire Copa America, from the group stage to the knockout rounds and the climactic final. Our predictions and insights will keep you informed and engaged throughout the tournament.",
+    ctaTitle: "Get Premium Euro Insights",
+  },
+  eredivisie: {
+    callToAction:
+      "Immerse yourself in the excitement of the Eredivisie with Betweysure's expert guidance. Join us today and make the most of your Dutch football wagers.",
+    title: "Eredivisie Predictions: Master the Dutch League",
+    description:
+      "At Betweysure, our team of dedicated football analysts closely follows the Eredivisie, providing you with in-depth predictions and betting tips to enhance your understanding of the league. We cover every aspect of the Eredivisie, from the top-of-the-table clashes to the crucial relegation battles. Our predictions will keep you informed and engaged throughout the season.",
+    ctaTitle: "Get Premium Euro Insights",
+  },
+
+  "primeira-liga": {
+    callToAction:
+      "Immerse yourself in the excitement of the Primeira Liga with Betweysure's expert guidance. Join us today and make the most of your Portuguese football wagers.",
+    title:
+      "Primeira Liga Predictions: Unlock the Excitement of Portuguese Football",
+    description:
+      "At Betweysure, our team of dedicated football analysts closely follows the Primeira Liga, providing you with in-depth predictions and betting tips to enhance your understanding of the league. We cover every aspect of the Primeira Liga, from the top-of-the-table clashes to the crucial battles for European qualification. Our predictions will keep you informed and engaged throughout the season.",
+    ctaTitle: "Experience the Thrill of Portuguese Football",
+  },
+  "pro-league": {
+    callToAction:
+      "Immerse yourself in the excitement of the Pro League with Betweysure's expert guidance. Join us today and make the most of your Belgian football wagers.",
+    title: "Pro League Predictions: Master the Belgian League",
+    description:
+      "At Betweysure, our team of dedicated football analysts closely follows the Pro League, providing you with in-depth predictions and betting tips to enhance your understanding of the league. We cover every aspect of the Pro League, from the top-of-the-table clashes to the crucial battles for European qualification. Our predictions will keep you informed and engaged throughout the season.",
+    ctaTitle: "Experience the Thrill of Belgian Football",
+  },
+  "la-liga": {
+    callToAction:
+      "Immerse yourself in the passion and excitement of La Liga with Betweysure's expert guidance. Join us today and make the most of your Spanish football wagers.",
+    title: "La Liga Predictions: Decipher the Spanish Game",
+    description:
+      "At Betweysure, our team of passionate football analysts meticulously studies every La Liga match, providing you with in-depth predictions and betting tips to enhance your understanding of the league. We cover every aspect of La Liga, from the iconic El Clásico between Real Madrid and Barcelona to the intense battles at the bottom of the table. Our predictions will keep you informed and engaged throughout the season.",
+    ctaTitle: "Experience the Magic of Spanish Football",
+  },
+  bundesliga: {
+    title: "Bundesliga Predictions: Crack the Code of German Football",
+    callToAction:
+      "Immerse yourself in the excitement of the Bundesliga with Betweysure's expert guidance. Join us today and make the most of your German football wagers.",
+    description:
+      " At Betweysure, our team of dedicated football analysts closely follows the Bundesliga, providing you with in-depth predictions and betting tips to enhance your understanding of the league. We cover every aspect of the Bundesliga, from the intense title races to the crucial battles to avoid relegation. Our predictions will keep you informed and engaged throughout the season.",
+    ctaTitle: "Get Premium Euro Insights",
+  },
+  "italy-serie-a": {
+    callToAction:
+      "Immerse yourself in the excitement of Serie A with Betweysure's expert guidance. Join us today and make the most of your Italian football wagers.",
+    title: "Serie A Predictions: Unlock the Secrets of Italian Football",
+    description:
+      "At Betweysure, our team of dedicated football analysts closely follows Serie A, providing you with in-depth predictions and betting tips to enhance your understanding of the league. We cover every aspect of Serie A, from the thrilling Scudetto title race to the intense battles for European qualification. Our predictions will keep you informed and engaged throughout the season.",
+    ctaTitle: "Experience the Passion of Italian Football",
+  },
+  "ligue-1": {
+    callToAction:
+      "Immerse yourself in the passion and drama of Ligue 1 with Betweysure's expert guidance. Join us today and make the most of your French football wagers.",
+    title: "Ligue 1 Predictions: Decode the French Football Scene",
+    description:
+      "At Betweysure, our team of dedicated football analysts closely follows Ligue 1, providing you with in-depth predictions and betting tips to enhance your understanding of the league. We cover every aspect of Ligue 1, from the exciting title race to the intense battles for European qualification. Our predictions will keep you informed and engaged throughout the season.",
+
+    ctaTitle: "Experience the Passion of French Football",
+  },
+  "spain-primera-liga": {
+    callToAction:
+      "Immerse yourself in the passion and excitement of La Liga with Betweysure's expert guidance. Join us today and make the most of your Spanish football wagers.",
+    title: "La Liga Predictions: Decipher the Spanish Game",
+    description:
+      "At Betweysure, our team of passionate football analysts meticulously studies every La Liga match, providing you with in-depth predictions and betting tips to enhance your understanding of the league. We cover every aspect of La Liga, from the iconic El Clásico between Real Madrid and Barcelona to the intense battles at the bottom of the table. Our predictions will keep you informed and engaged throughout the season.",
+    ctaTitle: "Experience the Magic of Spanish Football",
+  },
+  "uefa-super-cup": {
+    callToAction:
+      "Don't miss out on this clash of European giants. Join Betweysure and make the most of your Super Cup wagers with our expert guidance.",
+    title: "UEFA Super Cup Predictions: Where Champions Collide",
+    description:
+      "At Betweysure, our team of seasoned football analysts meticulously analyzes the Super Cup matchup, providing you with in-depth predictions and betting tips. We delve into team form, player fitness, tactical approaches, and head-to-head records to identify potential value bets and key factors that could influence the outcome.",
+    ctaTitle: "Experience the Thrill of the Super Cup",
   },
 };

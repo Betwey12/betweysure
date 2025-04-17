@@ -1,15 +1,15 @@
+"use client";
+
 import WalletCard from "@/components/dashboard/wallet-card";
 import FundWalletForm from "@/components/wallet/fund-wallet-form";
 import Transactions from "@/components/wallet/transactions";
+import { useSearchParams } from "next/navigation";
 
 export type TActiveTab = "transactions" | "topup";
 
-export default function Wallet({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
-  const activeTab = (searchParams.tab as TActiveTab) || "transactions";
+export default function Wallet() {
+  const searchParams = useSearchParams();
+  const activeTab = (searchParams.get("tab") as TActiveTab) || "transactions";
 
   return (
     <>

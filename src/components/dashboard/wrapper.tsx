@@ -57,7 +57,7 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
                 View
               </a>
             )}
-          </div>
+          </div>,
         );
       });
     })();
@@ -65,6 +65,8 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
 
   useEffect(() => {
     // Check if Notification API is available
+
+    if (typeof window === "undefined") return;
     if ("Notification" in window) {
       const permission = Notification.permission;
 

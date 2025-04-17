@@ -6,14 +6,13 @@ export default function PurifiedHtml({ html }: { html: string }) {
   const [sanitizedHtml, setSanitizedHtml] = useState("");
 
   useEffect(() => {
-    if (html.length === 0) return;
+    if (typeof window === "undefined" || html.length === 0) return;
 
-    const domPurify = DOMPurify(window);
-    const cleanHtml = domPurify.sanitize(html);
+    const cleanHtml = DOMPurify.sanitize(html);
     setSanitizedHtml(cleanHtml);
   }, [html]);
 
-  if (!sanitizedHtml) return <></>;
+  if (!sanitizedHtml) return null;
 
   return <div dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />;
 }

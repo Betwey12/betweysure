@@ -100,7 +100,7 @@ export default function BuyDataForm() {
                   "cursor-pointer peer-checked:border-2 peer-checked:border-cyan border-opacity-30 shadow transition-all peer-checked:scale-105 block rounded",
                   {
                     "border-red-500": errors.network,
-                  }
+                  },
                 )}
                 onClick={() => reset({ plan: "", phone: "" })}
               >
@@ -147,7 +147,7 @@ export default function BuyDataForm() {
         ) : (
           dataBundles?.length && (
             <fieldset className="grid grid-cols-3 flex-wrap gap-2 max-h-[300px] overflow-y-scroll mt-4 p-4">
-              {dataBundles?.map((bundle, index) => (
+              {dataBundles?.map((bundle: any, index: number) => (
                 <div key={index}>
                   <input
                     type="radio"
@@ -163,7 +163,7 @@ export default function BuyDataForm() {
                       "cursor-pointer flex h-full border border-gray-two bg-white flex-col justify-center items-center peer-checked:border-2 peer-checked:border-cyan border-opacity-30 shadow transition-all peer-checked:scale-105  rounded p-2 dark:bg-blue-two dark:border-0",
                       {
                         "border-red-500": errors.network,
-                      }
+                      },
                     )}
                   >
                     <p className="text-sm font-bold capitalize text-center">
