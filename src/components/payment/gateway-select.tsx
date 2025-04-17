@@ -151,6 +151,7 @@ export default function GatewaySelect() {
       name: "paystack",
       logo: paystack,
       title: "paystack",
+      info: "Currently only supports NGN",
       onClick: handlePaystackGateway,
     },
     {
@@ -158,44 +159,47 @@ export default function GatewaySelect() {
       logo: bank,
       title: "bank transfer",
       onClick: handleFlutterGateway,
+      info: "Complete bank transfer using paystack or flutter",
     },
-    ...(currency === "USD"
-      ? [
-          {
-            name: "crypto",
-            logo: crypto,
-            title: "crypto",
-            onClick: () => {
-              const userId = user?._id;
-              if (
-                !userId ||
-                !fonbnkDetails.source ||
-                !fonbnkDetails.address ||
-                !fonbnkDetails.network
-              ) {
-                toast.error("Please login to continue");
-                return;
-              }
+    {
+      name: "crypto",
+      logo: crypto,
+      title: "crypto",
+      info: "USDT payments only",
+      onClick: () => {
+        const userId = user?._id;
+        if (currency !== "USD") {
+          toast.error("Please change currency to USD");
+          router.push("/dashboard/buy-plan");
+          return;
+        }
+        if (
+          !userId ||
+          !fonbnkDetails.source ||
+          !fonbnkDetails.address ||
+          !fonbnkDetails.network
+        ) {
+          toast.error("Please login to continue");
+          return;
+        }
 
-              const params = new URLSearchParams({
-                source: "ysIzEXl5",
-                orderParams: userId,
-                amount: amount.toString(),
-                freezeAmount: amount.toString(),
-                freezeWallet: "1",
-                network: fonbnkDetails.network,
-                address: fonbnkDetails.address,
-                currency: "usdc",
-                hideSwitch: "true",
-                callbackUrl: fonbnkDetails.callbackUrl,
-                asset: fonbnkDetails.asset,
-              }).toString();
+        const params = new URLSearchParams({
+          source: "ysIzEXl5",
+          orderParams: userId,
+          amount: amount.toString(),
+          freezeAmount: amount.toString(),
+          freezeWallet: "1",
+          network: fonbnkDetails.network,
+          address: fonbnkDetails.address,
+          currency: "usdc",
+          hideSwitch: "true",
+          callbackUrl: fonbnkDetails.callbackUrl,
+          asset: fonbnkDetails.asset,
+        }).toString();
 
-              router.push(`https://pay.fonbnk.com/?${params}`);
-            },
-          },
-        ]
-      : []),
+        router.push(`https://pay.fonbnk.com/?${params}`);
+      },
+    },
   ];
 
   return (
@@ -205,16 +209,10 @@ export default function GatewaySelect() {
           key={index}
           className="flex relative border border-cyan justify-between flex-col capitalize items-center gap-4 p-4 px-2 rounded cursor-pointer dark:bg-blue-three"
         >
-          {gateway.name === "bank transfer" && (
-            <span className="flex items-center gap-1 justify-center text-[9px]   w-full ">
+          {gateway.info && (
+            <span className="flex items-center gap-1 justify-center text-[9px] font-medium  w-full ">
               <FaInfo className="text-yellow-500 border rounded-full border-yellow-500" />
-              Complete bank transfer using paystack or flutter
-            </span>
-          )}
-          {gateway.name === "paystack" && (
-            <span className="flex items-center gap-1 justify-center text-[9px]   w-full ">
-              <FaInfo className="text-yellow-500 border rounded-full border-yellow-500" />
-              Currently only supports NGN
+              {gateway.info}
             </span>
           )}
 
@@ -229,6 +227,7 @@ export default function GatewaySelect() {
           <Button
             onClick={() => {
               setClickedIndex(index);
+
               if (!plan || !durationParams) {
                 toast.error("Please select a plan");
                 router.push("/dashboard/buy-plan");
@@ -238,7 +237,7 @@ export default function GatewaySelect() {
             className="text-white gap-2 text-sm bg-yellow-sunset hover:bg-white hover:border hover:border-yellow-sunset hover:text-yellow-sunset text-center px-4 py-2 rounded disabled:cursor-not-allowed disabled:opacity-50"
             disabled={isPending}
             title={
-              gateway.name === "bank transfer"
+              gateway.title === "bank transfer"
                 ? "Complete bank transfer using paystack or flutter"
                 : ""
             }
