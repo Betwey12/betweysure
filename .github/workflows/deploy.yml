@@ -37,6 +37,11 @@ jobs:
         with:
           node-version: "18" # Update to match your project if needed
 
+      - name: Debug Check if API key is being read
+        run: |
+          echo "Firebase API key length: ${#NEXT_PUBLIC_FIREBASE_API_KEY}"
+          echo "Starts with: ${NEXT_PUBLIC_FIREBASE_API_KEY:0:5}*****"
+
       - name: 📦 Install dependencies
         run: npm ci
 
