@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Spinner from "../ui/spinner";
 
-const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL;
+const blogUrl = `${process.env.NEXT_PUBLIC_BASE_URL ?? "#"}/blog`;
 
 export default function BlogAndNews() {
   const t = useTranslations("BLOG_AND_NEWS");
