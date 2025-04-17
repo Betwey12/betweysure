@@ -19,7 +19,7 @@ import discover from "@/assets/icons/discover-card.png";
 import bank from "@/assets/icons/bank-transfer.png";
 import Divider from "./divider";
 
-const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL ?? "#";
+const blogUrl = `${process.env.NEXT_PUBLIC_BASE_URL ?? "#"}/blog`;
 const forumUrl = process.env.NEXT_PUBLIC_FORUM_URL ?? "#";
 
 export default function Footer() {

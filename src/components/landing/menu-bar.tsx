@@ -9,7 +9,7 @@ import PredictionSelect from "../ui/prediction-select";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL ?? "#";
+const blogUrl = `${process.env.NEXT_PUBLIC_BASE_URL ?? "#"}/blog`;
 const forumUrl = process.env.NEXT_PUBLIC_FORUM_URL ?? "#";
 
 export default function MenuBar() {

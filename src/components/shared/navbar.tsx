@@ -10,7 +10,7 @@ import SelectLanguage from "../ui/select-language";
 import ToggleTheme from "../ui/toggle-theme";
 import { useAuth } from "@/hooks/useAuth";
 
-const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL ?? "#";
+const blogUrl = `${process.env.NEXT_PUBLIC_BASE_URL ?? "#"}/blog`;
 const forumUrl = process.env.NEXT_PUBLIC_FORUM_URL ?? "#";
 
 export default function Navbar() {
@@ -33,7 +33,7 @@ export default function Navbar() {
           "w-[90%] lg:w-auto top-16 absolute lg:static flex lg:items-center lg:gap-14 flex-col gap-4 lg:flex-row bg-white p-4 lg:p-0 rounded-lg z-50 dark:bg-blue-one dark:text-white lg:dark:bg-transparent lg:bg-transparent",
           {
             "hidden lg:flex": !isMenuOpen,
-          }
+          },
         )}
       >
         <ul className="flex flex-col gap-4 lg:items-center lg:gap-14 lg:flex-row">

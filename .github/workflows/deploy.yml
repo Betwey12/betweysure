@@ -3,43 +3,51 @@ name: Deploy to Namecheap
 on:
   push:
     branches:
-      - main # Change this to your default branch if different
+      - main # Change this if your default branch is different
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     env:
-      VITE_BASE_URL: ${{ secrets.VITE_BASE_URL }}
-      VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL }}
-      VITE_PAYSTACK_PUBLIC_KEY: ${{ secrets.VITE_PAYSTACK_PUBLIC_KEY }}
-      VITE_FLUTTERWAVE_PUBLIC_KEY: ${{ secrets.VITE_FLUTTERWAVE_PUBLIC_KEY }}
-      VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
-      VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
-      VITE_FIREBASE_DATABASE_URL: ${{ secrets.VITE_FIREBASE_DATABASE_URL }}
-      VITE_GOOGLE_RECAPTCHA_SITE_KEY: ${{ secrets.VITE_GOOGLE_RECAPTCHA_SITE_KEY }}
-      VITE_FIREBASE_PUBLIC_VAPID_KEY: ${{ secrets.VITE_FIREBASE_PUBLIC_VAPID_KEY }}
-      VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+      NEXT_PUBLIC_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_API_BASE_URL }}
+      NEXT_PUBLIC_BASE_URL: ${{ secrets.NEXT_PUBLIC_BASE_URL }}
+      NEXT_PUBLIC_BLOG_URL: ${{ secrets.NEXT_PUBLIC_BLOG_URL }}
+      NEXT_PUBLIC_FORUM_URL: ${{ secrets.NEXT_PUBLIC_FORUM_URL }}
+      NEXT_PUBLIC_COOKIE_DOMAIN: ${{ secrets.NEXT_PUBLIC_COOKIE_DOMAIN }}
+      NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}
+      NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ secrets.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN }}
+      NEXT_PUBLIC_FIREBASE_DATABASE_URL: ${{ secrets.NEXT_PUBLIC_FIREBASE_DATABASE_URL }}
+      NEXT_PUBLIC_FIREBASE_PUBLIC_VAPID_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_PUBLIC_VAPID_KEY }}
+      NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: ${{ secrets.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET }}
+      NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY }}
+      NEXT_PUBLIC_FLUTTERWAVE_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_FLUTTERWAVE_PUBLIC_KEY }}
+      NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY }}
+      NEXT_PUBLIC_FONBNK_NETWORK: ${{ secrets.NEXT_PUBLIC_FONBNK_NETWORK }}
+      NEXT_PUBLIC_FONBNK_WALLET_ADDRESS: ${{ secrets.NEXT_PUBLIC_FONBNK_WALLET_ADDRESS }}
+      NEXT_PUBLIC_FONBNK_SOURCE: ${{ secrets.NEXT_PUBLIC_FONBNK_SOURCE }}
+      NEXT_PUBLIC_FONBNK_ASSET: ${{ secrets.NEXT_PUBLIC_FONBNK_ASSET }}
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v2
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: "14"
+          node-version: "18" # Update to match your project if needed
 
-      - name: Install dependencies
-        run: npm install
+      - name: 📦 Install dependencies
+        run: npm ci
 
-      - name: Build project
+      - name: 🔨 Build project
         run: npm run build
 
-      - name: Deploy to Namecheap via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      - name: 🚀 Deploy to Namecheap via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./next/
+          local-dir: ./out # For static export (next export), change if using SSR
+
