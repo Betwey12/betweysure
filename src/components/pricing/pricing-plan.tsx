@@ -75,7 +75,7 @@ export default function PricingPlans() {
             key={predictionPackage.name}
             timeframe={timeframe}
             currencyCode={currency}
-            isSupported={isSupported}
+            isSupported={isSupported ? true : false}
           />
         ))}
       </div>
