@@ -25,7 +25,7 @@ export default function SelectedGames() {
   const totalGames = games.length;
 
   useOnClickOutside(slipRef, () =>
-    setShowBetNaija(alwaysOnTop && totalGames ? true : false)
+    setShowBetNaija(alwaysOnTop && totalGames ? true : false),
   );
 
   useEffect(() => {
@@ -39,7 +39,6 @@ export default function SelectedGames() {
     return () => clearTimeout(timeoutId);
   }, [setSlip]);
 
-  console.log(slip);
   return (
     <>
       {!slipTimedOut && (
@@ -117,7 +116,7 @@ export default function SelectedGames() {
                               !(
                                 pred.id === prediction.id &&
                                 prediction.resultKey === pred.resultKey
-                              )
+                              ),
                           ),
                         }))
                       }

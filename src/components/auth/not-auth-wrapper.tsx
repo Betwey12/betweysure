@@ -29,8 +29,6 @@ export default function NotAuthedWrapper({ children }: NotAuthedWrapperProps) {
 
   const flarumUserToken = data?.flarumUserToken;
 
-  console.log(user, userLoading);
-
   useEffect(() => {
     if (user && !userLoading) {
       if (

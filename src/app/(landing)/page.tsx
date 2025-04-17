@@ -1,3 +1,5 @@
+"use client";
+
 import WhyBetWeySure from "@/components/home/why-betweysure";
 import {
   AboutBetWeySure,
@@ -12,14 +14,12 @@ import SelectedGames from "@/components/ui/selected-games";
 import ReferralClientWapper from "@/components/home/referral-client";
 import sportsbetGif from "@/assets/images/sportsbet-gif.gif";
 import cryptoBanner from "@/assets/images/crypto-banner.webp";
+import { useSearchParams } from "next/navigation";
 
-export default function HomePage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
-  const sport = searchParams["sport"] as string | null;
-  const referralCode = searchParams["referralCode"] as string | null;
+export default function HomePage() {
+  const searchParams = useSearchParams();
+  const referralCode = searchParams.get("referralCode") || null;
+  const sport = searchParams.get("sport") || null;
 
   return (
     <ReferralClientWapper referralCode={referralCode}>

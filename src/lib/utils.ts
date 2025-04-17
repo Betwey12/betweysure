@@ -59,13 +59,17 @@ export const fuzzyMatch = (str1: string, str2: string) => {
 
 export function simpleSocialShare({
   medium,
-  shareurl,
+  referralCode,
   message,
 }: {
   medium: TSocialMedia;
-  shareurl: string;
+  referralCode: string;
   message: string;
 }) {
+  const shareurl = `${window?.location.origin}?referralCode=${
+    referralCode ?? ""
+  }`;
+
   const hrefs = {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${shareurl}&quote=${message}`,
     linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${shareurl}&title=${message}`,

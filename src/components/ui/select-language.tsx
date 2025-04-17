@@ -9,7 +9,6 @@ import { cn } from "../../lib/utils";
 import Image, { StaticImageData } from "next/image";
 import { useLocale } from "next-intl";
 import { Button } from "./button";
-import { setUserLocale } from "@/services/locale";
 import { Locale } from "@/i18n/config";
 
 export default function SelectLanguage() {
@@ -38,7 +37,7 @@ export default function SelectLanguage() {
     console.log("locale", locale);
 
     startTransition(() => {
-      setUserLocale(locale);
+      console.log("Hello no language support");
     });
     setDropDown(false);
   }
@@ -47,7 +46,7 @@ export default function SelectLanguage() {
     <div className="relative min-w-[130px]" ref={ref}>
       <Button
         className={cn(
-          "px-0 border justify-around bg-transparent hover:bg-cyan/20 border-cyan text-base dark:border-white w-full"
+          "px-0 border justify-around bg-transparent hover:bg-cyan/20 border-cyan text-base dark:border-white w-full",
         )}
         onClick={() => setDropDown((prev) => !prev)}
       >

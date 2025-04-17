@@ -1,12 +1,12 @@
-import { redirect } from "next/navigation";
+"use client";
 
-export default function AuthPage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
-  const mode = searchParams.mode as string;
-  const token = searchParams.oobCode as string;
+import { useRouter, useSearchParams } from "next/navigation";
+
+export default function AuthPage() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const token = searchParams.get("oobCode") ?? "";
+  const mode = searchParams.get("mode") ?? "";
 
   const modes: Record<string, string> = {
     resetPassword: `/auth/reset-password?token=${token}`,
@@ -14,7 +14,7 @@ export default function AuthPage({
   };
 
   if (!mode || !token) {
-    return redirect("/auth/login");
+    return router.push("/auth/login");
   }
-  return redirect(modes[mode] ?? "/auth/login");
+  return router.push(modes[mode] ?? "/auth/login");
 }

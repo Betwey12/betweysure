@@ -1,6 +1,8 @@
+"use client";
 import * as yup from "yup";
 import ResetPasswordForm from "@/components/auth/reset-password-form";
 import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 
 const resetPasswordSchema = yup.object().shape({
   password: yup
@@ -11,13 +13,10 @@ const resetPasswordSchema = yup.object().shape({
 
 type ResetPasswordForm = yup.InferType<typeof resetPasswordSchema>;
 
-export default function ResetPassword({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
+export default function ResetPassword() {
   const t = useTranslations("AUTH");
-  const token = searchParams.token as string;
+  const searchParams = useSearchParams();
+  const token = searchParams.get("token") ?? "";
 
   return (
     <div className="relative flex min-h-screen h-max">

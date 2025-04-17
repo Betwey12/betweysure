@@ -1,25 +1,36 @@
-import { EDuration, EPaidPlanNames, plans } from "@/assets/data/data";
-import GatewaySelect from "@/components/payment/gateway-select";
-import { formatCurrency } from "@/lib/utils";
-import { redirect } from "next/navigation";
+"use client";
 
-export default function PaymentPage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
-  const planName = searchParams.plan as EPaidPlanNames;
-  const durationParams = searchParams.duration as EDuration;
-  const currency = (searchParams.currency as string) || "NGN";
+import { EDuration, EPaidPlanNames, plans } from "@/assets/data/data";
+import { formatCurrency } from "@/lib/utils";
+import dynamic from "next/dynamic";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+
+const GatewaySelect = dynamic(
+  () => import("@/components/payment/gateway-select"),
+  {
+    ssr: false,
+  },
+);
+
+export default function PaymentPage() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const planName = searchParams.get("plan") as EPaidPlanNames;
+  const durationParams = searchParams.get("duration");
+  const currency = searchParams.get("currency") || "NGN";
+
   const plan = plans[currency] ? plans[currency] : plans["NGN"];
   const availableCurrency = plans[currency] ? currency : "NGN";
   const duration = durationParams!.replace(/-/, " ") as EDuration;
 
   const amount = plan[planName!][duration] || 0;
 
-  if (!plan || !durationParams) {
-    redirect("/dashboard/buy-plan");
-  }
+  useEffect(() => {
+    if (!plan || !durationParams) {
+      router.push("/dashboard/buy-plan");
+    }
+  }, [plan, durationParams, router]);
 
   return (
     <div className="w-full bg-white shadow border border-gray-two lg:p-6 p-4 rounded dark:bg-blue-two dark:border-0">
