@@ -11,6 +11,7 @@ import premiumPopUp from "@/assets/images/premium-banner-desktop.webp";
 import AuthedLink from "../ui/authed-link";
 import { SelectItem } from "../ui/select";
 import RadixSelect from "../ui/radix-select";
+import MySelect from "../ui/my-select";
 
 export default function PricingPlans() {
   const {
@@ -22,6 +23,7 @@ export default function PricingPlans() {
     timeframe,
     setDuration,
     planCards,
+    isSupported,
   } = usePricingPlans();
 
   const selectItems = supportedCountries.map((country) => (
@@ -35,7 +37,7 @@ export default function PricingPlans() {
       </span>
     </SelectItem>
   ));
-  return (
+  return currency ? (
     <div className="flex flex-col gap-20 dark:text-white md:px-10 px-4 lg:px-20">
       <div className="flex items-center flex-col lg:flex-row gap-4 justify-between z-10">
         <div className="flex items-center gap-4 flex-1">
@@ -66,18 +68,17 @@ export default function PricingPlans() {
         </div>
       </div>
 
-      {currency && (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:px-0">
-          {packages.map((predictionPackage) => (
-            <PackageCard
-              predictionPackage={predictionPackage}
-              key={predictionPackage.name}
-              timeframe={timeframe}
-              currencyCode={currency}
-            />
-          ))}
-        </div>
-      )}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:px-0">
+        {packages.map((predictionPackage) => (
+          <PackageCard
+            predictionPackage={predictionPackage}
+            key={predictionPackage.name}
+            timeframe={timeframe}
+            currencyCode={currency}
+            isSupported={isSupported}
+          />
+        ))}
+      </div>
 
       <AuthedLink
         href="/dashboard/buy-plan"
@@ -104,6 +105,24 @@ export default function PricingPlans() {
             currencyCode={currency}
           />
         ))}
+      </div>
+    </div>
+  ) : (
+    <div className="flex flex-col gap-4 items-center justify-center w-full max-w-xl mx-auto">
+      <h3 className="uppercase text-4xl text-center">Pricing plan</h3>
+
+      <div className="p-4 dark:bg-blue-one dark:border-blue-two py-8 rounded-lg flex gap-4 flex-col items-center w-full bg-secondary-foreground border border-gray-two">
+        <p className="text-xl font-medium">Choose your country</p>
+        <div className="max-w-[600px] w-full">
+          <RadixSelect
+            selectItems={selectItems}
+            placeholder={"Select currency"}
+            handleValueChange={(v) => setSelectedCurrency(v)}
+            className="w-full"
+          />
+        </div>
+
+        <p>Choose your preferred country and select from the available plans</p>
       </div>
     </div>
   );
@@ -185,5 +204,6 @@ function usePricingPlans() {
     setDuration,
     timeframe,
     planCards,
+    isSupported,
   };
 }

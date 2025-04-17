@@ -16,11 +16,13 @@ type TPackage = {
 export default function PackageCard({
   predictionPackage,
   timeframe,
+  isSupported,
   currencyCode,
 }: {
   predictionPackage: TPackage[number];
   timeframe: string;
   currencyCode: string;
+  isSupported: boolean;
 }) {
   const t = useTranslations("PRICING_PLANS");
   const isFree = predictionPackage.name === EPlanNames.FREE;
@@ -47,7 +49,10 @@ export default function PackageCard({
 
           <div className="flex items-center">
             <p className="font-bold text-2xl">
-              {formatCurrency(predictionPackage.price, currencyCode)}
+              {formatCurrency(
+                predictionPackage.price,
+                isSupported ? currencyCode : "USD",
+              )}
             </p>
             <p className="font-bold">/{timeframe}</p>
           </div>
