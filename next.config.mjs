@@ -13,7 +13,9 @@ const nextConfig = {
       "aff-partners-io.ck-cdn.com",
       "lh3.googleusercontent.com",
     ],
+    unoptimized: true,
   },
+
   output: "export",
 };
 
