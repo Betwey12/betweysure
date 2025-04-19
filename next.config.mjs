@@ -9,7 +9,7 @@ const nextConfig = {
       "refpa4293501.top",
       "media.api-sports.io",
       "flagcdn.com",
-      "blog.betweysure.com",
+      "betweysure.com/blog",
       "aff-partners-io.ck-cdn.com",
       "lh3.googleusercontent.com",
     ],
