@@ -74,6 +74,8 @@ export const pageParams: TParams[] = [
   "both-teams-to-score-betting",
   "draw-betting",
   "sportsbet.io-prediction",
+  "free-booking-codes",
+  "convert-bet-codes",
 ];
 
 export const popularLeaguesParams: TPopularLeages[] = [
