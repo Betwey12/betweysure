@@ -187,7 +187,6 @@ export default function GatewaySelect() {
           orderParams: userId,
           amount: amount.toString(),
           freezeAmount: amount.toString(),
-          freezeWallet: "1",
           network: fonbnkDetails.network,
           address: fonbnkDetails.address,
           currency: "usdc",
