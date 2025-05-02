@@ -30,14 +30,9 @@ export default function PopUpProvider({ children }: IPopUpProvider) {
     if (!hasPlan) {
       const premiumTimeout = setTimeout(() => setPopUp("premium"), 20000);
       timeouts.push(premiumTimeout);
-    }
-
-    if (hasAnsweredSurvery) {
+    } else {
       const popUpTimeout = setTimeout(() => setPopUp("popUp"), 40000);
       timeouts.push(popUpTimeout);
-    } else {
-      const surveyTimeout = setTimeout(() => setPopUp("survey"), 40000);
-      timeouts.push(surveyTimeout);
     }
 
     return () => {
