@@ -179,7 +179,7 @@ const contactInfo = {
 
 export const { email, phone, telegram, whatsapp, address } = contactInfo;
 
-const pageMetadata = {
+export const pageMetadata = {
   home: {
     title: "Free Football Betting Tips & Predictions Website - Betweysure",
     description:
@@ -258,7 +258,41 @@ const pageMetadata = {
     title: "Get started - Betweysure",
     description: " Get started with Betweysure by setting up your account",
   },
-
+  football: {
+    title: "Football Predictions - Betweysure",
+    description:
+      "Get expert football predictions and tips on Betweysure to boost your winning chances.",
+    keywords:
+      "football betting tips, football predictions, Betweysure football, soccer tips, match analysis",
+  },
+  basketball: {
+    title: "Basketball Predictions - Betweysure",
+    description:
+      "Stay ahead with the best basketball betting tips and predictions from Betweysure.",
+    keywords:
+      "basketball tips, NBA predictions, basketball betting, Betweysure basketball, game insights",
+  },
+  tennis: {
+    title: "Tennis Predictions - Betweysure",
+    description:
+      "Bet smarter with daily tennis predictions and insights from Betweysure.",
+    keywords:
+      "tennis predictions, tennis tips, Betweysure tennis, ATP betting, WTA analysis",
+  },
+  baseball: {
+    title: "Baseball Predictions - Betweysure",
+    description:
+      "Explore accurate baseball betting tips and analysis with Betweysure.",
+    keywords:
+      "baseball predictions, MLB tips, Betweysure baseball, baseball betting, match insights",
+  },
+  "ice-hockey": {
+    title: "Ice Hockey Predictions - Betweysure",
+    description:
+      "Get winning ice hockey predictions and tips from Betweysure’s expert analysts.",
+    keywords:
+      "ice hockey tips, NHL predictions, Betweysure hockey, hockey betting, match previews",
+  },
   dashboard: {
     title: "Dashboard - Betweysure",
     description: "Create your account to get started with Betweysure.",
@@ -452,6 +486,10 @@ export const {
   auth,
   dashboard,
   acca,
+  football,
+  basketball,
+  tennis,
+  baseball,
   yesterday,
   today,
   tomorrow,

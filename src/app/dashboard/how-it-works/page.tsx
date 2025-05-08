@@ -7,7 +7,7 @@ export default function HowItWorksPage() {
   return (
     <div className="grid grid-cols-2 gap-10">
       {youtubes.map((link) => (
-        <iframe width="100%" height="345" src={link}></iframe>
+        <iframe key={link} width="100%" height="345" src={link}></iframe>
       ))}
     </div>
   );

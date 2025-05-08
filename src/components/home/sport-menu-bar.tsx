@@ -10,8 +10,9 @@ import LiveIcon, {
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-export default function () {
+export default function SportsMenuBar() {
   const pathname = usePathname();
+
   return (
     <div className="grid grid-cols-2 lg:flex items-center justify-between px-4 md:px-10 lg:px-20 py-11 flex-wrap">
       {trends.map((trend) => (
@@ -20,7 +21,7 @@ export default function () {
           className={cn(
             "flex items-center gap-2 py-2 rounded-lg transition-colors capitalize dark:text-white",
             {
-              "text-primary": pathname === trend.link,
+              "text-primary dark:text-primary": pathname === trend.link,
             },
           )}
           href={trend.link}

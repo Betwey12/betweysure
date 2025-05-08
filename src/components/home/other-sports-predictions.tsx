@@ -1,28 +1,22 @@
+"use client";
 import { cn } from "../../lib/utils";
-import MySelect from "../ui/my-select";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { getDate } from "../../lib/utils";
 import usePredictions from "../../hooks/usePredictions";
 import dayjs from "dayjs";
 import OtherSportsPredictionTable from "../predictions/othersports-prediction-table";
-import { otherSports } from "@/assets/data/data";
 import { useTranslations } from "next-intl";
 import DateWidget from "../ui/date-widget";
+import LinkSelect from "../ui/link-select";
+import { usePathname } from "next/navigation";
 
-interface OtherSportsPredictionsProps {
-  selectedSport: string;
-  setSelectedSport: React.Dispatch<React.SetStateAction<string>>;
-}
-
-export default function OtherSportsPredictions({
-  selectedSport,
-  setSelectedSport,
-}: OtherSportsPredictionsProps) {
+export default function OtherSportsPredictions() {
+  const pathname = usePathname();
   const t = useTranslations("PREDICTIONS_TABLE");
   const [showDate, setShowDate] = useState(false);
   const [period, setPeriod] = useState<"today" | "yesterday" | "tomorrow">(
-    "today"
+    "today",
   );
   const periodArray: Array<{
     name: string;
@@ -43,7 +37,7 @@ export default function OtherSportsPredictions({
   ];
 
   const [fullDate, setFullDate] = useState(getDate(period));
-  const option = selectedSport.replace(/\s/g, "").toLowerCase();
+  const option = pathname.replace(/\//g, "").toLowerCase();
   const endpoint = `tips/othersports/${option}/${fullDate}`;
   const queryKey = ["predictions", period, option];
   const predictionsPerPage = 9;
@@ -55,7 +49,28 @@ export default function OtherSportsPredictions({
   });
 
   const predictions = data?.data as TOtherSportsResponse["data"] | undefined;
-
+  const sportOptions = [
+    {
+      href: "/basketball",
+      title: "Basketball",
+    },
+    {
+      href: "/baseball",
+      title: "Baseball",
+    },
+    {
+      href: "/tennis",
+      title: "Tennis",
+    },
+    {
+      href: "/ice-hockey",
+      title: "Ice Hockey",
+    },
+  ];
+  const selectedSport =
+    sportOptions.find((option) => option.href === pathname)?.title ??
+    sportOptions[Math.floor(Math.random() * sportOptions.length)]?.title ??
+    "";
   const handlDateChange = (newValue: dayjs.Dayjs) => {
     const newDate = newValue.format("YYYY-MM-DD");
     setFullDate(newDate);
@@ -83,11 +98,8 @@ export default function OtherSportsPredictions({
         {/* <Select /> */}
         <div className="flex flex-col lg:flex-row gap-4 lg:items-center justify-between mt-8">
           <div className="w-[260px]">
-            <MySelect
-              options={otherSports}
-              selectedOption={selectedSport}
-              setSelectedOption={setSelectedSport}
-            />
+            <div></div>
+            <LinkSelect options={sportOptions} selectedOption={selectedSport} />
           </div>
           <div className="flex items-center gap-4">
             {periodArray.map((periodObj) => (
@@ -99,8 +111,8 @@ export default function OtherSportsPredictions({
                       periodObj.name.toLowerCase() as
                         | "today"
                         | "tomorrow"
-                        | "yesterday"
-                    )
+                        | "yesterday",
+                    ),
                   );
                   setPeriod(periodObj.filter);
                 }}
@@ -108,7 +120,7 @@ export default function OtherSportsPredictions({
                   "min-w-max hover:text-white text-center bg-transparent",
                   {
                     "text-cyan": periodObj.filter === period,
-                  }
+                  },
                 )}
               >
                 {periodObj.name}
@@ -122,7 +134,7 @@ export default function OtherSportsPredictions({
             isLoading={isLoading}
             predictions={predictions}
             to={to}
-            sport={selectedSport.toLowerCase()}
+            sport={selectedSport?.toLowerCase()}
           />
         </div>
       </div>
