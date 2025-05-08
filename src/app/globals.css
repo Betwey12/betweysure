@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --primary: 186 83% 45%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    --background: 200 100% 99%;
+  }
+  .dark {
+    --background: 255 100% 100%;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  input,
+  textarea {
+    @apply bg-white text-foreground;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  width: 100% !important;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide .overlay {
+  position: absolute;
+  color: white;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 2rem;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #13c1d6;
+}
+
+.swiper-pagination-bullet-active {
+  background: #13c1d6 !important;
+}
+
+.MuiPagination-root button,
+.MuiPaginationItem-ellipsis {
+  color: #13c1d6 !important;
+}
+
+.MuiPagination-root button:hover {
+  background: #13c1d62e !important;
+}
+
+.MuiPagination-root .Mui-selected {
+  background: #13c1d6 !important;
+  color: #fff !important;
+}
+
+.newsletter_bg {
+  background-image: url(../assets/images/light-ball.webp);
+  background-color: lightgray 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+.call_to_action_bg {
+  background: linear-gradient(#000000aa, #000000aa),
+    /* Gradient overlay */ url(../assets/images/foootball-shoe.webp); /* Background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+.footer_bg {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.72) 100%
+    ),
+    url(../assets/images/footer-bg.webp), lightgray 50% / cover no-repeat;
+}
+
+.login_bg {
+  background: url(../assets/images/login-bg.webp),
+    lightgray 50% / cover no-repeat;
+  background-position: 50% 50%;
+}
+
+.signup_bg {
+  background: url(../assets/images/signup-bg.webp),
+    lightgray 50% / cover no-repeat;
+  background-position: 50% 0%;
+}
+
+.pricing-hero_bg {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 58, 65, 0.46) 0%,
+      rgba(0, 58, 65, 0.46) 100%
+    ),
+    url(../assets/images/hero-bg-two.webp), lightgray 50% / cover no-repeat;
+}
+
+.expertise_bg {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+    url(../assets//images/experise.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.animate_scroll {
+  animation: marquee 20s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.slide-enter {
+  animation: slideIn 0.5s ease forwards;
+}
+
+.slide-exit {
+  animation: slideOut 0.5s ease forwards;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
