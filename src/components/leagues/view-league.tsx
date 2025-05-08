@@ -47,7 +47,7 @@ export default function ViewLeague({
                 "bg-gray-one px-4 text-sm font-thin text-center flex items-center justify-center py-1 text-white rounded capitalize",
                 {
                   "bg-cyan": tab === activeTab,
-                }
+                },
               )}
             >
               {tab}
@@ -60,6 +60,7 @@ export default function ViewLeague({
           leagueStandings={standings}
           isLoading={isLoading}
           league={popularLeague?.name}
+          category={category}
         />
       )}
       {activeTab === "trends" && (
@@ -69,7 +70,7 @@ export default function ViewLeague({
         <Form
           leagueStandings={standings}
           isLoading={isLoading}
-          league={popularLeague?.name}
+          category={category}
         />
       )}
       {activeTab === "fixtures" && (

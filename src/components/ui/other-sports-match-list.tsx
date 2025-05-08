@@ -23,13 +23,13 @@ export default function OtherSportMatchList({
 
   const country = Object.entries(countries).find(
     ([_key, value]) =>
-      value.toLowerCase() === predictionObj?.country_name?.toLowerCase()
+      value.toLowerCase() === predictionObj?.country_name?.toLowerCase(),
   )?.[0];
 
   const predictionProbabilities = Object.keys(predictionObj)
     .map(
       // @ts-expect-error do not type
-      (key) => (predictionObj[key] <= 1 ? predictionObj[key] : null)
+      (key) => (predictionObj[key] <= 1 ? predictionObj[key] : null),
     )
     .sort((a, b) => b - a);
 
@@ -39,7 +39,7 @@ export default function OtherSportMatchList({
   let highestPrediction = Object.keys(predictionObj).find(
     (predictionKey) =>
       // @ts-expect-error do not type
-      +predictionObj[predictionKey] === highestProbability
+      +predictionObj[predictionKey] === highestProbability,
   );
   // check if highest prediction is rank_to_lvl1_nt or rank_to_75_p1, replace prediction with the next highest
 
@@ -52,7 +52,7 @@ export default function OtherSportMatchList({
     highestPrediction = Object.keys(predictionObj).find(
       (predictionKey) =>
         // @ts-expect-error do not type
-        +predictionObj[predictionKey] === nextHighestPrediction
+        +predictionObj[predictionKey] === nextHighestPrediction,
     );
   }
 
@@ -69,12 +69,12 @@ export default function OtherSportMatchList({
   return (
     <div
       className={cn(
-        "grid grid-cols-[80px_1fr_80px] px-2 lg:grid-cols-5 items-center border-b border-gray-three text-xs py-2 lg:px-6 rounded-lg dark:border-0 dark:text-white dark:bg-blue-two",
+        "grid grid-cols-[30px_minmax(100px,_1fr)_80px] px-2 lg:grid-cols-5 items-center border-b border-gray-three text-xs py-2 lg:px-6 rounded-lg dark:border-0 dark:text-white dark:bg-blue-two",
         {
           "bg-white text-blue-three border-b border-gray-two first:border-t px-0":
             bgDashboard && theme === "light",
           "bg-blue-two px-0": bgDashboard && theme === "dark",
-        }
+        },
       )}
     >
       <div
@@ -115,12 +115,9 @@ export default function OtherSportMatchList({
         {predictionObj?.away_team_name}
       </p>
       <p
-        className={cn(
-          "lg:hidden flex flex-col items-center max-w-36 justify-center",
-          {
-            "opacity-50": hidePrediction,
-          }
-        )}
+        className={cn("lg:hidden flex flex-col items-center justify-center", {
+          "opacity-50": hidePrediction,
+        })}
       >
         <span className="truncate max-w-[90%]">
           {predictionObj?.home_team_name}

@@ -7,12 +7,14 @@ import { FaSpinner } from "react-icons/fa";
 interface StandingsProps {
   leagueStandings?: TLeagueResponse["data"]["standings"]["response"];
   isLoading: boolean;
+  category: string;
   league?: string;
 }
 
 export default function Standings({
   leagueStandings,
   isLoading,
+  category,
   league,
 }: StandingsProps) {
   const t = useTranslations("STANDINGS");
@@ -52,7 +54,9 @@ export default function Standings({
             >
               <thead>
                 <tr className="">
-                  <td colSpan={2}>OVERALL TABLE</td>
+                  <td colSpan={2} className="">
+                    OVERALL TABLE
+                  </td>
                   {["PTS", "GP", "W", "D", "L", "GF", "GA", "+/-"].map((d) => (
                     <td className="text-center align-middle py-2" key={d}>
                       <div className="flex items-center justify-center">
@@ -113,7 +117,7 @@ export default function Standings({
                   Full Table
                 </button>
                 <Link
-                  href={`/popular/${league}/form`}
+                  href={`/popular/${category}/form`}
                   className="bg-gray-one px-4 text-sm font-thin text-center flex items-center justify-center py-1 text-white rounded capitalize hover:bg-cyan transition-all"
                 >
                   Form Table

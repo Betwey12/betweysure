@@ -37,18 +37,6 @@ export default function OtherSportsPredictions() {
   ];
 
   const [fullDate, setFullDate] = useState(getDate(period));
-  const option = pathname.replace(/\//g, "").toLowerCase();
-  const endpoint = `tips/othersports/${option}/${fullDate}`;
-  const queryKey = ["predictions", period, option];
-  const predictionsPerPage = 9;
-
-  const { data, isLoading, from, to } = usePredictions({
-    endpoint,
-    queryKey,
-    predictionsPerPage,
-  });
-
-  const predictions = data?.data as TOtherSportsResponse["data"] | undefined;
   const sportOptions = [
     {
       href: "/basketball",
@@ -71,11 +59,24 @@ export default function OtherSportsPredictions() {
     sportOptions.find((option) => option.href === pathname)?.title ??
     sportOptions[Math.floor(Math.random() * sportOptions.length)]?.title ??
     "";
+  const option = selectedSport.toLowerCase();
+  const endpoint = `tips/othersports/${option}/${fullDate}`;
+  const queryKey = ["predictions", period, option];
+  const predictionsPerPage = 9;
+
+  const { data, isLoading, from, to } = usePredictions({
+    endpoint,
+    queryKey,
+    predictionsPerPage,
+  });
+
+  const predictions = data?.data as TOtherSportsResponse["data"] | undefined;
   const handlDateChange = (newValue: dayjs.Dayjs) => {
     const newDate = newValue.format("YYYY-MM-DD");
     setFullDate(newDate);
     setShowDate(false);
   };
+  console.log(selectedSport);
 
   return (
     <div

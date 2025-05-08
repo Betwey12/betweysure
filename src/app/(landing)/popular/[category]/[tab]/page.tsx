@@ -81,8 +81,6 @@ export default function PopularPage({
       decodeURIComponent(category)?.toLowerCase()?.replace(/-/g, " "),
   );
 
-  const formatCategory = category?.toUpperCase()?.replace(/-/g, "_");
-
   const popularSite = popularLeagueSites[category];
 
   return (

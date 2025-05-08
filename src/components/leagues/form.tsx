@@ -8,13 +8,13 @@ import { FaSpinner } from "react-icons/fa";
 interface FormProps {
   leagueStandings?: TLeagueResponse["data"]["standings"]["response"];
   isLoading: boolean;
-  league?: string;
+  category: string;
 }
 
 export default function Form({
   leagueStandings,
   isLoading,
-  league,
+  category,
 }: FormProps) {
   const t = useTranslations("FORM");
   const standings = leagueStandings?.[0]?.league?.standings?.flat() || [];
@@ -57,7 +57,7 @@ export default function Form({
                     {
                       "bg-red-500": form?.toUpperCase() === "L",
                       "bg-yellow-500": form?.toUpperCase() === "D",
-                    }
+                    },
                   )}
                 >
                   {form}
@@ -77,7 +77,7 @@ export default function Form({
             Full Table
           </button>
           <Link
-            href={`/popular/${league}/standings`}
+            href={`/popular/${category}/standings`}
             className="bg-gray-one px-4 text-sm font-thin text-center flex items-center justify-center py-1 text-white rounded capitalize hover:bg-cyan transition-all"
           >
             Standings

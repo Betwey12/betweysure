@@ -43,7 +43,7 @@ export default function OtherSportsPredictions() {
     {
       payload,
       handlePagination,
-    }
+    },
   );
 
   const filteredData = tableData
