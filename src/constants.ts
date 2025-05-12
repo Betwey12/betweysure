@@ -18,6 +18,7 @@ import { bothTeamsToScoreContent } from "./assets/data/seo/both-teams-content";
 import { bundesligaContent } from "./assets/data/seo/bundesliga-content";
 import { championsbetContent } from "./assets/data/seo/championsbet-content";
 import { correctscoreContent } from "./assets/data/seo/correct-score-content";
+import { doublceChanceContent } from "./assets/data/seo/double-chance-content";
 import { drawContent } from "./assets/data/seo/draw-content";
 import { englandPremierLeagueContent } from "./assets/data/seo/england-premier-league-content";
 import { flashscoreContent } from "./assets/data/seo/flashscore-content";
@@ -32,6 +33,7 @@ import { freedincoContent } from "./assets/data/seo/freedinco-content";
 import { futbol24Content } from "./assets/data/seo/futbol-content";
 import { galSportsBettingContent } from "./assets/data/seo/gal-content";
 import { HollywoodbetsContent } from "./assets/data/seo/hollywood-content";
+import { homeWinContent } from "./assets/data/seo/home-win-content";
 import { jackpotBettingContent } from "./assets/data/seo/jackpot-betting-content";
 import { kingspredictContent } from "./assets/data/seo/kingspredict-content";
 import { laLigaContent } from "./assets/data/seo/laliga-content";
@@ -145,6 +147,8 @@ export const paramsSeoText: Record<TParams, string> = {
   "sportsbet.io-prediction": sportsbetContent,
   "jackpot-betting": jackpotBettingContent,
   "correct-score-betting": correctscoreContent,
+  "home-win-betting": homeWinContent,
+  "double-chance-betting": doublceChanceContent,
   "over-1.5-betting": over15Content,
   "over-2.5-betting": over25Content,
   "both-teams-to-score-betting": bothTeamsToScoreContent,
@@ -952,6 +956,19 @@ export const paramsaMetaData: Record<
       "Master correct score betting with expert predictions and tips. Increase your chances of hitting the perfect score for bigger wins.",
     keywords:
       "correct score betting, correct score tips, football score predictions",
+  },
+  "double-chance-betting": {
+    title: "Double Chance Betting – Accurate Predictions for Maximum Profits",
+    description:
+      "Looking for sure home win predictions today? At Betweysure, we specialize in providing high-confidence football home win tips backed by data, expert analysis, and predictive models.",
+    keywords:
+      "double chance betting, double chance tips, football double chance predictions",
+  },
+  "home-win-betting": {
+    title: "Home Win Betting – Accurate Predictions for Maximum Profits",
+    description:
+      "we specialize in Homw win predictions backed by expert insights and data models—giving you smarter, safer betting options every day.",
+    keywords: "Home win betting, Home win tips, football win predictions",
   },
   "over-1.5-betting": {
     title: "Over 1.5 Betting – Best Tips for High-Scoring Matches",

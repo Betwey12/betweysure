@@ -40,6 +40,7 @@ oal Statistics – Look for teams with strong attacking form and weak defenses.<
 
 <ul style="padding-left: 20px; list-style-type: disc;">
     <li style="margin-top: 10px;"><a href="${baseUrl}/jackpot-betting" style="color: #13c1d6"><strong>Jackpot betting</strong></a></li>
+
     <li style="margin-top: 10px;"><a href="${baseUrl}/over-1.5-betting" style="color: #13c1d6"><strong>Over 1.5</strong></a></li>   <li style="margin-top: 10px;"><a href="${baseUrl}/over-2.5-betting" style="color: #13c1d6"><strong>Over 2.5</strong></a></li>
     <li style="margin-top: 10px;"><a href="${baseUrl}/both-teams-to-score-betting" style="color: #13c1d6"><strong>Both teams to score</strong></a></li>
     <li style="margin-top: 10px;"><a href="${baseUrl}/draw-betting" style="color: #13c1d6"><strong>Draw</strong></a></li>

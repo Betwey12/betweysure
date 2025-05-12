@@ -701,6 +701,8 @@ declare global {
     | "over-1.5-betting"
     | "over-2.5-betting"
     | "both-teams-to-score-betting"
+    | "home-win-betting"
+    | "double-chance-betting"
     | "draw-betting";
 
   type TBettingParams =

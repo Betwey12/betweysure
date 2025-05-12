@@ -2150,6 +2150,16 @@ export const predictionSites: Record<
     description:
       "Over 2.5 goals betting is a popular market — but it requires careful analysis. Our experts combine team form, stats, and head-to-head records to deliver accurate predictions for Over 2.5 goals markets, helping you make smarter, more profitable bets.",
   },
+  "home-win-betting": {
+    title: "Home Win Betting Tips & Predictions: Expert Analysis",
+    description:
+      "Looking to reduce your betting risks and win more often? Placing single bets on strong home teams using our tips increase your chances of consistent profits.",
+  },
+  "double-chance-betting": {
+    title: "Double Chance Betting Tips & Predictions: Expert Analysis",
+    description:
+      "At Betweysure, we specialize in providing high-confidence football home win tips backed by data, expert analysis, and predictive models. Whether you’re building a home win accumulator or placing single bets on strong home teams, our tips increase your chances of consistent profits.",
+  },
 };
 
 export const mediaSites: Record<
