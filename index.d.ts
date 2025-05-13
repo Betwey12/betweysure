@@ -674,7 +674,7 @@ declare global {
   >;
 
   type TPredictionsParams =
-    | "windrawwin"
+    | "win-draw-win-predictions-full-time-result-betting-tips"
     | "statarea"
     | "footballpredictions"
     | "mybets"

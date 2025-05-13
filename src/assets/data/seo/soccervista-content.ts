@@ -46,6 +46,6 @@ export const soccervistaContent = `
 
     <p style="margin: 10px 0;"><strong>Don’t wait — visit <a href="https://www.soccervista.com/" target="_blank" style="color: #13c1d6">SoccerVista</a> today and elevate your betting strategy!</strong></p>
 
-    <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/windrawwin" style="color: #13c1d6"><strong>WINDRAWWIN</strong></a> page!</p>
+    <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/win-draw-win-predictions-full-time-result-betting-tips" style="color: #13c1d6"><strong>Wind/Draw/WIn full time results and betting tips</strong></a> page!</p>
 
 `;

@@ -2009,10 +2009,10 @@ export const predictionSites: Record<
   TPredictionsParams,
   { title: string; description: string }
 > = {
-  windrawwin: {
-    title: "Windrawwin Football Predictions: Expert Tips & Match Insights",
+  "win-draw-win-predictions-full-time-result-betting-tips": {
+    title: "Win/Draw/Win predictions full time result and betting tips",
     description:
-      "Windrawwin offers expert football predictions for today’s matches, focusing on the key win-draw-win markets. Thier team of analysts provides up-to-date insights backed by performance data, team form, and injury reports, ensuring you have the best tips to make smarter, more profitable bets. Whether you’re backing favorites or spotting value in draws, Windrawwin helps you make informed betting decisions across top leagues and competitions.",
+      "If you're interested in learning more about football betting strategies, prediction categories, and the different types of wagers available, we invite you to explore our dedicated page offering free football predictions and expert betting tips.",
   },
   statarea: {
     title: "Statarea Football Predictions: Data-Driven Betting Tips",

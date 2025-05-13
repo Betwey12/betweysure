@@ -95,7 +95,7 @@ export const otherPagesSeoText = {
 export const paramsSeoText: Record<TParams, string> = {
   predictz: predictZContent,
   soccervista: soccervistaContent,
-  windrawwin: windrawwinContent,
+  "win-draw-win-predictions-full-time-result-betting-tips": windrawwinContent,
   "primatips-prediction": primaTipsContent,
   statarea: statareaContent,
   footballpredictions: footballpredictionsContent,
@@ -578,12 +578,13 @@ export const paramsaMetaData: Record<
       "Get today’s best BetBonanza predictions! Expert betting tips, match previews, and analysis to boost your winnings",
     keywords: "betbonanza predictions, betbonanza prediction, betbonanza tips",
   },
-  windrawwin: {
+  "win-draw-win-predictions-full-time-result-betting-tips": {
     title:
-      "Windrawwin Predictions Today | Winning Football Betting Tips & Stats",
+      "Win Draw Win Predictions Today | Winning Football Betting Tips & Stats",
     description:
-      "Unlock daily Windrawwin football predictions, expert betting tips, and match stats. Boost your betting success with data-driven insights and winning strategies.",
-    keywords: "windrawwin predictions, windrawwin prediction, windrawwin tips",
+      "Unlock daily Win/Draw/Win football predictions, expert betting tips, and match stats. Boost your betting success with data-driven insights and winning strategies.",
+    keywords:
+      "Win/Draw/Win predictions, Win/Draw/Win prediction, Win/Draw/Win tips",
   },
   statarea: {
     title: "Statarea Predictions | Football Betting Tips with Statistical Edge",

@@ -45,7 +45,7 @@ export const pageParams: TParams[] = [
   "premierbet-prediction",
   "stake-prediction",
   "jackpot-betting",
-  "windrawwin",
+  "win-draw-win-predictions-full-time-result-betting-tips",
   "statarea",
   "footballpredictions",
   "mybets",

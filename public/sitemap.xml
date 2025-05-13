@@ -284,7 +284,7 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
     </url>
             <!-- Prediction sites Pages -->
     <url>
-        <loc>https://www.betweysure.com/windrawwin</loc>
+        <loc>https://www.betweysure.com/win-draw-win-predictions-full-time-result-betting-tips</loc>
     </url>
     <url>
         <loc>https://www.betweysure.com/statarea</loc>
@@ -358,4 +358,36 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
     <url>
         <loc>https://www.betweysure.com/supatips</loc>
     </url>
+    <url>
+        <loc>https://www.betweysure.com/correct-score-betting</loc>
+    </url>
+    <url>
+       <loc>https://www.betweysure.com/over-1.5-betting</loc>
+    </url>
+    <url>
+       <loc>https://www.betweysure.com/over-2.5-betting</loc>
+    </url>
+    <url>
+       <loc>https://www.betweysure.com/both-teams-to-score-betting</loc>
+    </url>
+    <url>
+      <loc>https://www.betweysure.com/home-win-betting</loc>
+    </url>
+    <url>
+      <loc>https://www.betweysure.com/draw-betting</loc>
+    </url>
+    <url>
+      <loc>https://www.betweysure.com/jackpot-betting</loc>
+    </url>
+    <url>
+      <loc>https://www.betweysure.com/win-draw-win-predictions-full-time-result-betting-tips</loc>
+    </url>
+    <url>
+      <loc>https://www.betweysure.com/free-booking-codes</loc>
+    </url>
+    <url>
+      <loc>https://www.betweysure.com/double-chance-betting</loc>
+    </url>
+</urlset>
+
 </urlset>
