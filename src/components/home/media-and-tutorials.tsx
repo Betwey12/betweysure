@@ -7,7 +7,7 @@ export default function MediaAndTutorials() {
     "https://www.youtube.com/embed/G4P3hCWLcZw?si=K0P7G6boGVrLdsHc",
   ];
   return (
-    <div className="flex flex-col gap-8 px-4 lg:px-20 md:px-10 dark:text-white">
+    <div className="flex flex-col gap-8 px-4 lg:px-20 md:px-10 mb-10 lg:mb-20 dark:text-white">
       <h3 className="lg:text-2xl text-xl font-semibold">{t("TITLE")}</h3>
 
       <div className="grid lg:grid-cols-3 gap-4 lg:gap-8 justify-between">
