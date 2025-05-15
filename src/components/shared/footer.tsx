@@ -194,6 +194,10 @@ function useFooter() {
         { title: t("RESULTS"), link: "/results" },
         { title: t("PRIVACY_POLICY"), link: "/privacy" },
         { title: t("TERMS_AMP_CONDITIONS"), link: "/terms-and-conditions" },
+        {
+          title: "Live Football Scores",
+          link: "https://www.flashscore.com.ng/",
+        },
       ],
     },
     {

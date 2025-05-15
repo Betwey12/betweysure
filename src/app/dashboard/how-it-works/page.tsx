@@ -1,7 +1,6 @@
 export default function HowItWorksPage() {
   const youtubes = [
     "https://www.youtube.com/embed/V8FFe1PfRkg?si=64Q9OPOXUB-QRiE9",
-    "https://www.youtube.com/embed/G4P3hCWLcZw?si=K0P7G6boGVrLdsHc",
   ];
 
   return (

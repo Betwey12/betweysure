@@ -6,6 +6,7 @@ import {
   CallToAction,
   FrequentlyAskedQuestions,
   HomeHero,
+  MediaAndTurotials,
   WhyBetWeySure,
 } from "@/components/home";
 import ReferralClientWapper from "@/components/home/referral-client";
@@ -70,6 +71,7 @@ export default function HomeLayout({ children }: IHomeLayout) {
       <AboutBetWeySure />
       <CallToAction />
       <FrequentlyAskedQuestions />
+      <MediaAndTurotials />
       <BlogAndNews />
       <SelectedGames />
     </ReferralClientWapper>

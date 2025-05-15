@@ -258,7 +258,7 @@ const navlinks = [
     path: "/dashboard/bet-offers",
   },
   {
-    name: "How it works",
+    name: "Tutorials",
     icon: <FaPhotoVideo />,
     path: "/dashboard/how-it-works",
   },
