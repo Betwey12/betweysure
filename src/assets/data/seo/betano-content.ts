@@ -1,4 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 export const betanoContent = `
   <h4 style="margin: 32px 0; font-size: 32px;">Betweysure: Your Trusted Partner for Betano Predictions and Football Betting Tips</h4>
   <p style="margin: 10px 0;">
@@ -58,5 +57,5 @@ export const betanoContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://www.betano.com/" target="_blank" style="color: #13c1d6"><strong>Betano</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="${baseUrl}/22bet-prediction" style="color: #13c1d6"><strong>22bet Predictions</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="/22bet-prediction" style="color: #13c1d6"><strong>22bet Predictions</strong></a> page!</p>
 `;

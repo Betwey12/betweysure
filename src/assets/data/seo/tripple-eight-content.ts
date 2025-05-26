@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const trippleEightBetContent = `
   <h4 style="margin: 32px 0; font-size: 32px;">888Bet Predictions – Your Ultimate Guide to Winning Bets</h4>
 
@@ -61,4 +59,4 @@ Looking for 888Bet predictions? You're in the right place! At Betweysure, we pro
 
 <p style="margin: 10px 0;">Visit <a href="https://www.888sport.com/" target="_blank" style="color: #13c1d6"><strong>888Bet</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="${baseUrl}/premierbet-prediction" style="color: #13c1d6"><strong>PremierBet Predictions</strong></a> page!</p> `;
+<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="/premierbet-prediction" style="color: #13c1d6"><strong>PremierBet Predictions</strong></a> page!</p> `;

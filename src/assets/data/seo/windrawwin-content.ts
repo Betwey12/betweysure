@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const windrawwinContent = `
     <h4 style="font-size:32px">Win-Draw-Win Predictions, Betting Tips & Football Stats for Today and the Week Ahead</h4>
 
@@ -113,10 +111,10 @@ export const windrawwinContent = `
   <p style="margin: 16px 0;">If you're interested in learning more about <b>football betting strategies</p>, prediction categories, and the different types of wagers available, we invite you to explore our dedicated page offering <b>free football predictions</b> and <b>expert betting tips</b>. This will help you better understand the full scope of football markets and improve your overall betting approach.</p>
 
   <ul style="padding-left: 20px; list-style-type: disc; margin: 32px 0">
-    <li style="margin-top: 10px;"><a href="${baseUrl}/home-win-betting" style="color: #13c1d6"><strong>Home Win Betting</strong></  a></li>
-    <li style="margin-top: 10px;"><a href="${baseUrl}/correct-score-betting" style="color: #13c1d6"><strong>Correct Score Betting</strong></  a></li>
-  <li style="margin-top: 10px;"><a href="${baseUrl}/over-1.5-betting" style="color: #13c1d6"><strong>Over 1.5</strong></a></li>     
-  <li style="margin-top: 10px;"><a href="${baseUrl}/over-2.5-betting" style="color: #13c1d6"><strong>Over 2.5</strong></a></li>
-  <li style="margin-top: 10px;"><a href="${baseUrl}/both-teams-to-score-betting" style="color: #13c1d6"><strong>Both teams to score</strong></a></li>
-  <li style="margin-top: 10px;"><a href="${baseUrl}/draw-betting" style="color: #13c1d6"><strong>Draw</strong></a></li>
+    <li style="margin-top: 10px;"><a href="/home-win-betting" style="color: #13c1d6"><strong>Home Win Betting</strong></  a></li>
+    <li style="margin-top: 10px;"><a href="/correct-score-betting" style="color: #13c1d6"><strong>Correct Score Betting</strong></  a></li>
+  <li style="margin-top: 10px;"><a href="/over-1.5-betting" style="color: #13c1d6"><strong>Over 1.5</strong></a></li>     
+  <li style="margin-top: 10px;"><a href="/over-2.5-betting" style="color: #13c1d6"><strong>Over 2.5</strong></a></li>
+  <li style="margin-top: 10px;"><a href="/both-teams-to-score-betting" style="color: #13c1d6"><strong>Both teams to score</strong></a></li>
+  <li style="margin-top: 10px;"><a href="/draw-betting" style="color: #13c1d6"><strong>Draw</strong></a></li>
   </ul>`;

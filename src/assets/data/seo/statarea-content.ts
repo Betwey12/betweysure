@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const statareaContent = `
 <h4 style="font-size: 32px; margin-top: 32px;">What is Statarea?</h4>
 
@@ -84,6 +82,6 @@ export const statareaContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://www.statarea.com/" target="_blank" style="color: #13c1d6"><strong>Statarea</strong></a> today and take your soccer betting game to the next level!</p>
 
-    <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/footballpredictions" style="color: #13c1d6"><strong>FootballPredictions</strong></a> page!</p>
+    <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/footballpredictions" style="color: #13c1d6"><strong>FootballPredictions</strong></a> page!</p>
 
 `;

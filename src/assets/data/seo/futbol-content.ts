@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const futbol24Content = `
 <h4 style='margin: 32px 0; font-size: 32px;'>Futbol24 & Betweysure – Fast Live Scores and Smart Betting Insights</h4>
 <p style='margin: 10px 0;'><a href="http://www.futbol24.com/" target="_blank" style="color: #13c1d6"><strong>Futbol24</strong></a> is one of the fastest live score platforms, delivering instant updates on football matches worldwide. Whether you're tracking the Premier League, Champions League, or lower-tier leagues, Futbol24 ensures you get real-time match updates without delay.</p>
@@ -27,5 +25,5 @@ export const futbol24Content = `
 
     <p style="margin: 10px 0;">Visit <a href="http://www.futbol24.com/" target="_blank" style="color: #13c1d6"><strong>Futbol24</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer tips and insights, check out our <a href="${baseUrl}/marca" style="color: #13c1d6"><strong>Marca</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer tips and insights, check out our <a href="/marca" style="color: #13c1d6"><strong>Marca</strong></a> page!</p>
 `;

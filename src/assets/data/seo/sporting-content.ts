@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const sportingbetContent = `
 <h4 style="margin: 32px 0; font-size: 32px;">Sportingbet & Betweysure: A Winning Combination for Smart Betting</h4>
 <p style="margin: 16px 0;">Looking for a trusted online sports betting platform with accurate predictions to enhance your betting strategy? Sportingbet provides a comprehensive sportsbook, while Betweysure delivers expert football predictions to help you place smarter bets. By using both platforms together, you can maximize your chances of success in sports betting.</p>
@@ -57,5 +55,5 @@ export const sportingbetContent = `
 
  <p style="margin: 10px 0;">👉 Visit <a href="https://sports.sportingbet.com/en/sports" target="_blank" style="color: #13c1d6"><strong>Sportingbet</strong></a> now and start placing smarter football bets today!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/jackpot-betting" style="color: #13c1d6"><strong>Jackpot Betting</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/jackpot-betting" style="color: #13c1d6"><strong>Jackpot Betting</strong></a> page!</p>
 `;

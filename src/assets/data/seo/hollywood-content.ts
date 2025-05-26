@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const HollywoodbetsContent = `
   <h4 style="margin: 32px 0; font-size: 32px;">Hollywoodbets Prediction – Football Predict and Win with Betweysure</h4>
   <p style="margin: 10px 0;">
@@ -48,4 +46,4 @@ export const HollywoodbetsContent = `
     <p style="margin: 10px 0;">Visit <a href="https://m.hollywoodbets.net/" target="_blank" style="color: #13c1d6"><strong>Hollywoodbets</strong></a> today and take your soccer betting game to the next level!</p>
 
 
-<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="${baseUrl}/worldsportsbetting" style="color: #13c1d6"><strong>World Sports Betting  Predictions</strong></a> page!</p> `;
+<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="/worldsportsbetting" style="color: #13c1d6"><strong>World Sports Betting  Predictions</strong></a> page!</p> `;

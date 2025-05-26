@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const livescoreContent = `
 <h4 style="margin: 32px 0; font-size: 32px;">LiveScore – Live Football Scores, Fixtures, and Results with Betweysure</h4>
 
@@ -41,5 +39,5 @@ export const livescoreContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://www.livescore.com/en/" target="_blank" style="color: #13c1d6"><strong>Livescore</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer tips and insights, check out our <a href="${baseUrl}/sofascore" style="color: #13c1d6"><strong>SofaScore</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer tips and insights, check out our <a href="/sofascore" style="color: #13c1d6"><strong>SofaScore</strong></a> page!</p>
 `;

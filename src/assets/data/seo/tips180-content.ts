@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const tips180Content = `
 <h4 style="font-size: 32px;">Why Choose Tips180?</h4>
 <ul style="padding-left: 20px; margin: 16px 0; list-style: disc;">
@@ -40,5 +38,5 @@ export const tips180Content = `
 
     <p style="margin: 10px 0;">Visit <a href="https://www.tips180.com/" target="_blank" style="color: #13c1d6"><strong>Tips180</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/legitpredict" style="color: #13c1d6"><strong>Legit Predict</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/legitpredict" style="color: #13c1d6"><strong>Legit Predict</strong></a> page!</p>
 `;

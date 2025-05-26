@@ -1,4 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 export const predictZContent = `
     <h4 style="font-size: 32px;">Why PredictZ is the Best Soccer Prediction Website</h4>
 
@@ -51,6 +50,6 @@ export const predictZContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://www.predictz.com/" target="_blank" style="color: #13c1d6"><strong>PredictZ</strong></a> today and take your soccer betting game to the next level!</p>
 
-    <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/soccervista" style="color: #13c1d6"><strong>SoccerVista</strong></a> page!</p>
+    <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/soccervista" style="color: #13c1d6"><strong>SoccerVista</strong></a> page!</p>
 
 `;

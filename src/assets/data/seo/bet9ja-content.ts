@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const bet9jaContent = `
   <h4 style="margin-bottom: 32px 0; font-size: 32px">Betweysure Bet9ja Predictions and Football Betting Tips</h4>
   <p style="margin: 10px 0;">
@@ -87,5 +85,5 @@ export const bet9jaContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://sports.bet9ja.com/" target="_blank" style="color: #13c1d6"><strong>Bet9ja</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="${baseUrl}/sportybet-prediction" style="color: #13c1d6"><strong>Sportybet Predictions</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="/sportybet-prediction" style="color: #13c1d6"><strong>Sportybet Predictions</strong></a> page!</p>
 `;

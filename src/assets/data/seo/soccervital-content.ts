@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const soccervitalContent = `
 <h4 style="font-size: 32px; margin-top: 32px;">Soccervital Free Football Betting Predictions</h4>
 <p style="margin: 10px 0;">Soccervital is a top-tier soccer prediction website that provides free and accurate football betting tips to help you make steady profits without compromise. Whether you're looking for predictions for today's games, tomorrow's matches, or weekend fixtures, Soccervital has you covered.</p>
@@ -78,5 +76,5 @@ export const soccervitalContent = `
     <p style="margin: 10px 0;"><strong>Don’t wait — visit <a href="https://www.soccervital.com/" target="_blank" style="color: #13c1d6">Soccervital</a> today and elevate your betting strategy!</strong></p>
 
 
-<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/forebet" style="color: #13c1d6"><strong>Forebet</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/forebet" style="color: #13c1d6"><strong>Forebet</strong></a> page!</p>
 `;

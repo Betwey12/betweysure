@@ -78,6 +78,9 @@ export const pageParams: TParams[] = [
   "convert-bet-codes",
   "home-win-betting",
   "double-chance-betting",
+  "2up-betting",
+  "win-to-nil-predictions",
+  "over-0-5-first-half-goals-predictions",
 ];
 
 export const popularLeaguesParams: TPopularLeages[] = [

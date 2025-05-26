@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const xbetContent = `
   <h4 style="margin: 32px 0; font-size: 32px;">Betweysure: Your Ultimate Source for 1xBet Predictions and Betting Tips</h4>
   <p style="margin: 10px 0;">
@@ -127,5 +125,5 @@ export const xbetContent = `
 
 <p style="margin: 10px 0;">Visit <a href="https://refpa7921972.top/L?tag=d_2927467m_1573c_&site=2927467&ad=1573" target="_blank" style="color: #13c1d6"><strong>1xbet</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="${baseUrl}/betway-prediction" style="color: #13c1d6"><strong>Betway Predictions</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="/betway-prediction" style="color: #13c1d6"><strong>Betway Predictions</strong></a> page!</p>
 `;

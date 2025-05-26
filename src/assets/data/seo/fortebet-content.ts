@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const fortebetContent = `
   <h4 style="margin: 32px 0; font-size: 32px;">ForteBet Predictions – Expert Betting Insights with Betweysure</h4>
   <p style="margin: 10px 0;">
@@ -74,4 +72,4 @@ export const fortebetContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://www.fortebet.ug/" target="_blank" style="color: #13c1d6"><strong>ForteBet</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="${baseUrl}/gal-sports-betting" style="color: #13c1d6"><strong>Gal Sports Predictions</strong></a> page!</p> `;
+<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="/gal-sports-betting" style="color: #13c1d6"><strong>Gal Sports Predictions</strong></a> page!</p> `;

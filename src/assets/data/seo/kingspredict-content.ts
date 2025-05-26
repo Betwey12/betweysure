@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const kingspredictContent = `
 <h4 style="font-size: 32px; margin-top: 32px;">Kingspredict: The Most Accurate Football Prediction Site</h4>
   <p style="margin: 16px 0;">Kingspredict is a trusted and innovative football prediction platform that provides free and accurate betting tips to help punters make consistent profits. With a focus on delivering 97% accurate predictions, Kingspredict covers over 30 leagues worldwide, including the Premier League, La Liga, Serie A, Bundesliga, and French Ligue 1. Whether you're a beginner or an experienced bettor, Kingspredict offers the tools and insights you need to succeed.</p>
@@ -50,5 +48,5 @@ export const kingspredictContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://kingspredict.com/" target="_blank" style="color: #13c1d6"><strong>Kingspredict</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/tips180" style="color: #13c1d6"><strong>Tips180</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/tips180" style="color: #13c1d6"><strong>Tips180</strong></a> page!</p>
 `;

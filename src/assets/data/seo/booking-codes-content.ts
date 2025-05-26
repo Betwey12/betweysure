@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const bookingCodesContent = `
 <h4 style="margin: 32px 0; font-size: 32px;">Free Booking Codes for Today – Betweysure</h4>
 
@@ -48,9 +46,9 @@ export const bookingCodesContent = `
 <p style="margin: 16px 0;">For an in-depth insight into sports betting, check out our categories that we cover on Betweysure!</p>
 
     <ul style="padding-left: 20px; list-style-type: disc;">
-    <li style="margin-top: 10px;"><a href="${baseUrl}/jackpot-betting" style="color: #13c1d6"><strong>Jackpot betting</strong></a></li>
-    <li style="margin-top: 10px;"><a href="${baseUrl}/over-1.5-betting" style="color: #13c1d6"><strong>Over 1.5</strong></a></li>   <li style="margin-top: 10px;"><a href="${baseUrl}/over-2.5-betting" style="color: #13c1d6"><strong>Over 2.5</strong></a></li>
-    <li style="margin-top: 10px;"><a href="${baseUrl}/both-teams-to-score-betting" style="color: #13c1d6"><strong>Both teams to score</strong></a></li>
-    <li style="margin-top: 10px;"><a href="${baseUrl}/draw-betting" style="color: #13c1d6"><strong>Draw</strong></a></li>
-<li style="margin-top: 10px;"><a href="${baseUrl}/free-booking-codes" style="color: #13c1d6"><strong>Free Booking Codes</strong></a></li>
+    <li style="margin-top: 10px;"><a href="/jackpot-betting" style="color: #13c1d6"><strong>Jackpot betting</strong></a></li>
+    <li style="margin-top: 10px;"><a href="/over-1.5-betting" style="color: #13c1d6"><strong>Over 1.5</strong></a></li>   <li style="margin-top: 10px;"><a href="/over-2.5-betting" style="color: #13c1d6"><strong>Over 2.5</strong></a></li>
+    <li style="margin-top: 10px;"><a href="/both-teams-to-score-betting" style="color: #13c1d6"><strong>Both teams to score</strong></a></li>
+    <li style="margin-top: 10px;"><a href="/draw-betting" style="color: #13c1d6"><strong>Draw</strong></a></li>
+<li style="margin-top: 10px;"><a href="/free-booking-codes" style="color: #13c1d6"><strong>Free Booking Codes</strong></a></li>
 </ul>`;

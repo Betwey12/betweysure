@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const betwizadContent = `
 <h4 style="font-size: 32px; margin-top: 32px;">Betwizard Predictions</h4>
   <p style="margin: 16px 0;">Betwizad is a trusted platform for accurate football predictions and betting tips, designed to help punters make informed decisions and maximize their profits. Created by experienced bookmakers, Betwizad offers a comprehensive betting guide with the best odds across various markets, making it a go-to resource for football enthusiasts.</p>
@@ -46,5 +44,5 @@ export const betwizadContent = `
     <p style="margin: 10px 0;">Visit <a href="https://betwizad.com/" target="_blank" style="color: #13c1d6"><strong>Betwizad</strong></a> today and take your soccer betting game to the next level!</p>
 
 
-<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/focuspredict" style="color: #13c1d6"><strong>Focuspredict</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/focuspredict" style="color: #13c1d6"><strong>Focuspredict</strong></a> page!</p>
 `;

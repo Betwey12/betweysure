@@ -1,4 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 export const worldStarBettingContent = `
   <h4 style="margin: 32px 0; font-size: 32px;">World Star Betting-Prediction – Winning Tips with Betweysure</h4>
   <p style="margin: 10px 0;">
@@ -65,4 +64,4 @@ export const worldStarBettingContent = `
 
 <p style="margin: 10px 0;">Visit <a href="https://m.wsbetting.com/" target="_blank" style="color: #13c1d6"><strong>Word Star Betting</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="${baseUrl}/meridianbet-prediction" style="color: #13c1d6"><strong>MeridianBet Predictions</strong></a> page!</p> `;
+<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="/meridianbet-prediction" style="color: #13c1d6"><strong>MeridianBet Predictions</strong></a> page!</p> `;

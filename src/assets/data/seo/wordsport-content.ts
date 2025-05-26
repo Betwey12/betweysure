@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const worldsportsbettingContent = `
   <h4 style="margin: 32px 0; font-size: 32px;">World Sports Betting Prediction – Expert Tips with Betweysure</h4>
   <p style="margin: 10px 0;">
@@ -61,4 +59,4 @@ export const worldsportsbettingContent = `
 
 <p style="margin: 10px 0;">Visit <a href="https://www.worldsportsbetting.co.za/" target="_blank" style="color: #13c1d6"><strong>World Sport Betting</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="${baseUrl}/sunbet-prediction" style="color: #13c1d6"><strong>SunBet Predictions</strong></a> page!</p> `;
+<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="/sunbet-prediction" style="color: #13c1d6"><strong>SunBet Predictions</strong></a> page!</p> `;

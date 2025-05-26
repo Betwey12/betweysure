@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const victorspredictContent = `
 <h4 style="font-size: 32px;">VictorsPredict: Free Football Predictions and Betting Tips</h4>
 
@@ -51,5 +49,5 @@ export const victorspredictContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://www.victorspredict.com/" target="_blank" style="color: #13c1d6"><strong>VictorsPredict</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/supatips" style="color: #13c1d6"><strong>SupaTips</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/supatips" style="color: #13c1d6"><strong>SupaTips</strong></a> page!</p>
 `;

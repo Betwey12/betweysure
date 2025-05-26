@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const solopredictContent = `
 <h4 style="font-size: 32px;">What Makes Solopredict Unique?</h4>
 <ul style="padding-left: 20px; margin: 16px 0; list-style: disc;">
@@ -53,5 +51,5 @@ export const solopredictContent = `
 
     <p style="margin: 10px 0;"><strong>Don’t wait — visit <a href="https://www.solopredict.com/" target="_blank" style="color: #13c1d6">Solopredict</a> today and elevate your betting strategy!</strong></p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/feedinco" style="color: #13c1d6"><strong>Feedinco</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/feedinco" style="color: #13c1d6"><strong>Feedinco</strong></a> page!</p>
 `;

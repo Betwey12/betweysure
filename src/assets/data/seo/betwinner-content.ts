@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const betwinnerContent = `
   <h4 style="margin: 32px 0; font-size: 32px;">Betweysure & Betwinners Predictions – Accurate Football Betting Tips</h4>
   <p style="margin: 10px 0;">
@@ -66,5 +64,5 @@ export const betwinnerContent = `
     <p style="margin: 10px 0;">Visit <a href="https://betwinner.com/en" target="_blank" style="color: #13c1d6"><strong>Betwinner</strong></a> today and take your soccer betting game to the next level!</p>
 
 
-<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="${baseUrl}/betano-prediction" style="color: #13c1d6"><strong>Betano Predictions</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="/betano-prediction" style="color: #13c1d6"><strong>Betano Predictions</strong></a> page!</p>
 `;

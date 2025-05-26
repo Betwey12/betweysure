@@ -703,7 +703,10 @@ declare global {
     | "both-teams-to-score-betting"
     | "home-win-betting"
     | "double-chance-betting"
-    | "draw-betting";
+    | "draw-betting"
+    | "2up-betting"
+    | "win-to-nil-predictions"
+    | "over-0-5-first-half-goals-predictions";
 
   type TBettingParams =
     | "bet9ja-prediction"

@@ -1,6 +1,4 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
-export const tewntyTwoBetContent = `
+export const twentyTwoBetContent = `
   <h4 style="margin: 32px 0; font-size: 32px;">Betweysure: Your Ultimate Source for 22Bet Predictions and Football Betting Tips</h4>
   <p style="margin: 10px 0;">
     Looking for accurate 22Bet predictions and expert football betting tips? Betweysure is your go-to platform for reliable soccer predictions, helping you make smarter and more profitable betting decisions. Whether you're a beginner or an experienced bettor, our meticulously researched 22Bet football predictions give you the insights you need to stay ahead.
@@ -75,6 +73,6 @@ export const tewntyTwoBetContent = `
 <p style="margin: 10px 0;">Visit <a href="https://22bet.com/" target="_blank" style="color: #13c1d6"><strong>22Bet</strong></a> today and take your soccer betting game to the next level!</p>
 
 
-<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="${baseUrl}/betbonanza-prediction" style="color: #13c1d6"><strong>BetBonanza Predictions</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="/betbonanza-prediction" style="color: #13c1d6"><strong>BetBonanza Predictions</strong></a> page!</p>
 
 `;

@@ -1,4 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 export const myBetsContent = `
 <h4 style="margin: 32px 0; font-size: 32px;">MyBets.Today: Free Football Predictions and Betting Tips</h4>
 <p style="margin: 16px 0;">Looking for reliable and accurate football predictions? MyBets.Today is one of the top platforms providing expert football betting tips, covering various markets such as 1x2, double chance, both teams to score (BTTS), and over/under goals. Whether you’re a beginner or a seasoned bettor, MyBets.Today offers valuable insights to help you maximize your profits.</p>
@@ -66,5 +65,5 @@ export const myBetsContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://www.mybets.today/" target="_blank" style="color: #13c1d6"><strong>MyBets</strong></a> today and take your soccer betting game to the next level!</p>
 
-    <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/betensured" style="color: #13c1d6"><strong>Betensured predictions</strong></a> page!</p>
+    <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/betensured" style="color: #13c1d6"><strong>Betensured predictions</strong></a> page!</p>
 `;

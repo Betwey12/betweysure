@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const soccerecoContent = `
 <h4 style="font-size: 32px; margin-top: 32px;">Soccereco</h4>
 <p style="margin: 10px 0;">Soccereco is a comprehensive platform that provides free football predictions and detailed match analysis. It’s known for its focus on statistical data and in-depth insights, making it a favorite among data-driven bettors.</p>
@@ -52,7 +50,7 @@ export const soccerecoContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://www.soccereco.com/" target="_blank" style="color: #13c1d6"><strong>Soccereco</strong></a> today and take your soccer betting game to the next level!</p>
 
-    <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/soccervital" style="color: #13c1d6"><strong>Soccervital</strong></a> page!</p>
+    <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/soccervital" style="color: #13c1d6"><strong>Soccervital</strong></a> page!</p>
 
 
 `;

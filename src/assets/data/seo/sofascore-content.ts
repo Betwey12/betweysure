@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const sofascoreContent = `
 <h4 style="margin: 32px 0; font-size: 32px;">SofaScore & Betweysure – Real-Time Sports Data with Deep Analytics</h4>
 
@@ -40,5 +38,5 @@ export const sofascoreContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://www.sofascore.com/" target="_blank" style="color: #13c1d6"><strong>Sofascore</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer tips and insights, check out our <a href="${baseUrl}/fotmob" style="color: #13c1d6"><strong>Fotmob</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer tips and insights, check out our <a href="/fotmob" style="color: #13c1d6"><strong>Fotmob</strong></a> page!</p>
 `;

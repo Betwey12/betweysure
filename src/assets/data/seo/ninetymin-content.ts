@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const ninetyMinContent = `
   <h4 style="margin: 32px 0; font-size: 32px;">90min – Football News, Transfer Updates, and Fan Content with Betweysure</h4>
   
@@ -31,4 +29,4 @@ export const ninetyMinContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://www.90min.com/" target="_blank" style="color: #13c1d6"><strong>90min</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer tips and insights, check out our <a href="${baseUrl}/livescore" style="color: #13c1d6"><strong>Livescore</strong></a> page!</p>`;
+<p style="margin: 10px 0;">For an in-depth look at soccer tips and insights, check out our <a href="/livescore" style="color: #13c1d6"><strong>Livescore</strong></a> page!</p>`;

@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const stakePredictionContent = `
 <h4 style="margin: 32px 0; font-size: 32px;">Stake-Prediction & Betweysure: High-Risk vs. Smart Bets – Your Guide to Crypto Betting Wins</h4>
 
@@ -39,4 +37,4 @@ export const stakePredictionContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://stake.com/sports/home" target="_blank" style="color: #13c1d6"><strong>Stake</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth insights into sports betting, check out our <a href="${baseUrl}/sportsbet.io-prediction" style="color: #13c1d6"><strong>Sportsbet.io Predictions</strong></a> page!</p> `;
+<p style="margin: 10px 0;">For an in-depth insights into sports betting, check out our <a href="/sportsbet.io-prediction" style="color: #13c1d6"><strong>Sportsbet.io Predictions</strong></a> page!</p> `;

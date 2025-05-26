@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const legitpredictContent = `
 <h4 style="font-size: 32px;">Why Legit Predict Stands Out</h4>
 
@@ -66,5 +64,5 @@ If you're a football enthusiast looking for accurate and reliable soccer predict
 
     <p style="margin: 10px 0;">Visit <a href="https://legitpredict.com/" target="_blank" style="color: #13c1d6"><strong>legitpredict</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/solopredict" style="color: #13c1d6"><strong>Solopredict</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/solopredict" style="color: #13c1d6"><strong>Solopredict</strong></a> page!</p>
 `;

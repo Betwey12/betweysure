@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const sunbetContent = `
   <h4 style="margin: 32px 0; font-size: 32px;">SunBet Predictions: Elevate Your Betting Game with Betweysure</h4>
   <p style="margin: 10px 0;">
@@ -67,4 +65,4 @@ export const sunbetContent = `
     <p style="margin: 10px 0;">Visit <a href="https://www.sunbet.co.za/" target="_blank" style="color: #13c1d6"><strong>Sunbet</strong></a> today and take your soccer betting game to the next level!</p>
 
 
-<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="${baseUrl}/bet.co.za" style="color: #13c1d6"><strong>Bet.co.za Predictions</strong></a> page!</p> `;
+<p style="margin: 10px 0;">For an in-depth look at betting websites and insights, check out our <a href="/bet.co.za" style="color: #13c1d6"><strong>Bet.co.za Predictions</strong></a> page!</p> `;

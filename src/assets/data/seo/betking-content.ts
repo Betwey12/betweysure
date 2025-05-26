@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const betkingContent = `
 <h4 style="margin: 32px 0; font-size:32px;">BetKing & Betweysure: The Ultimate Betting Strategy</h4>
     <p style="margin: 16px 0;">Looking for accurate football predictions while betting on BetKing? Betweysure provides expert football tips, helping you make smart betting decisions on BetKing’s platform. By combining BetKing’s competitive odds with Betweysure’s accurate predictions, you can increase your chances of winning.</p>
@@ -58,5 +56,5 @@ export const betkingContent = `
 
 <p style="margin: 10px 0;">Visit <a href="https://m.betking.com/" target="_blank" style="color: #13c1d6"><strong>Betking</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/sportingbet-prediction" style="color: #13c1d6"><strong>Sportingbet Predictions</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/sportingbet-prediction" style="color: #13c1d6"><strong>Sportingbet Predictions</strong></a> page!</p>
 `;

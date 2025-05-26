@@ -1,3 +1,4 @@
+import { twoUpContent } from "./assets/data/seo/two-up-content";
 import { adibetContent } from "./assets/data/seo/adibet-content";
 import { bangbetContent } from "./assets/data/seo/bangbet-content";
 import { besoccerContent } from "./assets/data/seo/besoccer-content";
@@ -72,7 +73,7 @@ import { supatipsContent } from "./assets/data/seo/supatips-content";
 import { teamtalkContent } from "./assets/data/seo/teamtalk-content";
 import { tips180Content } from "./assets/data/seo/tips180-content";
 import { trippleEightBetContent } from "./assets/data/seo/tripple-eight-content";
-import { tewntyTwoBetContent } from "./assets/data/seo/twnty-two-content";
+import { twentyTwoBetContent } from "./assets/data/seo/twenty-two-content";
 import { victorspredictContent } from "./assets/data/seo/victorspredict-content";
 import { wasafibetContent } from "./assets/data/seo/wasafibet-content";
 import { windrawwinContent } from "./assets/data/seo/windrawwin-content";
@@ -80,6 +81,8 @@ import { worldsportsbettingContent } from "./assets/data/seo/wordsport-content";
 import { worldStarBettingContent } from "./assets/data/seo/world-star-content";
 import { xbetContent } from "./assets/data/seo/xbet-content";
 import { zulubetContent } from "./assets/data/seo/zulubet-content";
+import { winToNilContent } from "./assets/data/seo/win-to-nil-content";
+import { over05FHGContent } from "./assets/data/seo/over-05-fhg-content";
 
 export const specificLeagueSeoText: TLeagueSeoText = {
   "la-liga": laLigaContent,
@@ -93,6 +96,9 @@ export const otherPagesSeoText = {
 };
 
 export const paramsSeoText: Record<TParams, string> = {
+  "over-0-5-first-half-goals-predictions": over05FHGContent,
+  "win-to-nil-predictions": winToNilContent,
+  "2up-betting": twoUpContent,
   predictz: predictZContent,
   soccervista: soccervistaContent,
   "win-draw-win-predictions-full-time-result-betting-tips": windrawwinContent,
@@ -120,7 +126,7 @@ export const paramsSeoText: Record<TParams, string> = {
   "betway-prediction": betwayContent,
   "betwinner-prediction": betwinnerContent,
   "betano-prediction": betanoContent,
-  "22bet-prediction": tewntyTwoBetContent,
+  "22bet-prediction": twentyTwoBetContent,
   "betbonanza-prediction": betbonanzaContent,
   "betika-prediction": betikaContent,
   "sportpesa-prediction": sportpesaContent,
@@ -964,6 +970,30 @@ export const paramsaMetaData: Record<
       "Looking for sure home win predictions today? At Betweysure, we specialize in providing high-confidence football home win tips backed by data, expert analysis, and predictive models.",
     keywords:
       "double chance betting, double chance tips, football double chance predictions",
+  },
+  "2up-betting": {
+    title:
+      "2Up Betting Guide 2024 - How to Win with Early Payout Offers | BetweySure",
+    description:
+      "Discover how 2Up betting works & get daily value picks! Learn which teams & bookmakers offer early payouts on 2-goal leads. Start profiting today",
+    keywords:
+      "2up betting, early payout betting, 2 goals ahead strategy, football betting tips, bookmaker promotions, matched betting 2up, BetweySure, best teams for 2up, how 2up works, soccer betting strategies",
+  },
+  "win-to-nil-predictions": {
+    title:
+      "Win to Nil Predictions Today | Expert WTN Betting Tips | BetweySure",
+    description:
+      "Get today's most accurate Win to Nil betting predictions. Our expert tips analyze team defenses, attack weaknesses & match stats to find the best WTN bets",
+    keywords:
+      "win to nil predictions, WTN betting tips, clean sheet betting, football betting experts, how to win WTN bets, best teams for win to nil, BetweySure predictions, defensive team betting, high odds football bets, today's win to nil picks",
+  },
+  "over-0-5-first-half-goals-predictions": {
+    title:
+      "Over 0.5 First Half Goals Predictions Today | HT Goals Betting Tips | BetweySure",
+    description:
+      "Get today's most accurate Over 0.5 first half goals predictions. Expert betting tips, team statistics, and best leagues for HT goals. Increase your winnings with BetweySure",
+    keywords:
+      "over 0.5 first half goals, HT goals predictions, halftime goals betting, football betting tips, first half goals today, over 0.5 HT strategy, goals before halftime, high scoring teams, BetweySure predictions, live betting tips",
   },
   "home-win-betting": {
     title: "Home Win Betting – Accurate Predictions for Maximum Profits",

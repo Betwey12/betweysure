@@ -2009,6 +2009,22 @@ export const predictionSites: Record<
   TPredictionsParams,
   { title: string; description: string }
 > = {
+  "over-0-5-first-half-goals-predictions": {
+    title:
+      "Over 0.5 First Half Goals Predictions Today | HT Goals Betting Tips | BetweySure",
+    description:
+      "Get today's most accurate Over 0.5 first half goals predictions. Expert betting tips, team statistics, and best leagues for HT goals. Increase your winnings with BetweySure!",
+  },
+  "win-to-nil-predictions": {
+    title: "Win to Nil Betting Predictions & Expert Tips",
+    description:
+      "At BetweySure, we specialize in providing high-quality Win to Nil (WTN) betting predictions to help you maximize your football betting profits. This exciting market offers excellent odds when you correctly predict a team will win without conceding any goals.",
+  },
+  "2up-betting": {
+    title: "2Up Early Payout Betting Guide – Maximize Your Winnings",
+    description:
+      "At BetweySure, we've mastered the art of 2Up betting - the smart way to get early payouts when your team takes a 2-goal lead. This exclusive bookmaker promotion lets you lock in wins before the final whistle, and we'll show you exactly how to profit from it.",
+  },
   "win-draw-win-predictions-full-time-result-betting-tips": {
     title: "Win/Draw/Win predictions full time result and betting tips",
     description:

@@ -1,4 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 export const betEnsuredContent = `
 
 <h4 style="margin: 32px 0; font-size: 32px;">BetEnsured: Free Football Predictions and Betting Tips</h4>
@@ -48,5 +47,5 @@ export const betEnsuredContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://www.betensured.com/" target="_blank" style="color: #13c1d6"><strong>Betensured</strong></a> to start making smarter football bets today!!</p>
 
-    <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/predictz" style="color: #13c1d6"><strong>PredictZ</strong></a> page!</p>
+    <p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/predictz" style="color: #13c1d6"><strong>PredictZ</strong></a> page!</p>
 `;

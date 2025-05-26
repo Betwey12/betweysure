@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const primaTipsContent = `
 <h4 style="font-size: 32px; margin-top: 32px;">Prima Tips for Today: Free Football Predictions and Betting Tips</h4>
 <p style="margin: 10px 0;">Looking for reliable and accurate football predictions? Prima Tips offers free football tips for today’s matches, covering a wide range of betting markets such as 1x2, double chance, both teams to score (BTTS), and over/under goals. Whether you're a seasoned punter or a beginner, Prima Tips provides step-by-step guidelines to help you make informed betting decisions and maximize your profits.</p>
@@ -52,7 +50,7 @@ export const primaTipsContent = `
 <h4 style="font-size: 32px; margin-top: 32px;">How to Use Prima Tips for Successful Betting</h4>
 
 <ul style="list-style-type: disc; padding-left: 20px; margin: 16px 0;">
-    <li><a href="${baseUrl}/primatips-prediction" style="color: #13c1d6">Visit Betweysure</a>: Access free Prima Tips predictions for today’s matches.</li>
+    <li><a href="/primatips-prediction" style="color: #13c1d6">Visit Betweysure</a>: Access free Prima Tips predictions for today’s matches.</li>
     <li>Analyze Predictions: Review our 1x2, BTTS, and over/under tips.</li>
     <li>Follow Guidelines: Use our step-by-step guides to make informed betting decisions.</li>
     <li>Join the Inner Circle: Gain access to exclusive resources to enhance your betting strategies.</li>
@@ -63,6 +61,6 @@ export const primaTipsContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://primatips.com/" target="_blank" style="color: #13c1d6"><strong>primatips</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/statarea" style="color: #13c1d6"><strong>Statarea</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/statarea" style="color: #13c1d6"><strong>Statarea</strong></a> page!</p>
 
 `;

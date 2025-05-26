@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const zulubetContent = `
 
 <h4 style="font-size: 32px; margin-top: 32px;">Zulubet predictions</h4>
@@ -41,5 +39,5 @@ export const zulubetContent = `
 
 <p style="margin: 10px 0;">Visit <a href="https://www.zulubet.com/" target="_blank" style="color: #13c1d6"><strong>Zulubet</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/betwizad" style="color: #13c1d6"><strong>Betwizad</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/betwizad" style="color: #13c1d6"><strong>Betwizad</strong></a> page!</p>
 `;

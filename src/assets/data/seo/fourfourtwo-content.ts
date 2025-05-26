@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const fourfourtwoContent = `
   <h4 style="margin: 32px 0; font-size: 32px;">FourFourTwo – In-Depth Football Journalism and Features with Betweysure</h4>
   
@@ -30,4 +28,4 @@ export const fourfourtwoContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://www.fourfourtwo.com/" target="_blank" style="color: #13c1d6"><strong>FourFourTwo</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer tips and insights, check out our <a href="${baseUrl}/90min" style="color: #13c1d6"><strong>90min</strong></a> page!</p>`;
+<p style="margin: 10px 0;">For an in-depth look at soccer tips and insights, check out our <a href="/90min" style="color: #13c1d6"><strong>90min</strong></a> page!</p>`;

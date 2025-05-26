@@ -1,5 +1,3 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export const adibetContent = `
 <h4 style="font-size: 32px; margin-top: 32px;">Adibet Soccer Predictions and Tips</h4>
 <p style="margin: 10px 0;">Adibet is a leading soccer prediction platform that provides free and accurate football betting tips to help punters make steady profits. Known for its reliability and wide coverage, Adibet is a go-to site for bettors looking for predictions for today’s and tomorrow’s matches across major and minor leagues.</p>
@@ -80,5 +78,5 @@ export const adibetContent = `
 
     <p style="margin: 10px 0;">Visit <a href="https://www.adibet.com/" target="_blank" style="color: #13c1d6"><strong>Adibet</strong></a> today and take your soccer betting game to the next level!</p>
 
-<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="${baseUrl}/zulubet" style="color: #13c1d6"><strong>Zulubet</strong></a> page!</p>
+<p style="margin: 10px 0;">For an in-depth look at soccer predictions and insights, check out our <a href="/zulubet" style="color: #13c1d6"><strong>Zulubet</strong></a> page!</p>
 `;
