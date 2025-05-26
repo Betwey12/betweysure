@@ -2,7 +2,7 @@ import { usePaystackPayment } from "react-paystack";
 import { useFlutterwave } from "flutterwave-react-v3";
 import { useAuth } from "./useAuth";
 
-const PAYSTACK_KEY = process.env.NEXT_PUBLIC_FLUTTERWAVE_PUBLIC_KEY ?? "";
+const PAYSTACK_KEY = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY ?? "";
 const FLUTTER_KEY = process.env.NEXT_PUBLIC_FLUTTERWAVE_PUBLIC_KEY ?? "";
 
 export default function usePayment({

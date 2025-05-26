@@ -184,7 +184,7 @@ export const winToNilContent = `
   <ul style="padding-left: 20px; list-style-type: disc; margin: 32px 0">
     <li style="margin-top: 10px;"><a href="/home-win-betting" style="color: #13c1d6"><strong>Home Win Betting</strong></  a></li>
     <li style="margin-top: 10px;"><a href="/correct-score-betting" style="color: #13c1d6"><strong>Correct Score Betting</strong></  a></li>
-  <li style="margin-top: 10px;"><a href="/win-to-nil-predictions" style="color: #13c1d6"><strong>Over 0.5 First Half Goals (HT O0.5)</strong></a></li>     
-  <li style="margin-top: 10px;"><a href="/over-0-5-first-half-goals-predictions" style="color: #13c1d6"><strong>Both teams to score</strong></a></li>
+  <li style="margin-top: 10px;"><a href="/over-0-5-first-half-goals-predictions" style="color: #13c1d6"><strong>Over 0.5 First Half Goals (HT O0.5)</strong></a></li>     
+  <li style="margin-top: 10px;"><a href="both-teams-to-score-betting" style="color: #13c1d6"><strong>Both teams to score</strong></a></li>
   <li style="margin-top: 10px;"><a href="/draw-betting" style="color: #13c1d6"><strong>Draw</strong></a></li>
   </ul>`;
