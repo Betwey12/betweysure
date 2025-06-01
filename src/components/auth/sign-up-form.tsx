@@ -113,9 +113,10 @@ export default function SignUpForm() {
       return toast.error(message);
     }
 
-    toast.success(response.message);
-
     await signInWithEmailAndPassword(auth, data.email, data.password);
+
+    toast.success(response.message);
+    
     if (action === "register") return;
     router.push("/auth/verify-email");
   };
