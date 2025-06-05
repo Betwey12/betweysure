@@ -71,8 +71,8 @@ export default function HomeLayout({ children }: IHomeLayout) {
       <AboutBetWeySure />
       <CallToAction />
       <FrequentlyAskedQuestions />
-      <MediaAndTurotials />
       <BlogAndNews />
+      <MediaAndTurotials />
       <SelectedGames />
     </ReferralClientWapper>
   );
