@@ -62,7 +62,7 @@ function NewsCard({ news }: { news: any }) {
           <h4 className="text-center text-2xl font-bold">{news.title}</h4>
         </div>
       )}
-      <div className="flex flex-col gap-4 bg-white shadow-md rounded-[0_0_12px_12px] px-4 py-6 dark:bg-blue-one dark:text-white">
+      <div className="flex flex-1 flex-col gap-4 bg-white shadow-md rounded-[0_0_12px_12px] px-4 py-6 dark:bg-blue-one dark:text-white">
         <h4 className="text-dark dark:text-white">{news?.title}</h4>
         <p className="text-sm text-gray-one mt-2">{content}...</p>
         <Link
