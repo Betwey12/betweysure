@@ -6,12 +6,14 @@ export default function useHandleLogout() {
   const { setUser } = useAuth();
 
   async function handleLogout() {
-    console.log("Logging out");
-
-    await signOut(auth);
-    localStorage.removeItem("user");
-    setUser(null);
-    window.location.replace("/auth/login");
+    try {
+      await signOut(auth);
+      localStorage.removeItem("user");
+      setUser(null);
+      window.location.href = "/auth/login";
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
   }
 
   return {

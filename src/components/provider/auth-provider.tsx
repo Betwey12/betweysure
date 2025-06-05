@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { User, onAuthStateChanged } from "firebase/auth";
 import { useQuery } from "@tanstack/react-query";
@@ -11,45 +12,53 @@ interface AuthProviderProps {
 }
 
 export default function AuthProvider({ children }: AuthProviderProps) {
-  const [userId, setUserId] = useState<string | undefined>();
-  const { data, isPending: userLoading } = useQuery({
-    queryKey: ["user", userId],
-    queryFn: () => HTTPRequest.Get(`users/me`),
-    enabled: !!userId,
-  });
-
+  const [firebaseUser, setFirebaseUser] = useState<User | null>(null);
+  const [userId, setUserId] = useState<string>();
   const [user, setUser] = useState<TAuthUser | null>(null);
-  const [loggedInUser, setLoggedInUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Subscribe to Firebase auth state
   useEffect(() => {
-    // Subscribe to authentication state changes
-    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
-      setIsLoading(false);
-
-      if (firebaseUser) {
-        setUserId(firebaseUser.uid);
-        setLoggedInUser(firebaseUser);
-        setIsLoading(true);
-        localStorage.setItem("token", await firebaseUser.getIdToken());
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (currentUser) {
+        const token = await currentUser.getIdToken();
+        localStorage.setItem("token", token);
+        setFirebaseUser(currentUser);
+        setUserId(currentUser.uid);
+      } else {
+        localStorage.removeItem("token");
+        setFirebaseUser(null);
+        setUserId(undefined);
+        setUser(null);
+        setIsLoading(false);
       }
     });
 
-    return () => {
-      // Unsubscribe to avoid memory leaks
-      unsubscribe();
-    };
+    return unsubscribe;
   }, []);
 
+  // Fetch user data from your API
+  const { data, isPending: userLoading } = useQuery({
+    queryKey: ["user", userId],
+    queryFn: () => HTTPRequest.Get("users/me"),
+    enabled: !!userId,
+  });
+
+  // Merge Firebase + API user data
   useEffect(() => {
-    if (!userLoading) {
-      setIsLoading(false);
+    if (firebaseUser && data?.user && !userLoading) {
       setUser({
-        ...loggedInUser,
-        ...data?.user,
+        ...firebaseUser,
+        ...data.user,
       });
+      setIsLoading(false);
     }
-  }, [loggedInUser, userLoading, userId, data]);
+
+    if (!firebaseUser && !userLoading) {
+      setUser(null);
+      setIsLoading(false);
+    }
+  }, [firebaseUser, data, userLoading]);
 
   return (
     <AuthContext.Provider
