@@ -25,6 +25,8 @@ import { useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import useGetUser from "@/hooks/useGetUser";
 import { fonbnkDetails } from "@/constants";
+import Modal from "../shared/modal";
+import CloseTimes from "../ui/close";
 
 type TPayload = {
   method: string;
@@ -43,8 +45,10 @@ export default function GatewaySelect() {
   const availableCurrency = plans[currency] ? currency : "NGN";
   const duration = durationParams!.replace(/-/, " ") as EDuration;
   const amount = plan[planName!][duration] || 0;
+  const [showAddress, setShowAddress] = useState(false);
 
   const [clickedIndex, setClickedIndex] = useState(0);
+  const [copied, setCopied] = useState<number>();
 
   const { isPending, isError, mutateAsync } = useMutation({
     mutationFn: (data: TPayload) => HTTPRequest.Post("wallet/subscribe", data),
@@ -120,6 +124,14 @@ export default function GatewaySelect() {
     return handleUpdatePlan("wallet", "wallet");
   }
 
+  function copyToClipboard(address: string, index: number) {
+    navigator.clipboard.writeText(address);
+    toast.success(
+      "Address copied to clipboard. Please contact support after payment",
+    );
+    setCopied(index);
+  }
+
   const paymentGateways = [
     {
       name: "flutterwave",
@@ -185,57 +197,118 @@ export default function GatewaySelect() {
         router.push(`https://pay.fonbnk.com/?${params}`);
       },
     },
+    {
+      name: "crypto",
+      logo: crypto,
+      title: "Crypto Transfer",
+      onClick: () => setShowAddress(true),
+      info: "Complete crypto transfer using wallet address",
+    },
   ];
 
   return (
-    <div className="grid gap-4 lg:grid-cols-4">
-      {paymentGateways.map((gateway, index) => (
-        <div
-          key={index}
-          className="flex relative border border-cyan justify-between flex-col capitalize items-center gap-4 p-4 px-2 rounded cursor-pointer dark:bg-blue-three"
-        >
-          {gateway.info && (
-            <span className="flex items-center gap-1 justify-center text-[9px] font-medium  w-full ">
-              <FaInfo className="text-yellow-500 border rounded-full border-yellow-500" />
-              {gateway.info}
-            </span>
-          )}
-
-          <Image
-            width={40}
-            height={40}
-            src={gateway.logo}
-            alt={gateway.name}
-            className="w-10 h-10"
-          />
-
-          <Button
-            onClick={() => {
-              setClickedIndex(index);
-
-              if (!plan || !durationParams) {
-                toast.error("Please select a plan");
-                router.push("/dashboard/buy-plan");
-              }
-              gateway.onClick();
-            }}
-            className="text-white gap-2 text-sm bg-yellow-sunset hover:bg-white hover:border hover:border-yellow-sunset hover:text-yellow-sunset text-center px-4 py-2 rounded disabled:cursor-not-allowed disabled:opacity-50"
-            disabled={isPending}
-            title={
-              gateway.title === "bank transfer"
-                ? "Complete bank transfer using paystack or flutter"
-                : ""
-            }
+    <>
+      <div className="grid gap-4 lg:grid-cols-4">
+        {paymentGateways.map((gateway, index) => (
+          <div
+            key={index}
+            className="flex relative border border-cyan justify-between flex-col capitalize items-center gap-4 p-4 px-2 rounded cursor-pointer dark:bg-blue-three"
           >
-            <span className="flex items-center gap-2">
-              Pay with {gateway.title}
-            </span>
-            {isPending && clickedIndex === index && (
-              <FaSpinner className="animate-spin" />
+            {gateway.info && (
+              <span className="flex items-center gap-1 justify-center text-[9px] font-medium  w-full ">
+                <FaInfo className="text-yellow-500 border rounded-full border-yellow-500" />
+                {gateway.info}
+              </span>
             )}
-          </Button>
-        </div>
-      ))}
-    </div>
+
+            <Image
+              width={40}
+              height={40}
+              src={gateway.logo}
+              alt={gateway.name}
+              className="w-10 h-10"
+            />
+
+            <Button
+              onClick={() => {
+                setClickedIndex(index);
+
+                if (!plan || !durationParams) {
+                  toast.error("Please select a plan");
+                  router.push("/dashboard/buy-plan");
+                }
+                gateway.onClick();
+              }}
+              className="text-white gap-2 text-sm bg-yellow-sunset hover:bg-white hover:border hover:border-yellow-sunset hover:text-yellow-sunset text-center px-4 py-2 rounded disabled:cursor-not-allowed disabled:opacity-50"
+              disabled={isPending}
+              title={
+                gateway.title === "bank transfer"
+                  ? "Complete bank transfer using paystack or flutter"
+                  : ""
+              }
+            >
+              <span className="flex items-center gap-2">
+                Pay with {gateway.title}
+              </span>
+              {isPending && clickedIndex === index && (
+                <FaSpinner className="animate-spin" />
+              )}
+            </Button>
+          </div>
+        ))}
+      </div>
+      {showAddress && (
+        <Modal>
+          <div className="flex flex-col gap-4 items-center justify-center max-w-[500px] p-4 lg:p-6">
+            <h3 className="text-3xl font-bold text-center">
+              Copy wallet address to complete your payement
+            </h3>
+            <ul className="flex flex-col gap-1 w-full">
+              {walletAddress.map(({ address, currency, type }, index) => (
+                <li
+                  className="w-full p-4 flex items-center justify-between gap-4 bg-gray-light dark:bg-blue-two rounded"
+                  key={index}
+                >
+                  {type} {currency}
+                  <button
+                    className="text-white bg-cyan px-6 py-1 rounded"
+                    onClick={() => copyToClipboard(address, index)}
+                  >
+                    {copied === index ? "Copied!" : "Copy"}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <CloseTimes
+              onClick={() => setShowAddress(false)}
+              className="hover:text-red-500"
+            />
+          </div>
+        </Modal>
+      )}
+    </>
   );
 }
+
+const walletAddress = [
+  {
+    type: "erc20",
+    currency: "USDT",
+    address: "0xc9F466774cfbB0ceAD677C93a07b327D6dc7282E",
+  },
+  {
+    type: "trx",
+    currency: "USDT",
+    address: "TWY3yk8ooHkdcJV22JkkH8YowT78fW1Cek",
+  },
+  {
+    type: "sol",
+    currency: "USDT",
+    address: "4qAFdXoSJDEWeHq3B25fdoFCSjFCgJ4bf18zSyNC8dzG",
+  },
+  {
+    type: "erc20",
+    currency: "USDC",
+    address: "0xc9F466774cfbB0ceAD677C93a07b327D6dc7282E",
+  },
+];
