@@ -21,7 +21,7 @@ export default function RegisterPage() {
             {t("CREATE_AN_ACCOUNT")} <br />
             {t("GAIN_ACCESS")}
           </h1>
-          <p className="mt-2 text-xs font-medium">{t("SIGNUP_TITLE")}</p>
+          <p className="mt-2 text-sm font-medium">{t("SIGNUP_TITLE")}</p>
 
           <SignUpForm />
         </div>

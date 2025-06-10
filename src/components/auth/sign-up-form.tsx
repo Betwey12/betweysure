@@ -116,7 +116,7 @@ export default function SignUpForm() {
     await signInWithEmailAndPassword(auth, data.email, data.password);
 
     toast.success(response.message);
-    
+
     if (action === "register") return;
     router.push("/auth/verify-email");
   };
@@ -139,7 +139,7 @@ export default function SignUpForm() {
               {...register("fullName")}
               placeholder="Enter your full name"
               className={cn(
-                "px-4 border py-3 rounded focus:outline-none text-gray-neutral",
+                "px-4 border py-3 rounded focus:outline-none text-gray-neutral text-base",
                 {
                   "border border-red-500": errors.fullName,
                 },
@@ -164,7 +164,7 @@ export default function SignUpForm() {
               {...register("email")}
               placeholder="Enter your email"
               className={cn(
-                "px-4 py-3 border rounded focus:outline-none text-gray-neutral",
+                "px-4 py-3 border rounded focus:outline-none text-gray-neutral text-base",
                 {
                   "border border-red-500": errors.email,
                 },
@@ -189,7 +189,7 @@ export default function SignUpForm() {
               placeholder="Enter your phone number"
               name="phone"
               className={cn(
-                "px-4 py-3 border-y border-r focus:outline-none text-gray-neutral",
+                "px-4 py-3 border-y border-r focus:outline-none text-gray-neutral text-base",
                 {
                   "border border-red-500": errors.phone,
                 },
@@ -213,7 +213,7 @@ export default function SignUpForm() {
             {...register("referredBy")}
             placeholder="betwey-axDcf3G"
             className={cn(
-              "px-4 border py-3 rounded focus:outline-none text-gray-neutral",
+              "px-4 border py-3 rounded focus:outline-none text-gray-neutral text-base",
               {
                 "border border-red-500": errors.referredBy,
               },

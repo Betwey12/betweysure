@@ -31,10 +31,10 @@ export default function PasswordInput({
         {...register(name)}
         placeholder={placeholder}
         className={cn(
-          "w-full px-4 py-3 rounded border focus:outline-none text-gray-neutral",
+          "w-full px-4 py-3 rounded border focus:outline-none text-gray-neutral text-base",
           {
             "border border-red-500": error,
-          }
+          },
         )}
       />
       <button

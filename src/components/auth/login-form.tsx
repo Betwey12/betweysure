@@ -108,10 +108,10 @@ export default function LoginForm() {
             {...register("email")}
             placeholder={t("EMAIL_PLACEHOLDER")}
             className={cn(
-              "px-4 py-3 border rounded focus:outline-none text-gray-neutral",
+              "px-4 py-3 border rounded focus:outline-none text-gray-neutral text-base",
               {
                 "border border-red-500": errors.email,
-              }
+              },
             )}
           />
           {errors.email && (
@@ -150,7 +150,7 @@ export default function LoginForm() {
                 "w-5 h-5 rounded bg-white border border-cyan peer-checked:bg-[#2A2E45] flex items-center justify-center text-white",
                 {
                   "border-red-500": errors.rememberMe,
-                }
+                },
               )}
             >
               <FaCheck className="text-xs" />
