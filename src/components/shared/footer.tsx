@@ -161,7 +161,7 @@ function useFooter() {
       links: [
         {
           title: t("HOME_WIN"),
-          link: "/dashboard/home-win-betting",
+          link: "/home-win-betting",
         },
         {
           title: t("CORRECT_SCORE"),

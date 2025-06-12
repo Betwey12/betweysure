@@ -269,7 +269,12 @@ export default function GatewaySelect() {
                   className="w-full p-4 flex items-center justify-between gap-4 bg-gray-light dark:bg-blue-two rounded"
                   key={index}
                 >
-                  {type} {currency}
+                  <div>
+                    <p className="font-semibold">
+                      {type} {currency}
+                    </p>
+                    <p className="text-xs">{address}</p>
+                  </div>
                   <button
                     className="text-white bg-cyan px-6 py-1 rounded"
                     onClick={() => copyToClipboard(address, index)}
@@ -292,22 +297,22 @@ export default function GatewaySelect() {
 
 const walletAddress = [
   {
-    type: "erc20",
+    type: "ERC20",
     currency: "USDT",
     address: "0xc9F466774cfbB0ceAD677C93a07b327D6dc7282E",
   },
   {
-    type: "trx",
+    type: "TRX",
     currency: "USDT",
     address: "TWY3yk8ooHkdcJV22JkkH8YowT78fW1Cek",
   },
   {
-    type: "sol",
+    type: "SOL",
     currency: "USDT",
     address: "4qAFdXoSJDEWeHq3B25fdoFCSjFCgJ4bf18zSyNC8dzG",
   },
   {
-    type: "erc20",
+    type: "ERC20",
     currency: "USDC",
     address: "0xc9F466774cfbB0ceAD677C93a07b327D6dc7282E",
   },
