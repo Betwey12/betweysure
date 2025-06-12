@@ -77,7 +77,7 @@ export default function GatewaySelect() {
     if (!response.success || isError) {
       return toast.error(response.errorMessage || response.message);
     }
-    toast.success(`Payment successfull. You are now a ${planName} subscriber`);
+    toast.success(`Payment successful. You are now a ${planName} subscriber`);
     router.push("/payment-confirmation");
   }
 
@@ -128,6 +128,9 @@ export default function GatewaySelect() {
     navigator.clipboard.writeText(address);
     toast.success(
       "Address copied to clipboard. Please contact support after payment",
+      {
+        autoClose: 20000,
+      },
     );
     setCopied(index);
   }
