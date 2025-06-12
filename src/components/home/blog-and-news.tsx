@@ -43,8 +43,6 @@ function NewsCard({ news }: { news: any }) {
   const firstParagraph = doc.querySelector("p")?.textContent || "";
   const content = firstParagraph.slice(0, 130);
 
-  console.log(firstParagraph, doc);
-
   const src = news?.featuredImage?.node?.sourceUrl ?? "";
 
   return (

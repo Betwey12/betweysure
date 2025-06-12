@@ -108,7 +108,6 @@ export default function OtherSportsPredictions() {
           predictions={filteredData}
           to={to}
           bgDashboard={true}
-          sport={sport}
         />
         <div className="flex items-center lg:justify-end">
           <Pagination
