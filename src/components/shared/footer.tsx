@@ -125,7 +125,12 @@ export default function Footer() {
           </div>
         ))}
       </div>
-      <p className="text-center mt-8 text-xs text-gray-two">{t("COPYRIGHT")}</p>
+      <p className="text-center mt-8 text-xs text-gray-two">
+        {t("COPYRIGHT", {
+          year: "2021",
+          currentYear: new Date().getFullYear(),
+        })}
+      </p>
     </footer>
   );
 }

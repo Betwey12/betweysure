@@ -18,7 +18,7 @@
   "LocaleSwitcher": {},
   "FOOTER": {
     "DISCLAIMER": "We are committed to responsible gambling and have a number of ways to help you stay in control and keep gambling fun. \n You must be 18 years or older to use this site. Please bet responsibly.",
-    "COPYRIGHT": "© 2021 Betweysure. All rights reserved.",
+    "COPYRIGHT": "© {year}-{currentYear} Betweysure. All rights reserved.",
     "CHAT_ON_WHATSAPP": "Chat with us on whatsapp",
     "CHAT_ON_TELEGRAM": "Chat with us on telegram",
     "FOLLOW_US:": "Follow Us:",

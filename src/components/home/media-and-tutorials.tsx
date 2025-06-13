@@ -20,7 +20,7 @@ export default function MediaAndTutorials() {
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
-            className="w-[calc(100vw-32px)] lg:w-auto block rounded-xl"
+            className="w-[calc(100vw-32px)] lg:w-full block rounded-xl"
             allowFullScreen
           />
         ))}
