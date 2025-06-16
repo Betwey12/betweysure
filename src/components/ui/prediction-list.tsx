@@ -60,12 +60,12 @@ export function PredictionList({
 
   const home = {
     name: predictionObj?.homeTeam,
-    logo: predictionObj.homeLogo,
+    logo: predictionObj?.homeLogo,
   };
 
   const away = {
     name: predictionObj?.awayTeam,
-    logo: predictionObj.awayLogo,
+    logo: predictionObj?.awayLogo,
   };
 
   function handleModal() {
@@ -135,7 +135,7 @@ export function PredictionList({
         <Image
           width={30}
           height={30}
-          src={home.logo}
+          src={home?.logo ?? ""}
           alt="home team logo"
           className="w-6 h-6 rounded-full bg-white"
           loading="lazy"
@@ -155,7 +155,7 @@ export function PredictionList({
         <Image
           width={30}
           height={30}
-          src={away.logo}
+          src={home?.logo ?? ""}
           alt="away team logo"
           className="w-6 h-6 rounded-full bg-white"
           loading="lazy"

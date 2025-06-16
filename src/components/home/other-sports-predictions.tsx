@@ -135,7 +135,6 @@ export default function OtherSportsPredictions() {
             isLoading={isLoading}
             predictions={predictions}
             to={to}
-            sport={selectedSport?.toLowerCase()}
           />
         </div>
       </div>
