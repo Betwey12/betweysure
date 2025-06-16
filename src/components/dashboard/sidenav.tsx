@@ -242,6 +242,11 @@ const navlinks = [
     ],
   },
   {
+    name: "Fifa Club World Cup",
+    path: "/popular/club-world-cup/predictions",
+    icon: <FootBallIcon />,
+  },
+  {
     name: "Buy plan",
     path: "/dashboard/buy-plan",
     icon: <BundlesIcon />,

@@ -87,6 +87,8 @@ declare global {
     prediction?: string;
     bet_of_the_day?: boolean;
     resultKey?: string;
+    homeLogo: string;
+    awayLogo: string;
     matchData: TMatchData;
   };
 

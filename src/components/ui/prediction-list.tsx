@@ -44,7 +44,7 @@ export function PredictionList({
   const isClicked = slip?.predictions.some(
     (prediction) =>
       prediction.resultKey === predictionObj?.resultKey &&
-      prediction.id === predictionObj?.id
+      prediction.id === predictionObj?.id,
   );
 
   const predictedScore = predictionObj?.correctscore || "N/A";
@@ -55,21 +55,17 @@ export function PredictionList({
   const imgSource = leagueApiF
     ? leagueApiF.country.flag || leagueApiF.league.logo
     : globeIcon;
-  const homeId = predictionObj?.matchData?.matchdetails?.homeID;
-  const awayId = predictionObj?.matchData?.matchdetails?.awayID;
+
+  console.log(predictionObj);
 
   const home = {
     name: predictionObj?.homeTeam,
-    logo: homeId
-      ? `https://media.api-sports.io/football/teams/${homeId}.png`
-      : footballIcon.src,
+    logo: predictionObj.homeLogo,
   };
 
   const away = {
     name: predictionObj?.awayTeam,
-    logo: awayId
-      ? `https://media.api-sports.io/football/teams/${awayId}.png`
-      : footballIcon.src,
+    logo: predictionObj.awayLogo,
   };
 
   function handleModal() {
@@ -89,7 +85,7 @@ export function PredictionList({
                   !(
                     prediction.id === predictionObj.id &&
                     prediction.resultKey === predictionObj.resultKey
-                  )
+                  ),
               )
             : slip?.predictions.concat(predictionObj))(),
       }),
@@ -180,7 +176,7 @@ export function PredictionList({
           {
             "border-red-300 text-red-300": hidePrediction,
             "bg-cyan text-white": isClicked,
-          }
+          },
         )}
         onClick={handleAddToSlip}
       >
@@ -203,7 +199,7 @@ export function PredictionList({
           {
             "border-red-300 text-red-300": hidePrediction,
             "bg-cyan text-white": isClicked,
-          }
+          },
         )}
         onClick={handleAddToSlip}
         aria-label={

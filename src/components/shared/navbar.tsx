@@ -45,6 +45,12 @@ export default function Navbar() {
             </li>
           ))}
 
+          <li className="hidden text-inherit lg:block">
+            <NavLink href={"/popular/club-world-cup/predictions"}>
+              Fifa Club World Cup
+            </NavLink>
+          </li>
+
           {navLinks.map((nav, i) => (
             <li
               className="capitalize text-inherit lg:hidden"
