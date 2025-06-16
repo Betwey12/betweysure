@@ -4,7 +4,7 @@ import { EDuration, EPaidPlanNames, plans } from "@/assets/data/data";
 import { formatCurrency } from "@/lib/utils";
 import dynamic from "next/dynamic";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const GatewaySelect = dynamic(
   () => import("@/components/payment/gateway-select"),
