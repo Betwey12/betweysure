@@ -12,19 +12,18 @@ interface AuthProviderProps {
 }
 
 export default function AuthProvider({ children }: AuthProviderProps) {
-  const [firebaseUser, setFirebaseUser] = useState<User | null>(null);
   const [userId, setUserId] = useState<string>();
+  const [firebaseUser, setFirebaseUser] = useState<User | null>(null);
   const [user, setUser] = useState<TAuthUser | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Subscribe to Firebase auth state
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-      if (currentUser) {
-        const token = await currentUser.getIdToken();
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      if (firebaseUser) {
+        const token = await firebaseUser.getIdToken();
         localStorage.setItem("token", token);
-        setFirebaseUser(currentUser);
-        setUserId(currentUser.uid);
+        setFirebaseUser(firebaseUser);
+        setUserId(firebaseUser.uid);
       } else {
         localStorage.removeItem("token");
         setFirebaseUser(null);
@@ -37,19 +36,17 @@ export default function AuthProvider({ children }: AuthProviderProps) {
     return unsubscribe;
   }, []);
 
-  // Fetch user data from your API
   const { data, isPending: userLoading } = useQuery({
     queryKey: ["user", userId],
     queryFn: () => HTTPRequest.Get("users/me"),
     enabled: !!userId,
   });
 
-  // Merge Firebase + API user data
   useEffect(() => {
-    if (firebaseUser && data?.user && !userLoading) {
+    if (firebaseUser && !userLoading) {
       setUser({
         ...firebaseUser,
-        ...data.user,
+        ...(data?.user || {}),
       });
       setIsLoading(false);
     }
