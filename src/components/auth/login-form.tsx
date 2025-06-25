@@ -14,11 +14,12 @@ import { Button } from "../ui/button";
 import { FaCheck } from "react-icons/fa";
 import Link from "next/link";
 import Or from "../ui/or";
-import useGoogleWithCaptcha from "@/hooks/useGoogleWithCaptcha";
+import useGoogleCaptcha from "@/hooks/useGoogleCaptcha";
 import { GoogleIcon } from "../icons";
 import { useTranslations } from "next-intl";
 import PasswordInput from "../ui/password-input";
 import LoadingButton from "../ui/loading-button";
+import { useAuth } from "@/hooks/useAuth";
 
 const loginSchema = yup.object().shape({
   email: yup.string().email().required(),
@@ -39,7 +40,8 @@ export default function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isPending, setIsPending] = useState(false);
-  const { google, handleReCaptchaVerify } = useGoogleWithCaptcha();
+  const { signInWithSocial, isLoading } = useAuth();
+  const { handleReCaptchaVerify } = useGoogleCaptcha();
   const redirectTo = searchParams.get("redirect_to");
 
   const {
@@ -76,12 +78,13 @@ export default function LoginForm() {
       }
       await signInWithEmailAndPassword(auth, data.email, data.password);
 
-      setIsPending(false);
       toast.success("Login successful");
       if (redirectTo === "forum") {
         return;
       }
-      router.push("/dashboard");
+      // if (!isLoading) {
+      //   router.push("/dashboard");
+      // }
     } catch (e: any) {
       setIsPending(false);
       const message = e.message
@@ -183,7 +186,7 @@ export default function LoginForm() {
         <Or />
         <Button
           type="button"
-          onClick={google.signInWithSocial}
+          onClick={signInWithSocial}
           className="flex items-center gap-4 justify-center py-3 text-center bg-white border border-cyan text-cyan dark:border-0 dark:text-blue-three hover:bg-hover-light"
         >
           <GoogleIcon />

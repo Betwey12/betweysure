@@ -15,13 +15,14 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 import { HTTPRequest } from "@/api";
 import { Country } from "country-state-city";
-import useGoogleWithCaptcha from "@/hooks/useGoogleWithCaptcha";
+import useGoogleCaptcha from "@/hooks/useGoogleCaptcha";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/firebase/config";
 import PasswordInput from "../ui/password-input";
 import { useTranslations } from "next-intl";
 import LoadingButton from "../ui/loading-button";
 import { paymentSupportedCountries } from "@/assets/data/data";
+import { useAuth } from "@/hooks/useAuth";
 
 const registerSchema = yup.object().shape({
   fullName: yup.string().required("Full name is required"),
@@ -68,13 +69,15 @@ export default function SignUpForm() {
   } = useForm<RegisterForm>({
     resolver: yupResolver(registerSchema),
   });
+  const { signInWithSocial } = useAuth();
+
   const searchParams = useSearchParams();
   const action = searchParams.get("action");
 
   const { isPending, mutateAsync, isError } = useMutation({
     mutationFn: (data: RegisterData) => HTTPRequest.Post("auth/onboard", data),
   });
-  const { google, handleReCaptchaVerify } = useGoogleWithCaptcha();
+  const { handleReCaptchaVerify } = useGoogleCaptcha();
 
   const countries = Country.getAllCountries();
 
@@ -311,7 +314,7 @@ export default function SignUpForm() {
         <Or />
         <Button
           type="button"
-          onClick={google.signInWithSocial}
+          onClick={signInWithSocial}
           className="flex items-center gap-4 justify-center py-3 text-center bg-white border border-cyan text-cyan dark:border-0 dark:text-blue-three hover:bg-hover-light"
         >
           <GoogleIcon />

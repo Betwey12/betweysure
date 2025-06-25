@@ -1,10 +1,7 @@
-import { googleProvider } from "@/firebase/config";
-import { useSocialSignup } from "./useSocialSignup";
 import { useCallback } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const useGoogleWithCaptcha = () => {
-  const google = useSocialSignup(googleProvider);
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const handleReCaptchaVerify = useCallback(
@@ -17,10 +14,10 @@ const useGoogleWithCaptcha = () => {
       const token = await executeRecaptcha(action);
       return token;
     },
-    [executeRecaptcha]
+    [executeRecaptcha],
   );
 
-  return { google, handleReCaptchaVerify };
+  return { handleReCaptchaVerify };
 };
 
 export default useGoogleWithCaptcha;

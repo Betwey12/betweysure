@@ -5,7 +5,8 @@ import { User, onAuthStateChanged } from "firebase/auth";
 import { useQuery } from "@tanstack/react-query";
 import { AuthContext } from "@/hooks/useAuth";
 import { HTTPRequest } from "@/api";
-import { auth } from "@/firebase/config";
+import { auth, googleProvider } from "@/firebase/config";
+import { useSocialSignup } from "@/hooks/useSocialSignup";
 
 interface AuthProviderProps {
   children: React.ReactNode;
@@ -13,9 +14,13 @@ interface AuthProviderProps {
 
 export default function AuthProvider({ children }: AuthProviderProps) {
   const [userId, setUserId] = useState<string>();
-  const [firebaseUser, setFirebaseUser] = useState<User | null>(null);
+  const [firebaseUser, setFirebaseUser] = useState<User | null | undefined>(
+    undefined,
+  );
   const [user, setUser] = useState<TAuthUser | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const { signInWithSocial, isPending, setIsPending } =
+    useSocialSignup(googleProvider);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
@@ -30,17 +35,19 @@ export default function AuthProvider({ children }: AuthProviderProps) {
         setUserId(undefined);
         setUser(null);
         setIsLoading(false);
+        setIsPending(false);
       }
     });
 
     return unsubscribe;
   }, []);
 
-  const { data, isPending: userLoading } = useQuery({
+  const { data, isFetching } = useQuery({
     queryKey: ["user", userId],
     queryFn: () => HTTPRequest.Get("users/me"),
     enabled: !!userId,
   });
+  const userLoading = isFetching;
 
   useEffect(() => {
     if (firebaseUser && !userLoading) {
@@ -48,11 +55,13 @@ export default function AuthProvider({ children }: AuthProviderProps) {
         ...firebaseUser,
         ...(data?.user || {}),
       });
+      setIsPending(false);
       setIsLoading(false);
     }
 
-    if (!firebaseUser && !userLoading) {
+    if (!firebaseUser && !userLoading && firebaseUser !== undefined) {
       setUser(null);
+      setIsPending(false);
       setIsLoading(false);
     }
   }, [firebaseUser, data, userLoading]);
@@ -62,7 +71,8 @@ export default function AuthProvider({ children }: AuthProviderProps) {
       value={{
         user,
         setUser,
-        isLoading,
+        isLoading: isPending || userLoading || isLoading,
+        signInWithSocial,
       }}
     >
       {children}

@@ -6,13 +6,14 @@ import { useQuery } from "@tanstack/react-query";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import Cookie from "js-cookie";
+import { DashboardSpinner } from "@/components/ui/spinner";
 
 interface NotAuthedWrapperProps {
   children: React.ReactNode;
 }
 
 export default function NotAuthedWrapper({ children }: NotAuthedWrapperProps) {
-  const { user } = useAuth();
+  const { user, isLoading } = useAuth();
   const router = useRouter();
 
   const searchParams = useSearchParams();
@@ -45,6 +46,10 @@ export default function NotAuthedWrapper({ children }: NotAuthedWrapperProps) {
         router.replace(forumUrl);
         return;
       }
+      if (!user?.phone) {
+        router.push("/auth/complete-profile");
+        return;
+      }
 
       if (user?.emailVerified) {
         router.push("/dashboard");
@@ -62,5 +67,6 @@ export default function NotAuthedWrapper({ children }: NotAuthedWrapperProps) {
     userLoading,
   ]);
 
+  if (userLoading || isLoading || user) return <DashboardSpinner />;
   return <>{children}</>;
 }
