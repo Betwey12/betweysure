@@ -4,7 +4,13 @@ import useSelectCurrency from "@/hooks/useSelectCurrency";
 import { cn, formatCurrency } from "@/lib/utils";
 import { FaInfo } from "react-icons/fa";
 import Link from "next/link";
-import { durations, EPlanNames, planNames, plans } from "@/assets/data/data";
+import {
+  durations,
+  EPlanFullNames,
+  EPlanNames,
+  planNames,
+  plans,
+} from "@/assets/data/data";
 import RadixSelect from "../ui/radix-select";
 import { SelectItem } from "../ui/select";
 import { useState } from "react";
@@ -17,9 +23,9 @@ export default function Bundles() {
   const infos: Record<EPlanNames, string> = {
     free: "Free plan",
     premium:
-      " Enjoy all the benefits of the Free Plan, plus exclusive access to premium tip categories, weekend bundles, and personalized support. Maximize your earnings with our strategic betting tips and increase your odds of success in football betting.",
+      " Enjoy all the benefits of the Free Plan, plus exclusive access to premium gootball tip categories, weekend bundles, and personalized support. Maximize your earnings with our strategic betting tips and increase your odds of success in football betting.",
     mixed:
-      "Get daily surefire tips, access to games across 103 leagues in football, and other premium predictions for basketball, baseball, baseball, and ice-hockey, with 24/7 support. Our Mixed Plan is designed for bettors who want to increase their winning potential accross all sports without breaking the bank.",
+      "Get daily surefire tips, access to games across 103 leagues in football, and other mixed sports plan predictions for basketball, baseball, baseball, and ice-hockey, with 24/7 support. Our Mixed Sports Plan is designed for bettors who want to increase their winning potential accross all sports without breaking the bank.",
   };
 
   const availablePlans = planNames.map((planType) => {
@@ -77,7 +83,11 @@ export default function Bundles() {
             className="w-full bg-white shadow border border-gray-two lg:p-6 p-4 rounded dark:bg-blue-two dark:border-0"
           >
             <div className="border-gray-two pb-4 border-b flex items-center justify-between">
-              <h3 className="capitalize">{plan.name} plan</h3>
+              <h3 className="capitalize">
+                {plan.name === "premium"
+                  ? EPlanFullNames.PREMIUM
+                  : EPlanFullNames.MIXED}
+              </h3>
               <button
                 onClick={() => setShowInfo(!showInfo)}
                 className="w-8 h-8 rounded-full border-cyan text-cyan flex items-center justify-center border"
@@ -103,10 +113,12 @@ export default function Bundles() {
                       },
                     )}
                   >
-                    <p>
+                    <p className="capitalize">
                       {duration}{" "}
-                      {plan.name === "premium" ? "football" : "all sports"}{" "}
-                      {plan.name} {amount}
+                      {plan.name === "premium"
+                        ? EPlanFullNames.PREMIUM
+                        : EPlanFullNames.MIXED}{" "}
+                      {amount}
                     </p>
                     <button className="">Buy</button>
                   </Link>

@@ -79,7 +79,7 @@ function BetMinerPredictions({ popularLeague, category }: PredictionsProps) {
     }) ?? [];
 
   const count = Math.ceil(
-    (filteredPredictions?.length ?? 0) / predictionsPerPage
+    (filteredPredictions?.length ?? 0) / predictionsPerPage,
   );
 
   useEffect(() => {
@@ -123,7 +123,7 @@ function BetMinerPredictions({ popularLeague, category }: PredictionsProps) {
                 onClick={() => {
                   setPeriodIndex(index);
                   setFullDate(
-                    getDate(period as "today" | "tomorrow" | "yesterday")
+                    getDate(period as "today" | "tomorrow" | "yesterday"),
                   );
                 }}
               >
@@ -178,7 +178,7 @@ function ApiFootballPredictions({ popularLeague }: PredictionsProps) {
     ],
     queryFn: (): Promise<any> =>
       HTTPRequest.Get(
-        `tips/api-football/${popularLeague?.apiFootballId}/${fullDate}`
+        `tips/api-football/${popularLeague?.apiFootballId}/${fullDate}`,
       ),
   });
 
@@ -210,7 +210,7 @@ function ApiFootballPredictions({ popularLeague }: PredictionsProps) {
               onClick={() => {
                 setPeriodIndex(index);
                 setFullDate(
-                  getDate(period as "today" | "tomorrow" | "yesterday")
+                  getDate(period as "today" | "tomorrow" | "yesterday"),
                 );
               }}
             >
@@ -264,13 +264,6 @@ function ApiFootballPredictions({ popularLeague }: PredictionsProps) {
                   {matchPrediction?.under_over && (
                     <p>{matchPrediction?.under_over}</p>
                   )}
-                  {matchPrediction?.goals?.home &&
-                    matchPrediction?.goals?.away && (
-                      <>
-                        <p>Home Goals: {matchPrediction?.goals?.home}</p>
-                        <p>Away Goals: {matchPrediction?.goals?.away}</p>
-                      </>
-                    )}
                 </div>
               </div>
             );

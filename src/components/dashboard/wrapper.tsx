@@ -17,6 +17,7 @@ import PremiumPopUp from "../ui/premium-popup";
 import NotificationPopup from "./notification-popup";
 import SurveyPopUp from "../ui/survery-pop-up";
 import ThoughtsPopup from "../ui/thoughts-popup";
+import { isDue } from "@/lib/utils";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -64,16 +65,22 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
   }, []);
 
   useEffect(() => {
-    // Check if Notification API is available
+    if (typeof window === "undefined" || isLoading) return;
 
-    if (typeof window === "undefined") return;
+    const lastShown = Number(localStorage.getItem("notificationRequestShown"));
+
+    // Check Notification API support
     if ("Notification" in window) {
       const permission = Notification.permission;
 
-      if (permission === "default" && !isLoading) {
+      if (permission === "default" && isDue({ last: lastShown, dur: 1 })) {
         const timer = setTimeout(() => {
           setCanRequestPermission(true);
-        }, 30000);
+          localStorage.setItem(
+            "notificationRequestShown",
+            Date.now().toString(),
+          );
+        }, 30000); // 30 seconds
 
         return () => clearTimeout(timer);
       }
@@ -81,7 +88,6 @@ export default function DashboardWrapper({ children }: DashboardLayoutProps) {
       navigator.userAgent.includes("Safari") &&
       !navigator.userAgent.includes("Chrome")
     ) {
-      // Fallback for Safari mobile, where Notification permission isn't available
       console.log("Notification API not supported on Safari mobile.");
     }
   }, [isLoading]);

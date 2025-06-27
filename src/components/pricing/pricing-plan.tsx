@@ -1,6 +1,12 @@
 "use client";
 import { cn } from "../../lib/utils";
-import { durations, EDuration, EPlanNames, plans } from "@/assets/data/data";
+import {
+  durations,
+  EDuration,
+  EPlanFullNames,
+  EPlanNames,
+  plans,
+} from "@/assets/data/data";
 import useSelectCurrency from "@/hooks/useSelectCurrency";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -11,7 +17,6 @@ import premiumPopUp from "@/assets/images/premium-banner-desktop.webp";
 import AuthedLink from "../ui/authed-link";
 import { SelectItem } from "../ui/select";
 import RadixSelect from "../ui/radix-select";
-import MySelect from "../ui/my-select";
 
 export default function PricingPlans() {
   const {
@@ -149,22 +154,22 @@ function usePricingPlans() {
   const timeframe = timeframs[duration];
   const planCards = [
     {
-      title: "Premium Football",
+      title: EPlanFullNames.PREMIUM,
       duration: "Weekly",
       price: plan["premium"][EDuration.TWO_WEEKS],
     },
     {
-      title: "Premium Football",
+      title: EPlanFullNames.PREMIUM,
       duration: "Monthly",
       price: plan["premium"][EDuration.ONE_MONTH],
     },
     {
-      title: "Premium Mixed Sport",
+      title: EPlanFullNames.MIXED,
       duration: "Weekly",
       price: plan["mixed"][EDuration.TWO_WEEKS],
     },
     {
-      title: "Premium Mixed Sport",
+      title: EPlanFullNames.MIXED,
       duration: "Monthly",
       price: plan["mixed"][EDuration.ONE_MONTH],
     },
@@ -172,21 +177,21 @@ function usePricingPlans() {
 
   const packages = [
     {
-      title: "Free",
+      title: EPlanFullNames.FREE,
       name: EPlanNames.FREE,
       price: 0,
       features: t("FREE_FEATURES").split(", "),
       types: t("FREE_TYPES").split(", "),
     },
     {
-      title: "Premium Football",
+      title: EPlanFullNames.PREMIUM,
       name: EPlanNames.PREMIUM,
       price: plan["premium"][duration],
       features: t("PREMIUM_FEATURES").split(", "),
       types: t("PREMIUM_TYPES").split(", "),
     },
     {
-      title: "Premium Mixed Sport",
+      title: EPlanFullNames.MIXED,
       name: EPlanNames.MIXED,
       price: plan["mixed"][duration],
       features: t("MIXED_FEATURES").split(", "),

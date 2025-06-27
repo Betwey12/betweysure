@@ -84,3 +84,10 @@ export function simpleSocialShare({
 export const xDay = new Date().toLocaleDateString("en-US", {
   weekday: "long",
 });
+
+export const isDue = ({ last, dur }: { last: number; dur: number }) => {
+  const now = Date.now();
+  const dueTime = last + dur * 24 * 60 * 60 * 1000; // dur in days
+
+  return now >= dueTime;
+};

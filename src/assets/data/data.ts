@@ -1474,6 +1474,12 @@ export enum EDuration {
   "ONE_MONTH" = "1 month",
 }
 
+export enum EPlanFullNames {
+  PREMIUM = "Premium Football Plan",
+  MIXED = "Mixed Sports Plan",
+  FREE = "Free Plan",
+}
+
 export enum EPaidPlanNames {
   PREMIUM = "premium",
   MIXED = "mixed",

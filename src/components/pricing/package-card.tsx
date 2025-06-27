@@ -42,7 +42,7 @@ export default function PackageCard({
       <div className="flex flex-col gap-4 w-full">
         <div className="flex flex-col items-center gap-4">
           <h2 className="capitalize text-center text-2xl lg:text-3xl max-w-[250px]">
-            {predictionPackage.title} Plan
+            {predictionPackage.title}
           </h2>
 
           <div className="w-[80%] h-[1px] bg-yellow-sunset lg:my-4 my-2" />
