@@ -973,7 +973,7 @@ export const paramsaMetaData: Record<
   },
   "2up-betting": {
     title:
-      "2Up Betting Guide 2024 - How to Win with Early Payout Offers | BetweySure",
+      "2Up Betting Guide - How to Win with Early Payout Offers | BetweySure",
     description:
       "Discover how 2Up betting works & get daily value picks! Learn which teams & bookmakers offer early payouts on 2-goal leads. Start profiting today",
     keywords:

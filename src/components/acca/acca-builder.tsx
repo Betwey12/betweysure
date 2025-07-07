@@ -61,7 +61,7 @@ export default function AccumulatorBuilderForm({
   const [fullDate, setFullDate] = useState(getDate("today"));
   const today = getDate("today");
   const queryKey = ["predictions", fullDate];
-  const endpoint = `tips/football-history/${today}/${fullDate}`;
+  const endpoint = `tips/football/${today}/${fullDate}`;
 
   const { data, isLoading } = usePredictions({
     endpoint,

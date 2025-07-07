@@ -7,7 +7,7 @@ import { Pagination } from "@mui/material";
 export default function ResultsHistory() {
   const fromDate = getDate("last week");
   const toDate = getDate("yesterday");
-  const endpoint = `tips/football-history/${fromDate}/${toDate}`;
+  const endpoint = `tips/football/${fromDate}/${toDate}`;
   const {
     data: payload,
     isLoading,
@@ -21,7 +21,7 @@ export default function ResultsHistory() {
   });
   const predictions = payload?.data as Prediction[];
   const sortedPredictions = predictions?.sort(
-    (a, b) => a.date?.localeCompare(b.date) ?? 0
+    (a, b) => a.date?.localeCompare(b.date) ?? 0,
   );
   const predictionsPerPage = 10;
 
