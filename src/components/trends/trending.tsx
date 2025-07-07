@@ -11,7 +11,7 @@ import { getDate } from "@/lib/utils";
 import Image from "next/image";
 
 export default function Trending() {
-  const { t, aboutTrends } = useTrending();
+  const { t } = useTrending();
   const PREDICTIONS_PER_PAGE = 20;
   const [from, setFrom] = useState(0);
   const [to, setTo] = useState(PREDICTIONS_PER_PAGE);

@@ -26,8 +26,10 @@ const useControlFootballPredictions = () => {
 
   const payload = data?.data as TPredictionResponse["data"] | undefined;
 
+  const payloadArray = payload?.length ? payload : [];
+
   const transformedData =
-    payload?.map((data) => {
+    payloadArray?.map((data) => {
       const {
         over0,
         hthome,
@@ -58,7 +60,7 @@ const useControlFootballPredictions = () => {
     {
       data: transformedData,
       handlePagination,
-    }
+    },
   );
 
   const { data: inplayData, isLoading: isLoadingLive } = useQuery({
