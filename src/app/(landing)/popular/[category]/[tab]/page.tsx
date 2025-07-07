@@ -25,9 +25,10 @@ import {
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import LeaguesExplained from "@/components/leagues/leagues-explained";
-import { leagueList, period, popularLeagueSites } from "@/assets/data/data";
+import { period, popularLeagueSites } from "@/assets/data/data";
 import { capitalize } from "@/lib/utils";
 import { leagueTabParams, popularLeaguesParams } from "@/assets/data/params";
+import { leagueList } from "@/assets/data/leagueApiF";
 
 type Props = {
   params: { category: TPopularTCategories; tab: TLeagueMetaTabs };
@@ -74,11 +75,11 @@ export default function PopularPage({
   const formattedCategory = category?.toUpperCase().replace(/-/g, "_");
   const isPeriod = !!category && period.includes(category);
   const popularLeagues = [...Object.values(leagueList)].flat();
+  const linkArr = decodeURIComponent(category).split("-");
+  const apiFootballId = linkArr[linkArr.length - 1];
 
   const popularLeague = popularLeagues?.find(
-    (l) =>
-      l.name.toLowerCase() ===
-      decodeURIComponent(category)?.toLowerCase()?.replace(/-/g, " "),
+    (l) => l.apiFootballId === +apiFootballId,
   );
 
   const popularSite = popularLeagueSites[category];

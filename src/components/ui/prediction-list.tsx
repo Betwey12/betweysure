@@ -56,8 +56,6 @@ export function PredictionList({
     ? leagueApiF.country.flag || leagueApiF.league.logo
     : globeIcon;
 
-  console.log(predictionObj);
-
   const home = {
     name: predictionObj?.homeTeam,
     logo: predictionObj?.homeLogo,

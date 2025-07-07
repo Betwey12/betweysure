@@ -1,7 +1,7 @@
-import { TPopularLeague } from "@/assets/data/data";
 import LeagueInfo from "./league-info";
 import PredictionSelect from "../ui/prediction-select";
 import ViewLeague from "./view-league";
+import { TPopularLeague } from "@/assets/data/leagueApiF";
 
 interface LeaguePredictionsProps {
   category: string;

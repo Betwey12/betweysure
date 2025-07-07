@@ -43,7 +43,9 @@ export default function FreeFootballPredictions() {
   const [periodFilter, setPeriodFilter] = useState<
     "yesterday" | "today" | "tomorrow"
   >("today");
+
   const [fullDate, setFullDate] = useState(getDate(periodFilter));
+
   const endpoint = `tips/football/${fullDate}/${fullDate}`;
   const queryKey = ["predictions", fullDate];
   const predictionsPerPage = 9;

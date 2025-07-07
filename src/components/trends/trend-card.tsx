@@ -9,7 +9,7 @@ interface TrendCardProps {
   place?: string;
   gameType?: string;
   opponent?: {
-    name: string;
+    name?: string;
     logo: string;
   };
 }

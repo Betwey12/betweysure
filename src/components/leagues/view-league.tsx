@@ -1,10 +1,6 @@
 "use client";
 import { HTTPRequest } from "@/api";
-import {
-  period,
-  popularPredictionstabs,
-  TPopularLeague,
-} from "@/assets/data/data";
+import { period, popularPredictionstabs } from "@/assets/data/data";
 import { cn } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
@@ -13,6 +9,7 @@ import Trends from "./trends";
 import Form from "./form";
 import Fixtures from "./fixtures";
 import Predictions from "./predictions";
+import { TPopularLeague } from "@/assets/data/leagueApiF";
 
 interface ViewLeagueProps {
   category: string;

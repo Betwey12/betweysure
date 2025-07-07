@@ -1,9 +1,4 @@
-import {
-  TPopularLeague,
-  footballFreeTabs,
-  footballPaidTabs,
-  period,
-} from "@/assets/data/data";
+import { footballFreeTabs, footballPaidTabs, period } from "@/assets/data/data";
 import useControlFootballPredictions from "@/hooks/useControlFootballPredictions";
 import { cn, getDate } from "@/lib/utils";
 import { Pagination } from "@mui/material";
@@ -20,6 +15,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import FootballPredictionTable from "../predictions/football-predictions-table";
 import LivePredictions from "../predictions/live-predictions";
+import { TPopularLeague } from "@/assets/data/leagueApiF";
 
 interface PredictionsProps {
   popularLeague?: TPopularLeague;
@@ -81,6 +77,8 @@ function BetMinerPredictions({ popularLeague, category }: PredictionsProps) {
   const count = Math.ceil(
     (filteredPredictions?.length ?? 0) / predictionsPerPage,
   );
+
+  console.log(popularLeague);
 
   useEffect(() => {
     if (category && period.includes(category)) {

@@ -205,10 +205,10 @@ declare global {
     data: TMatchData;
   };
 
-  type TTrendResponse = {
+  type TMatchResponse = {
     success: boolean;
     message: string;
-    data: TMatchData[];
+    data: TMatchData;
   };
 
   type TNewsData = {
@@ -972,3 +972,10 @@ declare global {
     | TOtherPagesParams
     | TTrendsParams;
 }
+
+type TPopularLeague = {
+  name: string;
+  logo: string;
+  apiFootballId: number;
+  country: string;
+};
