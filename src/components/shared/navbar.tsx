@@ -46,7 +46,7 @@ export default function Navbar() {
           ))}
 
           <li className="hidden text-inherit lg:block">
-            <NavLink href={"/popular/club-world-cup/predictions"}>
+            <NavLink href={"/popular/fifa-club-world-cup-15/predictions"}>
               Fifa Club World Cup
             </NavLink>
           </li>

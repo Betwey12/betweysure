@@ -78,8 +78,6 @@ function BetMinerPredictions({ popularLeague, category }: PredictionsProps) {
     (filteredPredictions?.length ?? 0) / predictionsPerPage,
   );
 
-  console.log(popularLeague);
-
   useEffect(() => {
     if (category && period.includes(category)) {
       setPeriodIndex(period.indexOf(category));

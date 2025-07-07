@@ -243,7 +243,7 @@ const navlinks = [
   },
   {
     name: "Fifa Club World Cup",
-    path: "/popular/club-world-cup/predictions",
+    path: "/popular/fifa-club-world-cup-15/predictions",
     icon: <FootBallIcon />,
   },
   {
