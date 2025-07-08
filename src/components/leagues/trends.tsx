@@ -64,7 +64,7 @@ export default function Trends({ league, category }: TrendsProps) {
             <div key={index} className="w-full flex flex-col gap-4">
               <div
                 onClick={() => setMatchId(trend.id)}
-                className="bg-gray-one py-2 px-4 rounded-full cursor-pointer dark:bg-blue-one grid grid-cols-[1fr_200px_1fr] items-center justify-center"
+                className="bg-gray-one py-2 px-4 rounded-full cursor-pointer dark:bg-blue-one grid grid-cols-3 lg:grid-cols-[1fr_200px_1fr] items-center justify-center"
               >
                 {[
                   { name: trend.homeTeam, logo: trend.homeLogo },
@@ -73,43 +73,46 @@ export default function Trends({ league, category }: TrendsProps) {
                   <>
                     <div
                       key={match.name}
-                      className="flex justify-between items-center gap-4 px-10"
+                      className="flex justify-center items-center gap-4 lg:px-10"
                     >
-                      <div className="flex flex-col lg:flex-row gap-4 items-center">
+                      <div className="flex flex-row gap-4 items-center">
                         <Image
                           src={match.logo}
                           alt={match.name}
                           width="40"
                           height="40"
+                          className="w-5 h-5 lg:w-10 lg:h-10"
                         />
-                        <p className="text-2xl font-semibold text-center">
+                        <p className="text-sm lg:text-lg font-semibold text-center">
                           {match.name}
                         </p>
                       </div>
-                      {i === 1 && (
-                        <button>
+                    </div>
+                    {i === 0 && (
+                      <div className="flex flex-col items-center justify-center">
+                        <p className="text-sm lg:text-lg font-semibold text-center">
+                          Vs
+                        </p>
+                        <button className="">
                           {currId !== trend.id ? (
                             <FaCaretDown />
                           ) : (
                             <FaCaretUp />
                           )}
                         </button>
-                      )}
-                    </div>
-                    {i === 0 && (
-                      <p className="text-2xl font-semibold text-center">Vs</p>
+                      </div>
                     )}
                   </>
                 ))}
               </div>
-              {currId === trend?.id && (
-                <div className="grid lg:grid-cols-2 gap-4 py-10">
-                  {matchLoading ? (
-                    <div className="flex items-center justify-center min-h-[750px]">
-                      <FaSpinner className="animate-spin" />
-                    </div>
-                  ) : trends?.length > 0 ? (
-                    trends.map((trend, index) => (
+              {currId === trend?.id &&
+                (matchLoading ? (
+                  <div className="flex items-center justify-center py-10">
+                    <FaSpinner className="animate-spin" />
+                  </div>
+                ) : trends?.length > 0 ? (
+                  <div className="grid lg:grid-cols-2 gap-4 py-10">
+                    {trends.map((trend, index) => (
                       <TrendCard
                         key={index}
                         count={trend?.count ?? 0}
@@ -121,12 +124,11 @@ export default function Trends({ league, category }: TrendsProps) {
                         opponent={trend.opponent}
                         place={trend?.place}
                       />
-                    ))
-                  ) : (
-                    <p className="text-center">{t("NO_TRENDS")}</p>
-                  )}
-                </div>
-              )}
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-center py-10">{t("NO_TRENDS")}</p>
+                ))}
             </div>
           ))}
         </div>

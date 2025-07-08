@@ -30,7 +30,7 @@ export default function Trending() {
         name=""
         id=""
         placeholder="🔍  Filter by leagues, country, games"
-        className="self-end mb-10 py-2 px-4 rounded focus:outline-none text-gray-one w-full lg:max-w-[360px] border border-gray-one"
+        className="self-end py-2 px-4 rounded focus:outline-none text-gray-one w-full lg:max-w-[360px] border border-gray-one"
         onChange={(e) => {
           handlePagination(undefined, 1);
           setSearchValue(e.target.value);
@@ -48,7 +48,7 @@ export default function Trending() {
             <div key={index} className="w-full flex flex-col gap-4">
               <div
                 onClick={() => setMatchId(trend.id)}
-                className="bg-gray-one py-2 px-4 rounded-full cursor-pointer dark:bg-blue-one grid grid-cols-[1fr_200px_1fr] items-center justify-center"
+                className="bg-gray-one py-2 px-4 rounded-full cursor-pointer dark:bg-blue-one grid grid-cols-3 lg:grid-cols-[1fr_200px_1fr] items-center justify-center"
               >
                 {[
                   { name: trend.homeTeam, logo: trend.homeLogo },
@@ -57,31 +57,34 @@ export default function Trending() {
                   <>
                     <div
                       key={match.name}
-                      className="flex justify-between items-center gap-4 px-10"
+                      className="flex justify-center items-center gap-4 lg:px-10"
                     >
-                      <div className="flex flex-col lg:flex-row gap-4 items-center">
+                      <div className="flex flex-row gap-4 items-center">
                         <Image
                           src={match.logo}
                           alt={match.name}
                           width="40"
                           height="40"
+                          className="w-5 h-5 lg:w-10 lg:h-10"
                         />
-                        <p className="text-2xl font-semibold text-center">
+                        <p className="text-sm lg:text-lg font-semibold text-center">
                           {match.name}
                         </p>
                       </div>
-                      {i === 1 && (
-                        <button>
+                    </div>
+                    {i === 0 && (
+                      <div className="flex flex-col items-center justify-center">
+                        <p className="text-sm lg:text-lg font-semibold text-center">
+                          Vs
+                        </p>
+                        <button className="">
                           {currId !== trend.id ? (
                             <FaCaretDown />
                           ) : (
                             <FaCaretUp />
                           )}
                         </button>
-                      )}
-                    </div>
-                    {i === 0 && (
-                      <p className="text-2xl font-semibold text-center">Vs</p>
+                      </div>
                     )}
                   </>
                 ))}
