@@ -41,6 +41,7 @@ export function PredictionList({
   highestPrediction,
 }: PredictionListProps) {
   const { slip, setSlip } = useSlip();
+
   const isClicked = slip?.predictions.some(
     (prediction) =>
       prediction.resultKey === predictionObj?.resultKey &&

@@ -1,9 +1,8 @@
 import { getDate } from "@/lib/utils";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import usePredictions from "./usePredictions";
 import useTrends from "./useTrends";
-import { HTTPRequest } from "@/api";
-import { useQuery } from "@tanstack/react-query";
+import useGetMatch from "./useGetMatch";
 
 export default function useGetTrends() {
   const PREDICTIONS_PER_PAGE = 20;
@@ -41,17 +40,7 @@ export default function useGetTrends() {
 
   const currId = matchId ?? undefined;
 
-  const getMatch = async (): Promise<TMatchResponse> => {
-    return await HTTPRequest.Get(`tips/football-match/${currId}`);
-  };
-
-  const { data, isLoading: matchLoading } = useQuery({
-    queryKey: ["match", currId],
-    queryFn: getMatch,
-    enabled: !!currId,
-  });
-
-  const matchData = data?.data;
+  const { matchData, matchLoading } = useGetMatch(currId);
   const isValidData = Object.keys(matchData ?? {}).length > 1;
 
   const { trends } = useTrends({

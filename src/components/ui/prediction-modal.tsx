@@ -1,6 +1,10 @@
 import { cn } from "@/lib/utils";
 import CloseTimes from "./close";
 import Image from "next/image";
+import { HTTPRequest } from "@/api";
+import { useQuery } from "@tanstack/react-query";
+import useGetMatch from "@/hooks/useGetMatch";
+import Spinner from "./spinner";
 
 interface PredictionModalProps {
   setClickedPredictionObj: React.Dispatch<
@@ -20,7 +24,9 @@ export default function PredictionModal({
   predictionObj: prediction,
   topTwoPredictions,
 }: PredictionModalProps) {
-  const match = prediction?.matchData;
+  const predictionId = prediction?.id;
+  const { matchData: match, matchLoading } = useGetMatch(predictionId);
+
   const recentHomeMatches = match?.homerecent?.map((match) => {
     return {
       label: match.awayteamname,
@@ -28,8 +34,8 @@ export default function PredictionModal({
         match.winner === "HOME_TEAM"
           ? "W"
           : match.ftawaygoals === match.fthomegoals
-          ? "D"
-          : "L"
+            ? "D"
+            : "L"
       })`,
     };
   });
@@ -40,8 +46,8 @@ export default function PredictionModal({
         match.winner === "AWAY_TEAM"
           ? "W"
           : match.ftawaygoals === match.fthomegoals
-          ? "D"
-          : "L"
+            ? "D"
+            : "L"
       })`,
     };
   });
@@ -76,69 +82,76 @@ export default function PredictionModal({
       <div
         className={cn(
           "bg-white w-full p-6 rounded-3xl flex flex-col items-center text-blue-three lg:min-w-[500px] max-w-lg text-sm relative dark:bg-blue-two dark:text-white",
-          {}
+          {},
         )}
       >
         <h3 className="text-xl">Prediction</h3>
         <p>League & Country</p>
-        <p>
-          {match?.matchdetails?.comp_country} / {match?.matchdetails?.comp_name}
-        </p>
-        <div className="grid grid-cols-3 mt-4">
-          <div className="flex items-center justify-center flex-col text-center">
-            <Image
-              src={`https://media.api-sports.io/football/teams/${match?.matchdetails?.homeID}.png`}
-              alt="home team logo"
-              className="w-8"
-              loading="lazy"
-              width={100}
-              height={100}
-            />
-            <p> {match?.matchdetails?.home_team}</p>
-            <p> {prediction?.homeform}</p>
-          </div>
-          <p className="place-self-center">
-            {match?.result?.home_ft_goals} - {match?.result?.away_ft_goals}
-          </p>
-          <div className="flex items-center justify-center flex-col text-center">
-            <Image
-              src={`https://media.api-sports.io/football/teams/${match?.matchdetails?.awayID}.png`}
-              alt="away team logo"
-              className="w-8"
-              loading="lazy"
-              width={100}
-              height={100}
-            />
-            PredictionMod
-            <p> {match?.matchdetails?.away_team}</p>
-            <p> {prediction?.awayform}</p>
-          </div>
-        </div>
-        {predictionDetails?.map((detail, index) => (
-          <div
-            key={index}
-            className="w-full mt-4 flex flex-col items-center justify-center"
-          >
-            <h3>{detail.heading}</h3>
-            {detail?.details?.map(
-              (
-                item: {
-                  label: string;
-                  value: string;
-                },
-                index: number
-              ) => (
-                <div
-                  key={index}
-                  className="w-full flex items-center justify-between"
-                >
-                  <p>{item.label}</p>
-                  <p>{item.value}</p>
-                </div>
-              )
-            )}
-          </div>
-        ))}
+        {matchLoading ? (
+          <Spinner className="mt-4" />
+        ) : (
+          <>
+            <p>
+              {match?.matchdetails?.comp_country} /{" "}
+              {match?.matchdetails?.comp_name}
+            </p>
+            <div className="grid grid-cols-3 mt-4">
+              <div className="flex items-center justify-center flex-col text-center">
+                <Image
+                  src={`https://media.api-sports.io/football/teams/${match?.matchdetails?.homeID}.png`}
+                  alt="home team logo"
+                  className="w-8"
+                  loading="lazy"
+                  width={100}
+                  height={100}
+                />
+                <p> {match?.matchdetails?.home_team}</p>
+                <p> {prediction?.homeform}</p>
+              </div>
+              <p className="place-self-center">
+                {match?.result?.home_ft_goals} - {match?.result?.away_ft_goals}
+              </p>
+              <div className="flex items-center justify-center flex-col text-center">
+                <Image
+                  src={`https://media.api-sports.io/football/teams/${match?.matchdetails?.awayID}.png`}
+                  alt="away team logo"
+                  className="w-8"
+                  loading="lazy"
+                  width={100}
+                  height={100}
+                />
+                PredictionMod
+                <p> {match?.matchdetails?.away_team}</p>
+                <p> {prediction?.awayform}</p>
+              </div>
+            </div>
+            {predictionDetails?.map((detail, index) => (
+              <div
+                key={index}
+                className="w-full mt-4 flex flex-col items-center justify-center"
+              >
+                <h3>{detail.heading}</h3>
+                {detail?.details?.map(
+                  (
+                    item: {
+                      label: string;
+                      value: string;
+                    },
+                    index: number,
+                  ) => (
+                    <div
+                      key={index}
+                      className="w-full flex items-center justify-between"
+                    >
+                      <p>{item.label}</p>
+                      <p>{item.value}</p>
+                    </div>
+                  ),
+                )}
+              </div>
+            ))}
+          </>
+        )}
         <CloseTimes onClick={() => setClickedPredictionObj(undefined)} />
       </div>
     </div>
