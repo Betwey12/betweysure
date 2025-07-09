@@ -51,12 +51,14 @@ export default function PredictionModal({
       })`,
     };
   });
-  const tips = match?.tips?.map((tip) => {
-    return {
-      label: tip.selection,
-      value: tip.odds,
-    };
-  });
+  const tips = match?.tips?.length
+    ? match?.tips?.map((tip) => {
+        return {
+          label: tip.selection,
+          value: tip.odds,
+        };
+      })
+    : [];
 
   const predictionDetails = [
     {
