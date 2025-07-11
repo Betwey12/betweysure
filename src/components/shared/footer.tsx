@@ -23,7 +23,7 @@ const blogUrl = `${process.env.NEXT_PUBLIC_BASE_URL ?? "#"}/blog`;
 const forumUrl = process.env.NEXT_PUBLIC_FORUM_URL ?? "#";
 
 export default function Footer() {
-  const { t, footerLinks, paymentMethods } = useFooter();
+  const { t, footerLinks, paymentMethods, textLinks } = useFooter();
   return (
     <footer className="footer_bg w-full  px-4 md:px-10 lg:px-20 py-20 text-white mt-10 lg:mt-20">
       <div className="flex flex-col lg:flex-row justify-between lg:gap-0 gap-8">
@@ -131,6 +131,25 @@ export default function Footer() {
           currentYear: new Date().getFullYear(),
         })}
       </p>
+
+      <div className="pb-2 border-b border-[#252a33]">
+        <h4>Text Links</h4>
+      </div>
+
+      <div className="py-6">
+        <ul className="flex flex-wrap gap-4">
+          {textLinks.map(({ title, link }, index) => (
+            <Link
+              href={link ?? "#"}
+              key={index}
+              className="text-xs underline text-gray-two hover:text-white"
+              aria-label={title}
+            >
+              {title}
+            </Link>
+          ))}
+        </ul>
+      </div>
     </footer>
   );
 }
@@ -199,10 +218,6 @@ function useFooter() {
         { title: t("RESULTS"), link: "/results" },
         { title: t("PRIVACY_POLICY"), link: "/privacy" },
         { title: t("TERMS_AMP_CONDITIONS"), link: "/terms-and-conditions" },
-        {
-          title: "Live Football Scores",
-          link: "https://www.flashscore.com.ng/",
-        },
       ],
     },
     {
@@ -225,7 +240,22 @@ function useFooter() {
     },
   ];
 
+  const textLinks = [
+    {
+      title: "Live Football Scores",
+      link: "https://www.flashscore.com.ng/",
+    },
+    {
+      title: "Predictz Tips",
+      link: "https://legitpredict.com/predictz",
+    },
+    {
+      title: "Surest Prediction Site",
+      link: " https://99predict.com/",
+    },
+  ];
+
   const paymentMethods = [visa, verve, masterCard, bank, discover];
 
-  return { t, footerLinks, paymentMethods };
+  return { t, footerLinks, paymentMethods, textLinks };
 }
