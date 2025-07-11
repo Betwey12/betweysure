@@ -9,10 +9,13 @@ import Image from "next/image";
 import sportsbetGif from "@/assets/images/sportsbet-gif.gif";
 import newcastleBanner from "@/assets/images/newcastle-banner.webp";
 
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+
 export const metadata: Metadata = {
   title: acca.title,
   description: acca.description,
   keywords: acca.keywords,
+  alternates: { canonical: `${SITE_URL}/acca-builder` },
 };
 
 export default function AccumulatorBuilder() {

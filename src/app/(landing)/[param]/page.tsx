@@ -19,6 +19,8 @@ type Props = {
   params: { param: TParams };
 };
 
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const meta = paramsaMetaData[params.param];
 
@@ -26,6 +28,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: meta?.title ?? home?.title,
     keywords: meta?.keywords,
     description: meta?.description,
+    alternates: {
+      canonical: `${SITE_URL}/${params.param}`,
+    },
   };
 }
 

@@ -14,9 +14,14 @@ import ContactForm from "@/components/contact/contact-form";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+
 export const metadata: Metadata = {
   title: contact.title,
   description: contact.description,
+  alternates: {
+    canonical: `${SITE_URL}/contact-us`,
+  },
 };
 
 export default function ContactPage() {

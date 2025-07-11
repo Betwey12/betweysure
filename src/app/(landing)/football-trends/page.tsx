@@ -9,10 +9,15 @@ import Image from "next/image";
 import peripesaBanner from "@/assets/images/peripesa-banner.webp";
 import oneXbetBanner from "@/assets/images/1xbet-banner.gif";
 
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+
 export const metadata: Metadata = {
   title: trends.title,
   description: trends.description,
   keywords: trends.keywords,
+  alternates: {
+    canonical: `${SITE_URL}/football-trends`,
+  },
 };
 
 export default function TrendsPage() {

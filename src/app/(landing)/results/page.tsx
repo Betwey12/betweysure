@@ -4,9 +4,14 @@ import OtherPagesHero from "@/components/shared/other-pages-hero";
 import { result } from "@/constants";
 import ResultsHistory from "@/components/results/result-history";
 
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+
 export const metadata: Metadata = {
   title: result.title,
   description: result.description,
+  alternates: {
+    canonical: `${SITE_URL}/results`,
+  },
 };
 
 export default function ResultsPage() {

@@ -7,11 +7,9 @@ import {
   today,
   tomorrow,
   euroChampionship,
-  leagues,
   uefaSuperCup,
   copaAmerica,
   primeiraLiga,
-  spainPrimeiraLiga,
   eredivisie,
   proLeague,
   laliga,
@@ -34,6 +32,8 @@ type Props = {
   params: { category: TPopularTCategories; tab: TLeagueMetaTabs };
 };
 
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // read route params
   const category = params.category;
@@ -42,25 +42,39 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     yesterday,
     today,
     tomorrow,
-    "uefa-champions-league": uefaChampionsLeague,
-    "euro-championship": euroChampionship,
-    "uefa-super-cup": uefaSuperCup,
-    "copa-america": copaAmerica,
-    "spain-primera-liga": spainPrimeiraLiga,
-    "primeira-liga": primeiraLiga,
-    eredivisie: eredivisie,
-    "pro-league": proLeague,
-    "la-liga": laliga,
-    bundesliga: bundesliga,
-    "italian-serie-a": italianSerieA,
-    "ligue-1": ligue1,
-    "england-premier-league": englandPremierLeague,
-    "uefa-europa-league": uefaEuropaLeague,
+    "uefa-champions-league-2": uefaChampionsLeague,
+    "euro-championship-4": euroChampionship,
+    "uefa-super-cup-531": uefaSuperCup,
+    "copa-america-9": copaAmerica,
+    "primeira-liga-94": primeiraLiga,
+    "eredivisie-88": eredivisie,
+    "pro-league-591": proLeague,
+    "la-liga-140": laliga,
+    "bundesliga-78": bundesliga,
+    "italian-serie-a-135": italianSerieA,
+    "ligue-1-61": ligue1,
+    "england-premier-league-39": englandPremierLeague,
+    "uefa-europa-league-3": uefaEuropaLeague,
   };
   const meta = categories[category]?.[tab] ?? categories[category]?.["DEFAULT"];
+  const linkArr = decodeURIComponent(category).split("-");
+  const apiFootballId = linkArr[linkArr.length - 1];
+
+  const popularLeagues = [...Object.values(leagueList)].flat();
+
+  const popularLeague = popularLeagues?.find(
+    (l) => l.apiFootballId === +apiFootballId,
+  );
+
+  const title = `${popularLeague?.name} Predictions & Expert Betting Tips - Betweysure`;
+  const description = `View the standings, form, and statistics of ${popularLeague?.name}, and more. Get the latest football predictions and tips for this league`;
 
   return {
-    title: meta?.title || leagues.title,
+    title: meta?.title || title,
+    description: meta?.description || description,
+    alternates: {
+      canonical: `${SITE_URL}/popular/${category}/${tab}`,
+    },
   };
 }
 

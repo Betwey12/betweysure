@@ -14,10 +14,15 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 import PopUpProvider from "@/components/provider/pop-up-provider";
 
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+
 export const metadata: Metadata = {
   title: home.title,
   description: home.description,
   keywords: home.keywords,
+  alternates: {
+    canonical: `${SITE_URL}`,
+  },
 };
 
 export default async function RootLayout({

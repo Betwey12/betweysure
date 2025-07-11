@@ -5,9 +5,14 @@ import { privacy } from "@/constants";
 import PurifiedHtml from "@/components/shared/purified-html";
 import privacyPolicy from "@/assets/data/privacy-policy";
 
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+
 export const metadata: Metadata = {
   title: privacy.title,
   description: privacy.description,
+  alternates: {
+    canonical: `${SITE_URL}/privacy`,
+  },
 };
 
 export default function PrivacyPage() {

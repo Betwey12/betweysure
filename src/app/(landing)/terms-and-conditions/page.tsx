@@ -3,9 +3,14 @@ import { Metadata } from "next";
 import OtherPagesHero from "@/components/shared/other-pages-hero";
 import { terms } from "@/constants";
 
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+
 export const metadata: Metadata = {
   title: terms.title,
   description: terms.description,
+  alternates: {
+    canonical: `${SITE_URL}/terms-and-conditions`,
+  },
 };
 
 export default function TACPage() {

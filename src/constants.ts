@@ -193,7 +193,7 @@ export const pageMetadata = {
   home: {
     title: "Free Football Betting Tips & Predictions Website - Betweysure",
     description:
-      "Get accurate and reliable football betting tips and predictions for free at Betweysure. Increase your chances of winning with our expert analysis and insights.",
+      "Get accurate and reliable football betting tips and predictions for free at Betweysure. Increase your chances of winning with our expert analysis.",
     keywords: "Football Betting Tips & Predictions, 99 percent winning tips",
   },
   pricing: {
@@ -243,7 +243,7 @@ export const pageMetadata = {
   trends: {
     title: "Football Trends & Recent Form Analysis | Betweysure",
     description:
-      "Analyze recent team performance and trends to make informed betting decisions. Betweysure provides up-to-date football trends for various leagues and teams.",
+      "Analyze recent team performance and trends to make informed decisions. Betweysure provides up-to-date football trends for various leagues and teams.",
     keywords: "football trends, recent form analysis",
   },
   acca: {
@@ -388,13 +388,6 @@ export const pageMetadata = {
         "Get the edge in the UEFA Super Cup with Betweysure's expert predictions and analysis. We delve into the matchup, track trends, and provide valuable insights for informed wagers.",
     },
   },
-  spainPrimeiraLiga: {
-    DEFAULT: {
-      title: "La Liga Predictions & Expert Betting Tips - Betweysure",
-      description:
-        "Enhance your La Liga betting with Betweysure. We provide expert predictions, in-depth analysis, and valuable tips for upcoming matches in Spain's top football league.",
-    },
-  },
   primeiraLiga: {
     DEFAULT: {
       title: "Primeira Liga Predictions & Expert Betting Tips - Betweysure",
@@ -507,7 +500,6 @@ export const {
   euroChampionship,
   copaAmerica,
   uefaSuperCup,
-  spainPrimeiraLiga,
   ligue1,
   serieA,
   bundesliga,

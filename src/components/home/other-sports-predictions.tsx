@@ -76,7 +76,6 @@ export default function OtherSportsPredictions() {
     setFullDate(newDate);
     setShowDate(false);
   };
-  console.log(selectedSport);
 
   return (
     <div

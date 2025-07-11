@@ -11,10 +11,15 @@ import Image from "next/image";
 import peripesaBanner from "@/assets/images/peripesa-banner.webp";
 import PurifiedHtml from "@/components/shared/purified-html";
 
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+
 export const metadata: Metadata = {
   title: livescores.title,
   description: livescores.description,
   keywords: livescores.keywords,
+  alternates: {
+    canonical: `${SITE_URL}/livescores`,
+  },
 };
 
 export default function LivescoresPage() {

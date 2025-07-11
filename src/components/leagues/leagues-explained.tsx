@@ -44,7 +44,7 @@ function useLeaguesExplained() {
       description: string;
     }[]
   > = {
-    "euro-championship": [
+    "euro-championship-4": [
       {
         title: t("EURO_CHAMPIONSHIP_TITLE_P1"),
         description: t("EURO_CHAMPIONSHIP_DESC_P1"),
@@ -62,7 +62,7 @@ function useLeaguesExplained() {
         description: t("EURO_CHAMPIONSHIP_DESC_P4"),
       },
     ],
-    "uefa-champions-league": [
+    "uefa-champions-league-2": [
       {
         title: t("UEFA_CHAMPIONS_LEAGUE_TITLE_P1"),
         description: t("UEFA_CHAMPIONS_LEAGUE_DESC_P1"),
@@ -80,7 +80,7 @@ function useLeaguesExplained() {
         description: t("UEFA_CHAMPIONS_LEAGUE_DESC_P4"),
       },
     ],
-    "england-premier-league": [
+    "england-premier-league-39": [
       {
         title: t("ENGLAND_PREMIER_LEAGUE_TITLE_P1"),
         description: t("ENGLAND_PREMIER_LEAGUE_DESC_P1"),
@@ -98,7 +98,7 @@ function useLeaguesExplained() {
         description: t("ENGLAND_PREMIER_LEAGUE_DESC_P4"),
       },
     ],
-    "uefa-europa-league": [
+    "uefa-europa-league-3": [
       {
         title: t("UEFA_EUROPA_LEAGUE_TITLE_P1"),
         description: t("UEFA_EUROPA_LEAGUE_DESC_P1"),
@@ -116,7 +116,7 @@ function useLeaguesExplained() {
         description: t("UEFA_EUROPA_LEAGUE_DESC_P4"),
       },
     ],
-    "copa-america": [
+    "copa-america-9": [
       {
         title: t("COPA_AMERICA_TITLE_P1"),
         description: t("COPA_AMERICA_DESC_P1"),
@@ -134,7 +134,7 @@ function useLeaguesExplained() {
         description: t("COPA_AMERICA_DESC_P4"),
       },
     ],
-    eredivisie: [
+    "eredivisie-88": [
       {
         title: t("EREDIVISIE_TITLE_P1"),
         description: t("EREDIVISIE_DESC_P1"),
@@ -152,7 +152,7 @@ function useLeaguesExplained() {
         description: t("EREDIVISIE_DESC_P4"),
       },
     ],
-    "primeira-liga": [
+    "primeira-liga-94": [
       {
         title: t("PRIMEIRA_LIGA_TITLE_P1"),
         description: t("PRIMEIRA_LIGA_DESC_P1"),
@@ -170,7 +170,7 @@ function useLeaguesExplained() {
         description: t("PRIMEIRA_LIGA_DESC_P4"),
       },
     ],
-    "pro-league": [
+    "pro-league-591": [
       {
         title: t("PRO_LEAGUE_TITLE_P1"),
         description: t("PRO_LEAGUE_DESC_P1"),
@@ -188,7 +188,7 @@ function useLeaguesExplained() {
         description: t("PRO_LEAGUE_DESC_P4"),
       },
     ],
-    "la-liga": [
+    "la-liga-140": [
       {
         title: t("LA_LIGA_TITLE_P1"),
         description: t("LA_LIGA_DESC_P1"),
@@ -206,7 +206,7 @@ function useLeaguesExplained() {
         description: t("LA_LIGA_DESC_P4"),
       },
     ],
-    bundesliga: [
+    "bundesliga-78": [
       {
         title: t("BUNDESLIGA_TITLE_P1"),
         description: t("BUNDESLIGA_DESC_P1"),
@@ -224,7 +224,7 @@ function useLeaguesExplained() {
         description: t("BUNDESLIGA_DESC_P4"),
       },
     ],
-    "italian-serie-a": [
+    "italian-serie-a-135": [
       {
         title: t("ITALIAN_SERIE_A_TITLE_P1"),
         description: t("ITALIAN_SERIE_A_DESC_P1"),
@@ -242,7 +242,7 @@ function useLeaguesExplained() {
         description: t("ITALIAN_SERIE_A_DESC_P4"),
       },
     ],
-    "ligue-1": [
+    "ligue-1-61": [
       {
         title: t("LIGUE_1_TITLE_P1"),
         description: t("LIGUE_1_DESC_P1"),
@@ -260,25 +260,7 @@ function useLeaguesExplained() {
         description: t("LIGUE_1_DESC_P4"),
       },
     ],
-    "spain-primera-liga": [
-      {
-        title: t("SPAIN_PRIMERA_LIGA_TITLE_P1"),
-        description: t("SPAIN_PRIMERA_LIGA_DESC_P1"),
-      },
-      {
-        title: t("SPAIN_PRIMERA_LIGA_TITLE_P2"),
-        description: t("SPAIN_PRIMERA_LIGA_DESC_P2"),
-      },
-      {
-        title: t("SPAIN_PRIMERA_LIGA_TITLE_P3"),
-        description: t("SPAIN_PRIMERA_LIGA_DESC_P3"),
-      },
-      {
-        title: t("SPAIN_PRIMERA_LIGA_TITLE_P4"),
-        description: t("SPAIN_PRIMERA_LIGA_DESC_P4"),
-      },
-    ],
-    "uefa-super-cup": [
+    "uefa-super-cup-531": [
       {
         title: t("UEFA_SUPER_CUP_TITLE_P1"),
         description: t("UEFA_SUPER_CUP_DESC_P1"),
