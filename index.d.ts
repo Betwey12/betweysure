@@ -53,8 +53,8 @@ declare global {
   };
 
   type Prediction = {
-    "12_odds": string;
     "1x2": string;
+    "12_odds": string;
     "1x_odds": string;
     "2x_odds": string;
     awayTeam: string;
@@ -90,6 +90,9 @@ declare global {
     homeLogo: string;
     awayLogo: string;
     matchData: TMatchData;
+    homeID: number;
+    awayID: number;
+    countryCode: string;
   };
 
   type TPremiumPrediction = {

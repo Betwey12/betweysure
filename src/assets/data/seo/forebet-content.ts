@@ -33,6 +33,7 @@ export const forebetContent = `
 </ul>
 
 <h4 style="font-size: 32px; margin-top: 32px;">Comparison: Forebet vs. Soccervista vs. Betweysure</h4>
+
 <table style="width: 100%; margin: 16px 0; border: 1px solid #ddd; border-collapse: collapse;">
     <thead>
         <tr>
