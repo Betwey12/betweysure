@@ -6,23 +6,14 @@ import { useTranslations } from "next-intl";
 import { useSlip } from "@/hooks/useSlip";
 import { SlipIcon } from "../icons";
 import PredictionSelect from "../ui/prediction-select";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 const blogUrl = `${process.env.NEXT_PUBLIC_BASE_URL ?? "#"}/blog`;
 const forumUrl = process.env.NEXT_PUBLIC_FORUM_URL ?? "#";
 
 export default function MenuBar() {
   const { t, navigations } = useMenu();
-  const { theme } = useTheme();
   const { setSlip, slip } = useSlip();
   const slipAlert = slip?.predictions?.length ?? 0;
-
-  const [isDark, setIsDark] = useState<boolean>();
-
-  useEffect(() => {
-    setIsDark(theme === "dark");
-  }, [theme]);
 
   return (
     <div className="bg-white rounded-full lg:flex items-center justify-between pl-14 w-full pr-8 py-2 transition-colors hidden dark:bg-blue-one dark:text-white">
@@ -49,7 +40,7 @@ export default function MenuBar() {
         </div>
 
         <button
-          className="relative"
+          className="relative text-4xl"
           aria-label="slip"
           onClick={() => {
             setSlip({
@@ -58,7 +49,7 @@ export default function MenuBar() {
             });
           }}
         >
-          <SlipIcon fill={isDark ? "#fff" : "#0D233E"} />
+          <SlipIcon />
           {slipAlert > 0 && (
             <div className="absolute top-0 right-0 rounded-full  w-3 h-3 bg-[#FF2626] flex items-center justify-center">
               <p className="text-[10px]">{slipAlert}</p>

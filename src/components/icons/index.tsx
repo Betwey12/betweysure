@@ -622,8 +622,8 @@ export default function LiveIcon(props: React.SVGProps<SVGSVGElement>) {
 export function SlipIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
-      width="45"
-      height="45"
+      width="1em"
+      height="1em"
       viewBox="0 0 45 45"
       fill={props.fill || "currentColor"}
       xmlns="http://www.w3.org/2000/svg"

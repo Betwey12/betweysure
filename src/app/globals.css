@@ -12,6 +12,8 @@
   }
   .dark {
     --background: 255 100% 100%;
+    --popover: 219.2 97.4% 12.2%;
+    --popover-foreground: 0 0% 100%;
   }
 }
 @layer base {
@@ -103,7 +105,8 @@
 }
 
 .call_to_action_bg {
-  background: linear-gradient(#000000aa, #000000aa),
+  background:
+    linear-gradient(#000000aa, #000000aa),
     /* Gradient overlay */ url(../assets/images/foootball-shoe.webp); /* Background image */
   background-size: cover;
   background-repeat: no-repeat;
@@ -111,37 +114,36 @@
 }
 
 .footer_bg {
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.72) 0%,
-      rgba(0, 0, 0, 0.72) 100%
-    ),
-    url(../assets/images/footer-bg.webp), lightgray 50% / cover no-repeat;
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.72) 100%),
+    url(../assets/images/footer-bg.webp),
+    lightgray 50% / cover no-repeat;
 }
 
 .login_bg {
-  background: url(../assets/images/login-bg.webp),
+  background:
+    url(../assets/images/login-bg.webp),
     lightgray 50% / cover no-repeat;
   background-position: 50% 50%;
 }
 
 .signup_bg {
-  background: url(../assets/images/signup-bg.webp),
+  background:
+    url(../assets/images/signup-bg.webp),
     lightgray 50% / cover no-repeat;
   background-position: 50% 0%;
 }
 
 .pricing-hero_bg {
-  background: linear-gradient(
-      0deg,
-      rgba(0, 58, 65, 0.46) 0%,
-      rgba(0, 58, 65, 0.46) 100%
-    ),
-    url(../assets/images/hero-bg-two.webp), lightgray 50% / cover no-repeat;
+  background:
+    linear-gradient(0deg, rgba(0, 58, 65, 0.46) 0%, rgba(0, 58, 65, 0.46) 100%),
+    url(../assets/images/hero-bg-two.webp),
+    lightgray 50% / cover no-repeat;
 }
 
 .expertise_bg {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
     url(../assets//images/experise.webp);
   background-size: cover;
   background-repeat: no-repeat;
