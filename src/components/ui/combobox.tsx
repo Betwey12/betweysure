@@ -53,9 +53,7 @@ export function Combobox({
           <CommandInput placeholder={searchPlaceHolder} className="h-9" />
           <CommandList>
             <CommandEmpty>{empty ?? "Not found"}</CommandEmpty>
-            <CommandGroup className="bg-secondary-background">
-              {children}
-            </CommandGroup>
+            <CommandGroup>{children}</CommandGroup>
           </CommandList>
         </Command>
       </PopoverContent>
