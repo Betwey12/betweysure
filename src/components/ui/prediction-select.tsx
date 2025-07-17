@@ -2,10 +2,10 @@
 import { period } from "@/assets/data/data";
 import { leagueList } from "@/assets/data/leagueApiF";
 import { useRouter } from "next/navigation";
-import { Fragment, useState } from "react";
-import { CommandItem } from "cmdk";
+import { useState } from "react";
 import { capitalize } from "@/lib/utils";
 import { Combobox } from "./combobox";
+import { CommandGroup, CommandItem } from "@/components/ui/command";
 
 export default function PredictionSelect() {
   const router = useRouter();
@@ -19,14 +19,17 @@ export default function PredictionSelect() {
     }));
 
     return (
-      <Fragment key={option}>
-        <p className="text-gray-one text-sm">{option}</p>
+      <CommandGroup
+        key={option}
+        heading={capitalize(option)}
+        className="mt-2 text-gray-one text-sm"
+      >
         {leagueOptions.map((league) => (
           <CommandItem
             key={league.value}
             value={league.value}
             className={
-              "hover:bg-cyan/10 w-full  cursor-pointer px-2 py-2 min-w-fit text-sm"
+              "hover:bg-cyan/10 w-full cursor-pointer px-2 py-2 min-w-fit text-sm text-foreground"
             }
             onSelect={(v) => {
               router.push(`/popular/${v}/standings`);
@@ -35,7 +38,7 @@ export default function PredictionSelect() {
             {league.label}
           </CommandItem>
         ))}
-      </Fragment>
+      </CommandGroup>
     );
   });
 
@@ -51,7 +54,7 @@ export default function PredictionSelect() {
         onSelect={(v) => {
           router.push(`/popular/${v}/predictions`);
         }}
-        className="flex items-center hover:bg-cyan/10 w-full cursor-pointer px-2 py-2 min-w-fit text-sm"
+        className="flex items-center hover:bg-cyan/10 w-full cursor-pointer px-2 py-2 min-w-fit text-sm text-foreground"
       >
         {capitalize(option.label)}
       </CommandItem>
@@ -65,8 +68,9 @@ export default function PredictionSelect() {
       handleOpen={() => setOpen(!open)}
       open={open}
     >
-      <p className="text-gray-one text-sm">By Date</p>
-      {periodList}
+      <CommandGroup heading="By Date" className="text-gray-one text-sm">
+        {periodList}
+      </CommandGroup>
       {leaguesList}
     </Combobox>
   );

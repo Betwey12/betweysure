@@ -1,14 +1,11 @@
 import * as React from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
+import { ChevronsUpDown } from "lucide-react";
 
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
-  CommandGroup,
   CommandInput,
-  CommandItem,
   CommandList,
 } from "@/components/ui/command";
 import {
@@ -42,18 +39,18 @@ export function Combobox({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full lg:max-w-[300px] justify-between bg-transparent text-sm font-normal"
+          className="w-full lg:max-w-[300px] justify-between bg-transparent hover:bg-transparent text-sm font-normal"
         >
           {label ? label : (placeholder ?? "Select option")}
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-full lg:max-w-[300px] p-0">
+      <PopoverContent className="w-full min-w-[300px] lg:max-w-[300px] p-0">
         <Command>
           <CommandInput placeholder={searchPlaceHolder} className="h-9" />
           <CommandList>
             <CommandEmpty>{empty ?? "Not found"}</CommandEmpty>
-            <CommandGroup>{children}</CommandGroup>
+            {children}
           </CommandList>
         </Command>
       </PopoverContent>
