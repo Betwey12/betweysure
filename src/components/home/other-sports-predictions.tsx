@@ -59,7 +59,7 @@ export default function OtherSportsPredictions() {
     sportOptions.find((option) => option.href === pathname)?.title ??
     sportOptions[Math.floor(Math.random() * sportOptions.length)]?.title ??
     "";
-  const option = selectedSport.toLowerCase();
+  const option = selectedSport.toLowerCase().replace(/\s/g, "");
   const endpoint = `tips/othersports/${option}/${fullDate}`;
   const queryKey = ["predictions", period, option];
   const predictionsPerPage = 9;
