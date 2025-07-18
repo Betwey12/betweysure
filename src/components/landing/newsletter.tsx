@@ -19,7 +19,7 @@ export default function NewsLetter() {
       <form className="lg:self-end">
         <fieldset className="flex">
           <input
-            type="text"
+            type="email"
             placeholder="Enter your email address"
             className="flex-1 bg-white px-4 rounded-[4px_0_0_4px] focus:outline-none text-gray-one md:max-w-[220px]"
           />
