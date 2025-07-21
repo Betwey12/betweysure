@@ -8,8 +8,9 @@ import Link from "next/link";
 import { EmailSentIcon } from "../icons";
 import { Button } from "../ui/button";
 import { useTranslations } from "next-intl";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { HTTPRequest } from "@/api";
+import LoadingButton from "../ui/loading-button";
 
 interface VerifyEmailClientProps {
   token: string;
@@ -22,26 +23,33 @@ export default function VerifyEmailClient({ token }: VerifyEmailClientProps) {
     queryKey: ["verify-email"],
     queryFn: () =>
       HTTPRequest.Get(
-        `auth/verify-email?token=${token}&fullName=${user?.fullName}&email=${user?.email}`
+        `auth/verify-email?token=${token}&fullName=${user?.fullName}&email=${user?.email}`,
       ),
     enabled: !!(token || user),
   });
 
-  async function handleResendEmail() {
-    const user = auth.currentUser;
-    if (!user?.email) {
-      toast.error("Email not found");
-      return;
-    }
-    await sendEmailVerification(user).catch((error) => {
-      const message = error.message
-        .replace(/\W|-/g, " ")
-        .replace(/\b(?:Firebase|auth)\b/g, "")
-        .trim();
+  const { mutateAsync, isError, isPending } = useMutation({
+    mutationFn: () => HTTPRequest.Post("auth/resend-email", {}),
+  });
 
-      toast.error(message || "An error occurred");
-    });
-    toast.success("Email sent successfully");
+  async function handleResendEmail() {
+    try {
+      const user = auth.currentUser;
+      if (!user?.email) {
+        toast.error("Email not found");
+        return;
+      }
+      const res = await mutateAsync();
+      const message = res?.message;
+      if (isError || !res?.success) {
+        return toast.error(message);
+      }
+
+      toast.success("Email sent successfully");
+    } catch (error) {
+      toast.error("Something went wrong!");
+      console.log(error);
+    }
   }
 
   function handleGoToDashboard() {
@@ -75,13 +83,12 @@ export default function VerifyEmailClient({ token }: VerifyEmailClientProps) {
           <h1 className="text-2xl lg:text-3xl">{t("WELCOME")}</h1>
           <p className="text-center">{t("VERIFY_EMAIL_MESSAGE")}</p>
 
-          <Button
-            type="button"
-            className="py-3 mt-6 text-center justify-center text-white"
+          <LoadingButton
             onClick={handleResendEmail}
-          >
-            {t("RESEND_EMAIL")}
-          </Button>
+            isPending={isPending}
+            name={t("RESEND_EMAIL")}
+            className="py-3 mt-4"
+          />
         </>
       )}
     </div>
