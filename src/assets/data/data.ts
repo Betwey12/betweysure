@@ -1,5 +1,3 @@
-import { CallToAction } from "@/components/home";
-
 export const countries = {
   ad: "Andorra",
   ae: "United Arab Emirates",

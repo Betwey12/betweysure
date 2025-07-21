@@ -25,7 +25,7 @@ export default function Navbar() {
           alt="logo"
           width={160}
           height={40}
-          className="w-[120px] lg:w-[160px]"
+          className="w-[120px] h-auto lg:w-[160px]"
         />
       </Link>{" "}
       <div

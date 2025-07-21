@@ -34,7 +34,7 @@ export default function Footer() {
               height={40}
               src="/logo.png"
               alt="logo"
-              className="w-[120px] lg:w-[160px]"
+              className="w-[120px] h-auto lg:w-[160px]"
             />
           </Link>{" "}
           <div className="flex flex-col gap-2 max-w-[400px]">

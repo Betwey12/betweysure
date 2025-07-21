@@ -36,7 +36,7 @@ export default function AuthNavBar() {
           height={40}
           src="/logo.png"
           alt="logo"
-          className="w-[120px] lg:w-[160px]"
+          className="w-[120px] h-auto lg:w-[160px]"
         />
       </Link>
       <div
@@ -45,7 +45,7 @@ export default function AuthNavBar() {
           {
             "absolute flex z-50 flex-col gap-4 bg-white lg:bg-transparent text-blue-three w-[90%] border border-gray-two top-20 rounded-lg shadow p-4 ":
               isMenuOpen,
-          }
+          },
         )}
       >
         {links.map((link) => (

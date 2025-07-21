@@ -15,7 +15,7 @@ export default function PredictionSelect() {
   const leaguesList = leagues.map((option) => {
     const leagueOptions = leagueList[option].map((opt) => ({
       label: `${opt.country} ${opt.name}`,
-      value: `${opt.name.toLowerCase().replace(/\s+/g, "-").replace(/-+/g, "-")}-${opt.apiFootballId}`,
+      value: opt.url,
     }));
 
     return (
