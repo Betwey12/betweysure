@@ -22,6 +22,7 @@ import PasswordInput from "../ui/password-input";
 import { useTranslations } from "next-intl";
 import LoadingButton from "../ui/loading-button";
 import { paymentSupportedCountries } from "@/assets/data/data";
+import { sendGTMEvent } from "@next/third-parties/google";
 import { useAuth } from "@/hooks/useAuth";
 
 const registerSchema = yup.object().shape({
@@ -121,6 +122,12 @@ export default function SignUpForm() {
     toast.success(response.message);
 
     if (action === "register") return;
+    sendGTMEvent({
+      event: "user_registration",
+      email: data.email,
+      fullName: data.fullName,
+    });
+
     router.push("/auth/verify-email");
   };
 
