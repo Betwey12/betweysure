@@ -97,8 +97,7 @@ export default function CompleteProfileForm() {
       ...response.user,
     });
 
-    sendGAEvent({
-      event: "user_registration",
+    sendGAEvent("event", "user_registration", {
       value: `${user?.email} ${user?.fullName}`,
     });
     router.push("/dashboard");

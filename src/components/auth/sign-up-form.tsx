@@ -122,9 +122,8 @@ export default function SignUpForm() {
     toast.success(response.message);
 
     if (action === "register") return;
-    sendGAEvent({
-      event: "user_registration",
-      value: `${data.email} ${data.fullName}`,
+    sendGAEvent("event", "user_registration", {
+      value: `${data?.email} ${data?.fullName}`,
     });
 
     router.push("/auth/verify-email");
