@@ -99,8 +99,7 @@ export default function CompleteProfileForm() {
 
     sendGAEvent({
       event: "user_registration",
-      email: authUser.email,
-      fullName: authUser.displayName,
+      value: `${user?.email} ${user?.fullName}`,
     });
     router.push("/dashboard");
     // window.location.replace("/dashboard");
