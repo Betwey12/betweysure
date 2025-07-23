@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation";
 import LoadingButton from "../ui/loading-button";
 import { useTranslations } from "next-intl";
 import { paymentSupportedCountries } from "@/assets/data/data";
-import { sendGTMEvent } from "@next/third-parties/google";
+import { sendGAEvent, sendGTMEvent } from "@next/third-parties/google";
 
 const schema = yup.object().shape({
   phone: yup
@@ -96,7 +96,8 @@ export default function CompleteProfileForm() {
       ...user,
       ...response.user,
     });
-    sendGTMEvent({
+
+    sendGAEvent({
       event: "user_registration",
       email: authUser.email,
       fullName: authUser.displayName,
