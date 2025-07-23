@@ -124,8 +124,7 @@ export default function SignUpForm() {
     if (action === "register") return;
     sendGAEvent({
       event: "user_registration",
-      email: data.email,
-      fullName: data.fullName,
+      value: `${data.email} ${data.fullName}`,
     });
 
     router.push("/auth/verify-email");
